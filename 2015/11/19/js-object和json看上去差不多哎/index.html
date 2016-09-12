@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>js object VS json | lifesimple</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="代码中经常会用到object，数据请求中也经常会用到json，看下面例子12var obj = &amp;#123;&amp;quot;name&amp;quot;:&amp;quot;jing&amp;quot;,&amp;quot;age&amp;quot;:&amp;quot;20&amp;quot;,&amp;quot;job&amp;quot;:&amp;quot;coder&amp;quot;&amp;#125;;&amp;#123;&amp;quot;name&amp;quot;:&amp;quot;jing&amp;quot;,&amp;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js object VS json">
+<meta property="og:url" content="http://yoursite.com/2015/11/19/js-object和json看上去差不多哎/index.html">
+<meta property="og:site_name" content="lifesimple">
+<meta property="og:description" content="代码中经常会用到object，数据请求中也经常会用到json，看下面例子12var obj = &amp;#123;&amp;quot;name&amp;quot;:&amp;quot;jing&amp;quot;,&amp;quot;age&amp;quot;:&amp;quot;20&amp;quot;,&amp;quot;job&amp;quot;:&amp;quot;coder&amp;quot;&amp;#125;;&amp;#123;&amp;quot;name&amp;quot;:&amp;quot;jing&amp;quot;,&amp;">
+<meta property="og:image" content="http://moefq.com/images/2015/11/19/7bc8c9249ad1feacfc83296c45b6468c.png">
+<meta property="og:updated_time" content="2016-09-12T11:39:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="js object VS json">
+<meta name="twitter:description" content="代码中经常会用到object，数据请求中也经常会用到json，看下面例子12var obj = &amp;#123;&amp;quot;name&amp;quot;:&amp;quot;jing&amp;quot;,&amp;quot;age&amp;quot;:&amp;quot;20&amp;quot;,&amp;quot;job&amp;quot;:&amp;quot;coder&amp;quot;&amp;#125;;&amp;#123;&amp;quot;name&amp;quot;:&amp;quot;jing&amp;quot;,&amp;">
+<meta name="twitter:image" content="http://moefq.com/images/2015/11/19/7bc8c9249ad1feacfc83296c45b6468c.png">
+  
+    <link rel="alternate" href="/atom.xml" title="lifesimple" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lifesimple</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">life is simple</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-js-object和json看上去差不多哎" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/19/js-object和json看上去差不多哎/" class="article-date">
+  <time datetime="2015-11-19T15:25:03.000Z" itemprop="datePublished">2015-11-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      js object VS json
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>代码中经常会用到object，数据请求中也经常会用到json，看下面例子<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;&quot;name&quot;:&quot;jing&quot;,&quot;age&quot;:&quot;20&quot;,&quot;job&quot;:&quot;coder&quot;&#125;;</div><div class="line">&#123;&quot;name&quot;:&quot;jing&quot;,&quot;age&quot;:&quot;20&quot;,&quot;job&quot;:&quot;coder&quot;&#125;;</div></pre></td></tr></table></figure></p>
+<p>觉得很相似，有点分不清，这两个?<br>stackoverflow上有个回答不错，贴下地址。<br><a href="http://stackoverflow.com/questions/8294088/javascript-object-vs-json" target="_blank" rel="external">stackoverflow-Javascript object Vs JSON</a><br><a id="more"></a></p>
+<blockquote>
+<ol>
+<li><p>Is the key/property name valid both with/without quotes ?<br>The only time you need to enclose a key in quotes when using Object Literal notation is where the key contains a special character (if, :, - etc). It is worth noting that a key in JSON must be enclosed in double quotes.</p>
+</li>
+<li><p>If I convert the above object to JSON using var jSonString = JSON.stringify(testObject);, what is the difference between the 2 (JS obj and JSON)?<br>JSON is a data interchange format. It’s a standard which describes how ordered lists and unordered maps, strings booleans and numbers can be represented in a string. Just like XML and YAML is a way to pass structured information between languages, JSON is the same. A JavaScript object on the other hand is a physical type. Just like a PHP array, a C++ class/ struct, a JavaScript object is an type internal to JavaScript.<br>Here’s a story. Let’s imagine you’ve purchased some furniture from a store, and you want it delivered. However the only one left in stock is the display model, but you agree to buy it.<br>In the shop, the chest-of-drawers you’ve purchased is a living object:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var chestOfDrawers = &#123;</div><div class="line">    color: &quot;red&quot;,</div><div class="line">    numberOfDrawers: 4</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+</blockquote>
+<p>However, you can’t send a chest-of-drawers in the post, so you dismantle it (read, stringify it). It’s now useless in terms of furniture. It is now JSON. Its in flat pack form.<br>    {“color”:”red”,”numberOfDrawers”:4}<br>When you receive it, you then rebuild the chest-of-drawers (read, parse it). Its now back in an object form.<br>The reason behind JSON/ XML and YAML is to enable data to be transferred between programming languages in a format both participating languages can understand; you can’t give PHP or C++ your JavaScript object directly; because each language represents an object differently under-the-hood. However, because we’ve stringified the object into JSON notation; i.e. a standardised way to represent data, we can transmit the JSON representation of the object to another langauge (C++, PHP), they can recreate the JavaScript object we had into their own object based on the JSON representation of the object.<br>It is important to note that JSON cannot represent functions or dates. If you attempt to stringify an object with a function member, the function will be omitted from the JSON representation. A date will be converted to a string;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">JSON.stringify(&#123;</div><div class="line">    foo: new Date(),</div><div class="line">    blah: function () &#123; </div><div class="line">        alert(&apos;hello&apos;);</div><div class="line">    &#125;</div><div class="line">&#125;); // returns the string &quot;&#123;&quot;foo&quot;:&quot;2011-11-28T10:21:33.939Z&quot;&#125;&quot;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<ol>
+<li>For parsing a JSON string, is the method below recommended? var javascriptObj = JSON.parse(jSonString);<br>Yes, but older browsers don’t support JSON natively (IE &lt;8). To support these, you should include json2.js.<br>If you’re using jQuery, you can call jQuery.parseJSON(), which will use JSON.parse() under the hood if it’s supported and will otherwise fallback to a custom implementation to parse the input.</li>
+</ol>
+</blockquote>
+<h4 id="两者差别"><a href="#两者差别" class="headerlink" title="两者差别"></a>两者差别</h4><p>javascript object只是javascript的一种数据格式，其他程序C++ php不能识别</p>
+<blockquote>
+<p>object key/value key除了特殊字符，不需要一定加引号<br>json是一种通用的数据交换格式，其他程序也能识别</p>
+</blockquote>
+<p><code>JSON.stringify()</code> 这个将对象转成json字符串<br><code>JSON.parse()</code> 将json转成object对象</p>
+<p>demo代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line">var testObj = &#123;</div><div class="line">    one:1,</div><div class="line">    &quot;two&quot;:&quot;2&quot;,</div><div class="line">    &quot;three&quot;:&quot;3&quot;</div><div class="line">&#125;;</div><div class="line">// object-&gt;json</div><div class="line">var obj2json = JSON.stringify(testObj);</div><div class="line"></div><div class="line">// json-&gt;object</div><div class="line">var json2obj = JSON.parse(obj2json);</div><div class="line"></div><div class="line">console.log(testObj);</div><div class="line">console.log(obj2json);</div><div class="line">console.log(json2obj);</div><div class="line"></div><div class="line">console.log(obj2json.one);</div><div class="line">console.log(json2obj.one);</div><div class="line"></div><div class="line">var testObj2 = &#123;</div><div class="line">    book:&#123;</div><div class="line">        book1:&quot;http权威指南&quot;,</div><div class="line">        book2:&quot;javascript权威指南&quot;,</div><div class="line">        book3:&quot;css权威指南&quot;</div><div class="line">    &#125;,</div><div class="line">    car:&quot;Benz&quot;,</div><div class="line">    city:&quot;HangZhou&quot;,</div><div class="line">    info:&#123;</div><div class="line">        name:&quot;jing&quot;,</div><div class="line">        age:22,</div><div class="line">        skill:&#123;</div><div class="line">            html:&quot;5star&quot;,</div><div class="line">            js:&quot;3star&quot;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">console.log(testObj2);</div><div class="line">var obj22json = JSON.stringify(testObj2);</div><div class="line">console.log(obj22json);</div><div class="line">var json22obj = JSON.parse(obj22json);</div><div class="line">console.log(json22obj);</div></pre></td></tr></table></figure></p>
+<p>运行结果<br><img src="http://moefq.com/images/2015/11/19/7bc8c9249ad1feacfc83296c45b6468c.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/19/js-object和json看上去差不多哎/" data-id="ciszzn25d0019ozavj2gdmgrg" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/json/">json</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2015/11/22/javascript事件/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          javascript事件
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2015/11/16/gulp学习-一/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">gulp学习(一)</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery/">jquery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/公开课/">公开课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂记/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/问题/">问题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery插件/">jquery插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件/">事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/云存储/">云存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博弈/">博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命名/">命名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/对象/">对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技能/">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源/">资源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/jquery插件/" style="font-size: 10px;">jquery插件</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/云存储/" style="font-size: 10px;">云存储</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/博弈/" style="font-size: 10px;">博弈</a> <a href="/tags/命名/" style="font-size: 10px;">命名</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/技能/" style="font-size: 10px;">技能</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/生活/" style="font-size: 16.67px;">生活</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/09/12/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/05/2016-08-05/">前端</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/24/javascript函数/">javascript函数</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/04/2016-07-19/">编写可维护的JavaScript 笔记二</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/04/编写可维护的JavaScript-笔记二/">编写可维护的JavaScript 笔记二</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 jingxiao<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

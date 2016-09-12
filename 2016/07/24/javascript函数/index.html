@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>javascript函数 | lifesimple</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="JavaScript函数基本知识
+函数其实也是一个对象，函数名是访问这个函数的指针，而非调用函数函数是对象，函数名是指针
+没有重载
+函数声明和函数表达式，函数声明会被提前
+函数的length对应其参数的数量
+
+函数的内部属性和方法arguments和thisarguments是一个函数对象数组，保存传入函数的所有参数，arguments有一个callee的属性，是一个指针，指向拥有argument">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript函数">
+<meta property="og:url" content="http://yoursite.com/2016/07/24/javascript函数/index.html">
+<meta property="og:site_name" content="lifesimple">
+<meta property="og:description" content="JavaScript函数基本知识
+函数其实也是一个对象，函数名是访问这个函数的指针，而非调用函数函数是对象，函数名是指针
+没有重载
+函数声明和函数表达式，函数声明会被提前
+函数的length对应其参数的数量
+
+函数的内部属性和方法arguments和thisarguments是一个函数对象数组，保存传入函数的所有参数，arguments有一个callee的属性，是一个指针，指向拥有argument">
+<meta property="og:updated_time" content="2016-09-12T11:39:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="javascript函数">
+<meta name="twitter:description" content="JavaScript函数基本知识
+函数其实也是一个对象，函数名是访问这个函数的指针，而非调用函数函数是对象，函数名是指针
+没有重载
+函数声明和函数表达式，函数声明会被提前
+函数的length对应其参数的数量
+
+函数的内部属性和方法arguments和thisarguments是一个函数对象数组，保存传入函数的所有参数，arguments有一个callee的属性，是一个指针，指向拥有argument">
+  
+    <link rel="alternate" href="/atom.xml" title="lifesimple" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">lifesimple</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">life is simple</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-javascript函数" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/07/24/javascript函数/" class="article-date">
+  <time datetime="2016-07-24T08:57:18.000Z" itemprop="datePublished">2016-07-24</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      javascript函数
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="JavaScript函数"><a href="#JavaScript函数" class="headerlink" title="JavaScript函数"></a>JavaScript函数</h1><h3 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h3><ol>
+<li>函数其实也是一个对象，函数名是访问这个函数的指针，而非调用函数<strong>函数是对象，函数名是指针</strong></li>
+<li>没有重载</li>
+<li>函数声明和函数表达式，函数声明会被提前</li>
+<li>函数的length对应其参数的数量</li>
+</ol>
+<h3 id="函数的内部属性和方法"><a href="#函数的内部属性和方法" class="headerlink" title="函数的内部属性和方法"></a>函数的内部属性和方法</h3><p>arguments和this<br>arguments是一个函数对象数组，保存传入函数的所有参数，<strong>arguments有一个callee的属性，是一个指针，指向拥有arguments对象的函数</strong><br><a id="more"></a></p>
+<h4 id="callee"><a href="#callee" class="headerlink" title="callee"></a>callee</h4><p>举个栗子吧 eg1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function factorial(num)&#123;</div><div class="line">    if(num &lt;= 1)&#123;</div><div class="line">        return 1;</div><div class="line">    &#125;else&#123;</div><div class="line">        return num * factorial(num - 1);</div><div class="line">        //return num * arguments.callee(num - 1);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面这个是一个阶乘的计算方法，但是呢这样写有个不好的地方，在与这个函数的执行与函数名耦合在一起了，就是说，一般的function我们可以把函数名A赋值给B，这样B也指向了这个函数。<br>如果把A重写了，重新指向了一个新的函数，此时并不会影响B。<br>但是这里的话如果把<code>factorial()</code>函数重写了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var factorial2 = factorial;</div><div class="line">factorial = function()&#123;return 0;&#125;</div></pre></td></tr></table></figure></p>
+<p>如果factorial内部没有耦合函数名，则不影响factorial2的阶乘计算，但是很明显，当factorial重写后，factorial2指向的函数计算过程中<code>return num * factorial(num -1)</code>这个值就等于0了。<br>所以为了消除这样“函数的执行与函数名耦合在一起的问题，采用callee的方法来解决<em>callee这个指针指向拥有arguments对象的函数，即这里arguments.callee等同于当前的函数名</em>”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return num * arguments.callee(num -  1);</div></pre></td></tr></table></figure></p>
+<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>this引用的是函数当前据以执行的环境对象。<br>简单的例子 eg2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">window.color = &quot;red&quot;;</div><div class="line">var o = &#123;color:&quot;blue&quot;&#125;;</div><div class="line">function sayColor()&#123;</div><div class="line">	alert(this.color);</div><div class="line">&#125;</div><div class="line">sayColor(); //red,this当前引用的是全局对象 window.sayColor(),此时this引用的是window对象，即this.color = window.color;</div><div class="line">o.sayColor = sayColor;</div><div class="line">o.sayColor(); //blue,此时this引用的对象是o,即this.color = o.color;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>函数名字仅仅是一个包含指针的变量而已，因此即使在不同的执行环境中，全局的sayColor()和o.sayColor()仍然是指向同一个函数。</p>
+</blockquote>
+<h4 id="caller"><a href="#caller" class="headerlink" title="caller"></a>caller</h4><p>在ES5中规范化了另一个函数对象的属性caller,这个属性保存着<strong>调用当前函数的函数引用</strong>。<br>eg3<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function outer()&#123;</div><div class="line">	inner();</div><div class="line">&#125;</div><div class="line"></div><div class="line">function inner()&#123;</div><div class="line">	console.log(inner.caller);</div><div class="line">	// inner可以用arguments.callee代替 降低耦合度</div><div class="line">&#125;</div><div class="line">outer(); // 输出会显示outer的源代码</div></pre></td></tr></table></figure></p>
+<h4 id="call-和apply"><a href="#call-和apply" class="headerlink" title="call()和apply()"></a>call()和apply()</h4><p>这两个函数用途都是在<em>在特定作用域中调用函数，实际上等于设置函数体内this值。</em><br>apply(当前运行函数的作用域，参数数组|arguments对象);<br>call(当前运行函数的作用域，参数1，参数2…)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function sum(num1,num2)&#123;</div><div class="line">    return num1 + num2;</div><div class="line">&#125;</div><div class="line">function callSum1(num1,num2)&#123;</div><div class="line">    return sum.apply(this,arguments);</div><div class="line">&#125;</div><div class="line">function callSum2(num1,num2)&#123;</div><div class="line">    return sum.call(this,num1,num2);</div><div class="line">&#125;</div><div class="line">console.log(callSum1(10,10));</div><div class="line">console.log(callSum2(20,20));</div></pre></td></tr></table></figure></p>
+<p>两者的区别在于传入参数的方式不一样<br>就上面eg2来说，可以通过call/apply的方式来改变当前函数的执行环境,扩充作用域<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sayColor.call(this);</div><div class="line">sayColor.call(window);</div><div class="line">sayColor.apply(o);</div><div class="line"></div><div class="line">// ES5 还提供了一个bind()方法</div><div class="line">var obSayColor = sayColor.bind(o);</div><div class="line">obSayColor();</div></pre></td></tr></table></figure></p>
+<p>ES5 还提供了一个bind()方法，创建一个函数的实例，将this值绑定传到bind()函数的值。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>函数是对象，函数名是指针，指向函数</li>
+<li>函数的两个属性arguments this</li>
+<li>函数的两个方法call() apply()以及bind()</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/07/24/javascript函数/" data-id="ciszzn24s000sozavk7f2w3yq" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/JavaScript/">JavaScript</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/08/05/2016-08-05/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Récent</strong>
+      <div class="article-nav-title">
+        
+          前端
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/06/04/2016-07-19/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">编写可维护的JavaScript 笔记二</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Catégories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery/">jquery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/公开课/">公开课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂记/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/问题/">问题</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Mot-clés</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery插件/">jquery插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件/">事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/云存储/">云存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博弈/">博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命名/">命名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/对象/">对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技能/">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源/">资源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/jquery插件/" style="font-size: 10px;">jquery插件</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/云存储/" style="font-size: 10px;">云存储</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/博弈/" style="font-size: 10px;">博弈</a> <a href="/tags/命名/" style="font-size: 10px;">命名</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/技能/" style="font-size: 10px;">技能</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/生活/" style="font-size: 16.67px;">生活</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Articles récents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/09/12/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2016/08/05/2016-08-05/">前端</a>
+          </li>
+        
+          <li>
+            <a href="/2016/07/24/javascript函数/">javascript函数</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/04/2016-07-19/">编写可维护的JavaScript 笔记二</a>
+          </li>
+        
+          <li>
+            <a href="/2016/06/04/编写可维护的JavaScript-笔记二/">编写可维护的JavaScript 笔记二</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 jingxiao<br>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
