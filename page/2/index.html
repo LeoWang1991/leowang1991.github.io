@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8">
   
-  <title>lifesimple</title>
+  <title>lifelover</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="lifesimple">
+<meta property="og:title" content="lifelover">
 <meta property="og:url" content="http://yoursite.com/page/2/index.html">
-<meta property="og:site_name" content="lifesimple">
+<meta property="og:site_name" content="lifelover">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lifesimple">
+<meta name="twitter:title" content="lifelover">
   
-    <link rel="alternate" href="/atom.xml" title="lifesimple" type="application/atom+xml">
+    <link rel="alternate" href="/atom.xml" title="lifelover" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -33,11 +33,11 @@
   <div id="header-outer" class="outer">
     <div id="header-title" class="inner">
       <h1 id="logo-wrap">
-        <a href="/" id="logo">lifesimple</a>
+        <a href="/" id="logo">lifelover</a>
       </h1>
       
         <h2 id="subtitle-wrap">
-          <a href="/" id="subtitle">life is simple</a>
+          <a href="/" id="subtitle">love life</a>
         </h2>
       
     </div>
@@ -64,185 +64,6 @@
 </header>
       <div class="outer">
         <section id="main">
-  
-    <article id="post-git学习笔记-二" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/18/git学习笔记-二/" class="article-date">
-  <time datetime="2016-03-17T16:02:43.000Z" itemprop="datePublished">2016-03-18</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工具/">工具</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/18/git学习笔记-二/">git学习笔记(二)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="新建并连接远程库"><a href="#新建并连接远程库" class="headerlink" title="新建并连接远程库"></a>新建并连接远程库</h3><ol>
-<li><p>在github上新建一个仓库 比如learnnote<br><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-17/1990950.jpg" alt=""></p>
-</li>
-<li><p>在本地添加远程仓库</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin https://github.com/lifesimple/learnnote.git</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="本地与远程库的代码管理与同步"><a href="#本地与远程库的代码管理与同步" class="headerlink" title="本地与远程库的代码管理与同步"></a>本地与远程库的代码管理与同步</h3><p>因为新建的时候随手建了一个readme.md的文件，此时本地仓库是空的，远程origin是有一个文件的。所以这个时候，我们先获取一下远程库的内容。<br>遇到的一些问题<br>1) 我用<code>git fetch origin</code>并不能把新建仓库中的readme.md给获取下来，这是为什么？<br>2) 用<code>git pull orgin master</code>就可以把内容获取下来<br>3) <code>git diff</code>没用对 ？</p>
-<blockquote>
-<p>lifesimple:test jingxiao$ git diff master origin/master<br>fatal: ambiguous argument ‘master’: unknown revision or path not in the working tree.<br>Use ‘–’ to separate paths from revisions, like this:<br>‘git <command> [<revision>…] – [<file>…]’<br>lifesimple:test jingxiao$</file></revision></p>
-</blockquote>
-<p>用的话，按教程就用git pull=(fetch+merge)来处理，这样就能行了。<br><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-17/23809283.jpg" alt=""><br><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-18/78184558.jpg" alt=""><br>本地管理，然后提交到远程库就ok了。</p>
-<p>对git的分支啥的还是很不了解，以前甚至还搞不清楚master origin哪个是本地的哪个是远程的。<br><strong>只知道这么正确的操作是不够的，得知道为什么上面的问题，求指教谢谢。</strong><br>把这本<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="external">pro git指南看看掉应该就够了</a><br><em>工具这东西，得多用才行，用得多了菜的坑才能多，才能有点长进吧。</em></p>
-<h3 id="为什么学习git"><a href="#为什么学习git" class="headerlink" title="为什么学习git"></a>为什么学习git</h3><p>在<a href="https://segmentfault.com/q/1010000004591949" target="_blank" rel="external">sf上提过一个问题git要比svn好在哪里？</a><br>相对来说，1) 分布式没有所谓中央服务器，每台机子都是一个版本库，相对安全；2) 离线使用，git可以本地版本管理，svn需要联网(局域网)<br>但也不能就说哪个就好了，还是看使用场景，毕竟svn相比于git简单容易上手许多。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/18/git学习笔记-二/" data-id="cit09f0e0000cwi51zeu7h5ko" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-web移动端学习笔记-一" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/16/web移动端学习笔记-一/" class="article-date">
-  <time datetime="2016-03-15T16:38:26.000Z" itemprop="datePublished">2016-03-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/前端/">前端</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/16/web移动端学习笔记-一/">web移动端学习笔记(一)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="一点感想"><a href="#一点感想" class="headerlink" title="一点感想"></a>一点感想</h3><p>入行前端快两年了，一直埋头写代码什么的，抬头一看这个行业技术更新不要太快，当我刚知道grunt自动化部署啥的时候，大家都在说gulp好用，当我要开始学gulp的时候，大家又去用webpack了。<br>总之，是时候要跟一波节奏了，不能总是用jquery写业务代码吧，多跟进一些优秀的新技术新框架库什么，多和这个行业交流，总之要提高要进步吧。</p>
-<p>开始学习移动端web的相关知识吧，参考一些网上的教程以及一些学习视频做一段快速入门吧。有什么好的书籍推荐的么？</p>
-<h3 id="先收集一波资源做入门吧"><a href="#先收集一波资源做入门吧" class="headerlink" title="先收集一波资源做入门吧"></a>先收集一波资源做入门吧</h3><p><a href="http://www.imooc.com/learn/494" target="_blank" rel="external">慕课网-Hello,Web移动端</a><br><a href="https://www.v2ex.com/t/233335" target="_blank" rel="external">V2EX上的一个移动端入门的资源帖</a><br><a href="http://www.html-js.com/article/Mobile-terminal-H5-mobile-terminal-HD-multi-screen-adaptation-scheme%203041" target="_blank" rel="external">前端乱炖-移动端高清、多屏适配方案</a><br><a href="https://www.zybuluo.com/hacke2/note/45079" target="_blank" rel="external">移动web常见名词</a><br><a href="https://www.zhihu.com/question/20269059" target="_blank" rel="external">知乎-移动前端开发和 Web 前端开发的区别是什么?</a></p>
-<h3 id="web移动端的尺寸单位"><a href="#web移动端的尺寸单位" class="headerlink" title="web移动端的尺寸单位"></a>web移动端的尺寸单位</h3><p>px-CSS pixels 逻辑像素，浏览器使用的抽象单位<br>dp,pt-device independent pixels 设备无关像素<br>dpr-devicePixelRatio 设备像素缩放<br>DPI-打印机每英寸可以喷的墨汁点（印刷行业）<br>PPI-屏幕每英寸像素数量，单位英寸内的像素密度</p>
-<blockquote>
-<p>1px = (dpr)<sup>2</sup>*dp</p>
-</blockquote>
-<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-16/13581344.jpg" alt=""></p>
-<h3 id="viewport的理解和作用"><a href="#viewport的理解和作用" class="headerlink" title="viewport的理解和作用"></a>viewport的理解和作用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,user-scalable=no&quot;&gt;</div></pre></td></tr></table></figure>
-<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-16/96962031.jpg" alt=""><br>visual viewport:度量/视口 viewport<br>layout viewport:布局viewport<br>PC页面是怎么渲染viewport中的?</p>
-<blockquote>
-<p>页面调试可以通过chrome devTool选择各设备模拟查看</p>
-</blockquote>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>因为移动端的地方小，所以一般页面针对移动端重新设计或者优化就尽量砍掉那些不重要的点，做减法。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/16/web移动端学习笔记-一/" data-id="cit09f0ez001dwi51kcv9q3ed" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/移动端/">移动端</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-git学习笔记-一" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/15/git学习笔记-一/" class="article-date">
-  <time datetime="2016-03-14T16:09:51.000Z" itemprop="datePublished">2016-03-15</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/工具/">工具</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/15/git学习笔记-一/">git学习笔记(一)</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="创建一个git版本库"><a href="#创建一个git版本库" class="headerlink" title="创建一个git版本库"></a>创建一个git版本库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git add readme.txt</div><div class="line">git commit -m &apos;add a readme txt&apos;</div></pre></td></tr></table></figure>
-<p>通过<code>git status</code>查看当前库状态<br><code>git commit</code>加上<code>-m</code> 说明本次提交的更改情况，如果不加这个参数直接提交会怎么样呢，会这样，自动启动一个编辑器(如下是vim)还是得让你写点东西吧。</p>
-<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-15/22408369.jpg" alt="如果直接git commit"></p>
-<h3 id="本地版本管理"><a href="#本地版本管理" class="headerlink" title="本地版本管理"></a>本地版本管理</h3><ol>
-<li><p><code>git status</code> <code>git diff</code><br>这两个指令帮你了解当前库修改变动和提交状态。</p>
-<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-15/12235118.jpg" alt="git status"></p>
-</li>
-<li><p><code>git log</code> <code>git reset</code><br>git log版本记录，<br>git reset 时光穿梭机版本回退</p>
-<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-15/92997676.jpg" alt="git reset"> </p>
-<blockquote>
-<p>HEAD表示当前版本，HEAD^上一版本，HEAD^^上上版本，HEAD~100上*100个版本。<br>至于参数–hard什么意思，可以参考<a href="http://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard" target="_blank" rel="external">stackoverflow –mixed soft hard</a></p>
-</blockquote>
-</li>
-<li><p><strong>工作区 暂存区和版本库的理解</strong><br><img src="http://blog.chinaunix.net/attachment/201402/19/10415985_139279770639pM.jpg" alt=""></p>
-</li>
-<li><p><code>git add</code>把修改的文件放入暂存区，<code>git commit</code>把暂存区的文件提交到版本库中。<br>所以要是<br><em>第一次修改-&gt; git add-&gt;第二次修改-&gt;git commit</em><br>这种情况下并不会提交第二次修改的内容</p>
-<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-15/60103967.jpg" alt="git commit提交暂存区内容"><br>这种情况继续提交即可。</p>
-</li>
-<li><p>git checkout<br>没提交前后悔了<br>两种情况，1）还没提交到暂存区，即没有<code>git add</code><br>2) <code>git add</code>了，但是没有提交到版本库，没有<code>git commit</code><br>第一种情况直接<code>git checkout -- readme.txt</code>舍弃修改<br>第二种情况，通过<code>git reset</code>撤销暂存区修改<br><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-15/65141448.jpg" alt="checkout"></p>
-</li>
-<li><p>git rm<br>不要了<br><code>git rm</code>然后<code>git commit</code>,但是还是可以通过<code>git checkout</code>找回来</p>
-<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-15/52959431.jpg" alt="git rm"></p>
-</li>
-</ol>
-<p><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">笔记参考学习自廖雪峰老师的git教程</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/15/git学习笔记-一/" data-id="cit09f0df0001wi51cs6j300q" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
   
     <article id="post-jquery-ajax数据处理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -283,7 +104,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/23/jquery-ajax数据处理/" data-id="cit09f0ej000ywi51100c3xw1" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/23/jquery-ajax数据处理/" data-id="citiquj6u000teu51aaq0ah7x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery/">jquery</a></li></ul>
@@ -327,59 +148,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/15/浅谈闭包-一/" data-id="cit09f0fo0027wi511lb0f1sp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/02/15/浅谈闭包-一/" data-id="citiquj7o001meu51t7rmv4py" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/闭包/">闭包</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-谈谈现在或者以后" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/02/04/谈谈现在或者以后/" class="article-date">
-  <time datetime="2016-02-04T15:00:57.000Z" itemprop="datePublished">2016-02-04</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/生活/">生活</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/04/谈谈现在或者以后/">谈谈现在或者以后</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="谈谈现在或者以后"><a href="#谈谈现在或者以后" class="headerlink" title="谈谈现在或者以后"></a>谈谈现在或者以后</h1><p>明天就要回家过年了，自己也并没有那么开心，或许是因为长大了，或许是因为经历了很多事物。不再会以学生或者小孩子的视角来看待一些事物，“小孩子才讲对错，成年人只看利弊”，是这样的，也应该是这样的。</p>
-<h2 id="现在"><a href="#现在" class="headerlink" title="现在"></a>现在</h2><h3 id="精简生活，少而精"><a href="#精简生活，少而精" class="headerlink" title="精简生活，少而精"></a>精简生活，少而精</h3><p>少而精比多而实，我觉得要好。买一两件高品质的东西要比一堆一般的带来的体验要好一点。生活中的事情需要</p>
-<h3 id="分清主次"><a href="#分清主次" class="headerlink" title="分清主次"></a>分清主次</h3><p>没那么多重要的事情，为什么总会不自觉地感觉焦虑呢，其实并没有那么多事情有想象中的重要，不要花太多的时间和精力在那上面，比如丢了一些钱，偶尔被坑了等，这些都是次要的。不要被影响太久时间。因为</p>
-        
-          <p class="article-more-link">
-            <a href="/2016/02/04/谈谈现在或者以后/#more">Read More</a>
-          </p>
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/02/04/谈谈现在或者以后/" data-id="cit09f0ga0033wi51afsokw15" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/生活/">生活</a></li></ul>
 
     </footer>
   </div>
@@ -444,7 +216,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/26/重读js高程笔记二/" data-id="cit09f0g5002wwi515anuwsa0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/26/重读js高程笔记二/" data-id="citiquj86002deu512j2gjjp6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -520,7 +292,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/15/重读js高程笔记一/" data-id="cit09f0g80030wi51tx4sf07l" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/15/重读js高程笔记一/" data-id="citiquj820025eu51fu1mp4ur" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -565,7 +337,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/02/nodejs学习笔记-1/" data-id="cit09f0f3001fwi51pp4a319j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/02/nodejs学习笔记-1/" data-id="citiquj7f001aeu51j7288cdi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
@@ -610,7 +382,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/12/25/javascript-tips/" data-id="cit09f0e6000jwi51o50833vq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/12/25/javascript-tips/" data-id="citiquj6g000feu51s7u5uqek" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
@@ -622,10 +394,227 @@
 
 
   
+    <article id="post-jquery插件学习" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/22/jquery插件学习/" class="article-date">
+  <time datetime="2015-11-22T13:43:06.000Z" itemprop="datePublished">2015-11-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/jquery/">jquery</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/22/jquery插件学习/">jquery插件学习</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>jquery插件学习的一些资料<br>参考资料：<br><a href="http://www.cnblogs.com/Wayou/p/jquery_plugin_tutorial.html" target="_blank" rel="external">博客园 jquery插件精品教程</a><br><a href="http://www.cnblogs.com/silverLee/archive/2009/12/22/1629925.html" target="_blank" rel="external">博客园 jquery插件开发全解析</a><br><a href="http://blog.csdn.net/rambo_china/article/details/7742321" target="_blank" rel="external">csdn (function($){…})(jQuery)是什么意思</a><br><a href="http://www.cnblogs.com/RascallySnake/archive/2010/05/07/1729563.html" target="_blank" rel="external">博客园 jQuery.extend 函数详解</a></p>
+<p>小demo<br><a href="http://www.jquery001.com/jquery-checkall.html" target="_blank" rel="external">jQuery 全选反选插件</a><br>自调用匿名函数的作用</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/22/jquery插件学习/" data-id="citiquj6z000weu51q8hgxjhv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jquery插件/">jquery插件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-译Front-End-Developer-Interview-Questions" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/22/译Front-End-Developer-Interview-Questions/" class="article-date">
+  <time datetime="2015-11-22T13:38:29.000Z" itemprop="datePublished">2015-11-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/22/译Front-End-Developer-Interview-Questions/">译Front-End-Developer-Interview-Questions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>希望自己能多去阅读英文文档，提高英文文档阅读能力。</p>
+<p>翻译自<a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions">Front-end-Developer-Interview-Questions</a><br>这份文件包含一系列用于面试审查求职者(候选人)的前端面试问题。这并不推荐把每个问题都问在同一个求职者(因为这会花几个小时的时间)。从列表中抽取一些问题能够帮助你审查你需要求职者具备的一些技能。<br>注: 牢记这里的许多问题答案是开放式的，能够引导兴趣性探讨，相比于直接的答案这些东西能够使你更加了解求职者的相关信息。</p>
+<p>###内容表###</p>
+<p><hr/></p>
+<ol>
+<li><a href="#common">常用问题</a></li>
+<li><a href="#html">HTML问题</a></li>
+<li><a href="#css">CSS问题</a></li>
+<li><a href="#js">JS问题</a></li>
+<li><a href="#test">测试问题</a></li>
+<li><a href="#performance">性能问题</a></li>
+<li><a href="#network">网络问题</a></li>
+<li><a href="#code">代码问题</a></li>
+<li><a href="#interest">兴趣爱好</a></li>
+</ol>
+        
+          <p class="article-more-link">
+            <a href="/2015/11/22/译Front-End-Developer-Interview-Questions/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/22/译Front-End-Developer-Interview-Questions/" data-id="citiquj84002aeu51rgf6dn5g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/技能/">技能</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/面试/">面试</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-javascript面向对象" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/22/javascript面向对象/" class="article-date">
+  <time datetime="2015-11-22T13:36:59.000Z" itemprop="datePublished">2015-11-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/22/javascript面向对象/">javascript面向对象</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>《JavaScript高级程序设计 第三版》 学习笔记<br>Object-Oriented 有一个标志，就是都有类的概念，通过类来创建多个具有相同属性和方法的对象。而对于 EMCAScript中没有类的概念，ECMA-262把对象定义为<br>”无序属性的集合，该属性可以包含任何基本值，对象或者函数。“</p>
+<p><strong>原型模式</strong></p>
+<ul>
+<li>每个函数都有一个prototype(原型)属性</li>
+<li>这个属性都有一个指针，指向一个对象</li>
+<li>这个对象包含由特定类型所有实例共享的属性和方法</li>
+<li>使用原型的好处是 可以让所有对象实例共享它包含的方法和属性</li>
+</ul>
+<p>通过in操作符和hasOwnProperty来判断给定属性是来自于原型还是实例<br>in- true 代表属性在对象中存在 来自实例或者来自原型<br>hasOwnProperty- true代表属性来自于实例 是实例属性<br>
+        
+          <p class="article-more-link">
+            <a href="/2015/11/22/javascript面向对象/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/22/javascript面向对象/" data-id="citiquj6q000peu51kkvxe0d8" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/对象/">对象</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-javascript事件" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/11/22/javascript事件/" class="article-date">
+  <time datetime="2015-11-22T13:34:23.000Z" itemprop="datePublished">2015-11-22</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/前端/">前端</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/22/javascript事件/">javascript事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>JavaScript与HTML之间的交互式通过<strong>事件</strong>实现的。</p>
+<p>###事件流###</p>
+<ol>
+<li>概念<br>事件流描述的是从页面中接收事件的顺序</li>
+<li>过程<br>2.1 事件冒泡和事件捕获<br><img src="http://images.cnitblog.com/blog/550698/201307/23172518-591189f1bff54539b4039e4de975659c.png" alt=""><br>如图，事件冒泡是IE事件流，即事件开始时由最具体的元素接收，然后逐级向上传播较为不具体的节点(document)。而事件捕获由NetScape提出，恰好相反。<br>一个简单的例子，就是一张纸上画着好几个同心圆，你用手指指向圆心处，你所在指向的圆心是都是那些圆的圆心。</li>
+</ol>
+<p>“DOM2级事件”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段、事件冒泡阶段。<br>2.2 阻止事件继续传递的方法</p>
+<ul>
+<li>event.stopPropagation()</li>
+<li>删除相应元素，因为目标元素在文档中是事件冒泡的前提</li>
+</ul>
+        
+          <p class="article-more-link">
+            <a href="/2015/11/22/javascript事件/#more">Read More</a>
+          </p>
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/11/22/javascript事件/" data-id="citiquj6n000meu51a3cwluxy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/事件/">事件</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -635,7 +624,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery/">jquery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/公开课/">公开课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/技术/">技术</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂记/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/问题/">问题</a></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/http/">http</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/jquery/">jquery</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/公开课/">公开课</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/前端/">前端</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/工具/">工具</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/杂记/">杂记</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/生活/">生活</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/问题/">问题</a></li></ul>
     </div>
   </div>
 
@@ -645,7 +634,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery插件/">jquery插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件/">事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/云存储/">云存储</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博弈/">博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命名/">命名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/对象/">对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技能/">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源/">资源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/JavaScript/">JavaScript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/git/">git</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/gulp/">gulp</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/http/">http</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/javascript/">javascript</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery/">jquery</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/jquery插件/">jquery插件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/json/">json</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/node/">node</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/nodejs/">nodejs</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/npm/">npm</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/事件/">事件</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/前端/">前端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/博弈/">博弈</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/命名/">命名</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/对象/">对象</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/技能/">技能</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/杂记/">杂记</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/生活/">生活</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/知识/">知识</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/移动端/">移动端</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/资源/">资源</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/闭包/">闭包</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/面试/">面试</a></li></ul>
     </div>
   </div>
 
@@ -655,7 +644,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/jquery插件/" style="font-size: 10px;">jquery插件</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/云存储/" style="font-size: 10px;">云存储</a> <a href="/tags/前端/" style="font-size: 20px;">前端</a> <a href="/tags/博弈/" style="font-size: 10px;">博弈</a> <a href="/tags/命名/" style="font-size: 10px;">命名</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/技能/" style="font-size: 10px;">技能</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/生活/" style="font-size: 16.67px;">生活</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
+      <a href="/tags/JavaScript/" style="font-size: 13.33px;">JavaScript</a> <a href="/tags/git/" style="font-size: 16.67px;">git</a> <a href="/tags/gulp/" style="font-size: 10px;">gulp</a> <a href="/tags/http/" style="font-size: 10px;">http</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/jquery/" style="font-size: 10px;">jquery</a> <a href="/tags/jquery插件/" style="font-size: 10px;">jquery插件</a> <a href="/tags/json/" style="font-size: 10px;">json</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/事件/" style="font-size: 10px;">事件</a> <a href="/tags/前端/" style="font-size: 16.67px;">前端</a> <a href="/tags/博弈/" style="font-size: 10px;">博弈</a> <a href="/tags/命名/" style="font-size: 10px;">命名</a> <a href="/tags/对象/" style="font-size: 10px;">对象</a> <a href="/tags/技能/" style="font-size: 10px;">技能</a> <a href="/tags/杂记/" style="font-size: 10px;">杂记</a> <a href="/tags/生活/" style="font-size: 13.33px;">生活</a> <a href="/tags/知识/" style="font-size: 10px;">知识</a> <a href="/tags/移动端/" style="font-size: 10px;">移动端</a> <a href="/tags/资源/" style="font-size: 10px;">资源</a> <a href="/tags/闭包/" style="font-size: 10px;">闭包</a> <a href="/tags/面试/" style="font-size: 10px;">面试</a>
     </div>
   </div>
 
@@ -664,7 +653,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/09/">September 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/02/">February 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/12/">December 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/11/">November 2015</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a></li></ul>
     </div>
   </div>
 
@@ -677,11 +666,7 @@
       <ul>
         
           <li>
-            <a href="/2016/09/12/hello-world/">Hello World</a>
-          </li>
-        
-          <li>
-            <a href="/2016/08/05/2016-08-05/">前端</a>
+            <a href="/2016/09/13/life-lover/">life lover</a>
           </li>
         
           <li>
@@ -689,11 +674,15 @@
           </li>
         
           <li>
-            <a href="/2016/06/04/2016-07-19/">编写可维护的JavaScript 笔记二</a>
+            <a href="/2016/06/04/编写可维护的JavaScript-笔记二/">编写可维护的JavaScript 笔记二</a>
           </li>
         
           <li>
-            <a href="/2016/06/04/编写可维护的JavaScript-笔记二/">编写可维护的JavaScript 笔记二</a>
+            <a href="/2016/05/31/编写可维护的JavaScript-笔记一/">编写可维护的JavaScript-笔记一</a>
+          </li>
+        
+          <li>
+            <a href="/2016/04/25/npm-install-npm-g然后挂了/">npm install npm -g然后挂了</a>
           </li>
         
       </ul>
