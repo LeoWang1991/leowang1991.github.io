@@ -1,0 +1,1111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>lifelover</title>
+  <subtitle>love life</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://yoursite.com/"/>
+  <updated>2016-09-12T16:27:40.000Z</updated>
+  <id>http://yoursite.com/</id>
+  
+  <author>
+    <name>jingxiao</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>life lover</title>
+    <link href="http://yoursite.com/2016/09/13/life-lover/"/>
+    <id>http://yoursite.com/2016/09/13/life-lover/</id>
+    <published>2016-09-12T16:26:17.000Z</published>
+    <updated>2016-09-12T16:27:40.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>热爱生活</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;热爱生活&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript函数</title>
+    <link href="http://yoursite.com/2016/07/24/javascript%E5%87%BD%E6%95%B0/"/>
+    <id>http://yoursite.com/2016/07/24/javascript函数/</id>
+    <published>2016-07-24T08:57:18.000Z</published>
+    <updated>2016-07-24T08:58:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="JavaScript函数"><a href="#JavaScript函数" class="headerlink" title="JavaScript函数"></a>JavaScript函数</h1><h3 id="基本知识"><a href="#基本知识" class="headerlink" title="基本知识"></a>基本知识</h3><ol>
+<li>函数其实也是一个对象，函数名是访问这个函数的指针，而非调用函数<strong>函数是对象，函数名是指针</strong></li>
+<li>没有重载</li>
+<li>函数声明和函数表达式，函数声明会被提前</li>
+<li>函数的length对应其参数的数量</li>
+</ol>
+<h3 id="函数的内部属性和方法"><a href="#函数的内部属性和方法" class="headerlink" title="函数的内部属性和方法"></a>函数的内部属性和方法</h3><p>arguments和this<br>arguments是一个函数对象数组，保存传入函数的所有参数，<strong>arguments有一个callee的属性，是一个指针，指向拥有arguments对象的函数</strong><br><a id="more"></a></p>
+<h4 id="callee"><a href="#callee" class="headerlink" title="callee"></a>callee</h4><p>举个栗子吧 eg1<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function factorial(num)&#123;</div><div class="line">    if(num &lt;= 1)&#123;</div><div class="line">        return 1;</div><div class="line">    &#125;else&#123;</div><div class="line">        return num * factorial(num - 1);</div><div class="line">        //return num * arguments.callee(num - 1);</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面这个是一个阶乘的计算方法，但是呢这样写有个不好的地方，在与这个函数的执行与函数名耦合在一起了，就是说，一般的function我们可以把函数名A赋值给B，这样B也指向了这个函数。<br>如果把A重写了，重新指向了一个新的函数，此时并不会影响B。<br>但是这里的话如果把<code>factorial()</code>函数重写了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">var factorial2 = factorial;</div><div class="line">factorial = function()&#123;return 0;&#125;</div></pre></td></tr></table></figure></p>
+<p>如果factorial内部没有耦合函数名，则不影响factorial2的阶乘计算，但是很明显，当factorial重写后，factorial2指向的函数计算过程中<code>return num * factorial(num -1)</code>这个值就等于0了。<br>所以为了消除这样“函数的执行与函数名耦合在一起的问题，采用callee的方法来解决<em>callee这个指针指向拥有arguments对象的函数，即这里arguments.callee等同于当前的函数名</em>”<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">return num * arguments.callee(num -  1);</div></pre></td></tr></table></figure></p>
+<h4 id="this"><a href="#this" class="headerlink" title="this"></a>this</h4><p>this引用的是函数当前据以执行的环境对象。<br>简单的例子 eg2<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">window.color = &quot;red&quot;;</div><div class="line">var o = &#123;color:&quot;blue&quot;&#125;;</div><div class="line">function sayColor()&#123;</div><div class="line">	alert(this.color);</div><div class="line">&#125;</div><div class="line">sayColor(); //red,this当前引用的是全局对象 window.sayColor(),此时this引用的是window对象，即this.color = window.color;</div><div class="line">o.sayColor = sayColor;</div><div class="line">o.sayColor(); //blue,此时this引用的对象是o,即this.color = o.color;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>函数名字仅仅是一个包含指针的变量而已，因此即使在不同的执行环境中，全局的sayColor()和o.sayColor()仍然是指向同一个函数。</p>
+</blockquote>
+<h4 id="caller"><a href="#caller" class="headerlink" title="caller"></a>caller</h4><p>在ES5中规范化了另一个函数对象的属性caller,这个属性保存着<strong>调用当前函数的函数引用</strong>。<br>eg3<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">function outer()&#123;</div><div class="line">	inner();</div><div class="line">&#125;</div><div class="line"></div><div class="line">function inner()&#123;</div><div class="line">	console.log(inner.caller);</div><div class="line">	// inner可以用arguments.callee代替 降低耦合度</div><div class="line">&#125;</div><div class="line">outer(); // 输出会显示outer的源代码</div></pre></td></tr></table></figure></p>
+<h4 id="call-和apply"><a href="#call-和apply" class="headerlink" title="call()和apply()"></a>call()和apply()</h4><p>这两个函数用途都是在<em>在特定作用域中调用函数，实际上等于设置函数体内this值。</em><br>apply(当前运行函数的作用域，参数数组|arguments对象);<br>call(当前运行函数的作用域，参数1，参数2…)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">function sum(num1,num2)&#123;</div><div class="line">    return num1 + num2;</div><div class="line">&#125;</div><div class="line">function callSum1(num1,num2)&#123;</div><div class="line">    return sum.apply(this,arguments);</div><div class="line">&#125;</div><div class="line">function callSum2(num1,num2)&#123;</div><div class="line">    return sum.call(this,num1,num2);</div><div class="line">&#125;</div><div class="line">console.log(callSum1(10,10));</div><div class="line">console.log(callSum2(20,20));</div></pre></td></tr></table></figure></p>
+<p>两者的区别在于传入参数的方式不一样<br>就上面eg2来说，可以通过call/apply的方式来改变当前函数的执行环境,扩充作用域<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">sayColor.call(this);</div><div class="line">sayColor.call(window);</div><div class="line">sayColor.apply(o);</div><div class="line"></div><div class="line">// ES5 还提供了一个bind()方法</div><div class="line">var obSayColor = sayColor.bind(o);</div><div class="line">obSayColor();</div></pre></td></tr></table></figure></p>
+<p>ES5 还提供了一个bind()方法，创建一个函数的实例，将this值绑定传到bind()函数的值。</p>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ul>
+<li>函数是对象，函数名是指针，指向函数</li>
+<li>函数的两个属性arguments this</li>
+<li>函数的两个方法call() apply()以及bind()</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;JavaScript函数&quot;&gt;&lt;a href=&quot;#JavaScript函数&quot; class=&quot;headerlink&quot; title=&quot;JavaScript函数&quot;&gt;&lt;/a&gt;JavaScript函数&lt;/h1&gt;&lt;h3 id=&quot;基本知识&quot;&gt;&lt;a href=&quot;#基本知识&quot; class=&quot;headerlink&quot; title=&quot;基本知识&quot;&gt;&lt;/a&gt;基本知识&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;函数其实也是一个对象，函数名是访问这个函数的指针，而非调用函数&lt;strong&gt;函数是对象，函数名是指针&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;没有重载&lt;/li&gt;
+&lt;li&gt;函数声明和函数表达式，函数声明会被提前&lt;/li&gt;
+&lt;li&gt;函数的length对应其参数的数量&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;函数的内部属性和方法&quot;&gt;&lt;a href=&quot;#函数的内部属性和方法&quot; class=&quot;headerlink&quot; title=&quot;函数的内部属性和方法&quot;&gt;&lt;/a&gt;函数的内部属性和方法&lt;/h3&gt;&lt;p&gt;arguments和this&lt;br&gt;arguments是一个函数对象数组，保存传入函数的所有参数，&lt;strong&gt;arguments有一个callee的属性，是一个指针，指向拥有arguments对象的函数&lt;/strong&gt;&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编写可维护的JavaScript 笔记二</title>
+    <link href="http://yoursite.com/2016/06/04/%E7%BC%96%E5%86%99%E5%8F%AF%E7%BB%B4%E6%8A%A4%E7%9A%84JavaScript-%E7%AC%94%E8%AE%B0%E4%BA%8C/"/>
+    <id>http://yoursite.com/2016/06/04/编写可维护的JavaScript-笔记二/</id>
+    <published>2016-06-04T02:53:53.000Z</published>
+    <updated>2016-06-04T02:54:39.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="抛出自定义错误"><a href="#抛出自定义错误" class="headerlink" title="抛出自定义错误"></a>抛出自定义错误</h3><p>try…catch throw </p>
+<h3 id="不是你的对象不要动"><a href="#不是你的对象不要动" class="headerlink" title="不是你的对象不要动"></a>不是你的对象不要动</h3><p>如果你的代码没有创建这些对象，不要修改他们</p>
+<ul>
+<li>原声对象Object Array等</li>
+<li>DOM对象</li>
+<li>BOM对象</li>
+<li>类库对象å</li>
+</ul>
+<p>处理原则：</p>
+<ul>
+<li>不覆盖方法</li>
+<li>不新增方法</li>
+<li>不删除方法</li>
+</ul>
+<p>好的处理方法：<br>对象的继承</p>
+<h3 id="浏览器嗅探"><a href="#浏览器嗅探" class="headerlink" title="浏览器嗅探"></a>浏览器嗅探</h3><p>navigator.userAgent</p>
+<h3 id="文件和目录结构"><a href="#文件和目录结构" class="headerlink" title="文件和目录结构"></a>文件和目录结构</h3><p>基本结构<br>JavaScript文件目录下放置如下三个目录</p>
+<ul>
+<li>build 最终构建后的文件</li>
+<li>src 源文件</li>
+<li>test(s) 测试文件</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>自动化 测试 部署  文件压缩精简 等内容</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;抛出自定义错误&quot;&gt;&lt;a href=&quot;#抛出自定义错误&quot; class=&quot;headerlink&quot; title=&quot;抛出自定义错误&quot;&gt;&lt;/a&gt;抛出自定义错误&lt;/h3&gt;&lt;p&gt;try…catch throw &lt;/p&gt;
+&lt;h3 id=&quot;不是你的对象不要动&quot;&gt;&lt;a href=&quot;#
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>编写可维护的JavaScript-笔记一</title>
+    <link href="http://yoursite.com/2016/05/31/%E7%BC%96%E5%86%99%E5%8F%AF%E7%BB%B4%E6%8A%A4%E7%9A%84JavaScript-%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
+    <id>http://yoursite.com/2016/05/31/编写可维护的JavaScript-笔记一/</id>
+    <published>2016-05-30T16:01:27.000Z</published>
+    <updated>2016-05-30T16:12:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="基本格式化"><a href="#基本格式化" class="headerlink" title="基本格式化"></a>基本格式化</h3><p>1 程序是让人读的，只是偶尔让计算机执行一下。<br>2 编程风格style guideline 编程规范 code convention<br>3 code review工具使用 JSLint JSHint<br>4 命名<br>4.1 驼峰写法 thisIsName<br>4.2 变量命名应当名词前缀，函数方法命名应当动词前缀<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">// 好的写法</div><div class="line">var count = 10;</div><div class="line">var myName = &quot;lifesimple&quot;;</div><div class="line"></div><div class="line">// 不好的写法,变量看起来像函数</div><div class="line">var getCount = 10;</div><div class="line">var isFound = true;</div><div class="line"></div><div class="line">// 好的写法</div><div class="line">function getName()&#123;</div><div class="line">	return myName;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 不好的写法，函数看起来像变量</div><div class="line">function theName()&#123;</div><div class="line">	return myName;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<a id="more"></a>
+<h3 id="变量和函数的写法"><a href="#变量和函数的写法" class="headerlink" title="变量和函数的写法"></a>变量和函数的写法</h3><p>4.3 构造函数 驼峰大小写 字母大写开头<br>4.4 null undefined</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>1 一种通行的代码注释原则，当代码不够清晰时候添加注释，若是代码能清晰表示所表达的意思则不需要注释。<br>比如 getGoodsId() 代码能知道这是获取商品信息，则不必要加注释。<br>2 可能被误认为的错误代码，自己写的代码如果方法用的生僻或者解决方案在别的开发看来可能是不对的，这个时候需要加上注释说明，防止被误认为错误代码而别修改<br>3 浏览器HACK 这方面，写代码的时候要注释说明写的代码在什么条件下哪些浏览器适用。不然日子久了，自己可能也不清楚自己写的这些代码为什么在其他版本浏览器报错呢。<br>4 文档注释，注释说明一个function 的作用，参数含义和返回数据<br>sublime text3有个插件DocBlockr，写完function 添加说明文档注释</p>
+<h3 id="语句和表达式"><a href="#语句和表达式" class="headerlink" title="语句和表达式"></a>语句和表达式</h3><p>注意if else swtich for() for in语句的用法和写法</p>
+<h3 id="变量-函数和运算符"><a href="#变量-函数和运算符" class="headerlink" title="变量  函数和运算符"></a>变量  函数和运算符</h3><p>1 变量声明var  提前<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function doSomething()&#123;</div><div class="line">	var result = value + 10;</div><div class="line">	var value = 10;</div><div class="line">	return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>但这段代码 依旧返回NaN,上面代码相当于<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">function doSomething()&#123;</div><div class="line">	var result;</div><div class="line">	var value;</div><div class="line"></div><div class="line">	result = value + 10; // 此时value = undefined</div><div class="line">	value = 10;</div><div class="line">	return result;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>var value; 此时为undefined 所以…NaN</p>
+<p>变量声明提前意味着：在函数内部任意地方定义变量和在函数顶部定义变量是完全一样的。所以好的习惯是将所有的变量声明都放在函数的顶部而不是散落在各个角落，这种风格的代码逻辑和JavaScript引擎解析习惯是一样的。</p>
+<p>2 单var 声明语句<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var value = 10;</div><div class="line">var result = value + 10;</div><div class="line">var i;</div><div class="line">var len;</div><div class="line"></div><div class="line">var value = 10,</div><div class="line">     result = value + 10,</div><div class="line">    i,</div><div class="line">    len;</div></pre></td></tr></table></figure></p>
+<p>赋值运算符对齐，没有初始值的变量应当出现在var语句的结尾如上面的i,len</p>
+<p>3 函数声明<br>1 和变量声明一样会被提前，应当先声明函数再使用函数。函数内部声明函数紧接着变量声明函数。<br>函数声明不要出现在语句块中。</p>
+<p>2 自执行匿名函数 外面要加大括号<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// 不好的写法</div><div class="line">// 这样会容易让人误以为是一个函数赋值给了一个变量</div><div class="line">var a = function()&#123;</div><div class="line">    return&#123;</div><div class="line">        message:&quot;Hi&quot;</div><div class="line">    &#125;</div><div class="line">&#125;()；</div><div class="line"></div><div class="line">// 应该外加一个大括号 这样人家一看就知道是函数执行结果赋值给变量</div><div class="line">var a = (function()&#123;</div><div class="line">    return &#123;message:&quot;Hi&quot;&#125;</div><div class="line">&#125;());</div></pre></td></tr></table></figure></p>
+<p>3 严格模式 ES5 “use strict”<br>不要在全局作用域中使用，不然会作用到全局，哪个局部作用域需要加入。</p>
+<p>4 相等，== ！= === ！== 了解类型强制转换，在一些场合判断相等不相等 用恒等去判断</p>
+<p>5 eval() 少用 避免，性能和安全性相关的问题  </p>
+<h3 id="避免全局变量"><a href="#避免全局变量" class="headerlink" title="避免全局变量"></a>避免全局变量</h3><p>1 全局变量污染 容易出错 难以维护<br>2 最佳方法依赖尽可能少的全局变量，即只创建一个全局变量 单全局变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var a;</div><div class="line">var b;</div><div class="line">var c;</div><div class="line">a = ...;b= ..;c = ...;</div><div class="line"></div><div class="line">var myValue = &#123;&#125;;</div><div class="line">myValue.a = </div><div class="line">myValue.b = </div><div class="line">myValue.c =</div></pre></td></tr></table></figure></p>
+<p>3 namespace() 方法 命名空间<br>4 模块化（AMD CMD）</p>
+<h3 id="事件处理"><a href="#事件处理" class="headerlink" title="事件处理"></a>事件处理</h3><p>两个规则：<br>隔离应用逻辑<br>不要分发事件对象</p>
+<p>不是很理解，多看看给的demo</p>
+<h3 id="避免空比较"><a href="#避免空比较" class="headerlink" title="避免空比较"></a>避免空比较</h3><p>1 不要直接将变量和null做比较，若一定要比较通过<code>===</code> <code>!==</code><br>2 通过typeof检测基础数据类型<br>3 通过instanceof检测引用值类型<br>4 通过typeof myFunc === “function”检测函数，instanceof不能跨帧（frame）但是typeof可以</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;基本格式化&quot;&gt;&lt;a href=&quot;#基本格式化&quot; class=&quot;headerlink&quot; title=&quot;基本格式化&quot;&gt;&lt;/a&gt;基本格式化&lt;/h3&gt;&lt;p&gt;1 程序是让人读的，只是偶尔让计算机执行一下。&lt;br&gt;2 编程风格style guideline 编程规范 code convention&lt;br&gt;3 code review工具使用 JSLint JSHint&lt;br&gt;4 命名&lt;br&gt;4.1 驼峰写法 thisIsName&lt;br&gt;4.2 变量命名应当名词前缀，函数方法命名应当动词前缀&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;// 好的写法&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;var count = 10;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;var myName = &amp;quot;lifesimple&amp;quot;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// 不好的写法,变量看起来像函数&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;var getCount = 10;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;var isFound = true;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// 好的写法&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;function getName()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	return myName;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// 不好的写法，函数看起来像变量&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;function theName()&amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;	return myName;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="前端" scheme="http://yoursite.com/tags/%E5%89%8D%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>npm install npm -g然后挂了</title>
+    <link href="http://yoursite.com/2016/04/25/npm-install-npm-g%E7%84%B6%E5%90%8E%E6%8C%82%E4%BA%86/"/>
+    <id>http://yoursite.com/2016/04/25/npm-install-npm-g然后挂了/</id>
+    <published>2016-04-25T15:40:00.000Z</published>
+    <updated>2016-04-25T15:43:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>OS X想通过命令行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">npm install npm -g/ npm update -g</div></pre></td></tr></table></figure>
+<p>提示好像是没有权限吧，恩，全局安装又忘了加<code>sudo</code></p>
+<p>然而再次执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">sudo npm install npm -g</div></pre></td></tr></table></figure>
+<p>然而没反应啊，显示</p>
+<p><code>-bash: /usr/local/bin/npm: No such file or directory</code></p>
+<p>大概就是这样的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ npm update npm -g</div><div class="line">npm http GET https://registry.npmjs.org/npm</div><div class="line">npm http 304 https://registry.npmjs.org/npm</div><div class="line">npm http GET https://registry.npmjs.org/npm/1.4.4</div><div class="line">npm http 304 https://registry.npmjs.org/npm/1.4.4</div><div class="line">npm ERR! error rolling back Error: Refusing to delete: /usr/local/bin/npm not in /usr/local/lib/node_modules/npm</div><div class="line">npm ERR! error rolling back     at clobberFail (/usr/local/Cellar/node/0.10.26/lib/node_modules/npm/lib/utils/gently-rm.js:57:12)</div><div class="line">npm ERR! error rolling back     at next (/usr/local/Cellar/node/0.10.26/lib/node_modules/npm/lib/utils/gently-rm.js:43:14)</div><div class="line">npm ERR! error rolling back     at /usr/local/Cellar/node/0.10.26/lib/node_modules/npm/lib/utils/gently-rm.js:52:12</div><div class="line">npm ERR! error rolling back     at Object.oncomplete (fs.js:107:15)</div><div class="line">npm ERR! error rolling back  npm@1.4.4 &#123; [Error: Refusing to delete: /usr/local/bin/npm not in /usr/local/lib/node_modules/npm] code: &apos;EEXIST&apos;, path: &apos;/usr/local/bin/npm&apos; &#125;</div><div class="line">npm ERR! Refusing to delete: /usr/local/bin/npm not in /usr/local/lib/node_modules/npm</div><div class="line">File exists: /usr/local/bin/npm</div><div class="line">Move it away, and try again. </div><div class="line"></div><div class="line">npm ERR! System Darwin 13.1.0</div><div class="line">npm ERR! command &quot;/usr/local/Cellar/node/0.10.26/bin/node&quot; &quot;/usr/local/bin/npm&quot; &quot;update&quot; &quot;npm&quot; &quot;-g&quot;</div><div class="line">npm ERR! cwd /Users/dan/Google Drive/Projects/dotfiles</div><div class="line">npm ERR! node -v v0.10.26</div><div class="line">npm ERR! npm -v 1.4.3</div><div class="line">npm ERR! path /usr/local/bin/npm</div><div class="line">npm ERR! code EEXIST</div><div class="line">npm ERR! </div><div class="line">npm ERR! Additional logging details can be found in:</div><div class="line">npm ERR!     /Users/dan/Google Drive/Projects/dotfiles/npm-debug.log</div><div class="line">npm ERR! not ok code 0</div></pre></td></tr></table></figure>
+<a id="more"></a>
+<h3 id="寻求解决"><a href="#寻求解决" class="headerlink" title="寻求解决"></a>寻求解决</h3><p><a href="https://github.com/npm/npm/issues/4099" target="_blank" rel="external">github issue npm update -g has broken npm#4099</a></p>
+<p>这里面其中有人提到可以通过下面命令行来获取重新安装npm</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">curl -L http://npmjs.org/install.sh | sudo sh</div></pre></td></tr></table></figure>
+<p>试了一下，成功了。</p>
+<p>但是有两个问题</p>
+<p>1 为什么这样就行了？ 上述命令行下载npm重新安装即可。</p>
+<p>2 为什么 通过<code>npm install npm -g</code>升级（忘记加sudo）就挂了，讲道理以前这种情况，基本上是给个提示的么，然后正确操作即可。</p>
+<p>贴几个社区讨论的地址</p>
+<p><a href="https://gist.github.com/DanHerbert/9520689" target="_blank" rel="external">Fixing npm On Mac OS X for Homebrew Users</a></p>
+<p><a href="https://github.com/npm/npm/issues/3794" target="_blank" rel="external">Error: Refusing to delete: /usr/local/bin/npm #3794</a></p>
+<blockquote>
+<p>If you’re a Homebrew user and you installed node via Homebrew, there is a major philosophical issue with the way Homebrew and NPM work together. If you install node with Homebrew and then try to do npm update npm -g, you may see an error like this:</p>
+<p>There’s an NPM bug for this exact problem. The bug has been “fixed” by Homebrew installing npm in a way that allows it to manage itself once the install is complete. However, this is error-prone and still seems to cause problems for some people. The root of the the issue is really that npm is its own package manager and it is therefore better to have npm manage itself and its packages completely on its own instead of letting Homebrew do it.</p>
+<p>Also, using the Homebrew installation of npm will require you to use sudo when installing global packages. Since one of the core ideas behind Homebrew is that apps can be installed without giving them root access, this is a bad idea.</p>
+</blockquote>
+<p>先说下<a href="http://brew.sh/" target="_blank" rel="external">Homebrew</a>(家酿 好名字)，就是Mac OSX的软件包管理工具，可以通过<code>brew</code>命令在os x中安装或卸载软件很方便，类似于Ubuntu中的<code>apt-get</code>命令吧。表示从来没用过… 命令行安装软件确实挺酷的</p>
+<p>我对上面问题分析的理解是：OS X中node好像是自带就有的，是通过homebrew的方式安装的，npm也是通过homebrew的安装的，那么问题来了，npm本身也是一个包管理工具。</p>
+<p><code>npm install npm -g</code>可能并不是通过npm的方式去安装升级自己，而是通过<code>brew</code>的方式去安装，因为安装的是全局变没有加sudo所以导致npm的安装失败并使得npm broken。</p>
+<p>所以有人建议</p>
+<blockquote>
+<p>I still recommend to get homebrew to manage node, and get npm to manage itself. If you do npm install -gf npm, probably you will get into trouble when there is a new version of npm available from homebrew, and you do brew upgrade.</p>
+<p>npm can manage the update of itself, so it does not make much sense to get homebrew to manage npm. However, manually update nodejs is painful. Therefore, I think it’s best to get homebrew to manage nodejs, and get npm to manage itself.</p>
+</blockquote>
+<p>npm和homebrew独立开，不要通过homebrew的方式来安装npm。</p>
+<h3 id="一些知识点"><a href="#一些知识点" class="headerlink" title="一些知识点"></a>一些知识点</h3><p>curl命令行：curl是一个命令行工具，作用是发出网络请求，然后得到和提取数据显示在标准输出stdout上。</p>
+<p><a href="http://www.ruanyifeng.com/blog/2011/09/curl.html" target="_blank" rel="external">阮一峰  curl网站开发指南</a></p>
+<p><a href="http://blog.51yip.com/linux/1049.html" target="_blank" rel="external">inux curl 命令详解，以及实例</a></p>
+<p><a href="http://www.cnblogs.com/TankXiao/p/3247113.html" target="_blank" rel="external">Homebrew的安装与使用</a></p>
+<p><a href="http://col.dog/2015/11/22/homebrew/" target="_blank" rel="external">Mac下的软件安装</a></p>
+<p><a href="http://www.yangzhiping.com/tech/homebrew-cask.html" target="_blank" rel="external">Mac安装软件新方法 Homebrew-cask</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;问题描述&quot;&gt;&lt;a href=&quot;#问题描述&quot; class=&quot;headerlink&quot; title=&quot;问题描述&quot;&gt;&lt;/a&gt;问题描述&lt;/h3&gt;&lt;p&gt;OS X想通过命令行&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm install npm -g/ npm update -g&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;提示好像是没有权限吧，恩，全局安装又忘了加&lt;code&gt;sudo&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;然而再次执行&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;sudo npm install npm -g&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;然而没反应啊，显示&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;-bash: /usr/local/bin/npm: No such file or directory&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;大概就是这样的&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;7&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;8&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;9&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;10&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;11&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;13&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;14&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;15&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;16&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;17&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;18&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;19&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;21&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;22&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;23&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;24&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;25&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;27&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;$ npm update npm -g&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm http GET https://registry.npmjs.org/npm&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm http 304 https://registry.npmjs.org/npm&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm http GET https://registry.npmjs.org/npm/1.4.4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm http 304 https://registry.npmjs.org/npm/1.4.4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! error rolling back Error: Refusing to delete: /usr/local/bin/npm not in /usr/local/lib/node_modules/npm&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! error rolling back     at clobberFail (/usr/local/Cellar/node/0.10.26/lib/node_modules/npm/lib/utils/gently-rm.js:57:12)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! error rolling back     at next (/usr/local/Cellar/node/0.10.26/lib/node_modules/npm/lib/utils/gently-rm.js:43:14)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! error rolling back     at /usr/local/Cellar/node/0.10.26/lib/node_modules/npm/lib/utils/gently-rm.js:52:12&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! error rolling back     at Object.oncomplete (fs.js:107:15)&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! error rolling back  npm@1.4.4 &amp;#123; [Error: Refusing to delete: /usr/local/bin/npm not in /usr/local/lib/node_modules/npm] code: &amp;apos;EEXIST&amp;apos;, path: &amp;apos;/usr/local/bin/npm&amp;apos; &amp;#125;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! Refusing to delete: /usr/local/bin/npm not in /usr/local/lib/node_modules/npm&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;File exists: /usr/local/bin/npm&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;Move it away, and try again. &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! System Darwin 13.1.0&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! command &amp;quot;/usr/local/Cellar/node/0.10.26/bin/node&amp;quot; &amp;quot;/usr/local/bin/npm&amp;quot; &amp;quot;update&amp;quot; &amp;quot;npm&amp;quot; &amp;quot;-g&amp;quot;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! cwd /Users/dan/Google Drive/Projects/dotfiles&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! node -v v0.10.26&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! npm -v 1.4.3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! path /usr/local/bin/npm&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! code EEXIST&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! &lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! Additional logging details can be found in:&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR!     /Users/dan/Google Drive/Projects/dotfiles/npm-debug.log&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;npm ERR! not ok code 0&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+      <category term="问题" scheme="http://yoursite.com/categories/%E9%97%AE%E9%A2%98/"/>
+    
+    
+      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+    
+      <category term="npm" scheme="http://yoursite.com/tags/npm/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git学习笔记(三)之分支学习</title>
+    <link href="http://yoursite.com/2016/03/23/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%89-%E4%B9%8B%E5%88%86%E6%94%AF%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2016/03/23/git学习笔记-三-之分支学习/</id>
+    <published>2016-03-23T12:15:17.000Z</published>
+    <updated>2016-03-23T12:15:56.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><a href="https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%AE%80%E4%BB%8B" target="_blank" rel="external">学习参考-pro git分支介绍</a><br>Git相对于其他集中式版本管理系统对版本管理的差别在于，Git版本管理保存的不是文件的变化和差异而是一些列不同时刻的文件快照。</p>
+<p><strong>Git的分支，本质上仅仅是指向提交对象的可变指针</strong></p>
+<blockquote>
+<p>git init初始化的默认分支 是master(并不是一个特殊分支)</p>
+</blockquote>
+<p>相关指令</p>
+<ul>
+<li><code>git branch</code>新建/查看分支</li>
+<li><code>git checkout</code> 切换分支 加<code>-b</code>则是新建然后切换到该分支，切换分支时候确保当前分支下的内容要提交完成，不能切换时候也会提示你。</li>
+<li><code>git log --oneline --decorate</code> 查看当前分支所知对象，加<code>--graph --all</code>查看分叉历史</li>
+<li><code>git merge</code>合并分支，有不能自动合并的冲突时，需要手动merge然后<code>git add</code>提交代码 </li>
+<li><code>git branch --merged/--no--merged</code>，这两个指令过滤当前分支列表中已经合并或者未合并到当前分支的分支</li>
+<li><code>git branch -d/-D</code> <code>-d</code>删除已经合并的分支，<code>-D</code>强行删除那些还没有合并的分支丢掉那些工作</li>
+</ul>
+<p>其他</p>
+<ul>
+<li>git分支开发流的应用</li>
+<li>远程分支</li>
+<li>变基<code>git rebase</code></li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;a href=&quot;https://git-scm.com/book/zh/v2/Git-%E5%88%86%E6%94%AF-%E5%88%86%E6%94%AF%E7%AE%80%E4%BB%8B&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;学习参考-
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>各种资源</title>
+    <link href="http://yoursite.com/2016/03/18/%E5%90%84%E7%A7%8D%E8%B5%84%E6%BA%90/"/>
+    <id>http://yoursite.com/2016/03/18/各种资源/</id>
+    <published>2016-03-17T16:09:00.000Z</published>
+    <updated>2016-03-17T16:11:44.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="记录一些好的资源，备忘"><a href="#记录一些好的资源，备忘" class="headerlink" title="记录一些好的资源，备忘"></a>记录一些好的资源，备忘</h3><h4 id="工具类"><a href="#工具类" class="headerlink" title="工具类"></a>工具类</h4><p>1 <a href="http://yotuku.cn/" target="_blank" rel="external">yotuku</a><br>这个图床不错的，也可以设置到七牛图床，可以复制粘贴，相当好用。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;记录一些好的资源，备忘&quot;&gt;&lt;a href=&quot;#记录一些好的资源，备忘&quot; class=&quot;headerlink&quot; title=&quot;记录一些好的资源，备忘&quot;&gt;&lt;/a&gt;记录一些好的资源，备忘&lt;/h3&gt;&lt;h4 id=&quot;工具类&quot;&gt;&lt;a href=&quot;#工具类&quot; class=&quot;he
+    
+    </summary>
+    
+      <category term="杂记" scheme="http://yoursite.com/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+      <category term="杂记" scheme="http://yoursite.com/tags/%E6%9D%82%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git学习笔记(二)</title>
+    <link href="http://yoursite.com/2016/03/18/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8C/"/>
+    <id>http://yoursite.com/2016/03/18/git学习笔记-二/</id>
+    <published>2016-03-17T16:02:43.000Z</published>
+    <updated>2016-03-17T16:07:38.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="新建并连接远程库"><a href="#新建并连接远程库" class="headerlink" title="新建并连接远程库"></a>新建并连接远程库</h3><ol>
+<li><p>在github上新建一个仓库 比如learnnote<br><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-17/1990950.jpg" alt=""></p>
+</li>
+<li><p>在本地添加远程仓库</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">git remote add origin https://github.com/lifesimple/learnnote.git</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="本地与远程库的代码管理与同步"><a href="#本地与远程库的代码管理与同步" class="headerlink" title="本地与远程库的代码管理与同步"></a>本地与远程库的代码管理与同步</h3><p>因为新建的时候随手建了一个readme.md的文件，此时本地仓库是空的，远程origin是有一个文件的。所以这个时候，我们先获取一下远程库的内容。<br>遇到的一些问题<br>1) 我用<code>git fetch origin</code>并不能把新建仓库中的readme.md给获取下来，这是为什么？<br>2) 用<code>git pull orgin master</code>就可以把内容获取下来<br>3) <code>git diff</code>没用对 ？</p>
+<blockquote>
+<p>lifesimple:test jingxiao$ git diff master origin/master<br>fatal: ambiguous argument ‘master’: unknown revision or path not in the working tree.<br>Use ‘–’ to separate paths from revisions, like this:<br>‘git <command> [<revision>…] – [<file>…]’<br>lifesimple:test jingxiao$</file></revision></p>
+</blockquote>
+<p>用的话，按教程就用git pull=(fetch+merge)来处理，这样就能行了。<br><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-17/23809283.jpg" alt=""><br><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-18/78184558.jpg" alt=""><br>本地管理，然后提交到远程库就ok了。</p>
+<p>对git的分支啥的还是很不了解，以前甚至还搞不清楚master origin哪个是本地的哪个是远程的。<br><strong>只知道这么正确的操作是不够的，得知道为什么上面的问题，求指教谢谢。</strong><br>把这本<a href="https://git-scm.com/book/zh/v2" target="_blank" rel="external">pro git指南看看掉应该就够了</a><br><em>工具这东西，得多用才行，用得多了菜的坑才能多，才能有点长进吧。</em></p>
+<h3 id="为什么学习git"><a href="#为什么学习git" class="headerlink" title="为什么学习git"></a>为什么学习git</h3><p>在<a href="https://segmentfault.com/q/1010000004591949" target="_blank" rel="external">sf上提过一个问题git要比svn好在哪里？</a><br>相对来说，1) 分布式没有所谓中央服务器，每台机子都是一个版本库，相对安全；2) 离线使用，git可以本地版本管理，svn需要联网(局域网)<br>但也不能就说哪个就好了，还是看使用场景，毕竟svn相比于git简单容易上手许多。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;新建并连接远程库&quot;&gt;&lt;a href=&quot;#新建并连接远程库&quot; class=&quot;headerlink&quot; title=&quot;新建并连接远程库&quot;&gt;&lt;/a&gt;新建并连接远程库&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;在github上新建一个仓库 比如learnnote&lt;br&gt;&lt;img sr
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>web移动端学习笔记(一)</title>
+    <link href="http://yoursite.com/2016/03/16/web%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%80/"/>
+    <id>http://yoursite.com/2016/03/16/web移动端学习笔记-一/</id>
+    <published>2016-03-15T16:38:26.000Z</published>
+    <updated>2016-03-15T16:40:06.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="一点感想"><a href="#一点感想" class="headerlink" title="一点感想"></a>一点感想</h3><p>入行前端快两年了，一直埋头写代码什么的，抬头一看这个行业技术更新不要太快，当我刚知道grunt自动化部署啥的时候，大家都在说gulp好用，当我要开始学gulp的时候，大家又去用webpack了。<br>总之，是时候要跟一波节奏了，不能总是用jquery写业务代码吧，多跟进一些优秀的新技术新框架库什么，多和这个行业交流，总之要提高要进步吧。</p>
+<p>开始学习移动端web的相关知识吧，参考一些网上的教程以及一些学习视频做一段快速入门吧。有什么好的书籍推荐的么？</p>
+<h3 id="先收集一波资源做入门吧"><a href="#先收集一波资源做入门吧" class="headerlink" title="先收集一波资源做入门吧"></a>先收集一波资源做入门吧</h3><p><a href="http://www.imooc.com/learn/494" target="_blank" rel="external">慕课网-Hello,Web移动端</a><br><a href="https://www.v2ex.com/t/233335" target="_blank" rel="external">V2EX上的一个移动端入门的资源帖</a><br><a href="http://www.html-js.com/article/Mobile-terminal-H5-mobile-terminal-HD-multi-screen-adaptation-scheme%203041" target="_blank" rel="external">前端乱炖-移动端高清、多屏适配方案</a><br><a href="https://www.zybuluo.com/hacke2/note/45079" target="_blank" rel="external">移动web常见名词</a><br><a href="https://www.zhihu.com/question/20269059" target="_blank" rel="external">知乎-移动前端开发和 Web 前端开发的区别是什么?</a></p>
+<h3 id="web移动端的尺寸单位"><a href="#web移动端的尺寸单位" class="headerlink" title="web移动端的尺寸单位"></a>web移动端的尺寸单位</h3><p>px-CSS pixels 逻辑像素，浏览器使用的抽象单位<br>dp,pt-device independent pixels 设备无关像素<br>dpr-devicePixelRatio 设备像素缩放<br>DPI-打印机每英寸可以喷的墨汁点（印刷行业）<br>PPI-屏幕每英寸像素数量，单位英寸内的像素密度</p>
+<blockquote>
+<p>1px = (dpr)<sup>2</sup>*dp</p>
+</blockquote>
+<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-16/13581344.jpg" alt=""></p>
+<h3 id="viewport的理解和作用"><a href="#viewport的理解和作用" class="headerlink" title="viewport的理解和作用"></a>viewport的理解和作用</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1,user-scalable=no&quot;&gt;</div></pre></td></tr></table></figure>
+<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-16/96962031.jpg" alt=""><br>visual viewport:度量/视口 viewport<br>layout viewport:布局viewport<br>PC页面是怎么渲染viewport中的?</p>
+<blockquote>
+<p>页面调试可以通过chrome devTool选择各设备模拟查看</p>
+</blockquote>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>因为移动端的地方小，所以一般页面针对移动端重新设计或者优化就尽量砍掉那些不重要的点，做减法。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;一点感想&quot;&gt;&lt;a href=&quot;#一点感想&quot; class=&quot;headerlink&quot; title=&quot;一点感想&quot;&gt;&lt;/a&gt;一点感想&lt;/h3&gt;&lt;p&gt;入行前端快两年了，一直埋头写代码什么的，抬头一看这个行业技术更新不要太快，当我刚知道grunt自动化部署啥的时候，大家都在说
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="移动端" scheme="http://yoursite.com/tags/%E7%A7%BB%E5%8A%A8%E7%AB%AF/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git学习笔记(一)</title>
+    <link href="http://yoursite.com/2016/03/15/git%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%80/"/>
+    <id>http://yoursite.com/2016/03/15/git学习笔记-一/</id>
+    <published>2016-03-14T16:09:51.000Z</published>
+    <updated>2016-03-14T17:36:17.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="创建一个git版本库"><a href="#创建一个git版本库" class="headerlink" title="创建一个git版本库"></a>创建一个git版本库</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">git init</div><div class="line">git add readme.txt</div><div class="line">git commit -m &apos;add a readme txt&apos;</div></pre></td></tr></table></figure>
+<p>通过<code>git status</code>查看当前库状态<br><code>git commit</code>加上<code>-m</code> 说明本次提交的更改情况，如果不加这个参数直接提交会怎么样呢，会这样，自动启动一个编辑器(如下是vim)还是得让你写点东西吧。</p>
+<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-15/22408369.jpg" alt="如果直接git commit"></p>
+<h3 id="本地版本管理"><a href="#本地版本管理" class="headerlink" title="本地版本管理"></a>本地版本管理</h3><ol>
+<li><p><code>git status</code> <code>git diff</code><br>这两个指令帮你了解当前库修改变动和提交状态。</p>
+<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-15/12235118.jpg" alt="git status"></p>
+</li>
+<li><p><code>git log</code> <code>git reset</code><br>git log版本记录，<br>git reset 时光穿梭机版本回退</p>
+<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-15/92997676.jpg" alt="git reset"> </p>
+<blockquote>
+<p>HEAD表示当前版本，HEAD^上一版本，HEAD^^上上版本，HEAD~100上*100个版本。<br>至于参数–hard什么意思，可以参考<a href="http://stackoverflow.com/questions/3528245/whats-the-difference-between-git-reset-mixed-soft-and-hard" target="_blank" rel="external">stackoverflow –mixed soft hard</a></p>
+</blockquote>
+</li>
+<li><p><strong>工作区 暂存区和版本库的理解</strong><br><img src="http://blog.chinaunix.net/attachment/201402/19/10415985_139279770639pM.jpg" alt=""></p>
+</li>
+<li><p><code>git add</code>把修改的文件放入暂存区，<code>git commit</code>把暂存区的文件提交到版本库中。<br>所以要是<br><em>第一次修改-&gt; git add-&gt;第二次修改-&gt;git commit</em><br>这种情况下并不会提交第二次修改的内容</p>
+<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-15/60103967.jpg" alt="git commit提交暂存区内容"><br>这种情况继续提交即可。</p>
+</li>
+<li><p>git checkout<br>没提交前后悔了<br>两种情况，1）还没提交到暂存区，即没有<code>git add</code><br>2) <code>git add</code>了，但是没有提交到版本库，没有<code>git commit</code><br>第一种情况直接<code>git checkout -- readme.txt</code>舍弃修改<br>第二种情况，通过<code>git reset</code>撤销暂存区修改<br><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-15/65141448.jpg" alt="checkout"></p>
+</li>
+<li><p>git rm<br>不要了<br><code>git rm</code>然后<code>git commit</code>,但是还是可以通过<code>git checkout</code>找回来</p>
+<p><img src="http://7vij1u.com1.z0.glb.clouddn.com/16-3-15/52959431.jpg" alt="git rm"></p>
+</li>
+</ol>
+<p><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="external">笔记参考学习自廖雪峰老师的git教程</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;创建一个git版本库&quot;&gt;&lt;a href=&quot;#创建一个git版本库&quot; class=&quot;headerlink&quot; title=&quot;创建一个git版本库&quot;&gt;&lt;/a&gt;创建一个git版本库&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;t
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jquery ajax数据请求和返回</title>
+    <link href="http://yoursite.com/2016/02/23/jquery-ajax%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86/"/>
+    <id>http://yoursite.com/2016/02/23/jquery-ajax数据处理/</id>
+    <published>2016-02-23T14:41:53.000Z</published>
+    <updated>2016-02-23T15:16:27.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>刚接触学会用jQuery ajax的时候，觉得真东西好神奇，这样就可以把数据取回来了啊。然后我可以把取回来的数据渲染到页面上，一颗赛艇。<br>之前很早接触到项目，并不知道怎么优雅的去用jquery ajax（现在也不优雅）；<br>那个时候看别人写的代码<br>有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$.post(&quot;&quot;,&quot;&quot;,...)</div></pre></td></tr></table></figure></p>
+<p>也有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$.get(&quot;&quot;,&quot;&quot;,...)</div></pre></td></tr></table></figure></p>
+<p>还有<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$.ajax()</div></pre></td></tr></table></figure></p>
+<p>当然现在知道点，这些写法都是一个意思，还是习惯用<code>$.ajax()</code>写写吧。<br>之前的数据处理，发送数据请求(json的数据格式)，然后自己通过下面的方式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var request = &#123;&#125;;</div><div class="line">request.name = $(&quot;.name&quot;).val();</div><div class="line">request.age = $(&quot;.age&quot;).val();</div><div class="line">request.sex = $(&quot;.sex&quot;).val();</div><div class="line">//...</div></pre></td></tr></table></figure></p>
+<p>当时表单发送的参数项少，所以没觉得什么，到后来一个表单很多项数，也这么写，结果<code>request</code>就手工写了好多行，虽然能用吧，但是看看这样的代码就觉着哪里不对劲吧，至少很不“优雅”。<br>后来，发现其实jquery有个<a href="http://api.jquery.com/serialize/" target="_blank" rel="external">serialize</a>的方法可以序列化表单数据，可以省事很多。<br><a href="http://www.w3school.com.cn/tiy/t.asp?f=jquery_ajax_serialize" target="_blank" rel="external">w3c_jquery_serialize-demo</a></p>
+<p>处理返回数据，渲染到页面上去。<br>之前的做法也是和上面一模一样的吧，返回的数据是json数据格式的，然后分别取值赋值给页面元素，所以代码往往是这样的。<br><img src="http://ww3.sinaimg.cn/mw690/714d1b58jw1f19nehbr2jj20lc0av3zu.jpg" alt=""></p>
+<p>如果数据再多点，真的是感觉略难看。其实应该是有更好的做法的，返回的是一个json对象，所以我们可以通过遍历对象的属性值取到所有值然后依次渲染到页面对应元素即可。<br>对象遍历可以用<code>for-in</code>来写（有更好的方法来写么？）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$.ajax(&#123;</div><div class="line">	//...</div><div class="line">	success:function(result)&#123;</div><div class="line">		for(var v in result)&#123;</div><div class="line">			// 如果渲染的元素都是统一的输入框形式的话，</div><div class="line">			$(&quot;form&quot;).find(&quot;input[name=&quot;+ v +&quot;]&quot;).val(result[v]); </div><div class="line"></div><div class="line">			// 如果有其他元素 则另外单独校验处理</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line"></div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>上面name(或者其他tag在页面中先写好，和返回数据的属性一致)。</p>
+<p><a href="http://www.cnblogs.com/luoyanli/archive/2012/07/09/2582650.html" target="_blank" rel="external">另外摘记一个表单输入框中回车 自动提交的情况和处理方案</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;刚接触学会用jQuery ajax的时候，觉得真东西好神奇，这样就可以把数据取回来了啊。然后我可以把取回来的数据渲染到页面上，一颗赛艇。&lt;br&gt;之前很早接触到项目，并不知道怎么优雅的去用jquery ajax（现在也不优雅）；&lt;br&gt;那个时候看别人写的代码&lt;br&gt;有&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="jquery" scheme="http://yoursite.com/tags/jquery/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>浅谈闭包(一)</title>
+    <link href="http://yoursite.com/2016/02/15/%E6%B5%85%E8%B0%88%E9%97%AD%E5%8C%85-%E4%B8%80/"/>
+    <id>http://yoursite.com/2016/02/15/浅谈闭包-一/</id>
+    <published>2016-02-15T00:35:39.000Z</published>
+    <updated>2016-02-15T00:46:53.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="0什么是闭包？"><a href="#0什么是闭包？" class="headerlink" title="0什么是闭包？"></a>0什么是闭包？</h3><h3 id="1闭包的作用和副作用？"><a href="#1闭包的作用和副作用？" class="headerlink" title="1闭包的作用和副作用？"></a>1闭包的作用和副作用？</h3><h3 id="2理解闭包的运行机制？"><a href="#2理解闭包的运行机制？" class="headerlink" title="2理解闭包的运行机制？"></a>2理解闭包的运行机制？</h3><p>先放一段基础代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">function compareObject(propertyName)&#123;</div><div class="line">    return function(obj1,obj2)&#123;</div><div class="line">        if(obj1.name &gt; obj2.name)&#123;</div><div class="line">            return 1;</div><div class="line">        &#125;else if(obj1.name &lt; obj2.name)&#123;</div><div class="line">            return -1;</div><div class="line">        &#125;else&#123;</div><div class="line">            return 0;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">var compare = compareObject(&apos;name&apos;),</div><div class="line">    result = compare(&#123;name:&apos;jing&apos;,age:10&#125;,&#123;name:&apos;xiao&apos;,age:10&#125;);</div><div class="line">console.log(result);</div></pre></td></tr></table></figure>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;0什么是闭包？&quot;&gt;&lt;a href=&quot;#0什么是闭包？&quot; class=&quot;headerlink&quot; title=&quot;0什么是闭包？&quot;&gt;&lt;/a&gt;0什么是闭包？&lt;/h3&gt;&lt;h3 id=&quot;1闭包的作用和副作用？&quot;&gt;&lt;a href=&quot;#1闭包的作用和副作用？&quot; class=&quot;he
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://yoursite.com/categories/javascript/"/>
+    
+    
+      <category term="闭包" scheme="http://yoursite.com/tags/%E9%97%AD%E5%8C%85/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重读js高程笔记二</title>
+    <link href="http://yoursite.com/2016/01/26/%E9%87%8D%E8%AF%BBjs%E9%AB%98%E7%A8%8B%E7%AC%94%E8%AE%B0%E4%BA%8C/"/>
+    <id>http://yoursite.com/2016/01/26/重读js高程笔记二/</id>
+    <published>2016-01-26T15:32:53.000Z</published>
+    <updated>2016-01-26T15:36:18.000Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="重读js高程笔记二"><a href="#重读js高程笔记二" class="headerlink" title="重读js高程笔记二"></a>重读js高程笔记二</h2><blockquote>
+<p>引用类型的值(对象)是引用类型的一个实例，在ES中引用类型是一种数据结构，将数据和功能组织在一起。引用类型有时候也被称之为<strong>对象定义</strong>，因为他们描述的是一类对象所具有的属性和方法。</p>
+</blockquote>
+<h2 id="Object类型"><a href="#Object类型" class="headerlink" title="Object类型"></a>Object类型</h2><h4 id="两种创建方式"><a href="#两种创建方式" class="headerlink" title="两种创建方式"></a>两种创建方式</h4><p>1 <code>new Object()</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var person  = new Object();</div><div class="line">person.name = &quot;jing&quot;;</div><div class="line">person,age = 20;</div></pre></td></tr></table></figure></p>
+<p>2 对象字面量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var person = &#123;</div><div class="line">    name:&quot;jing&quot;,</div><div class="line">    age:20</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>属性的访问两种方式，1-person.name,<code>2-person[&#39;name&#39;]</code>,后一种方式的好处可以用来在代码中拼接属性名。</p>
+</blockquote>
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><h4 id="创建方式"><a href="#创建方式" class="headerlink" title="创建方式"></a>创建方式</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">// 使用new Array() 构造函数</div><div class="line">var arr1 = new Array();</div><div class="line">var arr2 = new Array(20); // 长度为20</div><div class="line">var arr3 = new Array(&quot;red&quot;,&quot;blue&quot;,&quot;yellow&quot;);</div><div class="line">// 数组字面量表示法</div><div class="line">var arr4 = [&quot;red&quot;,&quot;blue&quot;,&quot;yellow&quot;];</div></pre></td></tr></table></figure>
+<h4 id="检测数组方法"><a href="#检测数组方法" class="headerlink" title="检测数组方法"></a>检测数组方法</h4><ul>
+<li><code>arr instanceof Array</code>,页面多个框架引起的多个全局执行环境问题。怎么理解呢(?)</li>
+<li>ES5引入的<code>Array.isArray(arr)</code>解决上面的问题<h4 id="Array的常用方法"><a href="#Array的常用方法" class="headerlink" title="Array的常用方法"></a>Array的常用方法</h4></li>
+</ul>
+<ol>
+<li>转换方法(所有对象都具有)，<code>toString()/toLocalString()/ValueOf()</code></li>
+<li>栈方法，<code>push()</code></li>
+<li>队列方法，<code>shift()</code> <code>unshift()-添加元素</code> </li>
+<li>重排序，<code>reverse()</code>和<code>sort()</code> (?)</li>
+<li>操作方法，<code>concat()</code> <code>slice()</code>和<strong>splice()-删除/插入/替换</strong></li>
+<li>位置方法，<code>indexOf()</code> <code>lastIndexOf()</code></li>
+<li>迭代方法，<code>every()/filter()/forEach()/map()/some()</code></li>
+</ol>
+<a id="more"></a>
+<h2 id="Date"><a href="#Date" class="headerlink" title="Date"></a>Date</h2><h4 id="创建方法"><a href="#创建方法" class="headerlink" title="创建方法"></a>创建方法</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">var date1 = new Date(args);</div></pre></td></tr></table></figure>
+<h4 id="常见使用方法"><a href="#常见使用方法" class="headerlink" title="常见使用方法"></a>常见使用方法</h4><ol>
+<li>转换方法，<code>toString()/toLocalString()/ValueOf()</code></li>
+<li>日期格式化方法，<code>toDateString()</code> <code>toTimeString()</code> <code>toLocalDateString()</code> <code>toLocalTimeString()</code> <code>toUTCString()</code></li>
+<li>日期时间组件方法，<code>getTime/Date/Year/Month()...</code> <code>setTime/Date/Year/Month()...</code> <strong>get</strong>和<strong>set</strong> 获取时间，设置时间</li>
+</ol>
+<h2 id="regExp"><a href="#regExp" class="headerlink" title="regExp"></a>regExp</h2><p>regExp是ES支持正则表达式的一个接口<br>正则表达式，用得好可以少写很多逻辑代码</p>
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><ol>
+<li>函数声明和函数表达式，解析器在加载数据时候，会对函数声明进行<strong>函数声明提升</strong></li>
+<li>作为值得函数，函数可以作为参数传入到另一函数中的使用方法</li>
+<li>内部属性和方法 <code>arguments</code>,<code>this</code>,<code>.length</code>,<code>.prototype</code> <code>apply()</code> <code>call()</code></li>
+<li>没有重载</li>
+</ol>
+<h2 id="Boolean"><a href="#Boolean" class="headerlink" title="Boolean"></a>Boolean</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">      var falseObj = new Boolean(false); </div><div class="line">var falseValue = false;</div><div class="line"></div><div class="line">console.log(falseObj &amp;&amp; true); // true</div><div class="line">console.log(falseValue &amp;&amp; true); // false</div><div class="line"></div><div class="line">console.log(typeof falseObj); // Object</div><div class="line">console.log(typeof falseValue); // boolean</div><div class="line"></div><div class="line">console.log(falseObj instanceof Boolean); // true</div><div class="line">console.log(falseValue instanceof Boolean) // false</div></pre></td></tr></table></figure>
+<ul>
+<li>Boolean类型是与布尔值对应的引用类型</li>
+<li>在布尔表达式中使用布尔对象</li>
+</ul>
+<h2 id="Number"><a href="#Number" class="headerlink" title="Number"></a>Number</h2><p>与数字对应的引用类型，几个好用的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var num = 10;</div><div class="line">console.log(num.toString(2));</div><div class="line">console.log(num.toString(8)); // 加入参数转 显示其他进制</div><div class="line"></div><div class="line">console.log(num.toFixed(2)); // 保留几位小数</div></pre></td></tr></table></figure></p>
+<h2 id="String"><a href="#String" class="headerlink" title="String"></a>String</h2><p>String是字符串的对象包装类型<br>一些常用的方法如下</p>
+<ul>
+<li><code>charAt()/charCodeAt()</code> 找到第几位字符</li>
+<li><code>slice()/substr()/substring()</code> 截取 字符串，注意差别</li>
+<li><code>indexOf()/lastIndexOf()</code> 找到位置</li>
+<li><code>trim()</code>ES5引入的，创建一个字符串副本，删除前后的空格返回</li>
+<li><code>toUpperCase()/toLowerCase()</code> 大小写转换</li>
+<li>模式匹配本质上是调用了<code>RegExp</code>的<code>exec()</code>，有<code>match()/search()/replace()/split()</code></li>
+<li><code>localeCompare()</code> 比较两个字符串</li>
+<li><code>str.fromCodeAt(104,101,108,108,101) //hello</code> 传入多个字符编码转换成一个字符串</li>
+</ul>
+<h2 id="单体内置对象"><a href="#单体内置对象" class="headerlink" title="单体内置对象"></a>单体内置对象</h2><p>Global对象</p>
+<ul>
+<li><code>enCodeURI()/enCodeURIComponent()</code>  URI编码方法</li>
+<li><code>eval()</code> 强大到直接执行语句</li>
+<li><code>window</code>对象</li>
+</ul>
+<h2 id="Math对象"><a href="#Math对象" class="headerlink" title="Math对象"></a>Math对象</h2><ul>
+<li><code>min()/max()</code></li>
+<li><code>ceil()/floor()/round()</code> 向上向下标准舍入</li>
+<li><code>random()</code> 返回介于0和1之间的随机数</li>
+<li>其他<code>abs/sqrt/...</code></li>
+</ul>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><p>清楚js引用类型，和相关用法</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;重读js高程笔记二&quot;&gt;&lt;a href=&quot;#重读js高程笔记二&quot; class=&quot;headerlink&quot; title=&quot;重读js高程笔记二&quot;&gt;&lt;/a&gt;重读js高程笔记二&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;引用类型的值(对象)是引用类型的一个实例，在ES中引用类型是一种数据结构，将数据和功能组织在一起。引用类型有时候也被称之为&lt;strong&gt;对象定义&lt;/strong&gt;，因为他们描述的是一类对象所具有的属性和方法。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Object类型&quot;&gt;&lt;a href=&quot;#Object类型&quot; class=&quot;headerlink&quot; title=&quot;Object类型&quot;&gt;&lt;/a&gt;Object类型&lt;/h2&gt;&lt;h4 id=&quot;两种创建方式&quot;&gt;&lt;a href=&quot;#两种创建方式&quot; class=&quot;headerlink&quot; title=&quot;两种创建方式&quot;&gt;&lt;/a&gt;两种创建方式&lt;/h4&gt;&lt;p&gt;1 &lt;code&gt;new Object()&lt;/code&gt;&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var person  = new Object();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;person.name = &amp;quot;jing&amp;quot;;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;person,age = 20;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;2 对象字面量&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;var person = &amp;#123;&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    name:&amp;quot;jing&amp;quot;,&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;    age:20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;&amp;#125;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;属性的访问两种方式，1-person.name,&lt;code&gt;2-person[&amp;#39;name&amp;#39;]&lt;/code&gt;,后一种方式的好处可以用来在代码中拼接属性名。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&quot;Array&quot;&gt;&lt;a href=&quot;#Array&quot; class=&quot;headerlink&quot; title=&quot;Array&quot;&gt;&lt;/a&gt;Array&lt;/h2&gt;&lt;h4 id=&quot;创建方式&quot;&gt;&lt;a href=&quot;#创建方式&quot; class=&quot;headerlink&quot; title=&quot;创建方式&quot;&gt;&lt;/a&gt;创建方式&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;2&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;3&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;4&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;5&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;6&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;// 使用new Array() 构造函数&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;var arr1 = new Array();&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;var arr2 = new Array(20); // 长度为20&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;var arr3 = new Array(&amp;quot;red&amp;quot;,&amp;quot;blue&amp;quot;,&amp;quot;yellow&amp;quot;);&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;// 数组字面量表示法&lt;/div&gt;&lt;div class=&quot;line&quot;&gt;var arr4 = [&amp;quot;red&amp;quot;,&amp;quot;blue&amp;quot;,&amp;quot;yellow&amp;quot;];&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h4 id=&quot;检测数组方法&quot;&gt;&lt;a href=&quot;#检测数组方法&quot; class=&quot;headerlink&quot; title=&quot;检测数组方法&quot;&gt;&lt;/a&gt;检测数组方法&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;arr instanceof Array&lt;/code&gt;,页面多个框架引起的多个全局执行环境问题。怎么理解呢(?)&lt;/li&gt;
+&lt;li&gt;ES5引入的&lt;code&gt;Array.isArray(arr)&lt;/code&gt;解决上面的问题&lt;h4 id=&quot;Array的常用方法&quot;&gt;&lt;a href=&quot;#Array的常用方法&quot; class=&quot;headerlink&quot; title=&quot;Array的常用方法&quot;&gt;&lt;/a&gt;Array的常用方法&lt;/h4&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+&lt;li&gt;转换方法(所有对象都具有)，&lt;code&gt;toString()/toLocalString()/ValueOf()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;栈方法，&lt;code&gt;push()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;队列方法，&lt;code&gt;shift()&lt;/code&gt; &lt;code&gt;unshift()-添加元素&lt;/code&gt; &lt;/li&gt;
+&lt;li&gt;重排序，&lt;code&gt;reverse()&lt;/code&gt;和&lt;code&gt;sort()&lt;/code&gt; (?)&lt;/li&gt;
+&lt;li&gt;操作方法，&lt;code&gt;concat()&lt;/code&gt; &lt;code&gt;slice()&lt;/code&gt;和&lt;strong&gt;splice()-删除/插入/替换&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;位置方法，&lt;code&gt;indexOf()&lt;/code&gt; &lt;code&gt;lastIndexOf()&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;迭代方法，&lt;code&gt;every()/filter()/forEach()/map()/some()&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>重读js高程笔记一</title>
+    <link href="http://yoursite.com/2016/01/15/%E9%87%8D%E8%AF%BBjs%E9%AB%98%E7%A8%8B%E7%AC%94%E8%AE%B0%E4%B8%80/"/>
+    <id>http://yoursite.com/2016/01/15/重读js高程笔记一/</id>
+    <published>2016-01-14T16:13:44.000Z</published>
+    <updated>2016-01-14T16:28:05.000Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="http://img3.douban.com/lpic/s8958650.jpg" alt=""></p>
+<h4 id="00-javascript组成"><a href="#00-javascript组成" class="headerlink" title="00 javascript组成"></a>00 javascript组成</h4><ul>
+<li>ECMAScript(-265)核心语言部分</li>
+<li>DOM文档对象模型（DOM1、2、3）</li>
+<li>BOM浏览器对象模型(提供与浏览器交互的接口和方法)</li>
+</ul>
+<h4 id="01-script标签"><a href="#01-script标签" class="headerlink" title="01 script标签"></a>01 script标签</h4><ul>
+<li>async 异步加载 执行顺序不定</li>
+<li>charset</li>
+<li>defer 延迟加载，立即下载脚本但不执行</li>
+<li>src</li>
+<li>type 默认text/javascript</li>
+</ul>
+<h4 id="02-doctype"><a href="#02-doctype" class="headerlink" title="02 doctype"></a>02 doctype</h4><ul>
+<li>混杂模式quirks mode和标准模式standards mode</li>
+<li>为什么会有这两种模式？</li>
+<li>两种模式的差异？</li>
+</ul>
+<h4 id="03-ES3基础-ES5"><a href="#03-ES3基础-ES5" class="headerlink" title="03 ES3基础(ES5)"></a>03 ES3基础(ES5)</h4><ul>
+<li>区分大小写的</li>
+<li>标识符：首字母以字母、下划线(_)或者$开头</li>
+<li>注释的写法</li>
+<li><strong>ES5引入的 use strict 严格模式</strong></li>
+<li>变量（var）局部变量和全局变量</li>
+<li>数据类型(五个基本数据类型+Object)<br><code>Undefined Null Boolean String Number+Object</code>及判定方法<code>typeof instanceof</code>   </li>
+</ul>
+<h4 id="04-Number"><a href="#04-Number" class="headerlink" title="04 Number"></a>04 Number</h4><ul>
+<li>可以直接进行八进制 十六进制的计算 a=077 b=0x7F</li>
+<li>浮点数的摄入问题不能直接0.1+0.2==0.3这样的判断</li>
+<li>NaN()</li>
+<li>数值转换 Number,parseInt(num,基数)，parseFloat</li>
+</ul>
+<h4 id="05-相等和全等"><a href="#05-相等和全等" class="headerlink" title="05 相等和全等"></a>05 相等和全等</h4><p><code>==</code>和<code>===</code><br><code>!=</code>和<code>!==</code><br>相等会进行数据类型转换到一样的类型再进行比较，全等则不转换在数据类型一样的情况下比较。</p>
+<p>Q1:为什么0.1+0.2 == 0.3 false?怎么处理？<br><a href="https://www.zhihu.com/question/24415787" target="_blank" rel="external">知乎-JS计算0.1+0.2≠0.3，求解法？</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://img3.douban.com/lpic/s8958650.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h4 id=&quot;00-javascript组成&quot;&gt;&lt;a href=&quot;#00-javascript组成&quot; class=&quot;headerlink&quot; ti
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nodejs学习笔记#1</title>
+    <link href="http://yoursite.com/2016/01/02/nodejs%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-1/"/>
+    <id>http://yoursite.com/2016/01/02/nodejs学习笔记-1/</id>
+    <published>2016-01-02T06:48:00.000Z</published>
+    <updated>2016-01-02T06:53:43.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>学习地址<br><a href="http://study.163.com/course/courseMain.htm?courseId=601001" target="_blank" rel="external">网易云课堂-珠峰node.js学习课程</a></p>
+<p>课程讲的挺基础的<br>1 nodejs的安装<br>2 常用的一些全局变量和方法如<strong>filename </strong>dirname等<br>3 模块和包的概念</p>
+<p>nodejs的核心知识点就是应该去理解，模块和包的概念，阻塞与非阻塞<br>一个js文件，看成一个独立的模块，提高接口供另外的模块引用使用。<br>包，来管理多个模块。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;学习地址&lt;br&gt;&lt;a href=&quot;http://study.163.com/course/courseMain.htm?courseId=601001&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;网易云课堂-珠峰node.js学习课程&lt;/a&gt;&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="nodejs" scheme="http://yoursite.com/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript tips</title>
+    <link href="http://yoursite.com/2015/12/25/javascript-tips/"/>
+    <id>http://yoursite.com/2015/12/25/javascript-tips/</id>
+    <published>2015-12-25T00:02:10.000Z</published>
+    <updated>2015-12-25T00:06:42.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>1 isNaN()<br>更加严谨的用法<br>isNaN(“12”) false  “12”先转换为12 再判断<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN</a></p>
+<p>阻止上面的情况<br><a href="http://stackoverflow.com/questions/29658839/prevent-isnan-implicit-conversion-to-number" target="_blank" rel="external">http://stackoverflow.com/questions/29658839/prevent-isnan-implicit-conversion-to-number</a></p>
+<pre><code>if((typeof food)===&quot;number&quot; &amp;&amp; !isNaN(food))
+</code></pre>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;1 isNaN()&lt;br&gt;更加严谨的用法&lt;br&gt;isNaN(“12”) false  “12”先转换为12 再判断&lt;br&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/G
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>jquery插件学习</title>
+    <link href="http://yoursite.com/2015/11/22/jquery%E6%8F%92%E4%BB%B6%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://yoursite.com/2015/11/22/jquery插件学习/</id>
+    <published>2015-11-22T13:43:06.000Z</published>
+    <updated>2015-11-22T13:43:54.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>jquery插件学习的一些资料<br>参考资料：<br><a href="http://www.cnblogs.com/Wayou/p/jquery_plugin_tutorial.html" target="_blank" rel="external">博客园 jquery插件精品教程</a><br><a href="http://www.cnblogs.com/silverLee/archive/2009/12/22/1629925.html" target="_blank" rel="external">博客园 jquery插件开发全解析</a><br><a href="http://blog.csdn.net/rambo_china/article/details/7742321" target="_blank" rel="external">csdn (function($){…})(jQuery)是什么意思</a><br><a href="http://www.cnblogs.com/RascallySnake/archive/2010/05/07/1729563.html" target="_blank" rel="external">博客园 jQuery.extend 函数详解</a></p>
+<p>小demo<br><a href="http://www.jquery001.com/jquery-checkall.html" target="_blank" rel="external">jQuery 全选反选插件</a><br>自调用匿名函数的作用</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;jquery插件学习的一些资料&lt;br&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/Wayou/p/jquery_plugin_tutorial.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;博客园 jquer
+    
+    </summary>
+    
+      <category term="jquery" scheme="http://yoursite.com/categories/jquery/"/>
+    
+    
+      <category term="jquery插件" scheme="http://yoursite.com/tags/jquery%E6%8F%92%E4%BB%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>译Front-End-Developer-Interview-Questions</title>
+    <link href="http://yoursite.com/2015/11/22/%E8%AF%91Front-End-Developer-Interview-Questions/"/>
+    <id>http://yoursite.com/2015/11/22/译Front-End-Developer-Interview-Questions/</id>
+    <published>2015-11-22T13:38:29.000Z</published>
+    <updated>2015-11-22T13:59:20.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>希望自己能多去阅读英文文档，提高英文文档阅读能力。</p>
+<p>翻译自<a href="https://github.com/h5bp/Front-end-Developer-Interview-Questions" target="_blank" rel="external">Front-end-Developer-Interview-Questions</a><br>这份文件包含一系列用于面试审查求职者(候选人)的前端面试问题。这并不推荐把每个问题都问在同一个求职者(因为这会花几个小时的时间)。从列表中抽取一些问题能够帮助你审查你需要求职者具备的一些技能。<br>注: 牢记这里的许多问题答案是开放式的，能够引导兴趣性探讨，相比于直接的答案这些东西能够使你更加了解求职者的相关信息。</p>
+<p>###内容表###</p>
+<p><hr></p>
+<ol>
+<li><a href="#common">常用问题</a></li>
+<li><a href="#html">HTML问题</a></li>
+<li><a href="#css">CSS问题</a></li>
+<li><a href="#js">JS问题</a></li>
+<li><a href="#test">测试问题</a></li>
+<li><a href="#performance">性能问题</a></li>
+<li><a href="#network">网络问题</a></li>
+<li><a href="#code">代码问题</a></li>
+<li><a href="#interest">兴趣爱好</a></li>
+</ol>
+<a id="more"></a>
+<p>####<a name="common">常用问题</a>####</p>
+<ul>
+<li>你昨天/这周都有学什么？</li>
+<li>是什么激发让你对写代码感兴趣(你喜欢写代码的动力是什么？)？</li>
+<li>列举一项你最近(在项目)中碰到的挑战，你是如何解决的？</li>
+<li>当你在建一个web应用程序或者网站时候，你会考虑哪些方面(UI，安全，性能，SEO，可维护性还是技术等)</li>
+<li>说说你所喜欢的开发环境(OS，IDE…)？</li>
+<li>如果你有五个不同的样式表，你怎么样最好地整合应用到一个页面上去呢？</li>
+<li>你能描述下渐进增强和优雅降级的区别么？</li>
+<li>怎么对一个站点（页面）资源进行优化处理？</li>
+<li>浏览器从同一个站点一次能下载多少资源？（例外情况） （不清楚TODO）<br>How many resources will a browser download from a given domain at a time?<br>What are the exceptions?</li>
+<li>说出三条方法去减少页面加载时间(感知到的或者真是的加载时间)<br>Name 3 ways to decrease page load (perceived or actual load time).</li>
+<li>如果你在一个项目中别人都使用tabs而你使用space，你会怎么做？</li>
+<li>描述下你怎么创建一个简单的幻灯片播放页面？<br>Describe how you would create a simple slideshow page.</li>
+<li>如果你今年能学习掌握一门技术(语言)，你觉得会是什么呢？</li>
+<li>解释标准和标准机构的重要性？<br>Explain the importance of standards and standards bodies.</li>
+<li>什么是文档样式闪烁(Flash of Unstyled Content)？如何避免</li>
+<li>解释ARIA和screenreaders，怎么让一个网站可理解？<br>Explain what ARIA and screenreaders are, and how to make a website accessible.</li>
+<li>说下相比于JavaScript动画实现，CSS的动画实现有什么优点和缺点？</li>
+<li>CORS是什么？它解决什么问题？<br>What does CORS stand for and what issue does it address?<br>###<a name="html">HTML问题</a>###</li>
+<li><code>doctype</code>的作用？</li>
+<li>标准模式和兼容模式的差异？</li>
+<li>HTML和XHTML的差异？</li>
+<li>像<code>application/xhtml+xml</code>这样的服务页面会有什么问题么？</li>
+<li>你怎么实现一个页面的多种语言(切换)?</li>
+<li>哪些方面的东西是你在设计和开发多语言网站时必须要小心谨慎考虑到的？</li>
+<li>哪些<code>data-</code>的属性是有效的？<br>What are data- attributes good for?</li>
+<li>HTML5作为一个开放的Web平台，HTML5的构建块是什么？<br>Consider HTML5 as an open web platform. What are the building blocks of HTML5?</li>
+<li>描述下<code>cookie</code> <code>sessionStorage</code> <code>localStorage</code>的区别？</li>
+<li>描述下<code>&lt;script&gt;</code> <code>&lt;script  async&gt;</code> <code>&lt;script defer&gt;</code>的区别？</li>
+<li>为什么一般总是把CSS <code>link</code>放置于<code>&lt;head&gt;&lt;/head&gt;</code>，而把script放在<code>&lt;/body&gt;</code>前？有什么例外么</li>
+<li>什么是渐进渲染？</li>
+<li>你之前使用过什么不同的HTML模板语言么？<br>Have you used different HTML templating languages before?<br>###<a name="css">CSS问题</a>###</li>
+<li>CSS中class和ID的区别？</li>
+<li>CSS中<code>resetting</code>和<code>normalizing</code>的区别？你会选哪个，为什么？</li>
+<li>描述下<code>float</code>和它的作用原理</li>
+<li>描述下z-index以及层叠上下文是怎么形成的？</li>
+<li>描述下BFC(Block Formatting Context)和作用原理？</li>
+<li>有哪些清除技术(?)，它们分别适用于什么上下文环境？<br>What are the various clearing techniques and which is appropriate for what context?</li>
+<li>说下CSS Sprites（CSS压缩）,怎么在一个页面或者站点上实现？</li>
+<li>你最喜欢的图片替换技术，你是在什么时候用的？</li>
+<li>你怎么着手处理特定的浏览器样式问题（浏览器兼容）？</li>
+<li>你是怎么样让你你的页面在一些不支持一些特性的浏览器中跑起来的？用什么样的技术/处理程序去实现？<br>How do you serve your pages for feature-constrained browsers?<br>What techniques/processes do you use?</li>
+<li>有哪些方法在视觉上隐藏内容元素（以及让其仅对screener reader有效？）<br>What are the different ways to visually hide content (and make it available only for screen readers)?</li>
+<li>你用过栅格系统么，如果用过，喜欢哪一种呢？</li>
+<li>你用过/实践过media queries或者mobile specific布局/CSS?<br>Have you used or implemented media queries or mobile specific layouts/CSS?</li>
+<li>熟悉SVG么？</li>
+<li>怎么优化web页面的打印？</li>
+<li>一些书写高效CSS的”gotchas”是什么？<br>What are some of the “gotchas” for writing efficient CSS?</li>
+<li>CSS预处理器的优点与缺点？说下你用过的喜欢的和不喜欢的预处理器。</li>
+<li>你怎么实现非标准字体的网页设计排版？</li>
+<li>解释下浏览器是怎么确定元素和CSS选择器匹配起来的？</li>
+<li>说一下伪元素与其对应的作用功能？</li>
+<li>说一下你对盒模型的理解以及你怎么让浏览器通过CSS在不同的盒模型下渲染你的布局？<br>how you would tell the browser in CSS to render your layout in different box models.</li>
+<li><code>box-sizing:border-box</code>是什么？它的好处是什么？</li>
+<li>列举下你记得的display属性？</li>
+<li><code>inline</code>和<code>inline-block</code>的区别？</li>
+<li><code>relative</code> <code>fixed</code> <code>absolute</code>以及<code>static</code>来定位元素的区别？</li>
+<li>CSS中的<code>C</code>是层叠的意思，对于被指定样式的优先级是怎么确定的呢？（举一些例子）？你是怎么样很好地利用这个机制？</li>
+<li>在本地环境或者生产环境中，你用过哪些CSS框架？你是怎么改进和优化的呢？<br>What existing CSS frameworks have you used locally, or in production? How would you change/improve them?</li>
+<li>你玩过新的CSS Flexbox或是Grid specs?</li>
+<li>响应式设计(responsive design)和自适应设计(adaptive design)的区别？</li>
+<li>你做过retina graphic（视网膜图像）的处理么？是的话，你是用什么技术的呢？</li>
+<li>你在什么情况下使用<code>translate()</code>代替<code>absolute positioning</code>绝对定位，反之，为什么？<br>###<a name="js">JS问题</a>###</li>
+<li>解释下事件委托？</li>
+<li>解释下<code>this</code>在JavaScript中怎么工作的（机制）？</li>
+<li>解释下<code>prototypal inheritance</code>原型机城的工作原理？</li>
+<li>对于AMD和CommonJS的比较和看法？</li>
+<li>解释下以下代码为什么不能作为IIFE(匿名函数自调用)运行<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">function foo&#123;&#125;();</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>你需要怎么改使之成为一个IIFE？</p>
+<ul>
+<li><code>null</code> <code>undefined</code> <code>undeclared</code>这些变量有什么区别？怎么这些检查变量类型？</li>
+<li>什么是闭包？你是怎么使用的，为什么使用?</li>
+<li>匿名函数典型的应用案例？</li>
+<li>你是怎么组织你的代码的？（模块化还是类型继承）</li>
+<li>宿主对象(host object)和本地对象(native object)的区别</li>
+<li><p>以下代码有什么区别？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">funciton Person()&#123;&#125;;</div><div class="line">var person = Person();</div><div class="line">var person = new Person();</div></pre></td></tr></table></figure>
+</li>
+<li><p><code>.call</code>和<code>.apply</code>区别？</p>
+</li>
+<li>解释下<code>Function.prototype.bind</code>?</li>
+<li>什么时候使用<code>document.write()</code>?</li>
+<li><code>feature detection</code> <code>feature inference</code>以及<code>UA String</code>(用户代理)的区别？<br>What’s the difference between feature detection, feature inference, and using the UA string?</li>
+<li>尽你所知地解释下AJAX？</li>
+<li>解释下JSONP的工作原理（为什么它不算是AJAX）</li>
+<li>用过JavaScript Template（模板）么？如果用过，哪个库？</li>
+<li>解释下<code>hosting</code>?</li>
+<li>描述下事件冒泡(event bubbling)?</li>
+<li><code>attribute</code>和<code>property</code>的区别？</li>
+<li>为什么说扩展内置JavaScript对象(built-in Javascript Object)不是个好主意？</li>
+<li><code>load</code>和<code>document ready</code>事件区别？</li>
+<li><code>==</code>和<code>===</code>的区别？</li>
+<li>解释下关于JavaScript的同源策略(same-origin policy)?</li>
+<li><p>实现如下代码？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">depulicate([1,2,3,4,5]); //[1,2,3,4,5,1,2,3,4,5]</div></pre></td></tr></table></figure>
+</li>
+<li><p>为什么称之为Ternary expression(三元表达式/三目运算符？)，<code>Ternary</code>指什么？</p>
+</li>
+<li>什么是<code>use strict</code>(使用严格模式)？它的优点和缺点？</li>
+<li>for()循环100次，3的倍数输出<code>fizz</code>，5的倍数输出<code>buzz</code>，3和5的倍数输出<code>fizzbuzz</code>?</li>
+<li>为什么一般来说好的做法是使全局作用域保持原样而不去改变之。<br>Why is it, in general, a good idea to leave the global scope of a website as-is and never touch it?</li>
+<li>为什么你会使用类似于<code>load</code>(功能)的事件？它会有什么缺点么？你知道什么其他替代方法么，为什么你用那些替代方法？</li>
+<li>解释下什么是单页面应用(a single page app)以及怎么进行SEO优化（make one SEO-friendly）?</li>
+<li>使用<a href="http://www.zhangxinxu.com/wordpress/2014/02/es6-javascript-promise-%E6%84%9F%E6%80%A7%E8%AE%A4%E7%9F%A5/" target="_blank" rel="external">Promises</a>以及/或者他们的<a href="http://blog.csdn.net/wang16510/article/details/8960312" target="_blank" rel="external">polyfills</a>的经验程度？（新技术么，完全没了解）<br>What is the extent of your experience with Promises and/or their polyfills?</li>
+<li>使用<code>Promises</code>代替<code>callbacks</code>的利弊(优缺点)？</li>
+<li>编写一种(其他)语言编译成JavaScript的写法(writing JavaScript code in a language that compiles to JavaScript)有什么优点和缺点？</li>
+<li>你用什么技术和工具调试JavaScript代码？</li>
+<li>你使用哪种语言构造器(language constructions)来重复遍历对象属性和数组对象？</li>
+<li>解释下<a href="http://stackoverflow.com/questions/3200211/what-does-immutable-mean" target="_blank" rel="external">mutable和immutable对象</a>的区别<br> 举一个JavaScript中immutable对象的例子？immutability的利弊？怎么用代码实现immutability?</li>
+<li>解释下同步方法(synchronous function)和异步方法(asynchronous function)的区别？</li>
+<li>什么是<a href="http://www.ruanyifeng.com/blog/2013/10/event_loop.html" target="_blank" rel="external">event loop</a>?<br>  <code>call stack</code>和<code>take queue</code>的区别？</li>
+</ul>
+<p>###<a name="test">测试问题</a>###</p>
+<ul>
+<li>测试代码的利弊是什么？</li>
+<li>你用什么工具来进行代码功能测试？</li>
+<li>单元测试和功能/集成测试的区别？</li>
+<li>代码风格检查工具(a coding style linting tool)的目的/作用？<br>###<a name="performance">性能问题</a>###</li>
+<li>你用什么工具去发现检查代码中的性能缺陷？</li>
+<li>有哪些方法去优化网页的<a href="http://www.html5rocks.com/zh/tutorials/speed/scrolling/" target="_blank" rel="external">滚动性能</a>（website’s scrolling performance）?</li>
+<li>解释下<code>layout</code>  <code>painting</code>以及<code>compositing</code>的区别？</li>
+</ul>
+<p>###<a name="network">网络问题</a>###</p>
+<ul>
+<li>一般来说，为什么多域名指向(服务)一个站点会更好？<br>Traditionally, why has it been better to serve site assets from multiple domains?</li>
+<li>尽你所知解释下当你在(浏览器)输入域名到加载，到页面呈现的整个过程？</li>
+<li><code>Long-Polling长轮询</code> <code>WebSocket</code>以及<code>Server-Sent Events</code>的区别？</li>
+<li>解释下下列请求和返回头信息<blockquote>
+<p>Diff. between Expires, Date, Age and If-Modified-…<br>Do Not Track<br>Cache-Control<br>Transfer-Encoding<br>ETag<br>X-Frame-Options</p>
+</blockquote>
+</li>
+<li>什么是HTTP actions( HTTP 行为？)？列出你所知道的所有HTTP actions并解释？<br>###<a name="code">代码问题</a>###<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">// Q1: foo的值</div><div class="line">var foo = 10 + &apos;20&apos;;</div><div class="line">// Q2: 如何实现如下函数？</div><div class="line">add(2,5);//7</div><div class="line">add(2)(5);// 7</div><div class="line">// Q3: 下面字符串返回值？</div><div class="line">&quot;i&apos;m a lasagna hog&quot;.split(&quot;&quot;).reverse().join(&quot;&quot;);</div><div class="line">// Q4: window.foo值？</div><div class="line">(window.foo || (window.foo = &quot;bar&quot;));</div><div class="line">// Q5: 下面两个alert()结果</div><div class="line"> var foo = &quot;Hello&quot;;</div><div class="line">(function() &#123;</div><div class="line">  var bar = &quot; World&quot;;</div><div class="line">  alert(foo + bar);</div><div class="line">&#125;)();</div><div class="line">alert(foo + bar);</div><div class="line">// Q6: foo.length值</div><div class="line">var foo = [];</div><div class="line">foo.push(1);</div><div class="line">foo.push(2);</div><div class="line">// Q7: foo.x值</div><div class="line">var foo = &#123;n: 1&#125;;</div><div class="line">var bar = foo;</div><div class="line">foo.x = foo = &#123;n: 2&#125;;</div><div class="line">// Q8:下列代码输出</div><div class="line">console.log(&apos;one&apos;);</div><div class="line">setTimeout(function() &#123;</div><div class="line">  console.log(&apos;two&apos;);</div><div class="line">&#125;, 0);</div><div class="line">console.log(&apos;three&apos;);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>###<a name="interest">Fun兴趣问题</a>###</p>
+<ul>
+<li>最近有在做什么cool的项目么？</li>
+<li>你手头喜欢你在用的开发工具中的那些点呢？</li>
+<li>有宠物计划么？哪种类型？</li>
+<li>喜欢IE的那个特性？</li>
+<li>喜欢咖啡么？<br>###贡献者###<br>This document started in 2009 as a collaboration of @paul_irish @bentruyman @cowboy @ajpiano@SlexAxton @boazsender @miketaylr @vladikoff @gf3 @jon_neal @sambreed and @iansym.</li>
+</ul>
+<p>It has since received contributions from over 100 developers.</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;希望自己能多去阅读英文文档，提高英文文档阅读能力。&lt;/p&gt;
+&lt;p&gt;翻译自&lt;a href=&quot;https://github.com/h5bp/Front-end-Developer-Interview-Questions&quot;&gt;Front-end-Developer-Interview-Questions&lt;/a&gt;&lt;br&gt;这份文件包含一系列用于面试审查求职者(候选人)的前端面试问题。这并不推荐把每个问题都问在同一个求职者(因为这会花几个小时的时间)。从列表中抽取一些问题能够帮助你审查你需要求职者具备的一些技能。&lt;br&gt;注: 牢记这里的许多问题答案是开放式的，能够引导兴趣性探讨，相比于直接的答案这些东西能够使你更加了解求职者的相关信息。&lt;/p&gt;
+&lt;p&gt;###内容表###&lt;/p&gt;
+&lt;p&gt;&lt;hr/&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;#common&quot;&gt;常用问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#html&quot;&gt;HTML问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#css&quot;&gt;CSS问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#js&quot;&gt;JS问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#test&quot;&gt;测试问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#performance&quot;&gt;性能问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#network&quot;&gt;网络问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#code&quot;&gt;代码问题&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;#interest&quot;&gt;兴趣爱好&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
+    
+      <category term="技能" scheme="http://yoursite.com/tags/%E6%8A%80%E8%83%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript面向对象</title>
+    <link href="http://yoursite.com/2015/11/22/javascript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2015/11/22/javascript面向对象/</id>
+    <published>2015-11-22T13:36:59.000Z</published>
+    <updated>2015-11-22T13:38:51.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>《JavaScript高级程序设计 第三版》 学习笔记<br>Object-Oriented 有一个标志，就是都有类的概念，通过类来创建多个具有相同属性和方法的对象。而对于 EMCAScript中没有类的概念，ECMA-262把对象定义为<br>”无序属性的集合，该属性可以包含任何基本值，对象或者函数。“</p>
+<p><strong>原型模式</strong></p>
+<ul>
+<li>每个函数都有一个prototype(原型)属性</li>
+<li>这个属性都有一个指针，指向一个对象</li>
+<li>这个对象包含由特定类型所有实例共享的属性和方法</li>
+<li>使用原型的好处是 可以让所有对象实例共享它包含的方法和属性</li>
+</ul>
+<p>通过in操作符和hasOwnProperty来判断给定属性是来自于原型还是实例<br>in- true 代表属性在对象中存在 来自实例或者来自原型<br>hasOwnProperty- true代表属性来自于实例 是实例属性<br><a id="more"></a></p>
+<p>###继承###<br>ECMAScript中只支持实现继承，而且是通过原型链的方式来实现的</p>
+<p>理解原型对象<br>是这样的<br>当我们创建一个新函数的时候，会根据一组特定的规则为该函数创建一个<code>prototype</code>属性，这个<code>prototype</code>属性指向函数的原型对象。在默认情况下，原型对象都会自动获得一个<code>constructor</code>(构造函数)属性，这个属性包含包含一个指向prototype属性所在函数的指针。<br>所以关系就是<br>比如有一个Person的对象<br>Person.prototype  =&gt; 原型对象<br>原型对象.constructor =&gt; Person<br>即 Person.prototype.constructor == Person<br>见下图关系<br><img src="http://images.cnitblog.com/blog/362290/201305/20213500-68d3f70ba5fe43729a27891e0c2fbba5.png" alt=""></p>
+<p>将原型链作为实现继承的主要方法，基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。<br>demo代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function SuperType()&#123;</div><div class="line">    this.property = true;</div><div class="line">&#125;</div><div class="line">SuperType.prototype.getSuperValue = function()&#123;</div><div class="line">    return this.property;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function SubType()&#123;</div><div class="line">    this.subproperty = false;</div><div class="line">&#125;</div><div class="line">//SubType.prototype = new SuperType();</div><div class="line">SubType.prototype.getSubValue = function()&#123;</div><div class="line">    return this.subproperty;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 继承SuperType 就指向了SuperType的原型对象了</div><div class="line">SubType.prototype = new SuperType();</div><div class="line">var instance = new SubType();</div><div class="line">alert(instance.getSuperValue()); // true</div><div class="line">alert(instance.property); //true</div></pre></td></tr></table></figure></p>
+<iframe width="100%" height="300" src="http://jsfiddle.net/JimWang/dmkLmnhL/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<blockquote>
+<p>如果把SubType中的subproperty改成property会是怎么样呢 都会变成false<br>demo图解</p>
+</blockquote>
+<p><img src="http://images.cnblogs.com/cnblogs_com/moveofgod/201209/201209211612235219.png" alt=""></p>
+<p>备注：<br>之所以 SuperType中property属性会出现在，SubType.prototype中，是因为property是一个实例属性，而SubType.prototype是SuperType的一个实例对象，所以property属性会出现在SubType.prototype中，但是这个property相对于instance(SubType的一个实例)却又是一个原型属性，所以如果将subproperty换成property的话，在return this.property时，优先找到实例属性中有这么一个属性，就会返回实例属性。<br>此外这里SubType.prototype.constructor 被重写了，instance.constructor指向了SuperType 看图<br>instance.getSuperValue() 这个搜索的过程<br>1) 搜索实例<br>2) 搜索SubType.prototype<br>3) 搜索SuperType.prototype<br>搜索总是一步步向前到原型链末端停止(Object)</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;《JavaScript高级程序设计 第三版》 学习笔记&lt;br&gt;Object-Oriented 有一个标志，就是都有类的概念，通过类来创建多个具有相同属性和方法的对象。而对于 EMCAScript中没有类的概念，ECMA-262把对象定义为&lt;br&gt;”无序属性的集合，该属性可以包含任何基本值，对象或者函数。“&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;原型模式&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;每个函数都有一个prototype(原型)属性&lt;/li&gt;
+&lt;li&gt;这个属性都有一个指针，指向一个对象&lt;/li&gt;
+&lt;li&gt;这个对象包含由特定类型所有实例共享的属性和方法&lt;/li&gt;
+&lt;li&gt;使用原型的好处是 可以让所有对象实例共享它包含的方法和属性&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;通过in操作符和hasOwnProperty来判断给定属性是来自于原型还是实例&lt;br&gt;in- true 代表属性在对象中存在 来自实例或者来自原型&lt;br&gt;hasOwnProperty- true代表属性来自于实例 是实例属性&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="对象" scheme="http://yoursite.com/tags/%E5%AF%B9%E8%B1%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>javascript事件</title>
+    <link href="http://yoursite.com/2015/11/22/javascript%E4%BA%8B%E4%BB%B6/"/>
+    <id>http://yoursite.com/2015/11/22/javascript事件/</id>
+    <published>2015-11-22T13:34:23.000Z</published>
+    <updated>2015-11-22T13:35:10.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>JavaScript与HTML之间的交互式通过<strong>事件</strong>实现的。</p>
+<p>###事件流###</p>
+<ol>
+<li>概念<br>事件流描述的是从页面中接收事件的顺序</li>
+<li>过程<br>2.1 事件冒泡和事件捕获<br><img src="http://images.cnitblog.com/blog/550698/201307/23172518-591189f1bff54539b4039e4de975659c.png" alt=""><br>如图，事件冒泡是IE事件流，即事件开始时由最具体的元素接收，然后逐级向上传播较为不具体的节点(document)。而事件捕获由NetScape提出，恰好相反。<br>一个简单的例子，就是一张纸上画着好几个同心圆，你用手指指向圆心处，你所在指向的圆心是都是那些圆的圆心。</li>
+</ol>
+<p>“DOM2级事件”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段、事件冒泡阶段。<br>2.2 阻止事件继续传递的方法</p>
+<ul>
+<li>event.stopPropagation()</li>
+<li>删除相应元素，因为目标元素在文档中是事件冒泡的前提</li>
+</ul>
+<a id="more"></a>
+<p>###事件处理程序###</p>
+<ol>
+<li><p>概念<br>事件是用户或者浏览器自身执行的某种动作，如click,load,mouseover等，而去响应这些事件的函数称之为<strong>事件处理程序(事件侦听器)</strong>,事件处理程序的名字以“on”开头，如onclick,onload等</p>
+</li>
+<li><p>有哪几种事件处理程序类型<br>2.1 HTML事件处理程序</p>
+<pre><code>&lt;div onclick=&quot;alert(&apos;hello world&apos;)&quot;&gt;hello world&lt;/div&gt;
+&lt;div onclick=&quot;hi()&quot;&gt;simple life&lt;/div&gt;
+</code></pre><p>如这样直接写在HTML代码中的<br>2.2 DOM0级事件处理程序<br>通过JavaScript指定方法处理程序的传统方式，将一个函数赋值给一个事件处理程序属性。简单，跨浏览器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var btn = document.getElementById(&quot;myBtn&quot;);</div><div class="line">btn.onclick = function()&#123;</div><div class="line">    alert(&quot;hi world&quot;);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这个也比较常见<br>2.3 DOM2级事件处理程序<br>    addEventListener/removeEventListener<br>    对于IE，attachEvent/detachEvent</p>
+<pre><code><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var btn = document.getElementById(&quot;myBtn&quot;);</div><div class="line">        </div><div class="line">       var handle = function()&#123;</div><div class="line">    alert(this.id);</div><div class="line">&#125;</div><div class="line">btn.addEventListener(&quot;click&quot;,function()&#123;</div><div class="line">    alert(this.id+&quot;Hi world&quot;);</div><div class="line">&#125;,false);</div><div class="line">        // 没效果 function并不一致，统一写出来handle</div><div class="line">btn.removeEventListener(&quot;click&quot;,function()&#123;</div><div class="line">    alert(this.id+&quot;Hi world&quot;);</div><div class="line">&#125;,false);</div></pre></td></tr></table></figure>
+</code></pre><blockquote>
+<p>注意两点1 第三个参数false,表示事件会在冒泡阶段触发；为true则表示事件会在捕获阶段触发，这个和我们什么时候阻止以及事件委托有关系。2 上述removeEventListener事件没起作用因为两者的function不一样，所以要将这个function单独写出来。</p>
+</blockquote>
+<p> 我们在做兼容性处理时候，可以重新定义一个函数做判断兼容上述情况的事件处理程序<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var EventUtil = &#123;</div><div class="line">    addHandler:function(element,type,handler)&#123;&#125;,</div><div class="line">    removeHandler:function(element,type,handler)&#123;&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>###事件对象Event###</p>
+<ol>
+<li>概念<br>在触发DOM上某个事件时，会产生一个事件对象event，这个对象包含着所有与事件有关的信息。</li>
+<li>DOM中和IE中的事件对象<br><a href="http://www.w3school.com.cn/jsref/dom_obj_event.asp" target="_blank" rel="external">参见w3cschool-DOM Event对象</a><br>常见的几个注意下<ul>
+<li>currentTarget 表示其事件处理程序当前正在处理事件的那个元素</li>
+<li>target 表示事件的目标</li>
+<li>preventDefault() 取消事件的默认行为(cancelable = true)</li>
+<li>stopPropagation() 取消事件进一步捕获或者冒泡(bubbles=true)<blockquote>
+<p>注意：e.target e.currentTarget this在哪些情况下是一样的<br>对于IE中的事件对象</p>
+</blockquote>
+</li>
+<li>cancelBubble 取消事件冒泡 相当于DOM中的stopPropagation()</li>
+<li>returnValue 取消事件默认行为(默认true 设置false取消默认行为)</li>
+<li>srcElement 事件目标 与DOM中的target一样<blockquote>
+<p>IE中在使用DOM0级方法处理程序时，event对象作为window对象的一个属性存在</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ol>
+<p>###常用事件类型###</p>
+<ul>
+<li>UI事件 load、unload、resize、scroll…</li>
+<li>焦点事件 </li>
+<li>鼠标事件</li>
+<li>滚轮事件 mousewheel</li>
+<li>文本事件 </li>
+<li>键盘事件 keydown(任意字符) keypress(字符键触发) textInput(可编辑区)的区别</li>
+<li>合成事件</li>
+<li>变动事件 底层DOM结构发生变化触发</li>
+<li>变动事件名称</li>
+</ul>
+<p>一些HTML5事件<br>contextmenu/DOMContentLoaded/readystatechange…</p>
+<p>###内存和性能###<br>1 为什么<br>在JavaScript中，添加到页面上的事件处理程序数量将直接影响页面整体运行性能。原因有：</p>
+<ol>
+<li>每个函数都是对象，都会占内存；内存中对象越多，性能就越差；</li>
+<li>DOM的访问次数</li>
+</ol>
+<p>2 解决方案</p>
+<ol>
+<li>事件委托<br> 利用事件委托来处理“事件处理程序过多”的问题，如下代码 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">    &lt;ul id=&quot;list&quot;&gt;</div><div class="line">    &lt;li id=&quot;apple&quot;&gt;apple&lt;/li&gt;</div><div class="line">    &lt;li id=&quot;ms&quot;&gt;ms&lt;/li&gt;</div><div class="line">    &lt;li id=&quot;google&quot;&gt;google&lt;/li&gt;</div><div class="line">&lt;/ul&gt;</div><div class="line"></div><div class="line">    var  list = document.getElementById(&quot;list&quot;);</div><div class="line"></div><div class="line">    list.onclick = function(event)&#123;</div><div class="line">        var target = event.target;</div><div class="line">        switch(target.id)&#123;</div><div class="line">            case &quot;apple&quot;:</div><div class="line">                alert(&quot;apple event&quot;);break;</div><div class="line">            case &quot;ms&quot;:</div><div class="line">                alert(&quot;ms event&quot;);break;</div><div class="line">            case &quot;google&quot;:</div><div class="line">                alert(&quot;google event&quot;);break;</div><div class="line">        &#125;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这个例子中不用针对每个li分别写对应的事件处理程序，只需在DOM树种尽量最高的层次(这里是ul)添加一个事件处理程序。<br>事件委托是利用事件冒泡来实现的。<br>如果给其中li添加如下事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var li = document.getElementById(&quot;apple&quot;);</div><div class="line">    li.onclick = function(event)&#123;</div><div class="line">        event.stopPropagation();</div><div class="line">    &#125;</div></pre></td></tr></table></figure></p>
+<p>点击apple选项便看不到效果，事件被阻止继续传播。</p>
+<ol>
+<li><p>对于不需要的事件及时移除事件处理程序</p>
+<p> btn.onclick = null;</p>
+</li>
+<li><p>模拟事件<br>应用场景：定时做一些事件处理；侦听某个变量发生变化时候触发其他元素的一些事件等。<br><code>createEvent()</code></p>
+</li>
+</ol>
+<p>###小结###</p>
+<ul>
+<li>知道两种事件流的过程</li>
+<li>DOM和IE event对象</li>
+<li>几种事件处理程序</li>
+<li>模拟事件</li>
+<li>选择恰当的事件绑定优化内存和性能</li>
+</ul>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;JavaScript与HTML之间的交互式通过&lt;strong&gt;事件&lt;/strong&gt;实现的。&lt;/p&gt;
+&lt;p&gt;###事件流###&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;概念&lt;br&gt;事件流描述的是从页面中接收事件的顺序&lt;/li&gt;
+&lt;li&gt;过程&lt;br&gt;2.1 事件冒泡和事件捕获&lt;br&gt;&lt;img src=&quot;http://images.cnitblog.com/blog/550698/201307/23172518-591189f1bff54539b4039e4de975659c.png&quot; alt=&quot;&quot;&gt;&lt;br&gt;如图，事件冒泡是IE事件流，即事件开始时由最具体的元素接收，然后逐级向上传播较为不具体的节点(document)。而事件捕获由NetScape提出，恰好相反。&lt;br&gt;一个简单的例子，就是一张纸上画着好几个同心圆，你用手指指向圆心处，你所在指向的圆心是都是那些圆的圆心。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;“DOM2级事件”规定的事件流包括三个阶段：事件捕获阶段、处于目标阶段、事件冒泡阶段。&lt;br&gt;2.2 阻止事件继续传递的方法&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;event.stopPropagation()&lt;/li&gt;
+&lt;li&gt;删除相应元素，因为目标元素在文档中是事件冒泡的前提&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="事件" scheme="http://yoursite.com/tags/%E4%BA%8B%E4%BB%B6/"/>
+    
+  </entry>
+  
+</feed>
