@@ -1,0 +1,33 @@
+<!DOCTYPE html><html lang="zh-Hans"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> react学习之组件基础 · lifelover</title><meta name="description" content="react学习之组件基础 - jingxiao"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="lifelover"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/lifesimple1991" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/LeoWang1991" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">react学习之组件基础</h1><div class="post-info">Sep 28, 2016</div><div class="post-content"><p>学习参考 <a href="http://www.imooc.com/learn/504" target="_blank" rel="external">慕课网-react入门</a><br>讲的比较好</p>
+<h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><ol>
+<li>React并不是一个完整的MVC MVVM框架，只是其中的V部分</li>
+<li>React组件化构建UI的思路值得学习</li>
+<li>React的特点在于“轻量”,适合复杂场景的高性能开发,组件库的重用和组件的组合</li>
+<li>…</li>
+</ol>
+<a id="more"></a>
+<h3 id="React-Components"><a href="#React-Components" class="headerlink" title="React Components"></a>React Components</h3><p>React组件声明周期如下<br><img src="http://img.mukewang.com/57e88a340001b6ae12800720.jpg" alt=""></p>
+<ol>
+<li>Mounted: React.renderComponent() react组件被render解析生成对应DOM节点并插入浏览器的DOM结构的一个过程</li>
+<li>Update: setState()/setProps() =&gt; render() react会将组件的当前state和最近state进行对比，如果发生改变影响DOM结构时候，则被重新render的过程</li>
+<li>Unmounted: 一个mounted的react components对应DOM节点被从DOM结构中移除的一个过程</li>
+</ol>
+<p><em>每个状态React都封装了相应地hook函数</em><br><img src="http://img.mukewang.com/57ebc0130001668212800720.jpg" alt=""></p>
+<ol>
+<li><p>Mounting过程:<br> getDefaultProps() =&gt; getInitialState() =&gt; componentWillMount() =&gt; render() =&gt; componentsDidMount()</p>
+</li>
+<li><p>Updating过程:<br> componentWillReceiveProps() 当mounted component将要接受一个新的props时候触发 =&gt; shouldComponentUpdate() 判断当前props是否改变 改变则更新<br> =&gt; componentWillUpdate() =&gt; render() =&gt; componentDidUpdate();</p>
+</li>
+<li><p>Unmounting过程:<br> componentWillUnmount();</p>
+</li>
+</ol>
+<h3 id="components的state和props的区别？"><a href="#components的state和props的区别？" class="headerlink" title="components的state和props的区别？"></a>components的state和props的区别？</h3><p>props在写组件的时候指定，一般情况下不会变；<br>state一般被认为是私属于当前组件，可以改变。</p>
+<h3 id="component事件绑定"><a href="#component事件绑定" class="headerlink" title="component事件绑定"></a>component事件绑定</h3><p>两个学习demo<br>jsx基础</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/lifesimple/76yv5f6u/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>component事件绑定</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/lifesimple/y8rb33tv/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<h3 id="注意一点，组件名称大写开头"><a href="#注意一点，组件名称大写开头" class="headerlink" title="注意一点，组件名称大写开头"></a>注意一点，组件名称<em>大写开头</em></h3></div></article></div></section><footer><div class="paginator"><a href="/2016/09/27/多个git账号配置管理/" class="next">NEXT</a></div><div class="copyright"><p>© 2016 <a href="http://yoursite.com">jingxiao</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>

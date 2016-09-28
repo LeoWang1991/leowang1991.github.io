@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-27T15:00:42.000Z</updated>
+  <updated>2016-09-28T14:45:08.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,14 +16,74 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>react学习之组件基础</title>
+    <link href="http://yoursite.com/2016/09/28/react%E5%AD%A6%E4%B9%A0%E4%B9%8B%E7%BB%84%E4%BB%B6%E5%9F%BA%E7%A1%80/"/>
+    <id>http://yoursite.com/2016/09/28/react学习之组件基础/</id>
+    <published>2016-09-28T14:22:41.000Z</published>
+    <updated>2016-09-28T14:45:08.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>学习参考 <a href="http://www.imooc.com/learn/504" target="_blank" rel="external">慕课网-react入门</a><br>讲的比较好</p>
+<h3 id="React"><a href="#React" class="headerlink" title="React"></a>React</h3><ol>
+<li>React并不是一个完整的MVC MVVM框架，只是其中的V部分</li>
+<li>React组件化构建UI的思路值得学习</li>
+<li>React的特点在于“轻量”,适合复杂场景的高性能开发,组件库的重用和组件的组合</li>
+<li>…</li>
+</ol>
+<a id="more"></a>
+<h3 id="React-Components"><a href="#React-Components" class="headerlink" title="React Components"></a>React Components</h3><p>React组件声明周期如下<br><img src="http://img.mukewang.com/57e88a340001b6ae12800720.jpg" alt=""></p>
+<ol>
+<li>Mounted: React.renderComponent() react组件被render解析生成对应DOM节点并插入浏览器的DOM结构的一个过程</li>
+<li>Update: setState()/setProps() =&gt; render() react会将组件的当前state和最近state进行对比，如果发生改变影响DOM结构时候，则被重新render的过程</li>
+<li>Unmounted: 一个mounted的react components对应DOM节点被从DOM结构中移除的一个过程</li>
+</ol>
+<p><em>每个状态React都封装了相应地hook函数</em><br><img src="http://img.mukewang.com/57ebc0130001668212800720.jpg" alt=""></p>
+<ol>
+<li><p>Mounting过程:<br> getDefaultProps() =&gt; getInitialState() =&gt; componentWillMount() =&gt; render() =&gt; componentsDidMount()</p>
+</li>
+<li><p>Updating过程:<br> componentWillReceiveProps() 当mounted component将要接受一个新的props时候触发 =&gt; shouldComponentUpdate() 判断当前props是否改变 改变则更新<br> =&gt; componentWillUpdate() =&gt; render() =&gt; componentDidUpdate();</p>
+</li>
+<li><p>Unmounting过程:<br> componentWillUnmount();</p>
+</li>
+</ol>
+<h3 id="components的state和props的区别？"><a href="#components的state和props的区别？" class="headerlink" title="components的state和props的区别？"></a>components的state和props的区别？</h3><p>props在写组件的时候指定，一般情况下不会变；<br>state一般被认为是私属于当前组件，可以改变。</p>
+<h3 id="component事件绑定"><a href="#component事件绑定" class="headerlink" title="component事件绑定"></a>component事件绑定</h3><p>两个学习demo<br>jsx基础</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/lifesimple/76yv5f6u/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+<p>component事件绑定</p>
+<iframe width="100%" height="300" src="//jsfiddle.net/lifesimple/y8rb33tv/embedded/js,html,css,result/dark/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
+
+
+
+<h3 id="注意一点，组件名称大写开头"><a href="#注意一点，组件名称大写开头" class="headerlink" title="注意一点，组件名称大写开头"></a>注意一点，组件名称<em>大写开头</em></h3>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;学习参考 &lt;a href=&quot;http://www.imooc.com/learn/504&quot;&gt;慕课网-react入门&lt;/a&gt;&lt;br&gt;讲的比较好&lt;/p&gt;
+&lt;h3 id=&quot;React&quot;&gt;&lt;a href=&quot;#React&quot; class=&quot;headerlink&quot; title=&quot;React&quot;&gt;&lt;/a&gt;React&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;React并不是一个完整的MVC MVVM框架，只是其中的V部分&lt;/li&gt;
+&lt;li&gt;React组件化构建UI的思路值得学习&lt;/li&gt;
+&lt;li&gt;React的特点在于“轻量”,适合复杂场景的高性能开发,组件库的重用和组件的组合&lt;/li&gt;
+&lt;li&gt;…&lt;/li&gt;
+&lt;/ol&gt;
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="react" scheme="http://yoursite.com/tags/react/"/>
+    
+  </entry>
+  
+  <entry>
     <title>多个git账号配置管理</title>
     <link href="http://yoursite.com/2016/09/27/%E5%A4%9A%E4%B8%AAgit%E8%B4%A6%E5%8F%B7%E9%85%8D%E7%BD%AE%E7%AE%A1%E7%90%86/"/>
     <id>http://yoursite.com/2016/09/27/多个git账号配置管理/</id>
     <published>2016-09-27T12:42:52.000Z</published>
-    <updated>2016-09-27T15:00:42.000Z</updated>
+    <updated>2016-09-27T15:01:36.000Z</updated>
     
     <content type="html"><![CDATA[<p>多个git账号的配置和使用，如果你原来有一个git账号(比如用于github)，工作中又需要有另一个git账号则需要两个配置两套公钥来使用，当然如果工作中和自己用的两个git账号都是同一个邮箱的话，一套公钥配置到两个sshkey上就行了。</p>
-<p>&lt;–more–&gt;</p>
+<a id="more"></a>
 <p>具体步骤:<br>首先<br>1）先检查当前有没有已经存在的ssh key.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ls -al ~/.ssh</div></pre></td></tr></table></figure></p>
 <p>2) 生成ssh key<br>可以参考<a href="https://help.github.com/articles/generating-an-ssh-key/" target="_blank" rel="external">github generating an ssh key</a><br>注意 如果一路回车默认生成的是名为<code>id_rsa</code>的key保存在~/.ssh下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ssh-keygen -t rsa -C &quot;test123@qq.com&quot;</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/Users/jingxiao/.ssh/id_rsa):</div><div class="line">/Users/jingxiao/.ssh/id_rsa already exists.</div></pre></td></tr></table></figure></p>
 <p>如果原先存在了 则会提示你要不要覆盖掉。<br>因此对于生成多个sshkey时候，则需要输入一个新的密钥名称比如<code>id_rsa_work</code>,建议位置也放在同一个目录下。<br>这样生成完两个或者多个不重名的ssh key 比如A和B，对应配置到相应地远程git账号上去比如github和gitLab。</p>
@@ -36,7 +96,6 @@
     <summary type="html">
     
       &lt;p&gt;多个git账号的配置和使用，如果你原来有一个git账号(比如用于github)，工作中又需要有另一个git账号则需要两个配置两套公钥来使用，当然如果工作中和自己用的两个git账号都是同一个邮箱的话，一套公钥配置到两个sshkey上就行了。&lt;/p&gt;
-&lt;p&gt;&amp;lt;–more–
     
     </summary>
     
@@ -967,55 +1026,6 @@
       <category term="面试" scheme="http://yoursite.com/tags/%E9%9D%A2%E8%AF%95/"/>
     
       <category term="技能" scheme="http://yoursite.com/tags/%E6%8A%80%E8%83%BD/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript面向对象</title>
-    <link href="http://yoursite.com/2015/11/22/javascript%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://yoursite.com/2015/11/22/javascript面向对象/</id>
-    <published>2015-11-22T13:36:59.000Z</published>
-    <updated>2015-11-22T13:38:51.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>《JavaScript高级程序设计 第三版》 学习笔记<br>Object-Oriented 有一个标志，就是都有类的概念，通过类来创建多个具有相同属性和方法的对象。而对于 EMCAScript中没有类的概念，ECMA-262把对象定义为<br>”无序属性的集合，该属性可以包含任何基本值，对象或者函数。“</p>
-<p><strong>原型模式</strong></p>
-<ul>
-<li>每个函数都有一个prototype(原型)属性</li>
-<li>这个属性都有一个指针，指向一个对象</li>
-<li>这个对象包含由特定类型所有实例共享的属性和方法</li>
-<li>使用原型的好处是 可以让所有对象实例共享它包含的方法和属性</li>
-</ul>
-<p>通过in操作符和hasOwnProperty来判断给定属性是来自于原型还是实例<br>in- true 代表属性在对象中存在 来自实例或者来自原型<br>hasOwnProperty- true代表属性来自于实例 是实例属性<br><a id="more"></a></p>
-<p>###继承###<br>ECMAScript中只支持实现继承，而且是通过原型链的方式来实现的</p>
-<p>理解原型对象<br>是这样的<br>当我们创建一个新函数的时候，会根据一组特定的规则为该函数创建一个<code>prototype</code>属性，这个<code>prototype</code>属性指向函数的原型对象。在默认情况下，原型对象都会自动获得一个<code>constructor</code>(构造函数)属性，这个属性包含包含一个指向prototype属性所在函数的指针。<br>所以关系就是<br>比如有一个Person的对象<br>Person.prototype  =&gt; 原型对象<br>原型对象.constructor =&gt; Person<br>即 Person.prototype.constructor == Person<br>见下图关系<br><img src="http://images.cnitblog.com/blog/362290/201305/20213500-68d3f70ba5fe43729a27891e0c2fbba5.png" alt=""></p>
-<p>将原型链作为实现继承的主要方法，基本思想是利用原型让一个引用类型继承另一个引用类型的属性和方法。<br>demo代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function SuperType()&#123;</div><div class="line">    this.property = true;</div><div class="line">&#125;</div><div class="line">SuperType.prototype.getSuperValue = function()&#123;</div><div class="line">    return this.property;</div><div class="line">&#125;</div><div class="line"></div><div class="line">function SubType()&#123;</div><div class="line">    this.subproperty = false;</div><div class="line">&#125;</div><div class="line">//SubType.prototype = new SuperType();</div><div class="line">SubType.prototype.getSubValue = function()&#123;</div><div class="line">    return this.subproperty;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// 继承SuperType 就指向了SuperType的原型对象了</div><div class="line">SubType.prototype = new SuperType();</div><div class="line">var instance = new SubType();</div><div class="line">alert(instance.getSuperValue()); // true</div><div class="line">alert(instance.property); //true</div></pre></td></tr></table></figure></p>
-<iframe width="100%" height="300" src="http://jsfiddle.net/JimWang/dmkLmnhL/embedded/" allowfullscreen="allowfullscreen" frameborder="0"></iframe>
-
-<blockquote>
-<p>如果把SubType中的subproperty改成property会是怎么样呢 都会变成false<br>demo图解</p>
-</blockquote>
-<p><img src="http://images.cnblogs.com/cnblogs_com/moveofgod/201209/201209211612235219.png" alt=""></p>
-<p>备注：<br>之所以 SuperType中property属性会出现在，SubType.prototype中，是因为property是一个实例属性，而SubType.prototype是SuperType的一个实例对象，所以property属性会出现在SubType.prototype中，但是这个property相对于instance(SubType的一个实例)却又是一个原型属性，所以如果将subproperty换成property的话，在return this.property时，优先找到实例属性中有这么一个属性，就会返回实例属性。<br>此外这里SubType.prototype.constructor 被重写了，instance.constructor指向了SuperType 看图<br>instance.getSuperValue() 这个搜索的过程<br>1) 搜索实例<br>2) 搜索SubType.prototype<br>3) 搜索SuperType.prototype<br>搜索总是一步步向前到原型链末端停止(Object)</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;《JavaScript高级程序设计 第三版》 学习笔记&lt;br&gt;Object-Oriented 有一个标志，就是都有类的概念，通过类来创建多个具有相同属性和方法的对象。而对于 EMCAScript中没有类的概念，ECMA-262把对象定义为&lt;br&gt;”无序属性的集合，该属性可以包含任何基本值，对象或者函数。“&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;原型模式&lt;/strong&gt;&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;每个函数都有一个prototype(原型)属性&lt;/li&gt;
-&lt;li&gt;这个属性都有一个指针，指向一个对象&lt;/li&gt;
-&lt;li&gt;这个对象包含由特定类型所有实例共享的属性和方法&lt;/li&gt;
-&lt;li&gt;使用原型的好处是 可以让所有对象实例共享它包含的方法和属性&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;通过in操作符和hasOwnProperty来判断给定属性是来自于原型还是实例&lt;br&gt;in- true 代表属性在对象中存在 来自实例或者来自原型&lt;br&gt;hasOwnProperty- true代表属性来自于实例 是实例属性&lt;br&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="对象" scheme="http://yoursite.com/tags/%E5%AF%B9%E8%B1%A1/"/>
     
   </entry>
   
