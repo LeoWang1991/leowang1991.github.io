@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-10-09T15:03:09.000Z</updated>
+  <updated>2016-10-14T02:28:44.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,46 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>iconfont的使用</title>
+    <link href="http://yoursite.com/2016/10/14/iconfont%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://yoursite.com/2016/10/14/iconfont的使用/</id>
+    <published>2016-10-14T02:28:44.000Z</published>
+    <updated>2016-10-14T02:28:44.000Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>webpack学习之基础认识</title>
+    <link href="http://yoursite.com/2016/10/10/webpack%E5%AD%A6%E4%B9%A0%E4%B9%8B%E5%9F%BA%E7%A1%80%E8%AE%A4%E8%AF%86/"/>
+    <id>http://yoursite.com/2016/10/10/webpack学习之基础认识/</id>
+    <published>2016-10-10T08:52:11.000Z</published>
+    <updated>2016-10-10T08:58:30.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近学习React技术栈，作为技术栈的一部分webpack必须要学习。</p>
+<h3 id="01-一些学习资源和路径"><a href="#01-一些学习资源和路径" class="headerlink" title="01 一些学习资源和路径"></a>01 一些学习资源和路径</h3><p><a href="http://webpack.github.io/docs/tutorials/getting-started/" target="_blank" rel="external">webpack-getting-started</a><br><a href="https://github.com/petehunt/webpack-howto" target="_blank" rel="external">webpack-howto</a><br><a href="https://github.com/ruanyf/webpack-demos" target="_blank" rel="external">ruanyf webpack-demo</a></p>
+<h3 id="02基础概念"><a href="#02基础概念" class="headerlink" title="02基础概念"></a>02基础概念</h3><p><a href="http://webpack.github.io/docs/what-is-webpack.html" target="_blank" rel="external">what is webpack?</a><br>webpack是一种模块化打包工具，类似之前用过的browserify grunt gulp。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近学习React技术栈，作为技术栈的一部分webpack必须要学习。&lt;/p&gt;
+&lt;h3 id=&quot;01-一些学习资源和路径&quot;&gt;&lt;a href=&quot;#01-一些学习资源和路径&quot; class=&quot;headerlink&quot; title=&quot;01 一些学习资源和路径&quot;&gt;&lt;/a&gt;01 一些学习
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="webpack" scheme="http://yoursite.com/tags/webpack/"/>
+    
+  </entry>
   
   <entry>
     <title>d3.js学习初识</title>
@@ -812,55 +852,6 @@
     
     
       <category term="nodejs" scheme="http://yoursite.com/tags/nodejs/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript tips</title>
-    <link href="http://yoursite.com/2015/12/25/javascript-tips/"/>
-    <id>http://yoursite.com/2015/12/25/javascript-tips/</id>
-    <published>2015-12-25T00:02:10.000Z</published>
-    <updated>2015-12-25T00:06:42.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>1 isNaN()<br>更加严谨的用法<br>isNaN(“12”) false  “12”先转换为12 再判断<br><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN" target="_blank" rel="external">https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/isNaN</a></p>
-<p>阻止上面的情况<br><a href="http://stackoverflow.com/questions/29658839/prevent-isnan-implicit-conversion-to-number" target="_blank" rel="external">http://stackoverflow.com/questions/29658839/prevent-isnan-implicit-conversion-to-number</a></p>
-<pre><code>if((typeof food)===&quot;number&quot; &amp;&amp; !isNaN(food))
-</code></pre>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;1 isNaN()&lt;br&gt;更加严谨的用法&lt;br&gt;isNaN(“12”) false  “12”先转换为12 再判断&lt;br&gt;&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/G
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>jquery插件学习</title>
-    <link href="http://yoursite.com/2015/11/22/jquery%E6%8F%92%E4%BB%B6%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://yoursite.com/2015/11/22/jquery插件学习/</id>
-    <published>2015-11-22T13:43:06.000Z</published>
-    <updated>2015-11-22T13:43:54.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>jquery插件学习的一些资料<br>参考资料：<br><a href="http://www.cnblogs.com/Wayou/p/jquery_plugin_tutorial.html" target="_blank" rel="external">博客园 jquery插件精品教程</a><br><a href="http://www.cnblogs.com/silverLee/archive/2009/12/22/1629925.html" target="_blank" rel="external">博客园 jquery插件开发全解析</a><br><a href="http://blog.csdn.net/rambo_china/article/details/7742321" target="_blank" rel="external">csdn (function($){…})(jQuery)是什么意思</a><br><a href="http://www.cnblogs.com/RascallySnake/archive/2010/05/07/1729563.html" target="_blank" rel="external">博客园 jQuery.extend 函数详解</a></p>
-<p>小demo<br><a href="http://www.jquery001.com/jquery-checkall.html" target="_blank" rel="external">jQuery 全选反选插件</a><br>自调用匿名函数的作用</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;jquery插件学习的一些资料&lt;br&gt;参考资料：&lt;br&gt;&lt;a href=&quot;http://www.cnblogs.com/Wayou/p/jquery_plugin_tutorial.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;博客园 jquer
-    
-    </summary>
-    
-      <category term="jquery" scheme="http://yoursite.com/categories/jquery/"/>
-    
-    
-      <category term="jquery插件" scheme="http://yoursite.com/tags/jquery%E6%8F%92%E4%BB%B6/"/>
     
   </entry>
   
