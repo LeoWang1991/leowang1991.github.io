@@ -150,6 +150,95 @@
           
           
             
+              <a class="post-title-link" href="/2016/04/25/npm-install-npm-g然后挂了/">
+                npm install npm -g然后挂了
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          发表于 2016-04-25
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; 分类于
+            
+              <a href="/categories/问题/">问题</a>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2016/04/25/npm-install-npm-g然后挂了/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2016/04/25/npm-install-npm-g然后挂了/"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </div>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <h3 id="问题描述"><a href="#问题描述" class="headerlink" title="问题描述"></a>问题描述</h3><p>OS X想通过命令行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">npm install npm -g/ npm update -g</div></pre></td></tr></table></figure>
+<p>提示好像是没有权限吧，恩，全局安装又忘了加<code>sudo</code></p>
+<p>然而再次执行</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">sudo npm install npm -g</div></pre></td></tr></table></figure>
+<p>然而没反应啊，显示</p>
+<p><code>-bash: /usr/local/bin/npm: No such file or directory</code></p>
+<p>大概就是这样的</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">$ npm update npm -g</div><div class="line">npm http GET https://registry.npmjs.org/npm</div><div class="line">npm http 304 https://registry.npmjs.org/npm</div><div class="line">npm http GET https://registry.npmjs.org/npm/1.4.4</div><div class="line">npm http 304 https://registry.npmjs.org/npm/1.4.4</div><div class="line">npm ERR! error rolling back Error: Refusing to delete: /usr/local/bin/npm not in /usr/local/lib/node_modules/npm</div><div class="line">npm ERR! error rolling back     at clobberFail (/usr/local/Cellar/node/0.10.26/lib/node_modules/npm/lib/utils/gently-rm.js:57:12)</div><div class="line">npm ERR! error rolling back     at next (/usr/local/Cellar/node/0.10.26/lib/node_modules/npm/lib/utils/gently-rm.js:43:14)</div><div class="line">npm ERR! error rolling back     at /usr/local/Cellar/node/0.10.26/lib/node_modules/npm/lib/utils/gently-rm.js:52:12</div><div class="line">npm ERR! error rolling back     at Object.oncomplete (fs.js:107:15)</div><div class="line">npm ERR! error rolling back  npm@1.4.4 &#123; [Error: Refusing to delete: /usr/local/bin/npm not in /usr/local/lib/node_modules/npm] code: &apos;EEXIST&apos;, path: &apos;/usr/local/bin/npm&apos; &#125;</div><div class="line">npm ERR! Refusing to delete: /usr/local/bin/npm not in /usr/local/lib/node_modules/npm</div><div class="line">File exists: /usr/local/bin/npm</div><div class="line">Move it away, and try again. </div><div class="line"></div><div class="line">npm ERR! System Darwin 13.1.0</div><div class="line">npm ERR! command &quot;/usr/local/Cellar/node/0.10.26/bin/node&quot; &quot;/usr/local/bin/npm&quot; &quot;update&quot; &quot;npm&quot; &quot;-g&quot;</div><div class="line">npm ERR! cwd /Users/dan/Google Drive/Projects/dotfiles</div><div class="line">npm ERR! node -v v0.10.26</div><div class="line">npm ERR! npm -v 1.4.3</div><div class="line">npm ERR! path /usr/local/bin/npm</div><div class="line">npm ERR! code EEXIST</div><div class="line">npm ERR! </div><div class="line">npm ERR! Additional logging details can be found in:</div><div class="line">npm ERR!     /Users/dan/Google Drive/Projects/dotfiles/npm-debug.log</div><div class="line">npm ERR! not ok code 0</div></pre></td></tr></table></figure>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/25/npm-install-npm-g然后挂了/#more">
+              阅读全文 &raquo;
+            </a>
+          </div>
+        
+      
+    </div>
+
+    <div class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </div>
+  </div>
+
+
+    
+      
+
+  <div class="post post-type-normal ">
+    <div class="post-header">
+
+      
+      
+        <h1 class="post-title">
+          
+          
+            
               <a class="post-title-link" href="/2016/03/23/git学习笔记-三-之分支学习/">
                 git学习笔记(三)之分支学习
               </a>
@@ -968,85 +1057,6 @@
 
 
     
-      
-
-  <div class="post post-type-normal ">
-    <div class="post-header">
-
-      
-      
-        <h1 class="post-title">
-          
-          
-            
-              <a class="post-title-link" href="/2016/01/02/nodejs学习笔记-1/">
-                nodejs学习笔记#1
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          发表于 2016-01-02
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; 分类于
-            
-              <a href="/categories/前端/">前端</a>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2016/01/02/nodejs学习笔记-1/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2016/01/02/nodejs学习笔记-1/"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </div>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <p>学习地址<br><a href="http://study.163.com/course/courseMain.htm?courseId=601001" target="_blank" rel="external">网易云课堂-珠峰node.js学习课程</a></p>
-<p>课程讲的挺基础的<br>1 nodejs的安装<br>2 常用的一些全局变量和方法如<strong>filename </strong>dirname等<br>3 模块和包的概念</p>
-<p>nodejs的核心知识点就是应该去理解，模块和包的概念，阻塞与非阻塞<br>一个js文件，看成一个独立的模块，提高接口供另外的模块引用使用。<br>包，来管理多个模块。</p>
-
-        
-      
-    </div>
-
-    <div class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </div>
-  </div>
-
-
-    
   </div>
 
   
@@ -1085,7 +1095,7 @@
         <div class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">35</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
