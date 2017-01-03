@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="杂," />
+  <meta name="keywords" content="浏览器渲染," />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-  <title> hello life // lifelover </title>
+  <title> 浏览器渲染原理学习 // lifelover </title>
 </head>
 
 <body>
@@ -148,7 +148,7 @@
           
           
             
-              hello life
+              浏览器渲染原理学习
             
           
         </h1>
@@ -156,14 +156,14 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2016-12-21
+          发表于 2017-01-03
         </span>
 
         
           <span class="post-category">
             &nbsp; | &nbsp; 分类于
             
-              <a href="/categories/杂/">杂</a>
+              <a href="/categories/前端/">前端</a>
 
               
               
@@ -176,8 +176,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2016/12/21/lifelover/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2016/12/21/lifelover/"></span>
+            <a href="/2017/01/03/浏览器渲染原理学习/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/03/浏览器渲染原理学习/"></span>
             </a>
           </span>
           
@@ -191,15 +191,30 @@
       
 
       
-        <p>好久没有写blog了，<br>也不是没东西写<br>就是懒吧</p>
-<p>懒得总结，懒得学习，现在的项目有一点挑战性，不管是React技术栈，d3,svg…遇到了一些坑也解决了一些问题。<br>其实是可以去写写一些总结或者收获的，这样不至于过段时间遇到了，还得面向Google编程，虽然也能找到解决方案。</p>
-<p>把以前的blog都删了，也就二三十篇，都是一些笔记，现在觉得博客博文还是应该要写的深入一点，可以量少一点，所以要深入地去学习一些知识吧，有意识地去输出更好地促进输入，许多东西可能自己看看想想觉得是那么回事情，但要自己写出来给别人说明白就会显示一些自己并没有了解的点。</p>
-<p>2016年就要过去了。<br>年中的时候换了单位<br>一些事情，无法修复，能掩盖就掩盖了，或许一辈子都走不出来了</p>
-<p>成为自己想成为的人真是难啊，自律是一方面，另外一方面可能自己不够热爱生活。<br>所以能过就凑合过吧，焦虑和畏惧</p>
-<p>很多事情不能想象的东西都是有解的，技术上经常因为存在知识盲区，觉得有些点实现不了，后来去找去发现都是有解的。就像两个月前的自己看着拓扑上各种复杂的交互，那个时候对D3 svg画图才刚刚了解，怀疑自己以后能不能实现的了，但现在也能大概有个把控。</p>
-<p>相比于生存来说，逃跑可耻但有用。<br>是的吧，逃跑就不用承担那么多责任啊压力啊<br>可是现在人生的艰难何止于生存了，越长大越怀念，但这样并不好。<br><img src="http://ww1.sinaimg.cn/bmiddle/006wXSUJly1fayoj7gfjuj30tf0qo1kx0.jpg" alt=""></p>
-<p>最喜欢的一首日语歌<br><a href="http://music.163.com/#/m/song?id=26144177" target="_blank" rel="external"><code>明日晴</code></a>  </p>
-<p><strong>热い涙や恋の叫びも<br>无论是炽热的泪水还是爱的呼喊<br>辉ける日は何処へ消えたの<br>那些光辉岁月消逝于何处了呢?<br>明日も宛なき道を彷徨うなら<br>即便明天仍彷徨于去往何方<br>これ以上元には戻れない<br>也再无法回到旧处<br>耳を澄ませば心の声は<br>如若静心倾听心声<br>仆に何を语りかけるだろう<br>我在对自己诉说些什么呢<br>今は汚れた街の片隅にいて<br>现在置身于此肮脏的街角<br>あの顷の空を思うたびに<br>每当回想起那时的天空<br>神より给えし孤独やtrouble<br>神灵就会给予我孤独与烦恼<br>泣きたいときは泣きなよ<br>想哭的时候却不能哭<br>これが运命(さだめ)でしょうか<br>这就是命运吗?<br>谛めようか<br>我该放弃吗? </strong> </p>
+        <p>在讨论页面渲染性能的时候，经常会听到这几个词“重绘” “回流” “重排”。<br>回流和重排都是 <code>Reflow</code>的不同翻译(叫法)<br>重绘对应<code>Repaint</code>，重新绘制的意思。</p>
+<p><strong>webkit浏览器的渲染过程</strong><br><img src="http://taligarsiel.com/Projects/webkitflow.png" alt=""></p>
+<p><strong>Gecko(firefox)浏览器的渲染过程</strong><br><img src="http://taligarsiel.com/Projects/image008.jpg" alt=""></p>
+<p>从图上可以看出来我们熟知的<code>Reflow</code>的说法源于ff,webkit这个过程称之为<code>layout(计算布局)</code>,意思大概差不多吧。<br><a id="more"></a></p>
+<p><strong>浏览器的工作大致流程</strong><br><img src="http://coolshell.cn//wp-content/uploads/2013/05/Render-Process.jpg" alt=""></p>
+<p>从这个过程中可以了解到浏览器渲染主要有这么几步</p>
+<ol>
+<li>解析HTML/XHTML/SVG 生成DOM tree,解析CSS生成CSS rule tree，解析script脚本</li>
+<li>浏览器引擎通过DOM tree和css rule tree来构造render tree</li>
+<li>调用系统的GUI绘图</li>
+</ol>
+<p>几个值得关注的点：</p>
+<ol>
+<li>render tree不完全包含dom tree的内容，<code>head</code>或者<code>display:none</code>的元素不会出现在render tree中</li>
+<li>reflow/layout</li>
+<li><code>reflow/layout</code>必定会<code>repaint</code>但<code>repaint</code>不一定会<code>reflow/layout</code></li>
+<li>css rule tree的生成过程</li>
+<li><blockquote>
+<p>Repaint——屏幕的一部分要重画，比如某个CSS的背景色变了。但是元素的几何尺寸没有变。<br>Reflow——意味着元件的几何尺寸变了，我们需要重新验证并计算Render Tree。是Render Tree的一部分或全部发生了变化。这就是Reflow，或是Layout。（HTML使用的是flow based layout，也就是流式布局，所以，如果某元件的几何尺寸发生了变化，需要重新布局，也就叫reflow）reflow 会从<html>这个root frame开始递归往下，依次计算所有的结点几何尺寸和位置，在reflow过程中，可能会增加一些frame，比如一个文本字符串必需被包装起来。</html></p>
+</blockquote>
+</li>
+</ol>
+<p>参考:<br><a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" target="_blank" rel="external">how browsers work</a><br><a href="http://coolshell.cn/articles/9666.html" target="_blank" rel="external">浏览器渲染原理简介</a></p>
+<p>如果对这块知识感兴趣的话，建议去读下<a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" target="_blank" rel="external">how browsers work</a>这篇文章，比较长，讲的很细致，比如Gecko和webkit在渲染上的一些差异，生成树(dom tree/css render tree)的一些具体算法什么的。</p>
 
       
     </div>
@@ -208,7 +223,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/杂/"> #杂 </a>
+            <a href="/tags/浏览器渲染/"> #浏览器渲染 </a>
           
         </div>
       
@@ -217,11 +232,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/03/浏览器渲染原理学习/">浏览器渲染原理学习</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/21/lifelover/">hello life</a>
             
           </div>
         </div>
@@ -264,8 +279,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2016/12/21/lifelover/"
-               data-title="hello life" data-url="http://yoursite.com/2016/12/21/lifelover/">
+          <div class="ds-thread" data-thread-key="2017/01/03/浏览器渲染原理学习/"
+               data-title="浏览器渲染原理学习" data-url="http://yoursite.com/2017/01/03/浏览器渲染原理学习/">
           </div>
         
       </div>
