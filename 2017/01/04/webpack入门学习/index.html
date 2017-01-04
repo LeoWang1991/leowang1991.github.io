@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="浏览器渲染," />
+  <meta name="keywords" content="webpack,工具," />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-  <title> 浏览器渲染原理学习 // lifelover </title>
+  <title> webpack入门学习 // lifelover </title>
 </head>
 
 <body>
@@ -148,7 +148,7 @@
           
           
             
-              浏览器渲染原理学习
+              webpack入门学习
             
           
         </h1>
@@ -156,7 +156,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2017-01-03
+          发表于 2017-01-04
         </span>
 
         
@@ -176,8 +176,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2017/01/03/浏览器渲染原理学习/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/03/浏览器渲染原理学习/"></span>
+            <a href="/2017/01/04/webpack入门学习/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/04/webpack入门学习/"></span>
             </a>
           </span>
           
@@ -191,30 +191,14 @@
       
 
       
-        <p>在讨论页面渲染性能的时候，经常会听到这几个词“重绘” “回流” “重排”。<br>回流和重排都是 <code>Reflow</code>的不同翻译(叫法)<br>重绘对应<code>Repaint</code>，重新绘制的意思。</p>
-<p><strong>webkit浏览器的渲染过程</strong><br><img src="http://taligarsiel.com/Projects/webkitflow.png" alt=""></p>
-<p><strong>Gecko(firefox)浏览器的渲染过程</strong><br><img src="http://taligarsiel.com/Projects/image008.jpg" alt=""></p>
-<p>从图上可以看出来我们熟知的<code>Reflow</code>的说法源于ff,webkit这个过程称之为<code>layout(计算布局)</code>,意思大概差不多吧。<br><a id="more"></a></p>
-<p><strong>浏览器的工作大致流程</strong><br><img src="http://coolshell.cn//wp-content/uploads/2013/05/Render-Process.jpg" alt=""></p>
-<p>从这个过程中可以了解到浏览器渲染主要有这么几步</p>
-<ol>
-<li>解析HTML/XHTML/SVG 生成DOM tree,解析CSS生成CSS rule tree，解析script脚本</li>
-<li>浏览器引擎通过DOM tree和css rule tree来构造render tree</li>
-<li>调用系统的GUI绘图</li>
-</ol>
-<p>几个值得关注的点：</p>
-<ol>
-<li>render tree不完全包含dom tree的内容，<code>head</code>或者<code>display:none</code>的元素不会出现在render tree中</li>
-<li>reflow/layout</li>
-<li><code>reflow/layout</code>必定会<code>repaint</code>但<code>repaint</code>不一定会<code>reflow/layout</code></li>
-<li>css rule tree的生成过程</li>
-<li><blockquote>
-<p>Repaint——屏幕的一部分要重画，比如某个CSS的背景色变了。但是元素的几何尺寸没有变。<br>Reflow——意味着元件的几何尺寸变了，我们需要重新验证并计算Render Tree。是Render Tree的一部分或全部发生了变化。这就是Reflow，或是Layout。（HTML使用的是flow based layout，也就是流式布局，所以，如果某元件的几何尺寸发生了变化，需要重新布局，也就叫reflow）reflow 会从<html>这个root frame开始递归往下，依次计算所有的结点几何尺寸和位置，在reflow过程中，可能会增加一些frame，比如一个文本字符串必需被包装起来。</html></p>
-</blockquote>
-</li>
-</ol>
-<p>参考:<br><a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" target="_blank" rel="external">how browsers work</a><br><a href="http://coolshell.cn/articles/9666.html" target="_blank" rel="external">浏览器渲染原理简介</a></p>
-<p>如果对这块知识感兴趣的话，建议去读下<a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" target="_blank" rel="external">how browsers work</a>这篇文章，比较长，讲的很细致，比如Gecko和webkit在渲染上的一些差异，生成树(dom tree/css render tree)的一些具体算法什么的。</p>
+        <p>1 webpack是一款很好用的构建工具<br><img src="https://webpack.github.io/assets/what-is-webpack.png" alt=""></p>
+<p>2 相比其他构建工具，webpack的特点在于webpack能把任何类型的资源模块转换为.js代码块实现与其他模块的合并和加载。</p>
+<p>3 webpack通过<a href="https://webpack.github.io/docs/loaders.html#introduction" target="_blank" rel="external">loader</a>来实现上述的转换。通过loader来实现转换其他资源到JavaScript代码。</p>
+<p>4 webpack plugins插件，plugin的存在可以看做是实现那些loader实现不了或者不适合在loader中实现的功能。</p>
+<p>5 webpack.config.js 配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">var path = require(&quot;path&quot;);</div><div class="line">// var HtmlWebpackPlugin = require(&quot;html-webpack-plugin&quot;); // 插件使用</div><div class="line">module.exports = &#123;</div><div class="line">    entry: path.join(__dirname, &quot;index&quot;),</div><div class="line">    output: &#123;</div><div class="line">        path: __dirname,</div><div class="line">        filename: &quot;bundle.js&quot;</div><div class="line">    &#125;,</div><div class="line">    module: &#123;</div><div class="line">        loaders: [&#123;</div><div class="line">            test: /\.css$/,</div><div class="line">            loaders: [&quot;style&quot;, &quot;css&quot;]</div><div class="line">        &#125;]</div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">        // new HtmlWebpackPlugin(&#123;</div><div class="line">        //     title: &quot;use plugin&quot;</div><div class="line">        // &#125;)</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>6 其他，webpack-dev-server使用</p>
+<p>参考：<br><a href="https://webpack.github.io" target="_blank" rel="external">webpack</a><br><a href="https://book.douban.com/subject/26901067/" target="_blank" rel="external">React全栈</a> </p>
 
       
     </div>
@@ -223,7 +207,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/浏览器渲染/"> #浏览器渲染 </a>
+            <a href="/tags/webpack/"> #webpack </a>
+          
+            <a href="/tags/工具/"> #工具 </a>
           
         </div>
       
@@ -232,13 +218,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/01/04/webpack入门学习/">webpack入门学习</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/12/21/lifelover/">hello life</a>
+              <a href="/2017/01/03/浏览器渲染原理学习/">浏览器渲染原理学习</a>
             
           </div>
         </div>
@@ -281,8 +265,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2017/01/03/浏览器渲染原理学习/"
-               data-title="浏览器渲染原理学习" data-url="http://yoursite.com/2017/01/03/浏览器渲染原理学习/">
+          <div class="ds-thread" data-thread-key="2017/01/04/webpack入门学习/"
+               data-title="webpack入门学习" data-url="http://yoursite.com/2017/01/04/webpack入门学习/">
           </div>
         
       </div>
