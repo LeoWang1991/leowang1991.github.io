@@ -878,6 +878,11 @@ body {
 }
 .main {
   padding-bottom: 150px;
+  background: url("http://o6y95u6yt.bkt.clouddn.com/29.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 .main-inner {
   margin: 0 auto;
@@ -1167,7 +1172,7 @@ body {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8111a4;
+  background: #aff;
 }
 .sidebar-nav {
   margin: 0;
