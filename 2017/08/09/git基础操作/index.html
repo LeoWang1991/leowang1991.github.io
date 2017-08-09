@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="浏览器渲染," />
+  <meta name="keywords" content="git," />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-  <title> 浏览器渲染原理学习 // lifelover </title>
+  <title> git基础操作 // lifelover </title>
 </head>
 
 <body>
@@ -148,7 +148,7 @@
           
           
             
-              浏览器渲染原理学习
+              git基础操作
             
           
         </h1>
@@ -156,14 +156,14 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2017-01-03
+          发表于 2017-08-09
         </span>
 
         
           <span class="post-category">
             &nbsp; | &nbsp; 分类于
             
-              <a href="/categories/前端/">前端</a>
+              <a href="/categories/前端基础/">前端基础</a>
 
               
               
@@ -176,8 +176,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2017/01/03/浏览器渲染原理学习/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/03/浏览器渲染原理学习/"></span>
+            <a href="/2017/08/09/git基础操作/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/09/git基础操作/"></span>
             </a>
           </span>
           
@@ -191,30 +191,26 @@
       
 
       
-        <p>在讨论页面渲染性能的时候，经常会听到这几个词“重绘” “回流” “重排”。<br>回流和重排都是 <code>Reflow</code>的不同翻译(叫法)<br>重绘对应<code>Repaint</code>，重新绘制的意思。</p>
-<p><strong>webkit浏览器的渲染过程</strong><br><img src="http://taligarsiel.com/Projects/webkitflow.png" alt=""></p>
-<p><strong>Gecko(firefox)浏览器的渲染过程</strong><br><img src="http://taligarsiel.com/Projects/image008.jpg" alt=""></p>
-<p>从图上可以看出来我们熟知的<code>Reflow</code>的说法源于ff,webkit这个过程称之为<code>layout(计算布局)</code>,意思大概差不多吧。<br><a id="more"></a></p>
-<p><strong>浏览器的工作大致流程</strong><br><img src="http://coolshell.cn//wp-content/uploads/2013/05/Render-Process.jpg" alt=""></p>
-<p>从这个过程中可以了解到浏览器渲染主要有这么几步</p>
-<ol>
-<li>解析HTML/XHTML/SVG 生成DOM tree,解析CSS生成CSS rule tree，解析script脚本</li>
-<li>浏览器引擎通过DOM tree和css rule tree来构造render tree</li>
-<li>调用系统的GUI绘图</li>
+        <h3 id="Git三种状态"><a href="#Git三种状态" class="headerlink" title="Git三种状态"></a>Git三种状态</h3><p>Git项目的三个工作区域: Git仓库，工作目录以及暂存区域<br><img src="https://git-scm.com/book/en/v2/images/areas.png" alt=""></p>
+<p>1）Git仓库目录(.git)是用来保存项目元数据和对象数据库的地方，从其他计算机克隆仓库时，拷贝的就是这里的数据。</p>
+<p>2）工作目录就是对项目的某个版本独立提取出来的内容，这些内容从Git仓库的压缩数据库中提取，放在磁盘上提供使用和修改。</p>
+<p>3）暂存区域是一个文件，保存下次将要提交的文件列表信息。</p>
+<p>基本的Git工作流如下</p>
+<pre><code>1. 在工作目录中修改文件
+2. 暂存文件，将文件的快照放入暂存区域
+3. 提交更新，找到暂存区域的文件，将快照永久性存储到Git仓库目录
+</code></pre><p>暂存区的概念有别于之前用svn，暂存区可以随便放很多文件，commit提交时候不会去理会工作区的文件，如果发现不对劲在暂存区进行修改重置后再提交。<br><a id="more"></a></p>
+<h3 id="基础操作指令"><a href="#基础操作指令" class="headerlink" title="基础操作指令"></a>基础操作指令</h3><p>上述工作流中，怎么实际去执行。<br><strong>终端输入指令操作时候，执行注释会提示操作执行的相关信息(做了什么，怎么撤销)注意看</strong><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fidvr1du2nj30sw0fqgmg.jpg" alt=""></p>
+<p>1 add commit<br><code>git add</code> 将文件从工作区提交到暂存区，并track该文件<br><code>git commit</code> 将暂存区的文件提交到Git仓库<br><code>git commit -a</code> 可以将<code>tracked</code>的文件直接提交，省略<code>git add</code>操作</p>
+<p>2 更改重置等操作 reset checkout amend<br><code>git reset</code> 将误操作提交到暂存区的文件(没有提交到仓库)撤销回来<br><code>git checkout</code> 已经提交过的文件(在Git仓库)中，撤销改动<br><code>git commit --amend</code> 覆盖上一次的提交 从<code>git log</code>可以查看该功能</p>
+<p>3 其他<br><code>git tag</code> 给提交打标签，方便追踪记录重要的提交<br><code>git log</code> 日志功能<br><code>git show</code> 查看<br><code>alias</code> 给常用的命令操作取别名 提高效率<br>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git config --global alias.co checkout</div><div class="line">git config --global alias.br branch</div><div class="line">git config --global alias.ci commit</div><div class="line">git config --global alias.st status</div><div class="line"></div><div class="line">git st // git status</div></pre></td></tr></table></figure>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
+<li>Git仓库 工作区 暂存区的状态概念理解</li>
+<li>基本的相关指令操作 </li>
+<li>暂存区文件的修改 撤销操作</li>
 </ol>
-<p>几个值得关注的点：</p>
-<ol>
-<li>render tree不完全包含dom tree的内容，<code>head</code>或者<code>display:none</code>的元素不会出现在render tree中</li>
-<li>reflow/layout</li>
-<li><code>reflow/layout</code>必定会<code>repaint</code>但<code>repaint</code>不一定会<code>reflow/layout</code></li>
-<li>css rule tree的生成过程</li>
-<li><blockquote>
-<p>Repaint——屏幕的一部分要重画，比如某个CSS的背景色变了。但是元素的几何尺寸没有变。<br>Reflow——意味着元件的几何尺寸变了，我们需要重新验证并计算Render Tree。是Render Tree的一部分或全部发生了变化。这就是Reflow，或是Layout。（HTML使用的是flow based layout，也就是流式布局，所以，如果某元件的几何尺寸发生了变化，需要重新布局，也就叫reflow）reflow 会从<html>这个root frame开始递归往下，依次计算所有的结点几何尺寸和位置，在reflow过程中，可能会增加一些frame，比如一个文本字符串必需被包装起来。</html></p>
-</blockquote>
-</li>
-</ol>
-<p>参考:<br><a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" target="_blank" rel="external">how browsers work</a><br><a href="http://coolshell.cn/articles/9666.html" target="_blank" rel="external">浏览器渲染原理简介</a></p>
-<p>如果对这块知识感兴趣的话，建议去读下<a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" target="_blank" rel="external">how browsers work</a>这篇文章，比较长，讲的很细致，比如Gecko和webkit在渲染上的一些差异，生成树(dom tree/css render tree)的一些具体算法什么的。</p>
+<p><a href="https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E8%8E%B7%E5%8F%96-Git-%E4%BB%93%E5%BA%93" target="_blank" rel="external">学习来源参考</a></p>
 
       
     </div>
@@ -223,7 +219,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/浏览器渲染/"> #浏览器渲染 </a>
+            <a href="/tags/git/"> #git </a>
           
         </div>
       
@@ -232,11 +228,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/09/git基础操作/">git基础操作</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/01/03/浏览器渲染原理学习/">浏览器渲染原理学习</a>
             
           </div>
         </div>
@@ -279,8 +275,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2017/01/03/浏览器渲染原理学习/"
-               data-title="浏览器渲染原理学习" data-url="http://yoursite.com/2017/01/03/浏览器渲染原理学习/">
+          <div class="ds-thread" data-thread-key="2017/08/09/git基础操作/"
+               data-title="git基础操作" data-url="http://yoursite.com/2017/08/09/git基础操作/">
           </div>
         
       </div>
@@ -386,7 +382,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git三种状态"><span class="nav-number">1.</span> <span class="nav-text">Git三种状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础操作指令"><span class="nav-number">2.</span> <span class="nav-text">基础操作指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

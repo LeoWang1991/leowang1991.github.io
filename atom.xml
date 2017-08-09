@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-01-03T15:28:36.000Z</updated>
+  <updated>2017-08-09T15:40:09.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,56 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>git基础操作</title>
+    <link href="http://yoursite.com/2017/08/09/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"/>
+    <id>http://yoursite.com/2017/08/09/git基础操作/</id>
+    <published>2017-08-09T14:50:27.000Z</published>
+    <updated>2017-08-09T15:40:09.000Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Git三种状态"><a href="#Git三种状态" class="headerlink" title="Git三种状态"></a>Git三种状态</h3><p>Git项目的三个工作区域: Git仓库，工作目录以及暂存区域<br><img src="https://git-scm.com/book/en/v2/images/areas.png" alt=""></p>
+<p>1）Git仓库目录(.git)是用来保存项目元数据和对象数据库的地方，从其他计算机克隆仓库时，拷贝的就是这里的数据。</p>
+<p>2）工作目录就是对项目的某个版本独立提取出来的内容，这些内容从Git仓库的压缩数据库中提取，放在磁盘上提供使用和修改。</p>
+<p>3）暂存区域是一个文件，保存下次将要提交的文件列表信息。</p>
+<p>基本的Git工作流如下</p>
+<pre><code>1. 在工作目录中修改文件
+2. 暂存文件，将文件的快照放入暂存区域
+3. 提交更新，找到暂存区域的文件，将快照永久性存储到Git仓库目录
+</code></pre><p>暂存区的概念有别于之前用svn，暂存区可以随便放很多文件，commit提交时候不会去理会工作区的文件，如果发现不对劲在暂存区进行修改重置后再提交。<br><a id="more"></a></p>
+<h3 id="基础操作指令"><a href="#基础操作指令" class="headerlink" title="基础操作指令"></a>基础操作指令</h3><p>上述工作流中，怎么实际去执行。<br><strong>终端输入指令操作时候，执行注释会提示操作执行的相关信息(做了什么，怎么撤销)注意看</strong><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fidvr1du2nj30sw0fqgmg.jpg" alt=""></p>
+<p>1 add commit<br><code>git add</code> 将文件从工作区提交到暂存区，并track该文件<br><code>git commit</code> 将暂存区的文件提交到Git仓库<br><code>git commit -a</code> 可以将<code>tracked</code>的文件直接提交，省略<code>git add</code>操作</p>
+<p>2 更改重置等操作 reset checkout amend<br><code>git reset</code> 将误操作提交到暂存区的文件(没有提交到仓库)撤销回来<br><code>git checkout</code> 已经提交过的文件(在Git仓库)中，撤销改动<br><code>git commit --amend</code> 覆盖上一次的提交 从<code>git log</code>可以查看该功能</p>
+<p>3 其他<br><code>git tag</code> 给提交打标签，方便追踪记录重要的提交<br><code>git log</code> 日志功能<br><code>git show</code> 查看<br><code>alias</code> 给常用的命令操作取别名 提高效率<br>例如</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git config --global alias.co checkout</div><div class="line">git config --global alias.br branch</div><div class="line">git config --global alias.ci commit</div><div class="line">git config --global alias.st status</div><div class="line"></div><div class="line">git st // git status</div></pre></td></tr></table></figure>
+<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
+<li>Git仓库 工作区 暂存区的状态概念理解</li>
+<li>基本的相关指令操作 </li>
+<li>暂存区文件的修改 撤销操作</li>
+</ol>
+<p><a href="https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E8%8E%B7%E5%8F%96-Git-%E4%BB%93%E5%BA%93" target="_blank" rel="external">学习来源参考</a></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Git三种状态&quot;&gt;&lt;a href=&quot;#Git三种状态&quot; class=&quot;headerlink&quot; title=&quot;Git三种状态&quot;&gt;&lt;/a&gt;Git三种状态&lt;/h3&gt;&lt;p&gt;Git项目的三个工作区域: Git仓库，工作目录以及暂存区域&lt;br&gt;&lt;img src=&quot;https://git-scm.com/book/en/v2/images/areas.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;p&gt;1）Git仓库目录(.git)是用来保存项目元数据和对象数据库的地方，从其他计算机克隆仓库时，拷贝的就是这里的数据。&lt;/p&gt;
+&lt;p&gt;2）工作目录就是对项目的某个版本独立提取出来的内容，这些内容从Git仓库的压缩数据库中提取，放在磁盘上提供使用和修改。&lt;/p&gt;
+&lt;p&gt;3）暂存区域是一个文件，保存下次将要提交的文件列表信息。&lt;/p&gt;
+&lt;p&gt;基本的Git工作流如下&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1. 在工作目录中修改文件
+2. 暂存文件，将文件的快照放入暂存区域
+3. 提交更新，找到暂存区域的文件，将快照永久性存储到Git仓库目录
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;暂存区的概念有别于之前用svn，暂存区可以随便放很多文件，commit提交时候不会去理会工作区的文件，如果发现不对劲在暂存区进行修改重置后再提交。&lt;br&gt;
+    
+    </summary>
+    
+      <category term="前端基础" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="git" scheme="http://yoursite.com/tags/git/"/>
+    
+  </entry>
   
   <entry>
     <title>浏览器渲染原理学习</title>
