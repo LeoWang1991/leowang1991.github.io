@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-09T15:40:09.000Z</updated>
+  <updated>2017-08-24T15:37:04.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,44 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>introducing JSX（翻译）</title>
+    <link href="http://yoursite.com/2017/08/24/introducing-JSX%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89/"/>
+    <id>http://yoursite.com/2017/08/24/introducing-JSX（翻译）/</id>
+    <published>2017-08-24T15:35:57.000Z</published>
+    <updated>2017-08-24T15:37:04.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>开始学习React从过一遍官网资料开始。</p>
+<p><a href="https://facebook.github.io/react/docs/introducing-jsx.html" target="_blank" rel="external">introducting JSX原文</a> 翻译并不准确，还是看原文好。</p>
+<h3 id="JSX介绍"><a href="#JSX介绍" class="headerlink" title="JSX介绍"></a>JSX介绍</h3><p>看下面的代码<br>    const element = </p><h1>Hello,world</h1><br>这个有趣的连接语法既不是字符串也不是HTML。<br>它称之为<code>JSX</code>,它是JavaScript的一种语法扩展。我们推荐在React中使用它去编写UI界面的样子。JSX可能会使你想起模板语言，但是它带来的是全套的JavaScript功能。<p></p>
+<p>JSX生产React「元素」。在下一节我们将探索渲染React元素到DOM的过程。从下面的例子你能够学到JSX的基础知识。</p>
+<h3 id="表达式嵌套在JSX中"><a href="#表达式嵌套在JSX中" class="headerlink" title="表达式嵌套在JSX中"></a>表达式嵌套在JSX中</h3><p>你可以将JavaScript表达式通过花括号嵌套在JSX中使用。<br>例如，<code>2+2</code> <code>user.firstName</code>,以及<code>formatName(user)</code>等都是合法表达式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function formatName(user) &#123;</div><div class="line">  return user.firstName + &apos; &apos; + user.lastName;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const user = &#123;</div><div class="line">  firstName: &apos;Harper&apos;,</div><div class="line">  lastName: &apos;Perez&apos;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">const element = (</div><div class="line">  &lt;h1&gt;</div><div class="line">    Hello, &#123;formatName(user)&#125;!</div><div class="line">  &lt;/h1&gt;</div><div class="line">);</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  element,</div><div class="line">  document.getElementById(&apos;root&apos;)</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>当我们书写多行JSX代码时候，为了良好的可读性，虽不是必须，但还是推荐使用括号包裹避免产生<a href="https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi" target="_blank" rel="external">JavaScript分号自动插入</a>的问题。</p>
+<h3 id="JSX也是一种表达式"><a href="#JSX也是一种表达式" class="headerlink" title="JSX也是一种表达式"></a>JSX也是一种表达式</h3><p>通过编译之后，JSX表达式会编译成为一个普通的JavaScript对象。<br>这就意味着，你可以在<code>if</code>声明以及<code>for</code>循环中使用JSX，可以将它赋值给变量，将它作为函数参数或者返回值使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function getGreeting(user) &#123;</div><div class="line">  if (user) &#123;</div><div class="line">    return &lt;h1&gt;Hello, &#123;formatName(user)&#125;!&lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">  return &lt;h1&gt;Hello, Stranger.&lt;/h1&gt;;</div><div class="line">&#125;</div><div class="line">```   </div><div class="line"></div><div class="line">### 在JSX中定义属性</div><div class="line">你可以使用引号标注字符串作为属性值；</div></pre></td></tr></table></figure></p>
+<p>const element = <div tabindex="0"></div>;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">你也可以用在花括号中写JavaScript表达式作为属性值；</div></pre></td></tr></table></figure></p>
+<p>const element = <img src="{user.avatarUrl}">;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">注意不要给表达式加引号，不然JSX会将该表达式作为字符串处理。所以，你应该要么字符串加引号使用，要么花括号中写表达式，不要两者同时用。</div><div class="line"></div><div class="line">### 在JSX中定义Children(?)</div><div class="line">如果标签不闭合，可以通过`/&gt;`关闭标签，就像XML</div></pre></td></tr></table></figure></p>
+<p>const element = <img src="{user.avatarUrl}">;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">JSX标签包含子元素</div></pre></td></tr></table></figure></p>
+<p>const element = (<br>  <div><br>    <h1>Hello!</h1><br>    <h2>Good to see you here.</h2><br>  </div><br>);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    警告：JSX语法相比HTML更接近JavaScript，React DOM使用`camelCase`(驼峰命名)属性命名规定代替HTML属性名。</div><div class="line">    例如：`class`在JSX中是`className`，`tabindex`是`tabIndex`。</div><div class="line"></div><div class="line">### JSX可以防止注入攻击（XSS）</div><div class="line">通过JSX传入数据会更安全</div></pre></td></tr></table></figure></p>
+<p>const title = response.potentiallyMaliciousInput;<br>// This is safe:<br>const element = </p><h1>{title}</h1>;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">默认情况，React DOM在渲染JSX之前会排除嵌入的输入值，因此确保在你的应用中不会注入任何不明确的书面值。任何值在渲染之前都会转换为字符串。这就避免了XSS攻击。</div><div class="line"></div><div class="line">### JSX表现为对象</div><div class="line">Babel通过调用`React.createElement()`来编译JSX</div><div class="line">下面两段代码是相同的</div></pre></td></tr></table></figure><p></p>
+<p>const element = (<br>  </p><h1 classname="greeting"><br>    Hello, world!<br>  </h1><br>);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure><p></p>
+<p>const element = React.createElement(<br>  ‘h1’,<br>  {className: ‘greeting’},<br>  ‘Hello, world!’<br>);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`React.createElement()`展现了一些检查项来帮助你减少代码bug，但是本质上老说它创建了这样的对象</div></pre></td></tr></table></figure></p>
+<p>// Note: this structure is simplified<br>const element = {<br>  type: ‘h1’,<br>  props: {<br>    className: ‘greeting’,<br>    children: ‘Hello, world’<br>  }<br>};<br>```<br>这些对象称之为「React元素」.你可以把他们当做你想在界面上看到一种描述。React读取这些对象，然后使用它们去构造DOM元素，并且保持更新。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开始学习React从过一遍官网资料开始。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/introducing-jsx.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;introduct
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="React" scheme="http://yoursite.com/tags/React/"/>
+    
+  </entry>
   
   <entry>
     <title>git基础操作</title>

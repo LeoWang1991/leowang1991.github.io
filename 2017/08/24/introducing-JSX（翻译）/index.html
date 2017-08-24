@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="git," />
+  <meta name="keywords" content="React," />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-  <title> git基础操作 // lifelover </title>
+  <title> introducing JSX（翻译） // lifelover </title>
 </head>
 
 <body>
@@ -148,7 +148,7 @@
           
           
             
-              git基础操作
+              introducing JSX（翻译）
             
           
         </h1>
@@ -156,14 +156,14 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2017-08-09
+          发表于 2017-08-24
         </span>
 
         
           <span class="post-category">
             &nbsp; | &nbsp; 分类于
             
-              <a href="/categories/前端基础/">前端基础</a>
+              <a href="/categories/前端/">前端</a>
 
               
               
@@ -176,8 +176,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2017/08/09/git基础操作/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/09/git基础操作/"></span>
+            <a href="/2017/08/24/introducing-JSX（翻译）/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2017/08/24/introducing-JSX（翻译）/"></span>
             </a>
           </span>
           
@@ -191,26 +191,21 @@
       
 
       
-        <h3 id="Git三种状态"><a href="#Git三种状态" class="headerlink" title="Git三种状态"></a>Git三种状态</h3><p>Git项目的三个工作区域: Git仓库，工作目录以及暂存区域<br><img src="https://git-scm.com/book/en/v2/images/areas.png" alt=""></p>
-<p>1）Git仓库目录(.git)是用来保存项目元数据和对象数据库的地方，从其他计算机克隆仓库时，拷贝的就是这里的数据。</p>
-<p>2）工作目录就是对项目的某个版本独立提取出来的内容，这些内容从Git仓库的压缩数据库中提取，放在磁盘上提供使用和修改。</p>
-<p>3）暂存区域是一个文件，保存下次将要提交的文件列表信息。</p>
-<p>基本的Git工作流如下</p>
-<pre><code>1. 在工作目录中修改文件
-2. 暂存文件，将文件的快照放入暂存区域
-3. 提交更新，找到暂存区域的文件，将快照永久性存储到Git仓库目录
-</code></pre><p>暂存区的概念有别于之前用svn，暂存区可以随便放很多文件，commit提交时候不会去理会工作区的文件，如果发现不对劲在暂存区进行修改重置后再提交。<br><a id="more"></a></p>
-<h3 id="基础操作指令"><a href="#基础操作指令" class="headerlink" title="基础操作指令"></a>基础操作指令</h3><p>上述工作流中，怎么实际去执行。<br><strong>终端输入指令操作时候，执行注释会提示操作执行的相关信息(做了什么，怎么撤销)注意看</strong><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fidvr1du2nj30sw0fqgmg.jpg" alt=""></p>
-<p>1 add commit<br><code>git add</code> 将文件从工作区提交到暂存区，并track该文件<br><code>git commit</code> 将暂存区的文件提交到Git仓库<br><code>git commit -a</code> 可以将<code>tracked</code>的文件直接提交，省略<code>git add</code>操作</p>
-<p>2 更改重置等操作 reset checkout amend<br><code>git reset</code> 将误操作提交到暂存区的文件(没有提交到仓库)撤销回来<br><code>git checkout</code> 已经提交过的文件(在Git仓库)中，撤销改动<br><code>git commit --amend</code> 覆盖上一次的提交 从<code>git log</code>可以查看该功能</p>
-<p>3 其他<br><code>git tag</code> 给提交打标签，方便追踪记录重要的提交<br><code>git log</code> 日志功能<br><code>git show</code> 查看<br><code>alias</code> 给常用的命令操作取别名 提高效率<br>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git config --global alias.co checkout</div><div class="line">git config --global alias.br branch</div><div class="line">git config --global alias.ci commit</div><div class="line">git config --global alias.st status</div><div class="line"></div><div class="line">git st // git status</div></pre></td></tr></table></figure>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
-<li>Git仓库 工作区 暂存区的状态概念理解</li>
-<li>基本的相关指令操作 </li>
-<li>暂存区文件的修改 撤销操作</li>
-</ol>
-<p><a href="https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E8%8E%B7%E5%8F%96-Git-%E4%BB%93%E5%BA%93" target="_blank" rel="external">学习来源参考</a></p>
+        <p>开始学习React从过一遍官网资料开始。</p>
+<p><a href="https://facebook.github.io/react/docs/introducing-jsx.html" target="_blank" rel="external">introducting JSX原文</a> 翻译并不准确，还是看原文好。</p>
+<h3 id="JSX介绍"><a href="#JSX介绍" class="headerlink" title="JSX介绍"></a>JSX介绍</h3><p>看下面的代码<br>    const element = </p><h1>Hello,world</h1><br>这个有趣的连接语法既不是字符串也不是HTML。<br>它称之为<code>JSX</code>,它是JavaScript的一种语法扩展。我们推荐在React中使用它去编写UI界面的样子。JSX可能会使你想起模板语言，但是它带来的是全套的JavaScript功能。<p></p>
+<p>JSX生产React「元素」。在下一节我们将探索渲染React元素到DOM的过程。从下面的例子你能够学到JSX的基础知识。</p>
+<h3 id="表达式嵌套在JSX中"><a href="#表达式嵌套在JSX中" class="headerlink" title="表达式嵌套在JSX中"></a>表达式嵌套在JSX中</h3><p>你可以将JavaScript表达式通过花括号嵌套在JSX中使用。<br>例如，<code>2+2</code> <code>user.firstName</code>,以及<code>formatName(user)</code>等都是合法表达式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function formatName(user) &#123;</div><div class="line">  return user.firstName + &apos; &apos; + user.lastName;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const user = &#123;</div><div class="line">  firstName: &apos;Harper&apos;,</div><div class="line">  lastName: &apos;Perez&apos;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">const element = (</div><div class="line">  &lt;h1&gt;</div><div class="line">    Hello, &#123;formatName(user)&#125;!</div><div class="line">  &lt;/h1&gt;</div><div class="line">);</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  element,</div><div class="line">  document.getElementById(&apos;root&apos;)</div><div class="line">);</div></pre></td></tr></table></figure></p>
+<p>当我们书写多行JSX代码时候，为了良好的可读性，虽不是必须，但还是推荐使用括号包裹避免产生<a href="https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi" target="_blank" rel="external">JavaScript分号自动插入</a>的问题。</p>
+<h3 id="JSX也是一种表达式"><a href="#JSX也是一种表达式" class="headerlink" title="JSX也是一种表达式"></a>JSX也是一种表达式</h3><p>通过编译之后，JSX表达式会编译成为一个普通的JavaScript对象。<br>这就意味着，你可以在<code>if</code>声明以及<code>for</code>循环中使用JSX，可以将它赋值给变量，将它作为函数参数或者返回值使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function getGreeting(user) &#123;</div><div class="line">  if (user) &#123;</div><div class="line">    return &lt;h1&gt;Hello, &#123;formatName(user)&#125;!&lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">  return &lt;h1&gt;Hello, Stranger.&lt;/h1&gt;;</div><div class="line">&#125;</div><div class="line">```   </div><div class="line"></div><div class="line">### 在JSX中定义属性</div><div class="line">你可以使用引号标注字符串作为属性值；</div></pre></td></tr></table></figure></p>
+<p>const element = <div tabindex="0"></div>;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">你也可以用在花括号中写JavaScript表达式作为属性值；</div></pre></td></tr></table></figure></p>
+<p>const element = <img src="{user.avatarUrl}">;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">注意不要给表达式加引号，不然JSX会将该表达式作为字符串处理。所以，你应该要么字符串加引号使用，要么花括号中写表达式，不要两者同时用。</div><div class="line"></div><div class="line">### 在JSX中定义Children(?)</div><div class="line">如果标签不闭合，可以通过`/&gt;`关闭标签，就像XML</div></pre></td></tr></table></figure></p>
+<p>const element = <img src="{user.avatarUrl}">;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">JSX标签包含子元素</div></pre></td></tr></table></figure></p>
+<p>const element = (<br>  <div><br>    <h1>Hello!</h1><br>    <h2>Good to see you here.</h2><br>  </div><br>);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    警告：JSX语法相比HTML更接近JavaScript，React DOM使用`camelCase`(驼峰命名)属性命名规定代替HTML属性名。</div><div class="line">    例如：`class`在JSX中是`className`，`tabindex`是`tabIndex`。</div><div class="line"></div><div class="line">### JSX可以防止注入攻击（XSS）</div><div class="line">通过JSX传入数据会更安全</div></pre></td></tr></table></figure></p>
+<p>const title = response.potentiallyMaliciousInput;<br>// This is safe:<br>const element = </p><h1>{title}</h1>;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">默认情况，React DOM在渲染JSX之前会排除嵌入的输入值，因此确保在你的应用中不会注入任何不明确的书面值。任何值在渲染之前都会转换为字符串。这就避免了XSS攻击。</div><div class="line"></div><div class="line">### JSX表现为对象</div><div class="line">Babel通过调用`React.createElement()`来编译JSX</div><div class="line">下面两段代码是相同的</div></pre></td></tr></table></figure><p></p>
+<p>const element = (<br>  </p><h1 classname="greeting"><br>    Hello, world!<br>  </h1><br>);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure><p></p>
+<p>const element = React.createElement(<br>  ‘h1’,<br>  {className: ‘greeting’},<br>  ‘Hello, world!’<br>);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`React.createElement()`展现了一些检查项来帮助你减少代码bug，但是本质上老说它创建了这样的对象</div></pre></td></tr></table></figure></p>
+<p>// Note: this structure is simplified<br>const element = {<br>  type: ‘h1’,<br>  props: {<br>    className: ‘greeting’,<br>    children: ‘Hello, world’<br>  }<br>};<br>```<br>这些对象称之为「React元素」.你可以把他们当做你想在界面上看到一种描述。React读取这些对象，然后使用它们去构造DOM元素，并且保持更新。</p>
 
       
     </div>
@@ -219,7 +214,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/"> #git </a>
+            <a href="/tags/React/"> #React </a>
           
         </div>
       
@@ -228,13 +223,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/24/introducing-JSX（翻译）/">introducing JSX（翻译）</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/01/03/浏览器渲染原理学习/">浏览器渲染原理学习</a>
+              <a href="/2017/08/09/git基础操作/">git基础操作</a>
             
           </div>
         </div>
@@ -277,8 +270,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2017/08/09/git基础操作/"
-               data-title="git基础操作" data-url="http://yoursite.com/2017/08/09/git基础操作/">
+          <div class="ds-thread" data-thread-key="2017/08/24/introducing-JSX（翻译）/"
+               data-title="introducing JSX（翻译）" data-url="http://yoursite.com/2017/08/24/introducing-JSX（翻译）/">
           </div>
         
       </div>
@@ -384,7 +377,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Git三种状态"><span class="nav-number">1.</span> <span class="nav-text">Git三种状态</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#基础操作指令"><span class="nav-number">2.</span> <span class="nav-text">基础操作指令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#小结"><span class="nav-number">3.</span> <span class="nav-text">小结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX介绍"><span class="nav-number">1.</span> <span class="nav-text">JSX介绍</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">Hello,world</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#表达式嵌套在JSX中"><span class="nav-number">1.</span> <span class="nav-text">表达式嵌套在JSX中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX也是一种表达式"><span class="nav-number">2.</span> <span class="nav-text">JSX也是一种表达式</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">Hello!</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">Good to see you here.</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">{title}</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#undefined"><span class="nav-number"></span> <span class="nav-text">    Hello, world!  </span></a></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
