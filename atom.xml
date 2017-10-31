@@ -58,9 +58,9 @@
     <link href="http://yoursite.com/2017/08/09/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"/>
     <id>http://yoursite.com/2017/08/09/git基础操作/</id>
     <published>2017-08-09T14:50:27.000Z</published>
-    <updated>2017-08-09T15:40:09.000Z</updated>
+    <updated>2017-10-30T06:30:19.993Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="Git三种状态"><a href="#Git三种状态" class="headerlink" title="Git三种状态"></a>Git三种状态</h3><p>Git项目的三个工作区域: Git仓库，工作目录以及暂存区域<br><img src="https://git-scm.com/book/en/v2/images/areas.png" alt=""></p>
+    <content type="html"><![CDATA[<h3 id="Git三种状态"><a href="#Git三种状态" class="headerlink" title="Git三种状态"></a>Git三种状态</h3><p><strong>—监听事件的状态来做出相应的行为</strong><br>Git项目的三个工作区域: Git仓库，工作目录以及暂存区域<br><img src="https://git-scm.com/book/en/v2/images/areas.png" alt=""></p>
 <p>1）Git仓库目录(.git)是用来保存项目元数据和对象数据库的地方，从其他计算机克隆仓库时，拷贝的就是这里的数据。</p>
 <p>2）工作目录就是对项目的某个版本独立提取出来的内容，这些内容从Git仓库的压缩数据库中提取，放在磁盘上提供使用和修改。</p>
 <p>3）暂存区域是一个文件，保存下次将要提交的文件列表信息。</p>
@@ -84,7 +84,7 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;Git三种状态&quot;&gt;&lt;a href=&quot;#Git三种状态&quot; class=&quot;headerlink&quot; title=&quot;Git三种状态&quot;&gt;&lt;/a&gt;Git三种状态&lt;/h3&gt;&lt;p&gt;Git项目的三个工作区域: Git仓库，工作目录以及暂存区域&lt;br&gt;&lt;img src=&quot;https://git-scm.com/book/en/v2/images/areas.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+      &lt;h3 id=&quot;Git三种状态&quot;&gt;&lt;a href=&quot;#Git三种状态&quot; class=&quot;headerlink&quot; title=&quot;Git三种状态&quot;&gt;&lt;/a&gt;Git三种状态&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;—监听事件的状态来做出相应的行为&lt;/strong&gt;&lt;br&gt;Git项目的三个工作区域: Git仓库，工作目录以及暂存区域&lt;br&gt;&lt;img src=&quot;https://git-scm.com/book/en/v2/images/areas.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;1）Git仓库目录(.git)是用来保存项目元数据和对象数据库的地方，从其他计算机克隆仓库时，拷贝的就是这里的数据。&lt;/p&gt;
 &lt;p&gt;2）工作目录就是对项目的某个版本独立提取出来的内容，这些内容从Git仓库的压缩数据库中提取，放在磁盘上提供使用和修改。&lt;/p&gt;
 &lt;p&gt;3）暂存区域是一个文件，保存下次将要提交的文件列表信息。&lt;/p&gt;
