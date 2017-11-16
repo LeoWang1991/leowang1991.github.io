@@ -210,10 +210,10 @@
 <li>每个对象有一个私有属性<code>[[prototype]]</code>，这个私有属性持有一个连接到另一个称为其<code>prototype</code>对象（原型对象）的链接。</li>
 <li><code>__proto__</code>是浏览器对ES语法<code>[[prototype]]</code>的实现api</li>
 <li><code>prototype</code>属性指向的对象就是实例对象的原型对象即<code>__proto__</code>所指引的对象</li>
-<li>原型链，原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。<br>例1<br><img src="https://segmentfault.com/img/bVYCuG?w=447&amp;h=526" alt="clipboard.png"></li>
+<li>原型链，原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。<br>例1<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg" alt="clipboard.png"></li>
 </ol>
 <p>例2 通过原型链来检测对象所调用的方法是否存在，存在在哪个原型对象上</p>
-<p><img src="https://segmentfault.com/img/bVYDet?w=381&amp;h=428" alt="clipboard.png"><br>person1除了name,age在对象对象中存在外，其他方法都是通过原型链的方法在Object上找到并调用。<br><img src="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png" alt="原型链"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fljonrl5g9j30al0bwjrf.jpg" alt="clipboard.png"><br>person1除了name,age在对象对象中存在外，其他方法都是通过原型链的方法在Object上找到并调用。<br><img src="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png" alt="原型链"></p>
 
       
     </div>
