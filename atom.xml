@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-08-24T15:37:04.000Z</updated>
+  <updated>2017-11-16T01:41:48.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,40 +16,68 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>introducing JSX（翻译）</title>
-    <link href="http://yoursite.com/2017/08/24/introducing-JSX%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89/"/>
-    <id>http://yoursite.com/2017/08/24/introducing-JSX（翻译）/</id>
-    <published>2017-08-24T15:35:57.000Z</published>
-    <updated>2017-08-24T15:37:04.000Z</updated>
+    <title>js对象和原型对象</title>
+    <link href="http://yoursite.com/2017/11/11/js%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1/"/>
+    <id>http://yoursite.com/2017/11/11/js对象和原型对象/</id>
+    <published>2017-11-11T11:37:23.000Z</published>
+    <updated>2017-11-16T01:41:48.000Z</updated>
     
-    <content type="html"><![CDATA[<p>开始学习React从过一遍官网资料开始。</p>
-<p><a href="https://facebook.github.io/react/docs/introducing-jsx.html" target="_blank" rel="external">introducting JSX原文</a> 翻译并不准确，还是看原文好。</p>
-<h3 id="JSX介绍"><a href="#JSX介绍" class="headerlink" title="JSX介绍"></a>JSX介绍</h3><p>看下面的代码<br>    const element = </p><h1>Hello,world</h1><br>这个有趣的连接语法既不是字符串也不是HTML。<br>它称之为<code>JSX</code>,它是JavaScript的一种语法扩展。我们推荐在React中使用它去编写UI界面的样子。JSX可能会使你想起模板语言，但是它带来的是全套的JavaScript功能。<p></p>
-<p>JSX生产React「元素」。在下一节我们将探索渲染React元素到DOM的过程。从下面的例子你能够学到JSX的基础知识。</p>
-<h3 id="表达式嵌套在JSX中"><a href="#表达式嵌套在JSX中" class="headerlink" title="表达式嵌套在JSX中"></a>表达式嵌套在JSX中</h3><p>你可以将JavaScript表达式通过花括号嵌套在JSX中使用。<br>例如，<code>2+2</code> <code>user.firstName</code>,以及<code>formatName(user)</code>等都是合法表达式。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">function formatName(user) &#123;</div><div class="line">  return user.firstName + &apos; &apos; + user.lastName;</div><div class="line">&#125;</div><div class="line"></div><div class="line">const user = &#123;</div><div class="line">  firstName: &apos;Harper&apos;,</div><div class="line">  lastName: &apos;Perez&apos;</div><div class="line">&#125;;</div><div class="line"></div><div class="line">const element = (</div><div class="line">  &lt;h1&gt;</div><div class="line">    Hello, &#123;formatName(user)&#125;!</div><div class="line">  &lt;/h1&gt;</div><div class="line">);</div><div class="line"></div><div class="line">ReactDOM.render(</div><div class="line">  element,</div><div class="line">  document.getElementById(&apos;root&apos;)</div><div class="line">);</div></pre></td></tr></table></figure></p>
-<p>当我们书写多行JSX代码时候，为了良好的可读性，虽不是必须，但还是推荐使用括号包裹避免产生<a href="https://stackoverflow.com/questions/2846283/what-are-the-rules-for-javascripts-automatic-semicolon-insertion-asi" target="_blank" rel="external">JavaScript分号自动插入</a>的问题。</p>
-<h3 id="JSX也是一种表达式"><a href="#JSX也是一种表达式" class="headerlink" title="JSX也是一种表达式"></a>JSX也是一种表达式</h3><p>通过编译之后，JSX表达式会编译成为一个普通的JavaScript对象。<br>这就意味着，你可以在<code>if</code>声明以及<code>for</code>循环中使用JSX，可以将它赋值给变量，将它作为函数参数或者返回值使用。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">function getGreeting(user) &#123;</div><div class="line">  if (user) &#123;</div><div class="line">    return &lt;h1&gt;Hello, &#123;formatName(user)&#125;!&lt;/h1&gt;;</div><div class="line">  &#125;</div><div class="line">  return &lt;h1&gt;Hello, Stranger.&lt;/h1&gt;;</div><div class="line">&#125;</div><div class="line">```   </div><div class="line"></div><div class="line">### 在JSX中定义属性</div><div class="line">你可以使用引号标注字符串作为属性值；</div></pre></td></tr></table></figure></p>
-<p>const element = <div tabindex="0"></div>;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">你也可以用在花括号中写JavaScript表达式作为属性值；</div></pre></td></tr></table></figure></p>
-<p>const element = <img src="{user.avatarUrl}">;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">注意不要给表达式加引号，不然JSX会将该表达式作为字符串处理。所以，你应该要么字符串加引号使用，要么花括号中写表达式，不要两者同时用。</div><div class="line"></div><div class="line">### 在JSX中定义Children(?)</div><div class="line">如果标签不闭合，可以通过`/&gt;`关闭标签，就像XML</div></pre></td></tr></table></figure></p>
-<p>const element = <img src="{user.avatarUrl}">;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">JSX标签包含子元素</div></pre></td></tr></table></figure></p>
-<p>const element = (<br>  <div><br>    <h1>Hello!</h1><br>    <h2>Good to see you here.</h2><br>  </div><br>);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    警告：JSX语法相比HTML更接近JavaScript，React DOM使用`camelCase`(驼峰命名)属性命名规定代替HTML属性名。</div><div class="line">    例如：`class`在JSX中是`className`，`tabindex`是`tabIndex`。</div><div class="line"></div><div class="line">### JSX可以防止注入攻击（XSS）</div><div class="line">通过JSX传入数据会更安全</div></pre></td></tr></table></figure></p>
-<p>const title = response.potentiallyMaliciousInput;<br>// This is safe:<br>const element = </p><h1>{title}</h1>;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">默认情况，React DOM在渲染JSX之前会排除嵌入的输入值，因此确保在你的应用中不会注入任何不明确的书面值。任何值在渲染之前都会转换为字符串。这就避免了XSS攻击。</div><div class="line"></div><div class="line">### JSX表现为对象</div><div class="line">Babel通过调用`React.createElement()`来编译JSX</div><div class="line">下面两段代码是相同的</div></pre></td></tr></table></figure><p></p>
-<p>const element = (<br>  </p><h1 classname="greeting"><br>    Hello, world!<br>  </h1><br>);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure><p></p>
-<p>const element = React.createElement(<br>  ‘h1’,<br>  {className: ‘greeting’},<br>  ‘Hello, world!’<br>);<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">`React.createElement()`展现了一些检查项来帮助你减少代码bug，但是本质上老说它创建了这样的对象</div></pre></td></tr></table></figure></p>
-<p>// Note: this structure is simplified<br>const element = {<br>  type: ‘h1’,<br>  props: {<br>    className: ‘greeting’,<br>    children: ‘Hello, world’<br>  }<br>};<br>```<br>这些对象称之为「React元素」.你可以把他们当做你想在界面上看到一种描述。React读取这些对象，然后使用它们去构造DOM元素，并且保持更新。</p>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学习了解JavaScript对象的继承机制</p>
+<h3 id="JavaScript-Object"><a href="#JavaScript-Object" class="headerlink" title="JavaScript Object"></a>JavaScript Object</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>Object是js的基本数据结构的一种，属于引用类型。</p>
+<h4 id="对象的创建方法"><a href="#对象的创建方法" class="headerlink" title="对象的创建方法"></a>对象的创建方法</h4><ol>
+<li>对象字面量写法</li>
+<li>构造函数，通过构造函数来创建对象实例</li>
+<li>Object()构造函数</li>
+<li>create()方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">// 对象字面量</div><div class="line">let person1 = &#123;name: &apos;jim&apos;&#125;; </div><div class="line">// 构造函数</div><div class="line">function Person(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">    this.greeting = function() &#123;</div><div class="line">        console.log(&apos;hello my name is &apos; + this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">let person2 = new Person(&apos;Bob&apos;);</div><div class="line">console.log(person2.name);</div><div class="line">console.log(person2.greeting());</div><div class="line">// Object() 方法</div><div class="line">let person3 = new Object();</div><div class="line">person3.name = &apos;kobe&apos;;</div><div class="line">console.log(person3.name);</div><div class="line">person3 = new Object(&#123;</div><div class="line">    name: &apos;kobe2&apos;,</div><div class="line">    age: 22</div><div class="line">&#125;);</div><div class="line">console.log(person3.name);</div><div class="line">// create() 方法 类似构造函数 </div><div class="line">let person4 = Object.create(person3);</div><div class="line">person4.name = &apos;kobe3&apos;;</div><div class="line">console.log(person4.name,person3.name);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="对象属性的访问方式"><a href="#对象属性的访问方式" class="headerlink" title="对象属性的访问方式"></a>对象属性的访问方式</h4><ol>
+<li>点表示法</li>
+<li>中括号表示法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let person = &#123;</div><div class="line">    name: &apos;xiaofei&apos;,</div><div class="line">    age: 20</div><div class="line">&#125;</div><div class="line">console.log(person.name);</div><div class="line">console.log(person[&apos;age&apos;]);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="proto、-prototype-、prototype"><a href="#proto、-prototype-、prototype" class="headerlink" title="proto、[[prototype]]、prototype"></a><strong>proto</strong>、[[prototype]]、prototype</h3><ol>
+<li>JavaScript对象通过<code>原型机制</code>从其他对象<code>继承</code>功能特性</li>
+<li>每个对象有一个私有属性<code>[[prototype]]</code>，这个私有属性持有一个连接到另一个称为其<code>prototype</code>对象（原型对象）的链接。</li>
+<li><code>__proto__</code>是浏览器对ES语法<code>[[prototype]]</code>的实现api</li>
+<li><code>prototype</code>属性指向的对象就是实例对象的原型对象即<code>__proto__</code>所指引的对象</li>
+<li>原型链，原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。<br>例1<br><img src="https://segmentfault.com/img/bVYCuG?w=447&amp;h=526" alt="clipboard.png"></li>
+</ol>
+<p>例2 通过原型链来检测对象所调用的方法是否存在，存在在哪个原型对象上</p>
+<p><img src="https://segmentfault.com/img/bVYDet?w=381&amp;h=428" alt="clipboard.png"><br>person1除了name,age在对象对象中存在外，其他方法都是通过原型链的方法在Object上找到并调用。<br><img src="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png" alt="原型链"></p>
 ]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;开始学习React从过一遍官网资料开始。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://facebook.github.io/react/docs/introducing-jsx.html&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;introduct
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;学习了解JavaScript对象的继承机制&lt;/p&gt;
+&lt;h3 id=&quot;JavaScript-Object&quot;&gt;&lt;a href=&quot;#JavaScr
     
     </summary>
     
       <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="React" scheme="http://yoursite.com/tags/React/"/>
+      <category term="原型" scheme="http://yoursite.com/tags/%E5%8E%9F%E5%9E%8B/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>原型链、对象和构造函数之间的关系</title>
+    <link href="http://yoursite.com/2017/11/08/%E5%8E%9F%E5%9E%8B%E9%93%BE%E3%80%81%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/"/>
+    <id>http://yoursite.com/2017/11/08/原型链、对象和构造函数之间的关系/</id>
+    <published>2017-11-08T03:12:32.000Z</published>
+    <updated>2017-11-08T03:12:54.748Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
   </entry>
   
@@ -58,11 +86,11 @@
     <link href="http://yoursite.com/2017/08/09/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"/>
     <id>http://yoursite.com/2017/08/09/git基础操作/</id>
     <published>2017-08-09T14:50:27.000Z</published>
-    <updated>2017-10-30T06:30:19.993Z</updated>
+    <updated>2017-11-08T03:09:57.100Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Git三种状态"><a href="#Git三种状态" class="headerlink" title="Git三种状态"></a>Git三种状态</h3><p><strong>—监听事件的状态来做出相应的行为</strong><br>Git项目的三个工作区域: Git仓库，工作目录以及暂存区域<br><img src="https://git-scm.com/book/en/v2/images/areas.png" alt=""></p>
 <p>1）Git仓库目录(.git)是用来保存项目元数据和对象数据库的地方，从其他计算机克隆仓库时，拷贝的就是这里的数据。</p>
-<p>2）工作目录就是对项目的某个版本独立提取出来的内容，这些内容从Git仓库的压缩数据库中提取，放在磁盘上提供使用和修改。</p>
+<p>2）工作目录就是对项目的某个版本独立提取出来的内容，这些内容从G``it仓库的压缩数据库中提取，放在磁盘上提供使用和修改。</p>
 <p>3）暂存区域是一个文件，保存下次将要提交的文件列表信息。</p>
 <p>基本的Git工作流如下</p>
 <pre><code>1. 在工作目录中修改文件
@@ -86,7 +114,7 @@
     
       &lt;h3 id=&quot;Git三种状态&quot;&gt;&lt;a href=&quot;#Git三种状态&quot; class=&quot;headerlink&quot; title=&quot;Git三种状态&quot;&gt;&lt;/a&gt;Git三种状态&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;—监听事件的状态来做出相应的行为&lt;/strong&gt;&lt;br&gt;Git项目的三个工作区域: Git仓库，工作目录以及暂存区域&lt;br&gt;&lt;img src=&quot;https://git-scm.com/book/en/v2/images/areas.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
 &lt;p&gt;1）Git仓库目录(.git)是用来保存项目元数据和对象数据库的地方，从其他计算机克隆仓库时，拷贝的就是这里的数据。&lt;/p&gt;
-&lt;p&gt;2）工作目录就是对项目的某个版本独立提取出来的内容，这些内容从Git仓库的压缩数据库中提取，放在磁盘上提供使用和修改。&lt;/p&gt;
+&lt;p&gt;2）工作目录就是对项目的某个版本独立提取出来的内容，这些内容从G``it仓库的压缩数据库中提取，放在磁盘上提供使用和修改。&lt;/p&gt;
 &lt;p&gt;3）暂存区域是一个文件，保存下次将要提交的文件列表信息。&lt;/p&gt;
 &lt;p&gt;基本的Git工作流如下&lt;/p&gt;
 &lt;pre&gt;&lt;code&gt;1. 在工作目录中修改文件

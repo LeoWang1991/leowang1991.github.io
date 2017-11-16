@@ -20,7 +20,7 @@
 
 
 
-  <meta name="keywords" content="浏览器渲染," />
+  <meta name="keywords" content="原型,JavaScript," />
 
 
 
@@ -45,7 +45,7 @@
 
 
 
-  <title> 浏览器渲染原理学习 // lifelover </title>
+  <title> js对象和原型对象 // lifelover </title>
 </head>
 
 <body>
@@ -148,7 +148,7 @@
           
           
             
-              浏览器渲染原理学习
+              js对象和原型对象
             
           
         </h1>
@@ -156,7 +156,7 @@
 
       <div class="post-meta">
         <span class="post-time">
-          发表于 2017-01-03
+          发表于 2017-11-11
         </span>
 
         
@@ -176,8 +176,8 @@
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2017/01/03/浏览器渲染原理学习/#comments" >
-              <span class="post-comments-count ds-thread-count" data-thread-key="2017/01/03/浏览器渲染原理学习/"></span>
+            <a href="/2017/11/11/js对象和原型对象/#comments" >
+              <span class="post-comments-count ds-thread-count" data-thread-key="2017/11/11/js对象和原型对象/"></span>
             </a>
           </span>
           
@@ -191,30 +191,29 @@
       
 
       
-        <p>在讨论页面渲染性能的时候，经常会听到这几个词“重绘” “回流” “重排”。<br>回流和重排都是 <code>Reflow</code>的不同翻译(叫法)<br>重绘对应<code>Repaint</code>，重新绘制的意思。</p>
-<p><strong>webkit浏览器的渲染过程</strong><br><img src="http://taligarsiel.com/Projects/webkitflow.png" alt=""></p>
-<p><strong>Gecko(firefox)浏览器的渲染过程</strong><br><img src="http://taligarsiel.com/Projects/image008.jpg" alt=""></p>
-<p>从图上可以看出来我们熟知的<code>Reflow</code>的说法源于ff,webkit这个过程称之为<code>layout(计算布局)</code>,意思大概差不多吧。<br><a id="more"></a></p>
-<p><strong>浏览器的工作大致流程</strong><br><img src="http://coolshell.cn//wp-content/uploads/2013/05/Render-Process.jpg" alt=""></p>
-<p>从这个过程中可以了解到浏览器渲染主要有这么几步</p>
-<ol>
-<li>解析HTML/XHTML/SVG 生成DOM tree,解析CSS生成CSS rule tree，解析script脚本</li>
-<li>浏览器引擎通过DOM tree和css rule tree来构造render tree</li>
-<li>调用系统的GUI绘图</li>
-</ol>
-<p>几个值得关注的点：</p>
-<ol>
-<li>render tree不完全包含dom tree的内容，<code>head</code>或者<code>display:none</code>的元素不会出现在render tree中</li>
-<li>reflow/layout</li>
-<li><code>reflow/layout</code>必定会<code>repaint</code>但<code>repaint</code>不一定会<code>reflow/layout</code></li>
-<li>css rule tree的生成过程</li>
-<li><blockquote>
-<p>Repaint——屏幕的一部分要重画，比如某个CSS的背景色变了。但是元素的几何尺寸没有变。<br>Reflow——意味着元件的几何尺寸变了，我们需要重新验证并计算Render Tree。是Render Tree的一部分或全部发生了变化。这就是Reflow，或是Layout。（HTML使用的是flow based layout，也就是流式布局，所以，如果某元件的几何尺寸发生了变化，需要重新布局，也就叫reflow）reflow 会从<html>这个root frame开始递归往下，依次计算所有的结点几何尺寸和位置，在reflow过程中，可能会增加一些frame，比如一个文本字符串必需被包装起来。</html></p>
-</blockquote>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学习了解JavaScript对象的继承机制</p>
+<h3 id="JavaScript-Object"><a href="#JavaScript-Object" class="headerlink" title="JavaScript Object"></a>JavaScript Object</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>Object是js的基本数据结构的一种，属于引用类型。</p>
+<h4 id="对象的创建方法"><a href="#对象的创建方法" class="headerlink" title="对象的创建方法"></a>对象的创建方法</h4><ol>
+<li>对象字面量写法</li>
+<li>构造函数，通过构造函数来创建对象实例</li>
+<li>Object()构造函数</li>
+<li>create()方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">// 对象字面量</div><div class="line">let person1 = &#123;name: &apos;jim&apos;&#125;; </div><div class="line">// 构造函数</div><div class="line">function Person(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">    this.greeting = function() &#123;</div><div class="line">        console.log(&apos;hello my name is &apos; + this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">let person2 = new Person(&apos;Bob&apos;);</div><div class="line">console.log(person2.name);</div><div class="line">console.log(person2.greeting());</div><div class="line">// Object() 方法</div><div class="line">let person3 = new Object();</div><div class="line">person3.name = &apos;kobe&apos;;</div><div class="line">console.log(person3.name);</div><div class="line">person3 = new Object(&#123;</div><div class="line">    name: &apos;kobe2&apos;,</div><div class="line">    age: 22</div><div class="line">&#125;);</div><div class="line">console.log(person3.name);</div><div class="line">// create() 方法 类似构造函数 </div><div class="line">let person4 = Object.create(person3);</div><div class="line">person4.name = &apos;kobe3&apos;;</div><div class="line">console.log(person4.name,person3.name);</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>参考:<br><a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" target="_blank" rel="external">how browsers work</a><br><a href="http://coolshell.cn/articles/9666.html" target="_blank" rel="external">浏览器渲染原理简介</a></p>
-<p>如果对这块知识感兴趣的话，建议去读下<a href="http://taligarsiel.com/Projects/howbrowserswork1.htm" target="_blank" rel="external">how browsers work</a>这篇文章，比较长，讲的很细致，比如Gecko和webkit在渲染上的一些差异，生成树(dom tree/css render tree)的一些具体算法什么的。</p>
+<h4 id="对象属性的访问方式"><a href="#对象属性的访问方式" class="headerlink" title="对象属性的访问方式"></a>对象属性的访问方式</h4><ol>
+<li>点表示法</li>
+<li>中括号表示法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let person = &#123;</div><div class="line">    name: &apos;xiaofei&apos;,</div><div class="line">    age: 20</div><div class="line">&#125;</div><div class="line">console.log(person.name);</div><div class="line">console.log(person[&apos;age&apos;]);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="proto、-prototype-、prototype"><a href="#proto、-prototype-、prototype" class="headerlink" title="proto、[[prototype]]、prototype"></a><strong>proto</strong>、[[prototype]]、prototype</h3><ol>
+<li>JavaScript对象通过<code>原型机制</code>从其他对象<code>继承</code>功能特性</li>
+<li>每个对象有一个私有属性<code>[[prototype]]</code>，这个私有属性持有一个连接到另一个称为其<code>prototype</code>对象（原型对象）的链接。</li>
+<li><code>__proto__</code>是浏览器对ES语法<code>[[prototype]]</code>的实现api</li>
+<li><code>prototype</code>属性指向的对象就是实例对象的原型对象即<code>__proto__</code>所指引的对象</li>
+<li>原型链，原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。<br>例1<br><img src="https://segmentfault.com/img/bVYCuG?w=447&amp;h=526" alt="clipboard.png"></li>
+</ol>
+<p>例2 通过原型链来检测对象所调用的方法是否存在，存在在哪个原型对象上</p>
+<p><img src="https://segmentfault.com/img/bVYDet?w=381&amp;h=428" alt="clipboard.png"><br>person1除了name,age在对象对象中存在外，其他方法都是通过原型链的方法在Object上找到并调用。<br><img src="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png" alt="原型链"></p>
 
       
     </div>
@@ -223,7 +222,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/浏览器渲染/"> #浏览器渲染 </a>
+            <a href="/tags/原型/"> #原型 </a>
+          
+            <a href="/tags/JavaScript/"> #JavaScript </a>
           
         </div>
       
@@ -232,11 +233,11 @@
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/08/09/git基础操作/">git基础操作</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/11/08/原型链、对象和构造函数之间的关系/">原型链、对象和构造函数之间的关系</a>
             
           </div>
         </div>
@@ -279,8 +280,8 @@
     
       <div class="comments" id="comments">
         
-          <div class="ds-thread" data-thread-key="2017/01/03/浏览器渲染原理学习/"
-               data-title="浏览器渲染原理学习" data-url="http://yoursite.com/2017/01/03/浏览器渲染原理学习/">
+          <div class="ds-thread" data-thread-key="2017/11/11/js对象和原型对象/"
+               data-title="js对象和原型对象" data-url="http://yoursite.com/2017/11/11/js对象和原型对象/">
           </div>
         
       </div>
@@ -386,7 +387,7 @@
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-Object"><span class="nav-number">2.</span> <span class="nav-text">JavaScript Object</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的创建方法"><span class="nav-number">2.2.</span> <span class="nav-text">对象的创建方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象属性的访问方式"><span class="nav-number">2.3.</span> <span class="nav-text">对象属性的访问方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proto、-prototype-、prototype"><span class="nav-number">3.</span> <span class="nav-text">proto、[[prototype]]、prototype</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

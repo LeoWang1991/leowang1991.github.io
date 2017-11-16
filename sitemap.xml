@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/about/index.html</loc>
+    <loc>http://yoursite.com/2017/11/11/js%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1/</loc>
     
-    <lastmod>2017-10-31T09:08:19.480Z</lastmod>
+    <lastmod>2017-11-16T01:41:48.000Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2017/11/08/%E5%8E%9F%E5%9E%8B%E9%93%BE%E3%80%81%E5%AF%B9%E8%B1%A1%E5%92%8C%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB/</loc>
+    
+    <lastmod>2017-11-08T03:12:54.748Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2017/08/09/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/</loc>
     
-    <lastmod>2017-10-30T06:30:19.993Z</lastmod>
+    <lastmod>2017-11-08T03:09:57.100Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/2017/08/24/introducing-JSX%EF%BC%88%E7%BF%BB%E8%AF%91%EF%BC%89/</loc>
+    <loc>http://yoursite.com/about/index.html</loc>
     
-    <lastmod>2017-08-24T15:37:04.000Z</lastmod>
+    <lastmod>2017-10-31T09:09:16.097Z</lastmod>
     
   </url>
   
