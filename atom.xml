@@ -5,15 +5,35 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-11-16T01:48:07.000Z</updated>
+  <updated>2017-12-01T09:18:25.727Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
-    <name>jingxiao</name>
+    <name>骁飞</name>
     
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://yoursite.com/2017/12/01/test/"/>
+    <id>http://yoursite.com/2017/12/01/test/</id>
+    <published>2017-12-01T09:18:07.000Z</published>
+    <updated>2017-12-01T09:18:25.727Z</updated>
+    
+    <content type="html"><![CDATA[<p>test</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;test&lt;/p&gt;
+
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>js对象和原型对象</title>
