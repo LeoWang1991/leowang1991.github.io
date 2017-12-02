@@ -1828,7 +1828,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #7daa2e;
+  background: #141b62;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2644,9 +2644,6 @@ pre .javascript .function {
     border-radius: initial;
   }
 }
-.main {
-  background: #f00;
-}
 .main:before,
 .main:after {
   content: " ";
@@ -2998,4 +2995,10 @@ pre .javascript .function {
   .post-body {
     text-align: justify;
   }
+}
+body {
+  background: linear-gradient(to left, #f1f2b5, #135058);
+}
+body {
+  background: linear-gradient(to left, #f1f2b5, #135058);
 }
