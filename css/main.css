@@ -190,7 +190,6 @@ body {
   line-height: 2;
   color: #555;
   background: #f5f7f9;
-  background: linear-gradient(to left, #f1f2b5, #135058);
 }
 @media (max-width: 767px) {
   body {
@@ -1829,7 +1828,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d05201;
+  background: #588c33;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2644,6 +2643,9 @@ pre .javascript .function {
     width: auto;
     border-radius: initial;
   }
+}
+body {
+  background: linear-gradient(to left, #f1f2b5, #135058);
 }
 .main:before,
 .main:after {
