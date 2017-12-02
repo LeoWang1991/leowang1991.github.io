@@ -1828,7 +1828,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #99d2ff;
+  background: #7daa2e;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2644,11 +2644,8 @@ pre .javascript .function {
     border-radius: initial;
   }
 }
-body {
-  background: linear-gradient(to left, #f1f2b5, #135058) !important;
-}
 .main {
-  background: linear-gradient(to left, #f1f2b5, #135058) !important;
+  background: #f00;
 }
 .main:before,
 .main:after {
