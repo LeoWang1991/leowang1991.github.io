@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-02T02:24:40.198Z</updated>
+  <updated>2017-12-03T07:59:44.083Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,83 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>给hexo博客自定义域名加https</title>
+    <link href="http://yoursite.com/2017/12/03/%E7%BB%99hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%8A%A0https/"/>
+    <id>http://yoursite.com/2017/12/03/给hexo博客自定义域名加https/</id>
+    <published>2017-12-03T07:10:14.000Z</published>
+    <updated>2017-12-03T07:59:44.083Z</updated>
+    
+    <content type="html"><![CDATA[<p>给自定义域名加https</p>
+<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><ul>
+<li>看上去更加安全</li>
+<li>小绿锁看上去更好看</li>
+</ul>
+<h3 id="实现方案-cloudflare"><a href="#实现方案-cloudflare" class="headerlink" title="实现方案 cloudflare"></a>实现方案 cloudflare</h3><p>走cloudflare的DNS解析</p>
+<ol>
+<li>注册cloudflare账号</li>
+<li>添加域名<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lp252ssj30rb0ed0ty.jpg" alt="add site"><br>然后一步步走下去就ok了</li>
+<li>把你域名原有的DNS修改成cloudflare的<br><img src="https://ws1.sinaimg.cn/large/8700af19gy1fi43n3bs7yj21ig0g4wgj.jpg" alt="modify dns"><br>比如我的是万网<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fm3luk14gij30y90b3gmv.jpg" alt=""></li>
+<li>在cloudflare上check 应该很快生效<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lw69h29j30w60dr76l.jpg" alt=""></li>
+<li>在cloudflare上配置DNS 之前一直弄不好就是因为这里没有配置好<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lxcpu2rj30t70k20vl.jpg" alt=""><br>按这样配置就ok了，因为是挂在github上的静态博客，所以<code>192.30.252.153</code>指向的github的ip,CNAME的配置，我不是很明白，但就是这样配置就好了。<br>如果你操作完一直不成功可以查看是不是这里配置出问题了。</li>
+<li>配置规则，强制走https访问<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3m0e6e8dj30s00in41a.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fm3m1st5ymj307n014t8n.jpg" alt=""><br>有个小绿锁还是蛮好看的</li>
+</ol>
+<h3 id="一些知识"><a href="#一些知识" class="headerlink" title="一些知识"></a>一些知识</h3><p>主要只是就是了解DNS配置时候的A AAAA CNAME等都是啥<br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fm3m7e7niqj306109wwep.jpg" alt="dns"><br><code>DNS</code>全称，<code>Domain Name System</code>,域名系统，作为互联网的一项服务,将域名和ip地址映射的一个分布式数据库。通过DNS就可以通过域名，找到对应的物理机ip。<br>上面的A AAAA CNAME都是这套系统的资源记录类型。</p>
+<table>
+<thead>
+<tr>
+<th>代码</th>
+<th>描述</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A</td>
+<td>IP地址记录</td>
+<td>映射主机域名到IPv4地址</td>
+</tr>
+<tr>
+<td>AAAA</td>
+<td>IPv6 IP地址记录</td>
+<td>映射主机域名到IPv6地址</td>
+</tr>
+<tr>
+<td>CNAME</td>
+<td>规范名称记录</td>
+<td>一个主机域名的别名，告诉在哪个地方继续寻找</td>
+</tr>
+<tr>
+<td>MX</td>
+<td>电邮交互记录</td>
+<td>引导域名到该域名的邮件传输代理(MTA)列表</td>
+</tr>
+</tbody>
+</table>
+<p>还有更多的类型参考<a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E4%BC%BA%E6%9C%8D%E5%99%A8%E8%A8%98%E9%8C%84%E9%A1%9E%E5%9E%8B%E5%88%97%E8%A1%A8" target="_blank" rel="external">域名服务器记录类型列表</a>，<br><a href="http://www.dirs.cn/" target="_blank" rel="external">域名查询服务</a></p>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>应该多去学习一下计算机网络相关的知识 </p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;给自定义域名加https&lt;/p&gt;
+&lt;h3 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;看上去更加安全&lt;/li&gt;
+&lt;li&gt;小绿锁看上去更好看&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id
+    
+    </summary>
+    
+      <category term="https" scheme="http://yoursite.com/categories/https/"/>
+    
+    
+      <category term="dns" scheme="http://yoursite.com/tags/dns/"/>
+    
+      <category term="http" scheme="http://yoursite.com/tags/http/"/>
+    
+  </entry>
   
   <entry>
     <title>这一年</title>
@@ -48,26 +125,6 @@
     
     
       <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>test</title>
-    <link href="http://yoursite.com/2017/12/01/test/"/>
-    <id>http://yoursite.com/2017/12/01/test/</id>
-    <published>2017-12-01T09:18:07.000Z</published>
-    <updated>2017-12-01T09:18:25.727Z</updated>
-    
-    <content type="html"><![CDATA[<p>test</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;test&lt;/p&gt;
-
-    
-    </summary>
-    
     
   </entry>
   
