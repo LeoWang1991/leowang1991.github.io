@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="原型,JavaScript," />
+  <meta name="keywords" content="React,javascript," />
 
 
 
@@ -81,38 +81,25 @@
 
 
 
-<meta name="description" content="前言学习了解JavaScript对象的继承机制
-JavaScript Object概念Object是js的基本数据结构的一种，属于引用类型。
-对象的创建方法
-对象字面量写法
-构造函数，通过构造函数来创建对象实例
-Object()构造函数
-create()方法12345678910111213141516171819202122232425// 对象字面量let person1 = &amp;#123;na">
+<meta name="description" content="前言本篇blog主要记录一下React官网文档学习笔记。
+JSX
+组件名大写字母开头
+props不设置value的话，默认为true123456789101112131415&amp;lt;Input autocomplete/&amp;gt;  &amp;lt;Input autocomplete=&amp;#123;true&amp;#125;/&amp;gt;```  3. 对于Booleans,null undefined render">
 <meta property="og:type" content="article">
-<meta property="og:title" content="js对象和原型对象">
-<meta property="og:url" content="http://yoursite.com/2017/11/11/js对象和原型对象/index.html">
+<meta property="og:title" content="React官方文档学习笔记">
+<meta property="og:url" content="http://yoursite.com/2017/12/04/React官方文档学习笔记/index.html">
 <meta property="og:site_name" content="lifelover">
-<meta property="og:description" content="前言学习了解JavaScript对象的继承机制
-JavaScript Object概念Object是js的基本数据结构的一种，属于引用类型。
-对象的创建方法
-对象字面量写法
-构造函数，通过构造函数来创建对象实例
-Object()构造函数
-create()方法12345678910111213141516171819202122232425// 对象字面量let person1 = &amp;#123;na">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg">
-<meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fljonrl5g9j30al0bwjrf.jpg">
-<meta property="og:image" content="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png">
-<meta property="og:updated_time" content="2017-11-16T01:48:07.000Z">
+<meta property="og:description" content="前言本篇blog主要记录一下React官网文档学习笔记。
+JSX
+组件名大写字母开头
+props不设置value的话，默认为true123456789101112131415&amp;lt;Input autocomplete/&amp;gt;  &amp;lt;Input autocomplete=&amp;#123;true&amp;#125;/&amp;gt;```  3. 对于Booleans,null undefined render">
+<meta property="og:updated_time" content="2017-12-06T09:29:53.963Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="js对象和原型对象">
-<meta name="twitter:description" content="前言学习了解JavaScript对象的继承机制
-JavaScript Object概念Object是js的基本数据结构的一种，属于引用类型。
-对象的创建方法
-对象字面量写法
-构造函数，通过构造函数来创建对象实例
-Object()构造函数
-create()方法12345678910111213141516171819202122232425// 对象字面量let person1 = &amp;#123;na">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg">
+<meta name="twitter:title" content="React官方文档学习笔记">
+<meta name="twitter:description" content="前言本篇blog主要记录一下React官网文档学习笔记。
+JSX
+组件名大写字母开头
+props不设置value的话，默认为true123456789101112131415&amp;lt;Input autocomplete/&amp;gt;  &amp;lt;Input autocomplete=&amp;#123;true&amp;#125;/&amp;gt;```  3. 对于Booleans,null undefined render">
 
 
 
@@ -142,13 +129,13 @@ create()方法12345678910111213141516171819202122232425// 对象字面量let per
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/11/11/js对象和原型对象/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/12/04/React官方文档学习笔记/"/>
 
 
 
 
 
-  <title>js对象和原型对象 | lifelover</title>
+  <title>React官方文档学习笔记 | lifelover</title>
   
 
 
@@ -285,7 +272,7 @@ create()方法12345678910111213141516171819202122232425// 对象字面量let per
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/11/11/js对象和原型对象/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/04/React官方文档学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="骁飞">
@@ -302,7 +289,7 @@ create()方法12345678910111213141516171819202122232425// 对象字面量let per
 
         
         
-          <h1 class="post-title" itemprop="name headline">js对象和原型对象</h1>
+          <h1 class="post-title" itemprop="name headline">React官方文档学习笔记</h1>
         
 
         <div class="post-meta">
@@ -314,8 +301,8 @@ create()方法12345678910111213141516171819202122232425// 对象字面量let per
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-11-11T19:37:23+08:00">
-                2017-11-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-12-04T17:18:07+08:00">
+                2017-12-04
               </time>
             
 
@@ -379,29 +366,19 @@ create()方法12345678910111213141516171819202122232425// 对象字面量let per
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学习了解JavaScript对象的继承机制</p>
-<h3 id="JavaScript-Object"><a href="#JavaScript-Object" class="headerlink" title="JavaScript Object"></a>JavaScript Object</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>Object是js的基本数据结构的一种，属于引用类型。</p>
-<h4 id="对象的创建方法"><a href="#对象的创建方法" class="headerlink" title="对象的创建方法"></a>对象的创建方法</h4><ol>
-<li>对象字面量写法</li>
-<li>构造函数，通过构造函数来创建对象实例</li>
-<li>Object()构造函数</li>
-<li>create()方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">// 对象字面量</div><div class="line">let person1 = &#123;name: &apos;jim&apos;&#125;; </div><div class="line">// 构造函数</div><div class="line">function Person(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">    this.greeting = function() &#123;</div><div class="line">        console.log(&apos;hello my name is &apos; + this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">let person2 = new Person(&apos;Bob&apos;);</div><div class="line">console.log(person2.name);</div><div class="line">console.log(person2.greeting());</div><div class="line">// Object() 方法</div><div class="line">let person3 = new Object();</div><div class="line">person3.name = &apos;kobe&apos;;</div><div class="line">console.log(person3.name);</div><div class="line">person3 = new Object(&#123;</div><div class="line">    name: &apos;kobe2&apos;,</div><div class="line">    age: 22</div><div class="line">&#125;);</div><div class="line">console.log(person3.name);</div><div class="line">// create() 方法 类似构造函数 </div><div class="line">let person4 = Object.create(person3);</div><div class="line">person4.name = &apos;kobe3&apos;;</div><div class="line">console.log(person4.name,person3.name);</div></pre></td></tr></table></figure>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇blog主要记录一下<a href="https://reactjs.org/" target="_blank" rel="external">React官网文档</a>学习笔记。</p>
+<h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><ol>
+<li>组件名大写字母开头</li>
+<li>props不设置value的话，默认为true<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;Input autocomplete/&gt;  </div><div class="line">&lt;Input autocomplete=&#123;true&#125;/&gt;</div><div class="line">```  </div><div class="line">3. 对于Booleans,null undefined render()时候会忽略掉</div><div class="line"></div><div class="line">### 类型检测 </div><div class="line">1. propTypes来检查props数据类型,类型不对能快速在console中查看</div><div class="line">2. defaultProps，设置默认props，如果父组件没有特定值</div><div class="line">3. Flow和TypeScript</div><div class="line"></div><div class="line">### ref</div><div class="line">[ref and the dom][2]</div><div class="line">这篇文档写得很详细</div><div class="line">1 尽量少用ref</div><div class="line">2 ref的两种使用方式，一种是直接ref=&apos;&apos;，另一种是通过回调函数的写法，以及其访问方式</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<h4 id="对象属性的访问方式"><a href="#对象属性的访问方式" class="headerlink" title="对象属性的访问方式"></a>对象属性的访问方式</h4><ol>
-<li>点表示法</li>
-<li>中括号表示法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let person = &#123;</div><div class="line">    name: &apos;xiaofei&apos;,</div><div class="line">    age: 20</div><div class="line">&#125;</div><div class="line">console.log(person.name);</div><div class="line">console.log(person[&apos;age&apos;]);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="proto、-prototype-、prototype"><a href="#proto、-prototype-、prototype" class="headerlink" title="proto、[[prototype]]、prototype"></a><strong>proto</strong>、[[prototype]]、prototype</h3><ol>
-<li>JavaScript对象通过<code>原型机制</code>从其他对象<code>继承</code>功能特性</li>
-<li>每个对象有一个私有属性<code>[[prototype]]</code>，这个私有属性持有一个连接到另一个称为其<code>prototype</code>对象（原型对象）的链接。</li>
-<li><code>__proto__</code>是浏览器对ES语法<code>[[prototype]]</code>的实现api</li>
-<li><code>prototype</code>属性指向的对象就是实例对象的原型对象即<code>__proto__</code>所指引的对象</li>
-<li>原型链，原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。<br>例1<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg" alt="clipboard.png"></li>
-</ol>
-<p>例2 通过原型链来检测对象所调用的方法是否存在，存在在哪个原型对象上</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fljonrl5g9j30al0bwjrf.jpg" alt="clipboard.png"><br>person1除了name,age在对象对象中存在外，其他方法都是通过原型链的方法在Object上找到并调用。<br><img src="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png" alt="原型链"></p>
+<p><input ref="inputElem1"></p>
+<p><input ref="{input" ==""> this.inputElem2 = input}</p>
+<p><myinput ref="{input" ==""> this.inputElem3 = input}<br><code>`` 
+对于直接写的通过</code>this.refs.inputElem1<code>访问到第一个input
+对于回调函数直接</code>this.inputElem2<code>来访问，访问到第二个input
+回调函数的参数</code>input<code>就是对应</code>DOM元素<code>或者当前组件比如</code>MyInput<code>组件
+如果组件卸载了，访问到的</code>null`；<br>官方建议，使用回调函数的写法。</myinput></p>
 
       
     </div>
@@ -419,9 +396,9 @@ create()方法12345678910111213141516171819202122232425// 对象字面量let per
       
         <div class="post-tags">
           
-            <a href="/tags/原型/" rel="tag"># 原型</a>
+            <a href="/tags/React/" rel="tag"># React</a>
           
-            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+            <a href="/tags/javascript/" rel="tag"># javascript</a>
           
         </div>
       
@@ -434,8 +411,8 @@ create()方法12345678910111213141516171819202122232425// 对象字面量let per
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/09/git基础操作/" rel="next" title="git基础操作">
-                <i class="fa fa-chevron-left"></i> git基础操作
+              <a href="/2017/12/04/常见问题解决方案合集/" rel="next" title="常见问题解决方案合集">
+                <i class="fa fa-chevron-left"></i> 常见问题解决方案合集
               </a>
             
           </div>
@@ -443,10 +420,6 @@ create()方法12345678910111213141516171819202122232425// 对象字面量let per
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/12/02/这一年/" rel="prev" title="这一年">
-                这一年 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -589,7 +562,7 @@ create()方法12345678910111213141516171819202122232425// 对象字面量let per
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-Object"><span class="nav-number">2.</span> <span class="nav-text">JavaScript Object</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念"><span class="nav-number">2.1.</span> <span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的创建方法"><span class="nav-number">2.2.</span> <span class="nav-text">对象的创建方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象属性的访问方式"><span class="nav-number">2.3.</span> <span class="nav-text">对象属性的访问方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proto、-prototype-、prototype"><span class="nav-number">3.</span> <span class="nav-text">proto、[[prototype]]、prototype</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX"><span class="nav-number">2.</span> <span class="nav-text">JSX</span></a></li></ol></div>
             
 
           </div>

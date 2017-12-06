@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-04T07:59:21.177Z</updated>
+  <updated>2017-12-06T09:29:53.963Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,6 +14,43 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React官方文档学习笔记</title>
+    <link href="http://yoursite.com/2017/12/04/React%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>http://yoursite.com/2017/12/04/React官方文档学习笔记/</id>
+    <published>2017-12-04T09:18:07.000Z</published>
+    <updated>2017-12-06T09:29:53.963Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇blog主要记录一下<a href="https://reactjs.org/" target="_blank" rel="external">React官网文档</a>学习笔记。</p>
+<h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><ol>
+<li>组件名大写字母开头</li>
+<li>props不设置value的话，默认为true<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;Input autocomplete/&gt;  </div><div class="line">&lt;Input autocomplete=&#123;true&#125;/&gt;</div><div class="line">```  </div><div class="line">3. 对于Booleans,null undefined render()时候会忽略掉</div><div class="line"></div><div class="line">### 类型检测 </div><div class="line">1. propTypes来检查props数据类型,类型不对能快速在console中查看</div><div class="line">2. defaultProps，设置默认props，如果父组件没有特定值</div><div class="line">3. Flow和TypeScript</div><div class="line"></div><div class="line">### ref</div><div class="line">[ref and the dom][2]</div><div class="line">这篇文档写得很详细</div><div class="line">1 尽量少用ref</div><div class="line">2 ref的两种使用方式，一种是直接ref=&apos;&apos;，另一种是通过回调函数的写法，以及其访问方式</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><input ref="inputElem1"></p>
+<p><input ref="{input" ==""> this.inputElem2 = input}</p>
+<p><myinput ref="{input" ==""> this.inputElem3 = input}<br><code>`` 
+对于直接写的通过</code>this.refs.inputElem1<code>访问到第一个input
+对于回调函数直接</code>this.inputElem2<code>来访问，访问到第二个input
+回调函数的参数</code>input<code>就是对应</code>DOM元素<code>或者当前组件比如</code>MyInput<code>组件
+如果组件卸载了，访问到的</code>null`；<br>官方建议，使用回调函数的写法。</myinput></p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;本篇blog主要记录一下&lt;a href=&quot;https://reactjs.org/&quot; target=&quot;_blank&quot; rel=&quot;extern
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="React" scheme="http://yoursite.com/tags/React/"/>
+    
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+  </entry>
   
   <entry>
     <title>常见问题解决方案合集</title>
