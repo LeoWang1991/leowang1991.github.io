@@ -84,7 +84,13 @@
 <meta name="description" content="前言本篇blog主要记录一下React官网文档学习笔记。
 JSX
 组件名大写字母开头
-props不设置value的话，默认为true123456789101112131415&amp;lt;Input autocomplete/&amp;gt;  &amp;lt;Input autocomplete=&amp;#123;true&amp;#125;/&amp;gt;```  3. 对于Booleans,null undefined render">
+props不设置value的话，默认为true&amp;lt;Input autocomplete/&amp;gt;  
+&amp;lt;Input autocomplete={true}/&amp;gt;
+
+对于Booleans,null undefined render()时候会忽略掉
+
+类型检测
+propTypes来检查props数据类型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="React官方文档学习笔记">
 <meta property="og:url" content="http://yoursite.com/2017/12/04/React官方文档学习笔记/index.html">
@@ -92,14 +98,28 @@ props不设置value的话，默认为true123456789101112131415&amp;lt;Input auto
 <meta property="og:description" content="前言本篇blog主要记录一下React官网文档学习笔记。
 JSX
 组件名大写字母开头
-props不设置value的话，默认为true123456789101112131415&amp;lt;Input autocomplete/&amp;gt;  &amp;lt;Input autocomplete=&amp;#123;true&amp;#125;/&amp;gt;```  3. 对于Booleans,null undefined render">
-<meta property="og:updated_time" content="2017-12-07T02:48:56.443Z">
+props不设置value的话，默认为true&amp;lt;Input autocomplete/&amp;gt;  
+&amp;lt;Input autocomplete={true}/&amp;gt;
+
+对于Booleans,null undefined render()时候会忽略掉
+
+类型检测
+propTypes来检查props数据类型">
+<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fm81fqosk1j30s006ywf8.jpg">
+<meta property="og:updated_time" content="2017-12-07T03:22:28.756Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React官方文档学习笔记">
 <meta name="twitter:description" content="前言本篇blog主要记录一下React官网文档学习笔记。
 JSX
 组件名大写字母开头
-props不设置value的话，默认为true123456789101112131415&amp;lt;Input autocomplete/&amp;gt;  &amp;lt;Input autocomplete=&amp;#123;true&amp;#125;/&amp;gt;```  3. 对于Booleans,null undefined render">
+props不设置value的话，默认为true&amp;lt;Input autocomplete/&amp;gt;  
+&amp;lt;Input autocomplete={true}/&amp;gt;
+
+对于Booleans,null undefined render()时候会忽略掉
+
+类型检测
+propTypes来检查props数据类型">
+<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1fm81fqosk1j30s006ywf8.jpg">
 
 
 
@@ -369,11 +389,17 @@ props不设置value的话，默认为true123456789101112131415&amp;lt;Input auto
         <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇blog主要记录一下<a href="https://reactjs.org/" target="_blank" rel="external">React官网文档</a>学习笔记。</p>
 <h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><ol>
 <li>组件名大写字母开头</li>
-<li>props不设置value的话，默认为true<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">&lt;Input autocomplete/&gt;  </div><div class="line">&lt;Input autocomplete=&#123;true&#125;/&gt;</div><div class="line">```  </div><div class="line">3. 对于Booleans,null undefined render()时候会忽略掉</div><div class="line"></div><div class="line">### 类型检测 </div><div class="line">1. propTypes来检查props数据类型,类型不对能快速在console中查看</div><div class="line">2. defaultProps，设置默认props，如果父组件没有特定值</div><div class="line">3. Flow和TypeScript</div><div class="line"></div><div class="line">### ref</div><div class="line">[ref and the dom][2]</div><div class="line">这篇文档写得很详细</div><div class="line">1 尽量少用ref</div><div class="line">2 ref的两种使用方式，一种是直接ref=&apos;&apos;，另一种是通过回调函数的写法，以及其访问方式</div></pre></td></tr></table></figure>
-</li>
+<li>props不设置value的话，默认为true<pre><code>&lt;Input autocomplete/&gt;  
+&lt;Input autocomplete={true}/&gt;
+</code></pre></li>
+<li>对于Booleans,null undefined render()时候会忽略掉</li>
 </ol>
-<p>&lt; input ref=’inputElem1’/&gt;<br>&lt; input ref={input =&gt; this.inputElem2 = input} /&gt;</p>
-<p><myinput ref="{input" ==""> this.inputElem3 = input} /&gt;<br>``` </myinput></p>
+<h3 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h3><ol>
+<li>propTypes来检查props数据类型,类型不对能快速在console中查看</li>
+<li>defaultProps，设置默认props，如果父组件没有特定值</li>
+<li>Flow和TypeScript</li>
+</ol>
+<h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><p><a href="https://reactjs.org/docs/refs-and-the-dom.html" target="_blank" rel="external">ref and the dom</a><br>这篇文档写得很详细<br>1 尽量少用ref<br>2 ref的两种使用方式，一种是直接ref=’’，另一种是通过回调函数的写法，以及其访问方式<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fm81fqosk1j30s006ywf8.jpg" alt=""></p>
 <p>对于直接写的通过<code>this.refs.inputElem1</code> 访问到第一个input<br>对于回调函数直接<code>this.inputElem2</code>来访问，访问到第二个input<br>回调函数的参数<code>input</code>就是对应<code>DOM元素</code>或者当前组件比如<code>MyInput</code>组件<br>如果组件卸载了，访问到的<code>null</code>；<br>官方建议，使用回调函数的写法。</p>
 
       
@@ -558,7 +584,7 @@ props不设置value的话，默认为true123456789101112131415&amp;lt;Input auto
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX"><span class="nav-number">2.</span> <span class="nav-text">JSX</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSX"><span class="nav-number">2.</span> <span class="nav-text">JSX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#类型检测"><span class="nav-number">3.</span> <span class="nav-text">类型检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ref"><span class="nav-number">4.</span> <span class="nav-text">ref</span></a></li></ol></div>
             
 
           </div>
