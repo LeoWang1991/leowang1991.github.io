@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-07T03:22:28.756Z</updated>
+  <updated>2017-12-18T13:24:33.541Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,13 +16,73 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>胃病了...哎</title>
+    <link href="http://yoursite.com/2017/12/18/%E8%83%83%E7%97%85%E4%BA%86-%E5%93%8E/"/>
+    <id>http://yoursite.com/2017/12/18/胃病了-哎/</id>
+    <published>2017-12-18T13:13:35.000Z</published>
+    <updated>2017-12-18T13:24:33.541Z</updated>
+    
+    <content type="html"><![CDATA[<p>胃病了，蛋疼，居然也得了胃病，反流性食管炎，真是不好受啊。</p>
+<p>谁让自己作死呢，想想以前总是晚上打完游戏，回家习惯性点炒粉，各种饮食不规律，天天熬夜。那段时候就想着自己这么作死肯定会出问题的，当然很快就应验了。</p>
+<p>算是个提醒吧，问题不是很严重但也不容忽视，前两天公司体检，体检报告就是胖吧，脂肪肝啥的，想想也不奇怪咯，这么胖，健身房体脂称测得29.3%。</p>
+<p>所以，人生绝大多数事情都是有因果关系的，就像得胃病是必然的，如果不是病了，估计还是那样不好的生活作息饮食习惯吧。</p>
+<p>想起两个成语「防患未然」和「未雨绸缪」，两手准备。<br>对于感觉不好的事情，防止发生，就去做那些降低这件事发生可能性的相关事情。防患未然。<br>当然不管做了什么准备，都没有确定，我们做的努力都是降低发生的概率，所谓尽人事听天命。未雨绸缪，对于那些你不能很好掌控的事情，做好最坏的打算，把损失降到最低。</p>
+<p>人生的路还很长，身体健康是真真切切的资本，世界这么美好，首先要有个不错的身体。</p>
+<p>额，</p>
+<p>###要锻炼，要减肥###</p>
+<p>###健康饮食###</p>
+<p>###早点睡觉###</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;胃病了，蛋疼，居然也得了胃病，反流性食管炎，真是不好受啊。&lt;/p&gt;
+&lt;p&gt;谁让自己作死呢，想想以前总是晚上打完游戏，回家习惯性点炒粉，各种饮食不规律，天天熬夜。那段时候就想着自己这么作死肯定会出问题的，当然很快就应验了。&lt;/p&gt;
+&lt;p&gt;算是个提醒吧，问题不是很严重但也不容忽
+    
+    </summary>
+    
+      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+      <category term="健康" scheme="http://yoursite.com/tags/%E5%81%A5%E5%BA%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vscode相关使用指南</title>
+    <link href="http://yoursite.com/2017/12/15/vscode%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>http://yoursite.com/2017/12/15/vscode相关使用指南/</id>
+    <published>2017-12-15T03:07:54.000Z</published>
+    <updated>2017-12-15T03:11:21.641Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇blog主要记录，vscode相关使用技巧以及好用的插件等知识。</p>
+<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>1 <a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync" target="_blank" rel="external">Settings Sync</a><br>同步插件将vscode插件以及各种设置同步到github上，便于下次换机子同步之前的设置和插件。</p>
+]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;本篇blog主要记录，vscode相关使用技巧以及好用的插件等知识。&lt;/p&gt;
+&lt;h3 id=&quot;插件&quot;&gt;&lt;a href=&quot;#插件&quot; class
+    
+    </summary>
+    
+      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="vscode" scheme="http://yoursite.com/tags/vscode/"/>
+    
+  </entry>
+  
+  <entry>
     <title>React官方文档学习笔记</title>
     <link href="http://yoursite.com/2017/12/04/React%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>http://yoursite.com/2017/12/04/React官方文档学习笔记/</id>
     <published>2017-12-04T09:18:07.000Z</published>
-    <updated>2017-12-07T03:22:28.756Z</updated>
+    <updated>2017-12-07T03:40:32.290Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇blog主要记录一下<a href="https://reactjs.org/" target="_blank" rel="external">React官网文档</a>学习笔记。</p>
+    <content type="html"><![CDATA[<p><img src="https://pic3.zhimg.com/v2-3273f90cf5dd87d4499f0b70ad55e5e8_r.jpg" alt=""></p>
+<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇blog主要记录一下<a href="https://reactjs.org/" target="_blank" rel="external">React官网文档</a>学习笔记。</p>
 <h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><ol>
 <li>组件名大写字母开头</li>
 <li>props不设置value的话，默认为true<pre><code>&lt;Input autocomplete/&gt;  
@@ -41,7 +101,8 @@
     
     <summary type="html">
     
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;本篇blog主要记录一下&lt;a href=&quot;https://reactjs.org/&quot; target=&quot;_blank&quot; rel=&quot;extern
+      &lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/v2-3273f90cf5dd87d4499f0b70ad55e5e8_r.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
+&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; titl
     
     </summary>
     
