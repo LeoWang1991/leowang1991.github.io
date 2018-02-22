@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-18T13:24:33.541Z</updated>
+  <updated>2017-12-15T03:11:21.641Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -14,40 +14,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>胃病了...哎</title>
-    <link href="http://yoursite.com/2017/12/18/%E8%83%83%E7%97%85%E4%BA%86-%E5%93%8E/"/>
-    <id>http://yoursite.com/2017/12/18/胃病了-哎/</id>
-    <published>2017-12-18T13:13:35.000Z</published>
-    <updated>2017-12-18T13:24:33.541Z</updated>
-    
-    <content type="html"><![CDATA[<p>胃病了，蛋疼，居然也得了胃病，反流性食管炎，真是不好受啊。</p>
-<p>谁让自己作死呢，想想以前总是晚上打完游戏，回家习惯性点炒粉，各种饮食不规律，天天熬夜。那段时候就想着自己这么作死肯定会出问题的，当然很快就应验了。</p>
-<p>算是个提醒吧，问题不是很严重但也不容忽视，前两天公司体检，体检报告就是胖吧，脂肪肝啥的，想想也不奇怪咯，这么胖，健身房体脂称测得29.3%。</p>
-<p>所以，人生绝大多数事情都是有因果关系的，就像得胃病是必然的，如果不是病了，估计还是那样不好的生活作息饮食习惯吧。</p>
-<p>想起两个成语「防患未然」和「未雨绸缪」，两手准备。<br>对于感觉不好的事情，防止发生，就去做那些降低这件事发生可能性的相关事情。防患未然。<br>当然不管做了什么准备，都没有确定，我们做的努力都是降低发生的概率，所谓尽人事听天命。未雨绸缪，对于那些你不能很好掌控的事情，做好最坏的打算，把损失降到最低。</p>
-<p>人生的路还很长，身体健康是真真切切的资本，世界这么美好，首先要有个不错的身体。</p>
-<p>额，</p>
-<p>###要锻炼，要减肥###</p>
-<p>###健康饮食###</p>
-<p>###早点睡觉###</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;胃病了，蛋疼，居然也得了胃病，反流性食管炎，真是不好受啊。&lt;/p&gt;
-&lt;p&gt;谁让自己作死呢，想想以前总是晚上打完游戏，回家习惯性点炒粉，各种饮食不规律，天天熬夜。那段时候就想着自己这么作死肯定会出问题的，当然很快就应验了。&lt;/p&gt;
-&lt;p&gt;算是个提醒吧，问题不是很严重但也不容忽
-    
-    </summary>
-    
-      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="健康" scheme="http://yoursite.com/tags/%E5%81%A5%E5%BA%B7/"/>
-    
-  </entry>
   
   <entry>
     <title>vscode相关使用指南</title>
@@ -71,47 +37,6 @@
     
     
       <category term="vscode" scheme="http://yoursite.com/tags/vscode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>React官方文档学习笔记</title>
-    <link href="http://yoursite.com/2017/12/04/React%E5%AE%98%E6%96%B9%E6%96%87%E6%A1%A3%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>http://yoursite.com/2017/12/04/React官方文档学习笔记/</id>
-    <published>2017-12-04T09:18:07.000Z</published>
-    <updated>2017-12-07T03:40:32.290Z</updated>
-    
-    <content type="html"><![CDATA[<p><img src="https://pic3.zhimg.com/v2-3273f90cf5dd87d4499f0b70ad55e5e8_r.jpg" alt=""></p>
-<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇blog主要记录一下<a href="https://reactjs.org/" target="_blank" rel="external">React官网文档</a>学习笔记。</p>
-<h3 id="JSX"><a href="#JSX" class="headerlink" title="JSX"></a>JSX</h3><ol>
-<li>组件名大写字母开头</li>
-<li>props不设置value的话，默认为true<pre><code>&lt;Input autocomplete/&gt;  
-&lt;Input autocomplete={true}/&gt;
-</code></pre></li>
-<li>对于Booleans,null undefined render()时候会忽略掉</li>
-</ol>
-<h3 id="类型检测"><a href="#类型检测" class="headerlink" title="类型检测"></a>类型检测</h3><ol>
-<li>propTypes来检查props数据类型,类型不对能快速在console中查看</li>
-<li>defaultProps，设置默认props，如果父组件没有特定值</li>
-<li>Flow和TypeScript</li>
-</ol>
-<h3 id="ref"><a href="#ref" class="headerlink" title="ref"></a>ref</h3><p><a href="https://reactjs.org/docs/refs-and-the-dom.html" target="_blank" rel="external">ref and the dom</a><br>这篇文档写得很详细<br>1 尽量少用ref<br>2 ref的两种使用方式，一种是直接ref=’’，另一种是通过回调函数的写法，以及其访问方式<br><img src="https://ws4.sinaimg.cn/large/006tNc79gy1fm81fqosk1j30s006ywf8.jpg" alt=""></p>
-<p>对于直接写的通过<code>this.refs.inputElem1</code> 访问到第一个input<br>对于回调函数直接<code>this.inputElem2</code>来访问，访问到第二个input<br>回调函数的参数<code>input</code>就是对应<code>DOM元素</code>或者当前组件比如<code>MyInput</code>组件<br>如果组件卸载了，访问到的<code>null</code>；<br>官方建议，使用回调函数的写法。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;https://pic3.zhimg.com/v2-3273f90cf5dd87d4499f0b70ad55e5e8_r.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; titl
-    
-    </summary>
-    
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="React" scheme="http://yoursite.com/tags/React/"/>
-    
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
   </entry>
   
@@ -227,42 +152,6 @@
   </entry>
   
   <entry>
-    <title>这一年</title>
-    <link href="http://yoursite.com/2017/12/02/%E8%BF%99%E4%B8%80%E5%B9%B4/"/>
-    <id>http://yoursite.com/2017/12/02/这一年/</id>
-    <published>2017-12-02T02:04:43.000Z</published>
-    <updated>2017-12-02T02:24:40.198Z</updated>
-    
-    <content type="html"><![CDATA[<p>感觉今年过的特别快，比以往任何一年都过得快。<br>现在的时间真的是过得越来越快，基本上都是一周一周计算，一个月也就四周，所以一个月也过得相当快。一周过了周二这周基本就快过去了。<br>为什么时间过得越来越快呢？在知乎上看到的别人的解释是有两点：</p>
-<ol>
-<li>小时候比如十岁的时候，一年的时间，占自己经历的时间10%，等年龄越大，一年的时间占所占有的经历时间越来越少。</li>
-<li>工作后的日志，略显枯燥吧，早九晚五，好像每天都在重复，上班下班，一周回忆起来好像没什么东西，每天都是差不多的内容，每周都是差不多的内容。</li>
-</ol>
-<p>第一点必然是改变不了的，但是第二点吧，生活是自己的，你可以决定生活过的ok不ok,精彩不精彩。一个人就一个人呗，年初办的公园卡，多出去走走，总是好的，至少比总是呆在电脑前打游戏有意思点。</p>
-<p>最近读了一本书，「他改变了中国」，恩，是他就是他，一个不敢直呼其名的长者。学习一点长者微不足道的人生经验，一个人的努力啊固然重要，也要考虑历史的进程。一个人的努力比历史进程要重要，历史的进程的种种机遇，没有实力，就算机遇摆着你面前又能怎么样。要不是长者在上海干的那么出色，引起了北京老大哥的注意，也不会一下子就掉到北京去了。<br>现实也是如此的，能力越强的时候，能够选择的机会就多了。</p>
-<p>今年定的两个目标，基本也没有实现。<br>一个是学习日语，过二级。三月份的时候报名N3，买了单词书，然后就没有然后了，没有足够的动力吧，因为喜欢看日剧和日语歌曲吧。<br>另一个就是学车，拖了快两年了，上半年的时候想着上半年去把车子学了，因为懒？驾校太远了就拖啊拖啊想着下半年去学，然后一拖就到年末了。</p>
-<p>个人blog，也是好久都没有更新了，既然是个人blog就随便写吧，反正也没有备案，开心的不开心的，技术的，生活的，就随便在自己的blog上吐槽吧。</p>
-<p>技术上的东西，这一年，也没啥长进吧，React技术栈了解一知半解，D3画图的话只是会用吧，画了一年的拓扑图也没有什么总结，怎么说呢，我发现不止一次发现，知识的总结很重要，前端来说，记忆力也挺重要的，虽然google能找到，比如Array一些api，如果知道的话就不用还要去google了，影响写代码的节奏。</p>
-<p>变得焦虑，在同龄人中显得越来越落后带来的焦虑感，如果大家都一样那就没有这种情绪。这种情绪挺负面的，没必要拿别人的人生参考，什么时间点做什么事情，要具有目标性。别人变得优秀，学习他们优秀的地方。</p>
-<p>就写到这，去加班了。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;感觉今年过的特别快，比以往任何一年都过得快。&lt;br&gt;现在的时间真的是过得越来越快，基本上都是一周一周计算，一个月也就四周，所以一个月也过得相当快。一周过了周二这周基本就快过去了。&lt;br&gt;为什么时间过得越来越快呢？在知乎上看到的别人的解释是有两点：&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;
-    
-    </summary>
-    
-      <category term="生活" scheme="http://yoursite.com/categories/%E7%94%9F%E6%B4%BB/"/>
-    
-    
-      <category term="生活" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
     <title>js对象和原型对象</title>
     <link href="http://yoursite.com/2017/11/11/js%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1/"/>
     <id>http://yoursite.com/2017/11/11/js对象和原型对象/</id>
@@ -307,56 +196,6 @@
       <category term="原型" scheme="http://yoursite.com/tags/%E5%8E%9F%E5%9E%8B/"/>
     
       <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>git基础操作</title>
-    <link href="http://yoursite.com/2017/08/09/git%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C/"/>
-    <id>http://yoursite.com/2017/08/09/git基础操作/</id>
-    <published>2017-08-09T14:50:27.000Z</published>
-    <updated>2017-11-08T03:09:57.100Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Git三种状态"><a href="#Git三种状态" class="headerlink" title="Git三种状态"></a>Git三种状态</h3><p><strong>—监听事件的状态来做出相应的行为</strong><br>Git项目的三个工作区域: Git仓库，工作目录以及暂存区域<br><img src="https://git-scm.com/book/en/v2/images/areas.png" alt=""></p>
-<p>1）Git仓库目录(.git)是用来保存项目元数据和对象数据库的地方，从其他计算机克隆仓库时，拷贝的就是这里的数据。</p>
-<p>2）工作目录就是对项目的某个版本独立提取出来的内容，这些内容从G``it仓库的压缩数据库中提取，放在磁盘上提供使用和修改。</p>
-<p>3）暂存区域是一个文件，保存下次将要提交的文件列表信息。</p>
-<p>基本的Git工作流如下</p>
-<pre><code>1. 在工作目录中修改文件
-2. 暂存文件，将文件的快照放入暂存区域
-3. 提交更新，找到暂存区域的文件，将快照永久性存储到Git仓库目录
-</code></pre><p>暂存区的概念有别于之前用svn，暂存区可以随便放很多文件，commit提交时候不会去理会工作区的文件，如果发现不对劲在暂存区进行修改重置后再提交。<br><a id="more"></a></p>
-<h3 id="基础操作指令"><a href="#基础操作指令" class="headerlink" title="基础操作指令"></a>基础操作指令</h3><p>上述工作流中，怎么实际去执行。<br><strong>终端输入指令操作时候，执行注释会提示操作执行的相关信息(做了什么，怎么撤销)注意看</strong><br><img src="https://ws3.sinaimg.cn/large/006tNc79gy1fidvr1du2nj30sw0fqgmg.jpg" alt=""></p>
-<p>1 add commit<br><code>git add</code> 将文件从工作区提交到暂存区，并track该文件<br><code>git commit</code> 将暂存区的文件提交到Git仓库<br><code>git commit -a</code> 可以将<code>tracked</code>的文件直接提交，省略<code>git add</code>操作</p>
-<p>2 更改重置等操作 reset checkout amend<br><code>git reset</code> 将误操作提交到暂存区的文件(没有提交到仓库)撤销回来<br><code>git checkout</code> 已经提交过的文件(在Git仓库)中，撤销改动<br><code>git commit --amend</code> 覆盖上一次的提交 从<code>git log</code>可以查看该功能</p>
-<p>3 其他<br><code>git tag</code> 给提交打标签，方便追踪记录重要的提交<br><code>git log</code> 日志功能<br><code>git show</code> 查看<br><code>alias</code> 给常用的命令操作取别名 提高效率<br>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">git config --global alias.co checkout</div><div class="line">git config --global alias.br branch</div><div class="line">git config --global alias.ci commit</div><div class="line">git config --global alias.st status</div><div class="line"></div><div class="line">git st // git status</div></pre></td></tr></table></figure>
-<h3 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h3><ol>
-<li>Git仓库 工作区 暂存区的状态概念理解</li>
-<li>基本的相关指令操作 </li>
-<li>暂存区文件的修改 撤销操作</li>
-</ol>
-<p><a href="https://git-scm.com/book/zh/v2/Git-%E5%9F%BA%E7%A1%80-%E8%8E%B7%E5%8F%96-Git-%E4%BB%93%E5%BA%93" target="_blank" rel="external">学习来源参考</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Git三种状态&quot;&gt;&lt;a href=&quot;#Git三种状态&quot; class=&quot;headerlink&quot; title=&quot;Git三种状态&quot;&gt;&lt;/a&gt;Git三种状态&lt;/h3&gt;&lt;p&gt;&lt;strong&gt;—监听事件的状态来做出相应的行为&lt;/strong&gt;&lt;br&gt;Git项目的三个工作区域: Git仓库，工作目录以及暂存区域&lt;br&gt;&lt;img src=&quot;https://git-scm.com/book/en/v2/images/areas.png&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-&lt;p&gt;1）Git仓库目录(.git)是用来保存项目元数据和对象数据库的地方，从其他计算机克隆仓库时，拷贝的就是这里的数据。&lt;/p&gt;
-&lt;p&gt;2）工作目录就是对项目的某个版本独立提取出来的内容，这些内容从G``it仓库的压缩数据库中提取，放在磁盘上提供使用和修改。&lt;/p&gt;
-&lt;p&gt;3）暂存区域是一个文件，保存下次将要提交的文件列表信息。&lt;/p&gt;
-&lt;p&gt;基本的Git工作流如下&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1. 在工作目录中修改文件
-2. 暂存文件，将文件的快照放入暂存区域
-3. 提交更新，找到暂存区域的文件，将快照永久性存储到Git仓库目录
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;暂存区的概念有别于之前用svn，暂存区可以随便放很多文件，commit提交时候不会去理会工作区的文件，如果发现不对劲在暂存区进行修改重置后再提交。&lt;br&gt;
-    
-    </summary>
-    
-      <category term="前端基础" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF%E5%9F%BA%E7%A1%80/"/>
-    
-    
-      <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
   </entry>
   
