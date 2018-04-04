@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>lifelover</title>
+  
   <subtitle>love life</subtitle>
   <link href="/atom.xml" rel="self"/>
   
@@ -22,14 +23,15 @@
     <published>2017-12-15T03:07:54.000Z</published>
     <updated>2017-12-15T03:11:21.641Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇blog主要记录，vscode相关使用技巧以及好用的插件等知识。</p>
-<h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>1 <a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync" target="_blank" rel="external">Settings Sync</a><br>同步插件将vscode插件以及各种设置同步到github上，便于下次换机子同步之前的设置和插件。</p>
-]]></content>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>本篇blog主要记录，vscode相关使用技巧以及好用的插件等知识。</p><h3 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h3><p>1 <a href="https://marketplace.visualstudio.com/items?itemName=Shan.code-settings-sync" target="_blank" rel="noopener">Settings Sync</a><br>同步插件将vscode插件以及各种设置同步到github上，便于下次换机子同步之前的设置和插件。</p>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;本篇blog主要记录，vscode相关使用技巧以及好用的插件等知识。&lt;/p&gt;
+      
+      
+        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;本篇blog主要记录，vscode相关使用技巧以及好用的插件等知识。&lt;/p&gt;
 &lt;h3 id=&quot;插件&quot;&gt;&lt;a href=&quot;#插件&quot; class
+      
     
     </summary>
     
@@ -47,23 +49,14 @@
     <published>2017-12-04T03:26:24.000Z</published>
     <updated>2017-12-04T07:59:21.177Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="https://images.pexels.com/photos/262488/pexels-photo-262488.jpeg?w=1260&amp;h=750&amp;auto=compress&amp;cs=tinysrgb" alt="solution"></p>
-<p><strong>前端常见问题解决方案</strong><br>这篇blog主要整理工作中遇到的常见的前端问题解决方案</p>
-<h4 id="0-输入框密码被浏览器记住，显示黄色背景问题"><a href="#0-输入框密码被浏览器记住，显示黄色背景问题" class="headerlink" title="0 输入框密码被浏览器记住，显示黄色背景问题"></a>0 输入框密码被浏览器记住，显示黄色背景问题</h4><p>浏览器是根据input type=’password’判断保存密码，所以可以将密码input type=’text’,当focus时候设置成password。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">&lt;input onfocus=&quot;this.type=&apos;password&apos;&quot;/&gt;</div></pre></td></tr></table></figure></p>
-<p>参考<br><a href="https://www.zhihu.com/question/23529765" target="_blank" rel="external">怎么禁止自动填充浏览器记住密码</a><br><a href="https://stackoverflow.com/questions/31247214/onfocus-and-onblur-does-not-render-in-react" target="_blank" rel="external">onfocus-and-onblur-does-not-render-in-react</a></p>
-<a id="more"></a>
-<h4 id="1-文本溢出的解决方案"><a href="#1-文本溢出的解决方案" class="headerlink" title="1 文本溢出的解决方案"></a>1 文本溢出的解决方案</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.text &#123;</div><div class="line">	overflow:hidden;</div><div class="line">	text-overflow: ellipsis;</div><div class="line">	white-space: nowrap;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h4 id="2-前端将数据输出并保存的api"><a href="#2-前端将数据输出并保存的api" class="headerlink" title="2 前端将数据输出并保存的api"></a>2 前端将数据输出并保存的api</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">// downloadlink 是标签a</div><div class="line">let file = new Blob([data],&#123;type: &apos;text/plain&apos;&#125;);</div><div class="line">downloadlink.href = URL.createObjectURL(file);</div><div class="line">downloadlink.download = name;</div><div class="line">downloadlink.click();</div></pre></td></tr></table></figure>
-<p><code>API: new Blob()</code> </p>
-<h4 id="3-判断undefined和null"><a href="#3-判断undefined和null" class="headerlink" title="3 判断undefined和null"></a>3 判断<code>undefined</code>和<code>null</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">// 判断undefined</div><div class="line">typeof value == &apos;undefined&apos;;</div><div class="line">// 判断null</div><div class="line">value === null</div></pre></td></tr></table></figure>
-]]></content>
+    <content type="html"><![CDATA[<p><img src="https://images.pexels.com/photos/262488/pexels-photo-262488.jpeg?w=1260&amp;h=750&amp;auto=compress&amp;cs=tinysrgb" alt="solution"></p><p><strong>前端常见问题解决方案</strong><br>这篇blog主要整理工作中遇到的常见的前端问题解决方案</p><h4 id="0-输入框密码被浏览器记住，显示黄色背景问题"><a href="#0-输入框密码被浏览器记住，显示黄色背景问题" class="headerlink" title="0 输入框密码被浏览器记住，显示黄色背景问题"></a>0 输入框密码被浏览器记住，显示黄色背景问题</h4><p>浏览器是根据input type=’password’判断保存密码，所以可以将密码input type=’text’,当focus时候设置成password。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input onfocus=&quot;this.type=&apos;password&apos;&quot;/&gt;</span><br></pre></td></tr></table></figure></p><p>参考<br><a href="https://www.zhihu.com/question/23529765" target="_blank" rel="noopener">怎么禁止自动填充浏览器记住密码</a><br><a href="https://stackoverflow.com/questions/31247214/onfocus-and-onblur-does-not-render-in-react" target="_blank" rel="noopener">onfocus-and-onblur-does-not-render-in-react</a></p><a id="more"></a><h4 id="1-文本溢出的解决方案"><a href="#1-文本溢出的解决方案" class="headerlink" title="1 文本溢出的解决方案"></a>1 文本溢出的解决方案</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">.text &#123;</span><br><span class="line">overflow:hidden;</span><br><span class="line">text-overflow: ellipsis;</span><br><span class="line">white-space: nowrap;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h4 id="2-前端将数据输出并保存的api"><a href="#2-前端将数据输出并保存的api" class="headerlink" title="2 前端将数据输出并保存的api"></a>2 前端将数据输出并保存的api</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">// downloadlink 是标签a</span><br><span class="line">let file = new Blob([data],&#123;type: &apos;text/plain&apos;&#125;);</span><br><span class="line">downloadlink.href = URL.createObjectURL(file);</span><br><span class="line">downloadlink.download = name;</span><br><span class="line">downloadlink.click();</span><br></pre></td></tr></table></figure><p><code>API: new Blob()</code> </p><h4 id="3-判断undefined和null"><a href="#3-判断undefined和null" class="headerlink" title="3 判断undefined和null"></a>3 判断<code>undefined</code>和<code>null</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 判断undefined</span><br><span class="line">typeof value == &apos;undefined&apos;;</span><br><span class="line">// 判断null</span><br><span class="line">value === null</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;https://images.pexels.com/photos/262488/pexels-photo-262488.jpeg?w=1260&amp;amp;h=750&amp;amp;auto=compress&amp;amp;cs=tinysrgb&quot; alt=&quot;solution&quot;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;前端常见问题解决方案&lt;/strong&gt;&lt;br&gt;这篇blog主要整理工作中遇到的常见的前端问题解决方案&lt;/p&gt;
-&lt;h4 id=&quot;0-输入框密码被浏览器记住，显示黄色背景问题&quot;&gt;&lt;a href=&quot;#0-输入框密码被浏览器记住，显示黄色背景问题&quot; class=&quot;headerlink&quot; title=&quot;0 输入框密码被浏览器记住，显示黄色背景问题&quot;&gt;&lt;/a&gt;0 输入框密码被浏览器记住，显示黄色背景问题&lt;/h4&gt;&lt;p&gt;浏览器是根据input type=’password’判断保存密码，所以可以将密码input type=’text’,当focus时候设置成password。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;1&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;div class=&quot;line&quot;&gt;&amp;lt;input onfocus=&amp;quot;this.type=&amp;apos;password&amp;apos;&amp;quot;/&amp;gt;&lt;/div&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
-&lt;p&gt;参考&lt;br&gt;&lt;a href=&quot;https://www.zhihu.com/question/23529765&quot;&gt;怎么禁止自动填充浏览器记住密码&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://stackoverflow.com/questions/31247214/onfocus-and-onblur-does-not-render-in-react&quot;&gt;onfocus-and-onblur-does-not-render-in-react&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;0-输入框密码被浏览器记住，显示黄色背景问题&quot;&gt;&lt;a href=&quot;#0-输入框密码被浏览器记住，显示黄色背景问题&quot; class=&quot;headerlink&quot; title=&quot;0 输入框密码被浏览器记住，显示黄色背景问题&quot;&gt;&lt;/a&gt;0 输入框密码被浏览器记住，显示黄色背景问题&lt;/h4&gt;&lt;p&gt;浏览器是根据input type=’password’判断保存密码，所以可以将密码input type=’text’,当focus时候设置成password。&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&amp;lt;input onfocus=&amp;quot;this.type=&amp;apos;password&amp;apos;&amp;quot;/&amp;gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;&lt;/p&gt;
+&lt;p&gt;参考&lt;br&gt;&lt;a href=&quot;https://www.zhihu.com/question/23529765&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;怎么禁止自动填充浏览器记住密码&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://stackoverflow.com/questions/31247214/onfocus-and-onblur-does-not-render-in-react&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;onfocus-and-onblur-does-not-render-in-react&lt;/a&gt;&lt;/p&gt;
     
     </summary>
     
@@ -79,66 +72,21 @@
     <link href="http://yoursite.com/2017/12/03/%E7%BB%99hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%8A%A0https/"/>
     <id>http://yoursite.com/2017/12/03/给hexo博客自定义域名加https/</id>
     <published>2017-12-03T07:10:14.000Z</published>
-    <updated>2017-12-03T07:59:44.083Z</updated>
+    <updated>2017-12-03T07:59:44.084Z</updated>
     
-    <content type="html"><![CDATA[<p>给自定义域名加https</p>
-<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><ul>
-<li>看上去更加安全</li>
-<li>小绿锁看上去更好看</li>
-</ul>
-<h3 id="实现方案-cloudflare"><a href="#实现方案-cloudflare" class="headerlink" title="实现方案 cloudflare"></a>实现方案 cloudflare</h3><p>走cloudflare的DNS解析</p>
-<ol>
-<li>注册cloudflare账号</li>
-<li>添加域名<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lp252ssj30rb0ed0ty.jpg" alt="add site"><br>然后一步步走下去就ok了</li>
-<li>把你域名原有的DNS修改成cloudflare的<br><img src="https://ws1.sinaimg.cn/large/8700af19gy1fi43n3bs7yj21ig0g4wgj.jpg" alt="modify dns"><br>比如我的是万网<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fm3luk14gij30y90b3gmv.jpg" alt=""></li>
-<li>在cloudflare上check 应该很快生效<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lw69h29j30w60dr76l.jpg" alt=""></li>
-<li>在cloudflare上配置DNS 之前一直弄不好就是因为这里没有配置好<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lxcpu2rj30t70k20vl.jpg" alt=""><br>按这样配置就ok了，因为是挂在github上的静态博客，所以<code>192.30.252.153</code>指向的github的ip,CNAME的配置，我不是很明白，但就是这样配置就好了。<br>如果你操作完一直不成功可以查看是不是这里配置出问题了。</li>
-<li>配置规则，强制走https访问<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3m0e6e8dj30s00in41a.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fm3m1st5ymj307n014t8n.jpg" alt=""><br>有个小绿锁还是蛮好看的</li>
-</ol>
-<h3 id="一些知识"><a href="#一些知识" class="headerlink" title="一些知识"></a>一些知识</h3><p>主要只是就是了解DNS配置时候的A AAAA CNAME等都是啥<br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fm3m7e7niqj306109wwep.jpg" alt="dns"><br><code>DNS</code>全称，<code>Domain Name System</code>,域名系统，作为互联网的一项服务,将域名和ip地址映射的一个分布式数据库。通过DNS就可以通过域名，找到对应的物理机ip。<br>上面的A AAAA CNAME都是这套系统的资源记录类型。</p>
-<table>
-<thead>
-<tr>
-<th>代码</th>
-<th>描述</th>
-<th>功能</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>A</td>
-<td>IP地址记录</td>
-<td>映射主机域名到IPv4地址</td>
-</tr>
-<tr>
-<td>AAAA</td>
-<td>IPv6 IP地址记录</td>
-<td>映射主机域名到IPv6地址</td>
-</tr>
-<tr>
-<td>CNAME</td>
-<td>规范名称记录</td>
-<td>一个主机域名的别名，告诉在哪个地方继续寻找</td>
-</tr>
-<tr>
-<td>MX</td>
-<td>电邮交互记录</td>
-<td>引导域名到该域名的邮件传输代理(MTA)列表</td>
-</tr>
-</tbody>
-</table>
-<p>还有更多的类型参考<a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E4%BC%BA%E6%9C%8D%E5%99%A8%E8%A8%98%E9%8C%84%E9%A1%9E%E5%9E%8B%E5%88%97%E8%A1%A8" target="_blank" rel="external">域名服务器记录类型列表</a>，<br><a href="http://www.dirs.cn/" target="_blank" rel="external">域名查询服务</a></p>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>应该多去学习一下计算机网络相关的知识 </p>
-]]></content>
+    <content type="html"><![CDATA[<p>给自定义域名加https</p><h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><ul><li>看上去更加安全</li><li>小绿锁看上去更好看</li></ul><h3 id="实现方案-cloudflare"><a href="#实现方案-cloudflare" class="headerlink" title="实现方案 cloudflare"></a>实现方案 cloudflare</h3><p>走cloudflare的DNS解析</p><ol><li>注册cloudflare账号</li><li>添加域名<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lp252ssj30rb0ed0ty.jpg" alt="add site"><br>然后一步步走下去就ok了</li><li>把你域名原有的DNS修改成cloudflare的<br><img src="https://ws1.sinaimg.cn/large/8700af19gy1fi43n3bs7yj21ig0g4wgj.jpg" alt="modify dns"><br>比如我的是万网<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fm3luk14gij30y90b3gmv.jpg" alt=""></li><li>在cloudflare上check 应该很快生效<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lw69h29j30w60dr76l.jpg" alt=""></li><li>在cloudflare上配置DNS 之前一直弄不好就是因为这里没有配置好<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lxcpu2rj30t70k20vl.jpg" alt=""><br>按这样配置就ok了，因为是挂在github上的静态博客，所以<code>192.30.252.153</code>指向的github的ip,CNAME的配置，我不是很明白，但就是这样配置就好了。<br>如果你操作完一直不成功可以查看是不是这里配置出问题了。</li><li>配置规则，强制走https访问<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3m0e6e8dj30s00in41a.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fm3m1st5ymj307n014t8n.jpg" alt=""><br>有个小绿锁还是蛮好看的</li></ol><h3 id="一些知识"><a href="#一些知识" class="headerlink" title="一些知识"></a>一些知识</h3><p>主要只是就是了解DNS配置时候的A AAAA CNAME等都是啥<br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fm3m7e7niqj306109wwep.jpg" alt="dns"><br><code>DNS</code>全称，<code>Domain Name System</code>,域名系统，作为互联网的一项服务,将域名和ip地址映射的一个分布式数据库。通过DNS就可以通过域名，找到对应的物理机ip。<br>上面的A AAAA CNAME都是这套系统的资源记录类型。</p><table><thead><tr><th>代码</th><th>描述</th><th>功能</th></tr></thead><tbody><tr><td>A</td><td>IP地址记录</td><td>映射主机域名到IPv4地址</td></tr><tr><td>AAAA</td><td>IPv6 IP地址记录</td><td>映射主机域名到IPv6地址</td></tr><tr><td>CNAME</td><td>规范名称记录</td><td>一个主机域名的别名，告诉在哪个地方继续寻找</td></tr><tr><td>MX</td><td>电邮交互记录</td><td>引导域名到该域名的邮件传输代理(MTA)列表</td></tr></tbody></table><p>还有更多的类型参考<a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E4%BC%BA%E6%9C%8D%E5%99%A8%E8%A8%98%E9%8C%84%E9%A1%9E%E5%9E%8B%E5%88%97%E8%A1%A8" target="_blank" rel="noopener">域名服务器记录类型列表</a>，<br><a href="http://www.dirs.cn/" target="_blank" rel="noopener">域名查询服务</a></p><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>应该多去学习一下计算机网络相关的知识 </p>]]></content>
     
     <summary type="html">
     
-      &lt;p&gt;给自定义域名加https&lt;/p&gt;
+      
+      
+        &lt;p&gt;给自定义域名加https&lt;/p&gt;
 &lt;h3 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;看上去更加安全&lt;/li&gt;
 &lt;li&gt;小绿锁看上去更好看&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id
+      
     
     </summary>
     
@@ -158,35 +106,15 @@
     <published>2017-11-11T11:37:23.000Z</published>
     <updated>2017-11-16T01:48:07.000Z</updated>
     
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学习了解JavaScript对象的继承机制</p>
-<h3 id="JavaScript-Object"><a href="#JavaScript-Object" class="headerlink" title="JavaScript Object"></a>JavaScript Object</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>Object是js的基本数据结构的一种，属于引用类型。</p>
-<h4 id="对象的创建方法"><a href="#对象的创建方法" class="headerlink" title="对象的创建方法"></a>对象的创建方法</h4><ol>
-<li>对象字面量写法</li>
-<li>构造函数，通过构造函数来创建对象实例</li>
-<li>Object()构造函数</li>
-<li>create()方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line">// 对象字面量</div><div class="line">let person1 = &#123;name: &apos;jim&apos;&#125;; </div><div class="line">// 构造函数</div><div class="line">function Person(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">    this.greeting = function() &#123;</div><div class="line">        console.log(&apos;hello my name is &apos; + this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">let person2 = new Person(&apos;Bob&apos;);</div><div class="line">console.log(person2.name);</div><div class="line">console.log(person2.greeting());</div><div class="line">// Object() 方法</div><div class="line">let person3 = new Object();</div><div class="line">person3.name = &apos;kobe&apos;;</div><div class="line">console.log(person3.name);</div><div class="line">person3 = new Object(&#123;</div><div class="line">    name: &apos;kobe2&apos;,</div><div class="line">    age: 22</div><div class="line">&#125;);</div><div class="line">console.log(person3.name);</div><div class="line">// create() 方法 类似构造函数 </div><div class="line">let person4 = Object.create(person3);</div><div class="line">person4.name = &apos;kobe3&apos;;</div><div class="line">console.log(person4.name,person3.name);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h4 id="对象属性的访问方式"><a href="#对象属性的访问方式" class="headerlink" title="对象属性的访问方式"></a>对象属性的访问方式</h4><ol>
-<li>点表示法</li>
-<li>中括号表示法<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">let person = &#123;</div><div class="line">    name: &apos;xiaofei&apos;,</div><div class="line">    age: 20</div><div class="line">&#125;</div><div class="line">console.log(person.name);</div><div class="line">console.log(person[&apos;age&apos;]);</div></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="proto、-prototype-、prototype"><a href="#proto、-prototype-、prototype" class="headerlink" title="proto、[[prototype]]、prototype"></a><strong>proto</strong>、[[prototype]]、prototype</h3><ol>
-<li>JavaScript对象通过<code>原型机制</code>从其他对象<code>继承</code>功能特性</li>
-<li>每个对象有一个私有属性<code>[[prototype]]</code>，这个私有属性持有一个连接到另一个称为其<code>prototype</code>对象（原型对象）的链接。</li>
-<li><code>__proto__</code>是浏览器对ES语法<code>[[prototype]]</code>的实现api</li>
-<li><code>prototype</code>属性指向的对象就是实例对象的原型对象即<code>__proto__</code>所指引的对象</li>
-<li>原型链，原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。<br>例1<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg" alt="clipboard.png"></li>
-</ol>
-<p>例2 通过原型链来检测对象所调用的方法是否存在，存在在哪个原型对象上</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fljonrl5g9j30al0bwjrf.jpg" alt="clipboard.png"><br>person1除了name,age在对象对象中存在外，其他方法都是通过原型链的方法在Object上找到并调用。<br><img src="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png" alt="原型链"></p>
-]]></content>
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学习了解JavaScript对象的继承机制</p><h3 id="JavaScript-Object"><a href="#JavaScript-Object" class="headerlink" title="JavaScript Object"></a>JavaScript Object</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>Object是js的基本数据结构的一种，属于引用类型。</p><h4 id="对象的创建方法"><a href="#对象的创建方法" class="headerlink" title="对象的创建方法"></a>对象的创建方法</h4><ol><li>对象字面量写法</li><li>构造函数，通过构造函数来创建对象实例</li><li>Object()构造函数</li><li>create()方法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 对象字面量</span><br><span class="line">let person1 = &#123;name: &apos;jim&apos;&#125;; </span><br><span class="line">// 构造函数</span><br><span class="line">function Person(name) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    this.greeting = function() &#123;</span><br><span class="line">        console.log(&apos;hello my name is &apos; + this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let person2 = new Person(&apos;Bob&apos;);</span><br><span class="line">console.log(person2.name);</span><br><span class="line">console.log(person2.greeting());</span><br><span class="line">// Object() 方法</span><br><span class="line">let person3 = new Object();</span><br><span class="line">person3.name = &apos;kobe&apos;;</span><br><span class="line">console.log(person3.name);</span><br><span class="line">person3 = new Object(&#123;</span><br><span class="line">    name: &apos;kobe2&apos;,</span><br><span class="line">    age: 22</span><br><span class="line">&#125;);</span><br><span class="line">console.log(person3.name);</span><br><span class="line">// create() 方法 类似构造函数 </span><br><span class="line">let person4 = Object.create(person3);</span><br><span class="line">person4.name = &apos;kobe3&apos;;</span><br><span class="line">console.log(person4.name,person3.name);</span><br></pre></td></tr></table></figure></li></ol><h4 id="对象属性的访问方式"><a href="#对象属性的访问方式" class="headerlink" title="对象属性的访问方式"></a>对象属性的访问方式</h4><ol><li>点表示法</li><li>中括号表示法<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let person = &#123;</span><br><span class="line">    name: &apos;xiaofei&apos;,</span><br><span class="line">    age: 20</span><br><span class="line">&#125;</span><br><span class="line">console.log(person.name);</span><br><span class="line">console.log(person[&apos;age&apos;]);</span><br></pre></td></tr></table></figure></li></ol><h3 id="proto、-prototype-、prototype"><a href="#proto、-prototype-、prototype" class="headerlink" title="proto、[[prototype]]、prototype"></a><strong>proto</strong>、[[prototype]]、prototype</h3><ol><li>JavaScript对象通过<code>原型机制</code>从其他对象<code>继承</code>功能特性</li><li>每个对象有一个私有属性<code>[[prototype]]</code>，这个私有属性持有一个连接到另一个称为其<code>prototype</code>对象（原型对象）的链接。</li><li><code>__proto__</code>是浏览器对ES语法<code>[[prototype]]</code>的实现api</li><li><code>prototype</code>属性指向的对象就是实例对象的原型对象即<code>__proto__</code>所指引的对象</li><li>原型链，原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。<br>例1<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg" alt="clipboard.png"></li></ol><p>例2 通过原型链来检测对象所调用的方法是否存在，存在在哪个原型对象上</p><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fljonrl5g9j30al0bwjrf.jpg" alt="clipboard.png"><br>person1除了name,age在对象对象中存在外，其他方法都是通过原型链的方法在Object上找到并调用。<br><img src="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png" alt="原型链"></p>]]></content>
     
     <summary type="html">
     
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;学习了解JavaScript对象的继承机制&lt;/p&gt;
+      
+      
+        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;学习了解JavaScript对象的继承机制&lt;/p&gt;
 &lt;h3 id=&quot;JavaScript-Object&quot;&gt;&lt;a href=&quot;#JavaScr
+      
     
     </summary>
     
