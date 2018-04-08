@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-12-15T03:11:21.641Z</updated>
+  <updated>2018-04-08T14:15:49.019Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,85 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>node卸载与重装</title>
+    <link href="http://yoursite.com/2018/04/08/node%E5%8D%B8%E8%BD%BD%E4%B8%8E%E9%87%8D%E8%A3%85/"/>
+    <id>http://yoursite.com/2018/04/08/node卸载与重装/</id>
+    <published>2018-04-08T12:47:21.000Z</published>
+    <updated>2018-04-08T14:15:49.019Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为不知道怎么回事 node 和 npm 安装时候总是会出现一些莫名其妙的问题,于是索性打算卸了重装，顺便学习一下遇到的一些问题。</p><ol><li>homebrew</li><li>symlink 软链接是啥</li><li>chmod 权限指令 改变权限</li><li>macOS /usr/bin 系统目录 分别放了什么内容</li></ol><h3 id="node-卸载"><a href="#node-卸载" class="headerlink" title="node 卸载"></a>node 卸载</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /usr/local/lib/node_modules</span><br><span class="line">sudo rm -rf ~/.npm</span><br><span class="line">brew uninstall --force node</span><br><span class="line">brew install node</span><br></pre></td></tr></table></figure><p>总之就是把改删的都删除了就行了<br>参考<a href="https://stackoverflow.com/questions/33870520/npm-install-cannot-find-module-semver" target="_blank" rel="noopener">stackoverflow-uninstall node</a></p><h3 id="node安装"><a href="#node安装" class="headerlink" title="node安装"></a>node安装</h3><p>可以去官网下载pkg安装，推荐使用<code>brew install node</code>安装<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fq5js4ltmyj30d50cojtx.jpg" alt=""></p><p>不清楚为什么这样 google后的解决方案是<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod 776 /usr/local/lib</span><br><span class="line">brew link --overwrite node</span><br><span class="line">//Outputs: Linking /usr/local/Cellar/node/9.6.1... 49 symlinks created</span><br><span class="line">sudo chmod 755 /usr/local/lib</span><br></pre></td></tr></table></figure></p><p>应该是权限问题<br>参考<a href="https://stackoverflow.com/questions/35249204/node-already-installed-its-just-not-linked#" target="_blank" rel="noopener">node already installed its just node linked</a>最下面的回答</p><p>至此，卸载与安装完成</p><h3 id="npm-config-配置解释"><a href="#npm-config-配置解释" class="headerlink" title="npm config 配置解释"></a>npm config 配置解释</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">; cli configs</span><br><span class="line">metrics-registry = &quot;https://registry.npm.taobao.org/&quot;</span><br><span class="line">scope = &quot;&quot;</span><br><span class="line">user-agent = &quot;npm/5.6.0 node/v9.11.1 darwin x64&quot;</span><br><span class="line"></span><br><span class="line">; userconfig /Users/jingxiao/.npmrc</span><br><span class="line">config = &quot;&quot;</span><br><span class="line">cwd = &quot;/Users/jingxiao&quot;</span><br><span class="line">prefix = &quot;/usr/local&quot;</span><br><span class="line">registry = &quot;https://registry.npm.taobao.org/&quot;</span><br><span class="line"></span><br><span class="line">; builtin config undefined</span><br><span class="line">prefix = &quot;/usr/local&quot;</span><br><span class="line"></span><br><span class="line">; node bin location = /usr/local/Cellar/node/9.11.1/bin/node</span><br><span class="line">; cwd = /Users/jingxiao</span><br><span class="line">; HOME = /Users/jingxiao</span><br><span class="line">; &quot;npm config ls -l&quot; to show all defaults.</span><br></pre></td></tr></table></figure><p><code>metrics-registry</code> npm源地址，默认应该是指向npm的地址，我也没有去设置taobao源居然自动换成了淘宝源。<br><code>scope</code> 域名，比如个人或者公司私有的仓库，不用担心重名问题了 @somescope/somepackagename<br><code>user-agent</code> 用户代理，比如浏览器的话就是chrome firefox之类的，n这里就是node环境了<br><code>prefix</code> npm全局路径<br><code>cwd</code> process.cwd() current working directory. 当前工作目录</p><h3 id="npm-安装权限问题"><a href="#npm-安装权限问题" class="headerlink" title="npm 安装权限问题"></a>npm 安装权限问题</h3><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fq5krp1e5tj30ps0dq0w3.jpg" alt=""></p><p>全局安装webpack并没有问题，安装webpack-cli指令时候会有权限问题<br>解决权限问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R $(whoami) $(npm config get prefix)/&#123;lib/node_modules,bin,share&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;因为不知道怎么回事 node 和 npm 安装时候总是会出现一些莫名其妙的问题,于是索性打算卸了重装，顺便学习一下遇到的一些问题。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>命令行</title>
+    <link href="http://yoursite.com/2018/04/05/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    <id>http://yoursite.com/2018/04/05/命令行/</id>
+    <published>2018-04-05T14:18:08.000Z</published>
+    <updated>2018-04-08T14:18:31.239Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><p>指令都放在了bin目录下<br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fq5lp09andj30gs0kpn03.jpg" alt=""></p><h3 id="文件操作相关"><a href="#文件操作相关" class="headerlink" title="文件操作相关"></a>文件操作相关</h3><p>mkdir 新建文件夹<br>ls 显示文件目录<br>touch 新建空文件<br>cd 切换文件目录<br>mv 移动文件/ 文件改名</p><h3 id="编辑相关"><a href="#编辑相关" class="headerlink" title="编辑相关"></a>编辑相关</h3><p>cat 显示文件内容</p><h3 id="搜索相关"><a href="#搜索相关" class="headerlink" title="搜索相关"></a>搜索相关</h3><p>which 找到出处<br>find 寻找指令</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;指令&quot;&gt;&lt;a href=&quot;#指令&quot; class=&quot;headerlink&quot; title=&quot;指令&quot;&gt;&lt;/a&gt;指令&lt;/h3&gt;&lt;p&gt;指令都放在了bin目录下&lt;br&gt;&lt;img src=&quot;https://ws1.sinaimg.cn/large/006tKfTcgy1fq5l
+      
+    
+    </summary>
+    
+      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="指令" scheme="http://yoursite.com/tags/%E6%8C%87%E4%BB%A4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>iframe通信</title>
+    <link href="http://yoursite.com/2018/04/05/iframe%E9%80%9A%E4%BF%A1/"/>
+    <id>http://yoursite.com/2018/04/05/iframe通信/</id>
+    <published>2018-04-05T12:05:16.000Z</published>
+    <updated>2018-04-08T14:16:22.000Z</updated>
+    
+    <content type="html"><![CDATA[<p>postmessage 了解一下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;message&apos;, function() &#123;</span><br><span class="line"></span><br><span class="line">&#125;,false)</span><br></pre></td></tr></table></figure><p>参考<a href="https://juejin.im/post/590c3983ac502e006531df11" target="_blank" rel="noopener">使用postMessage 解决iframe跨域问题</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;postmessage 了解一下&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="iframe" scheme="http://yoursite.com/tags/iframe/"/>
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>vscode相关使用指南</title>
@@ -121,9 +200,9 @@
       <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="原型" scheme="http://yoursite.com/tags/%E5%8E%9F%E5%9E%8B/"/>
-    
       <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+      <category term="原型" scheme="http://yoursite.com/tags/%E5%8E%9F%E5%9E%8B/"/>
     
   </entry>
   
