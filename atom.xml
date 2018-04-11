@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-04-08T14:15:49.019Z</updated>
+  <updated>2018-04-10T02:40:39.706Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>css布局</title>
+    <link href="http://yoursite.com/2018/04/10/css%E5%B8%83%E5%B1%80/"/>
+    <id>http://yoursite.com/2018/04/10/css布局/</id>
+    <published>2018-04-10T02:27:25.000Z</published>
+    <updated>2018-04-10T02:40:39.706Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ol><li>了解和学习常用的几种CSS布局方式</li><li>学习BFC</li><li>学习position/float定位方式和原理</li></ol><h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><h3 id="双列布局"><a href="#双列布局" class="headerlink" title="双列布局"></a>双列布局</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;ol&gt;
+&lt;li&gt;了解和学习常用的几种CSS布局方式&lt;/li&gt;
+&lt;li&gt;学习BFC&lt;/li&gt;
+&lt;li&gt;学习position/float定位方式和原
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>node卸载与重装</title>
