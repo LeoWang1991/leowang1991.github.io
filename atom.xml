@@ -5,9 +5,9 @@
   <subtitle>love life</subtitle>
   <link href="/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/"/>
+  <link href="https://lifelover.cc/"/>
   <updated>2018-04-10T02:40:39.706Z</updated>
-  <id>http://yoursite.com/</id>
+  <id>https://lifelover.cc/</id>
   
   <author>
     <name>骁飞</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>css布局</title>
-    <link href="http://yoursite.com/2018/04/10/css%E5%B8%83%E5%B1%80/"/>
-    <id>http://yoursite.com/2018/04/10/css布局/</id>
+    <link href="https://lifelover.cc/2018/04/10/css%E5%B8%83%E5%B1%80/"/>
+    <id>https://lifelover.cc/2018/04/10/css布局/</id>
     <published>2018-04-10T02:27:25.000Z</published>
     <updated>2018-04-10T02:40:39.706Z</updated>
     
@@ -37,17 +37,17 @@
     
     </summary>
     
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="css" scheme="http://yoursite.com/tags/css/"/>
+      <category term="css" scheme="https://lifelover.cc/tags/css/"/>
     
   </entry>
   
   <entry>
     <title>node卸载与重装</title>
-    <link href="http://yoursite.com/2018/04/08/node%E5%8D%B8%E8%BD%BD%E4%B8%8E%E9%87%8D%E8%A3%85/"/>
-    <id>http://yoursite.com/2018/04/08/node卸载与重装/</id>
+    <link href="https://lifelover.cc/2018/04/08/node%E5%8D%B8%E8%BD%BD%E4%B8%8E%E9%87%8D%E8%A3%85/"/>
+    <id>https://lifelover.cc/2018/04/08/node卸载与重装/</id>
     <published>2018-04-08T12:47:21.000Z</published>
     <updated>2018-04-08T14:15:49.019Z</updated>
     
@@ -63,17 +63,17 @@
     
     </summary>
     
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="node" scheme="http://yoursite.com/tags/node/"/>
+      <category term="node" scheme="https://lifelover.cc/tags/node/"/>
     
   </entry>
   
   <entry>
     <title>命令行</title>
-    <link href="http://yoursite.com/2018/04/05/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
-    <id>http://yoursite.com/2018/04/05/命令行/</id>
+    <link href="https://lifelover.cc/2018/04/05/%E5%91%BD%E4%BB%A4%E8%A1%8C/"/>
+    <id>https://lifelover.cc/2018/04/05/命令行/</id>
     <published>2018-04-05T14:18:08.000Z</published>
     <updated>2018-04-08T14:18:31.239Z</updated>
     
@@ -88,17 +88,17 @@
     
     </summary>
     
-      <category term="技术" scheme="http://yoursite.com/categories/%E6%8A%80%E6%9C%AF/"/>
+      <category term="技术" scheme="https://lifelover.cc/categories/%E6%8A%80%E6%9C%AF/"/>
     
     
-      <category term="指令" scheme="http://yoursite.com/tags/%E6%8C%87%E4%BB%A4/"/>
+      <category term="指令" scheme="https://lifelover.cc/tags/%E6%8C%87%E4%BB%A4/"/>
     
   </entry>
   
   <entry>
     <title>iframe通信</title>
-    <link href="http://yoursite.com/2018/04/05/iframe%E9%80%9A%E4%BF%A1/"/>
-    <id>http://yoursite.com/2018/04/05/iframe通信/</id>
+    <link href="https://lifelover.cc/2018/04/05/iframe%E9%80%9A%E4%BF%A1/"/>
+    <id>https://lifelover.cc/2018/04/05/iframe通信/</id>
     <published>2018-04-05T12:05:16.000Z</published>
     <updated>2018-04-08T14:16:22.000Z</updated>
     
@@ -114,19 +114,19 @@
     
     </summary>
     
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="iframe" scheme="http://yoursite.com/tags/iframe/"/>
+      <category term="iframe" scheme="https://lifelover.cc/tags/iframe/"/>
     
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://lifelover.cc/tags/JavaScript/"/>
     
   </entry>
   
   <entry>
     <title>vscode相关使用指南</title>
-    <link href="http://yoursite.com/2017/12/15/vscode%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
-    <id>http://yoursite.com/2017/12/15/vscode相关使用指南/</id>
+    <link href="https://lifelover.cc/2017/12/15/vscode%E7%9B%B8%E5%85%B3%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/"/>
+    <id>https://lifelover.cc/2017/12/15/vscode相关使用指南/</id>
     <published>2017-12-15T03:07:54.000Z</published>
     <updated>2017-12-15T03:11:21.641Z</updated>
     
@@ -142,17 +142,17 @@
     
     </summary>
     
-      <category term="工具" scheme="http://yoursite.com/categories/%E5%B7%A5%E5%85%B7/"/>
+      <category term="工具" scheme="https://lifelover.cc/categories/%E5%B7%A5%E5%85%B7/"/>
     
     
-      <category term="vscode" scheme="http://yoursite.com/tags/vscode/"/>
+      <category term="vscode" scheme="https://lifelover.cc/tags/vscode/"/>
     
   </entry>
   
   <entry>
     <title>常见问题解决方案合集</title>
-    <link href="http://yoursite.com/2017/12/04/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%90%88%E9%9B%86/"/>
-    <id>http://yoursite.com/2017/12/04/常见问题解决方案合集/</id>
+    <link href="https://lifelover.cc/2017/12/04/%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E5%90%88%E9%9B%86/"/>
+    <id>https://lifelover.cc/2017/12/04/常见问题解决方案合集/</id>
     <published>2017-12-04T03:26:24.000Z</published>
     <updated>2017-12-04T07:59:21.177Z</updated>
     
@@ -167,19 +167,19 @@
     
     </summary>
     
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="解决方案" scheme="http://yoursite.com/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+      <category term="解决方案" scheme="https://lifelover.cc/tags/%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     
   </entry>
   
   <entry>
     <title>给hexo博客自定义域名加https</title>
-    <link href="http://yoursite.com/2017/12/03/%E7%BB%99hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%8A%A0https/"/>
-    <id>http://yoursite.com/2017/12/03/给hexo博客自定义域名加https/</id>
+    <link href="https://lifelover.cc/2017/12/03/%E7%BB%99hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%8A%A0https/"/>
+    <id>https://lifelover.cc/2017/12/03/给hexo博客自定义域名加https/</id>
     <published>2017-12-03T07:10:14.000Z</published>
-    <updated>2017-12-03T07:59:44.084Z</updated>
+    <updated>2018-04-12T08:18:56.607Z</updated>
     
     <content type="html"><![CDATA[<p>给自定义域名加https</p><h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><ul><li>看上去更加安全</li><li>小绿锁看上去更好看</li></ul><h3 id="实现方案-cloudflare"><a href="#实现方案-cloudflare" class="headerlink" title="实现方案 cloudflare"></a>实现方案 cloudflare</h3><p>走cloudflare的DNS解析</p><ol><li>注册cloudflare账号</li><li>添加域名<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lp252ssj30rb0ed0ty.jpg" alt="add site"><br>然后一步步走下去就ok了</li><li>把你域名原有的DNS修改成cloudflare的<br><img src="https://ws1.sinaimg.cn/large/8700af19gy1fi43n3bs7yj21ig0g4wgj.jpg" alt="modify dns"><br>比如我的是万网<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fm3luk14gij30y90b3gmv.jpg" alt=""></li><li>在cloudflare上check 应该很快生效<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lw69h29j30w60dr76l.jpg" alt=""></li><li>在cloudflare上配置DNS 之前一直弄不好就是因为这里没有配置好<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lxcpu2rj30t70k20vl.jpg" alt=""><br>按这样配置就ok了，因为是挂在github上的静态博客，所以<code>192.30.252.153</code>指向的github的ip,CNAME的配置，我不是很明白，但就是这样配置就好了。<br>如果你操作完一直不成功可以查看是不是这里配置出问题了。</li><li>配置规则，强制走https访问<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3m0e6e8dj30s00in41a.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fm3m1st5ymj307n014t8n.jpg" alt=""><br>有个小绿锁还是蛮好看的</li></ol><h3 id="一些知识"><a href="#一些知识" class="headerlink" title="一些知识"></a>一些知识</h3><p>主要只是就是了解DNS配置时候的A AAAA CNAME等都是啥<br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fm3m7e7niqj306109wwep.jpg" alt="dns"><br><code>DNS</code>全称，<code>Domain Name System</code>,域名系统，作为互联网的一项服务,将域名和ip地址映射的一个分布式数据库。通过DNS就可以通过域名，找到对应的物理机ip。<br>上面的A AAAA CNAME都是这套系统的资源记录类型。</p><table><thead><tr><th>代码</th><th>描述</th><th>功能</th></tr></thead><tbody><tr><td>A</td><td>IP地址记录</td><td>映射主机域名到IPv4地址</td></tr><tr><td>AAAA</td><td>IPv6 IP地址记录</td><td>映射主机域名到IPv6地址</td></tr><tr><td>CNAME</td><td>规范名称记录</td><td>一个主机域名的别名，告诉在哪个地方继续寻找</td></tr><tr><td>MX</td><td>电邮交互记录</td><td>引导域名到该域名的邮件传输代理(MTA)列表</td></tr></tbody></table><p>还有更多的类型参考<a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E4%BC%BA%E6%9C%8D%E5%99%A8%E8%A8%98%E9%8C%84%E9%A1%9E%E5%9E%8B%E5%88%97%E8%A1%A8" target="_blank" rel="noopener">域名服务器记录类型列表</a>，<br><a href="http://www.dirs.cn/" target="_blank" rel="noopener">域名查询服务</a></p><h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><p>应该多去学习一下计算机网络相关的知识 </p>]]></content>
     
@@ -197,19 +197,19 @@
     
     </summary>
     
-      <category term="https" scheme="http://yoursite.com/categories/https/"/>
+      <category term="https" scheme="https://lifelover.cc/categories/https/"/>
     
     
-      <category term="dns" scheme="http://yoursite.com/tags/dns/"/>
+      <category term="dns" scheme="https://lifelover.cc/tags/dns/"/>
     
-      <category term="http" scheme="http://yoursite.com/tags/http/"/>
+      <category term="http" scheme="https://lifelover.cc/tags/http/"/>
     
   </entry>
   
   <entry>
     <title>js对象和原型对象</title>
-    <link href="http://yoursite.com/2017/11/11/js%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1/"/>
-    <id>http://yoursite.com/2017/11/11/js对象和原型对象/</id>
+    <link href="https://lifelover.cc/2017/11/11/js%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1/"/>
+    <id>https://lifelover.cc/2017/11/11/js对象和原型对象/</id>
     <published>2017-11-11T11:37:23.000Z</published>
     <updated>2017-11-16T01:48:07.000Z</updated>
     
@@ -225,12 +225,12 @@
     
     </summary>
     
-      <category term="前端" scheme="http://yoursite.com/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+      <category term="JavaScript" scheme="https://lifelover.cc/tags/JavaScript/"/>
     
-      <category term="原型" scheme="http://yoursite.com/tags/%E5%8E%9F%E5%9E%8B/"/>
+      <category term="原型" scheme="https://lifelover.cc/tags/%E5%8E%9F%E5%9E%8B/"/>
     
   </entry>
   
