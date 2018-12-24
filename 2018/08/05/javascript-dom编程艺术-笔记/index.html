@@ -1,848 +1,254 @@
 <!DOCTYPE html>
+<html lang="zh-CN">
 
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-<html class="theme-next muse use-motion" lang="zh-CN">
+<!-- Head tag -->
 <head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-<meta name="theme-color" content="#222">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-
-
-
-
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
-
-<link href="/css/main.css?v=6.3.0" rel="stylesheet" type="text/css">
-
-
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.3.0">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.3.0">
-
-
-  <link rel="mask-icon" href="/images/logo.svg?v=6.3.0" color="#222">
-
-
-
-
-
-
-
-
-
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Muse',
-    version: '6.3.0',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: false,
-    fastclick: false,
-    lazyload: false,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
-  };
-</script>
-
-
+  <!--Description-->
   
 
-
-
-
-  <meta name="description" content="[TOC] 了解的知识点 DOM概念 JavaScript相关原生api  整理">
-<meta name="keywords" content="javascript">
-<meta property="og:type" content="article">
-<meta property="og:title" content="javascript dom编程艺术 笔记">
-<meta property="og:url" content="https://lifelover.cc/2018/08/05/javascript-dom编程艺术-笔记/index.html">
-<meta property="og:site_name" content="lifelover">
-<meta property="og:description" content="[TOC] 了解的知识点 DOM概念 JavaScript相关原生api  整理">
-<meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1ftv4mk3l2ij30tw19xq8a.jpg">
-<meta property="og:updated_time" content="2018-08-05T05:56:25.000Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="javascript dom编程艺术 笔记">
-<meta name="twitter:description" content="[TOC] 了解的知识点 DOM概念 JavaScript相关原生api  整理">
-<meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tNc79gy1ftv4mk3l2ij30tw19xq8a.jpg">
-
-
-
-  <link rel="alternate" href="/atom.xml" title="lifelover" type="application/atom+xml">
-
-
-
-
-  <link rel="canonical" href="https://lifelover.cc/2018/08/05/javascript-dom编程艺术-笔记/">
-
-
-
-<script type="text/javascript" id="page.configurations">
-  CONFIG.page = {
-    sidebar: "",
-  };
-</script>
-
-  <title>javascript dom编程艺术 笔记 | lifelover</title>
+  <!--Author-->
+  
+  <meta name="author" content="骁飞">
   
 
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="javascript dom编程艺术 笔记">
+  
+  <!--Open Graph Description-->
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="lifelover">
+  <!--Type page-->
+  
+      <meta property="og:type" content="article">
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>javascript dom编程艺术 笔记 - lifelover</title>
 
 
+  <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
 
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
 
+  <!----------------------------
+  https://github.com/GallenHu/hexo-theme-Daily
 
+ _____            _   _
+|  __ \          (_) | |
+| |  | |   __ _   _  | |  _   _
+| |  | |  / _` | | | | | | | | |
+| |__| | | (_| | | | | | | |_| |
+|_____/   \__,_| |_| |_|  \__, |
+                          __/ |
+                         |___/
 
-
-
-  <noscript>
-  <style type="text/css">
-    .use-motion .motion-element,
-    .use-motion .brand,
-    .use-motion .menu-item,
-    .sidebar-inner,
-    .use-motion .post-block,
-    .use-motion .pagination,
-    .use-motion .comments,
-    .use-motion .post-header,
-    .use-motion .post-body,
-    .use-motion .collection-title { opacity: initial; }
-
-    .use-motion .logo,
-    .use-motion .site-title,
-    .use-motion .site-subtitle {
-      opacity: initial;
-      top: initial;
-    }
-
-    .use-motion {
-      .logo-line-before i { left: initial; }
-      .logo-line-after i { right: initial; }
-    }
-  </style>
-</noscript>
+    --------------------------->
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-CN">
 
-  
-  
-    
-  
+<body>
 
-  <div class="container sidebar-position-left page-post-detail">
-    <div class="headband"></div>
-
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
-
-    <div class="custom-logo-site-title">
-      <a href="/" class="brand" rel="start">
-        <span class="logo-line-before"><i></i></span>
-        <span class="site-title">lifelover</span>
-        <span class="logo-line-after"><i></i></span>
+  <!-- Nav -->
+  <header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://hexo.io/logo.svg" alt="lifelover" height="60">
+        
       </a>
     </div>
-    
-      
-        <p class="site-subtitle">love life</p>
-      
-    
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  archive
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  about
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+    </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
   </div>
-
-  <div class="site-nav-toggle">
-    <button aria-label="切换导航栏">
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
-  </div>
-</div>
+</header>
 
 
-
-<nav class="site-nav">
-  
-    <ul id="menu" class="menu">
-      
-        
-        
-        
-          
-          <li class="menu-item menu-item-home">
-    <a href="/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-tags">
-    <a href="/tags/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-archives">
-    <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
-  </li>
-        
-        
-        
-          
-          <li class="menu-item menu-item-about">
-    <a href="/about/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
-  </li>
-
-      
-      
-    </ul>
-  
-
-  
-    
-
-  
-
-  
-</nav>
-
-
-
-  
-
-
-
-</div>
-    </header>
-
-    
-
-
-    <main id="main" class="main">
-      <div class="main-inner">
-        <div class="content-wrap">
-          
-          <div id="content" class="content">
-            
-
-  <div id="posts" class="posts-expand">
-    
-
-  
-
-  
-  
-  
-
-  
-
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://lifelover.cc/2018/08/05/javascript-dom编程艺术-笔记/">
-
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="骁飞">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lifelover">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">javascript dom编程艺术 笔记
-              
+  <!-- Main Content -->
+  <div class="content-area">
+  <div class="post">
+    <!-- Post Content -->
+    <div class="container">
+      <article>
+        <!-- Title date & tags -->
+        <div class="post-header">
+          <h1 class="entry-title">
+            javascript dom编程艺术 笔记
             
           </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-
-            
-            
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-
-              
-                
-              
-
-              <time title="创建时间：2018-08-05 13:54:15 / 修改时间：13:56:25" itemprop="dateCreated datePublished" datetime="2018-08-05T13:54:15+08:00">2018-08-05</time>
-            
-
+          <p class="posted-on">
+          2018-08-05
+          </p>
+          <div class="tags-links">
             
               
-
+                <a href="/tags/javascript/" rel="tag">
+                  javascript
+                </a>
               
             
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="post-meta-item-icon">
-            <i class="fa fa-eye"></i>
-             阅读次数： 
-            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
-            </span>
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        <p>[TOC]</p>
-<h3 id="了解的知识点"><a href="#了解的知识点" class="headerlink" title="了解的知识点"></a>了解的知识点</h3><ol>
+        <!-- Post Main Content -->
+        <div class="entry-content has_line_number">
+          <p>[TOC]</p>
+<h3><span id="了解的知识点">了解的知识点</span></h3><ol>
 <li>DOM概念</li>
 <li>JavaScript相关原生api</li>
 </ol>
-<h3 id="整理"><a href="#整理" class="headerlink" title="整理"></a>整理</h3><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1ftv4mk3l2ij30tw19xq8a.jpg" alt=""></p>
+<h3><span id="整理">整理</span></h3><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1ftv4mk3l2ij30tw19xq8a.jpg" alt=""></p>
 <a id="more"></a>
-<h3 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h3><h4 id="XHTML-HTML"><a href="#XHTML-HTML" class="headerlink" title="XHTML HTML"></a>XHTML HTML</h4><p>XML给文档加标记，方便存储传输分享数据，XML的语法严格。<br>XHTML就是用XML语法形式来写HTML<br>XHTML语法要求有</p>
+<h3><span id="知识要点">知识要点</span></h3><h4><span id="xhtml-html">XHTML HTML</span></h4><p>XML给文档加标记，方便存储传输分享数据，XML的语法严格。<br>XHTML就是用XML语法形式来写HTML<br>XHTML语法要求有</p>
 <ol>
 <li>必须包含文件头声明&lt;!DOCTYPE&gt;</li>
 <li>所有元素名小写</li>
 <li>所有空元素必须关闭</li>
 <li>所有属性值/名必须加引号</li>
 </ol>
-<h3 id="渐进增强和平稳退化"><a href="#渐进增强和平稳退化" class="headerlink" title="渐进增强和平稳退化"></a>渐进增强和平稳退化</h3><p>渐进增强 progressive enhancement<br>原则就一点，编写DOM时，考虑网站不支持js，css时候核心内容也能展示给用户。<br>所以采用<code>渐进增强</code>原则来编写代码时候，不要通过JavaScript来添加一些重要内容，如果网站不支持js。<br>总是应该从最核心的地方，即从内容开始，根据内容使用标记，实现良好的结构；然后再逐步加强这些内容，<br>加强的工作既可以通过css改进呈现效果，也可以通过DOM添加各种行为。<br>平稳退化： 渐进增强的实现必然支持平稳退化，如上，按渐进增强的原则去充实内容，就算去掉css或者DOM<br>支持依然可以访问到核心内容。</p>
+<h3><span id="渐进增强和平稳退化">渐进增强和平稳退化</span></h3><p>渐进增强 progressive enhancement<br>原则就一点，编写DOM时，考虑网站不支持js，css时候核心内容也能展示给用户。<br>所以采用<code>渐进增强</code>原则来编写代码时候，不要通过JavaScript来添加一些重要内容，如果网站不支持js。<br>总是应该从最核心的地方，即从内容开始，根据内容使用标记，实现良好的结构；然后再逐步加强这些内容，<br>加强的工作既可以通过css改进呈现效果，也可以通过DOM添加各种行为。<br>平稳退化： 渐进增强的实现必然支持平稳退化，如上，按渐进增强的原则去充实内容，就算去掉css或者DOM<br>支持依然可以访问到核心内容。</p>
 
+        </div>
+      </article>
+    </div>
+    <!-- Comments -->
+    <div class="container">
+      
+<section id="comment">
+  <!-- <h1 class="title">留言</h1> -->
+
+  
+</section>
+
+
+    </div>
+    <!-- Pre or Next -->
+    <div class="nav-links">
+      
+        <div class="nav-previous">
+          <a href="/2018/12/17/2018年年终小结/" rel="prev"><span class="meta-arraw meta-arraw-left"></span> 上一页</a>
+        </div>
+      
+      
+        <div class="nav-next">
+          <a href="/2018/04/08/node卸载与重装/" rel="prev">下一页 <span class="meta-arraw meta-arraw-right"></span></a>
+        </div>
       
     </div>
 
-    
-
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/javascript/" rel="tag"># javascript</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/04/08/node卸载与重装/" rel="next" title="node卸载与重装">
-                <i class="fa fa-chevron-left"></i> node卸载与重装
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/17/2018年年终小结/" rel="prev" title="2018年年终小结">
-                2018年年终小结 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-  
-
-
-
-        </div>
-        
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
-  </div>
-
-  <aside id="sidebar" class="sidebar">
-    
-    <div class="sidebar-inner">
-
-      
-
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-            
-              <p class="site-author-name" itemprop="name">骁飞</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          
-            <nav class="site-state motion-element">
-              
-                <div class="site-state-item site-state-posts">
-                
-                  <a href="/archives/">
-                
-                    <span class="site-state-item-count">5</span>
-                    <span class="site-state-item-name">日志</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-categories">
-                  <a href="/categories/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">3</span>
-                    <span class="site-state-item-name">分类</span>
-                  </a>
-                </div>
-              
-
-              
-                
-                
-                <div class="site-state-item site-state-tags">
-                  <a href="/tags/index.html">
-                    
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                      
-                    
-                    <span class="site-state-item-count">7</span>
-                    <span class="site-state-item-name">标签</span>
-                  </a>
-                </div>
-              
-            </nav>
-          
-
-          
-            <div class="feed-link motion-element">
-              <a href="/atom.xml" rel="alternate">
-                <i class="fa fa-rss"></i>
-                RSS
-              </a>
-            </div>
-          
-
-          
-
-          
-          
-
-          
-          
-
-          
-            
-          
-          
-
-        </div>
-      </section>
-
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#了解的知识点"><span class="nav-number">1.</span> <span class="nav-text">了解的知识点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#整理"><span class="nav-number">2.</span> <span class="nav-text">整理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#知识要点"><span class="nav-number">3.</span> <span class="nav-text">知识要点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#XHTML-HTML"><span class="nav-number">3.1.</span> <span class="nav-text">XHTML HTML</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#渐进增强和平稳退化"><span class="nav-number">4.</span> <span class="nav-text">渐进增强和平稳退化</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
-      
-
-      
-
-    </div>
-  </aside>
-
-
-        
-      </div>
-    </main>
-
-    <footer id="footer" class="footer">
-      <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
-  <span class="with-love" id="animate">
-    <i class="fa fa-user"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">骁飞</span>
-
-  
-
-  
 </div>
 
 
-
-
-  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动 v3.8.0</div>
-
-
-
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Muse</a></div>
-
-
-
-
-        
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv" title="总访客量">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-
-  
-    <span class="site-pv" title="总访问量">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
-
-
-
-
-
-
-
-
-
-        
-      </div>
-    </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
+  <!-- Footer -->
+  <!-- Footer-widgets -->
+<div class="footer-widgets">
+  <div class="row inside-wrapper">
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">关于本站</h1>
+        <div class="custom-widget-content">
+          
+          分享前端技术和生活趣事
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">与我联系</h1>
+        <div class="widget-text">
+          
+            
+              <a href="https://github.com/leowang1991" class="icon icon-github" target="_blank">github</a>
+            
+              <a href="mailto:kingswang007@qq.com" class="icon icon-mail" target="_blank">mail</a>
+            
+          
+        </div>
+      </aside>
+    </div>
+    <div class="col-1-3">
+      <aside>
+        <h1 class="widget-title">站内搜索</h1>
+        <div class="widget-text">
+          <form onsubmit="return appDaily.submitSearch('')">
+            <p>
+              <input type="text" placeholder="search..." id="homeSearchInput">
+            </p>
+            <!-- <input type="submit" value="GO"> -->
+          </form>
+        </div>
+      </aside>
+    </div>
   </div>
+</div>
+<!-- Footer -->
+<footer class="site-info">
+  <p>
+    <span>lifelover &copy; 2018</span>
+    
+      <span class="split">|</span>
+      <span>Powered by <a href="https://hexo.io/" target="_blank">Hexo</a> with Theme <a href="https://github.com/GallenHu/hexo-theme-Daily" target="_blank">Daily</a></span>
+    
+  </p>
+</footer>
 
-  
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+  <!-- After footer scripts -->
+  <!-- scripts -->
+<script src="/js/app.js"></script>
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=6.3.0"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=6.3.0"></script>
-
-
-
-  
-  
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.3.0"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=6.3.0"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.3.0"></script>
-
-
-
-  
-
-
-
-  
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
 
 </body>
+
 </html>
