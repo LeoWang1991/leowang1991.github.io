@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lifelover.cc/"/>
-  <updated>2018-12-24T03:25:22.522Z</updated>
+  <updated>2018-12-24T15:00:19.490Z</updated>
   <id>https://lifelover.cc/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="https://lifelover.cc/2018/12/24/test/"/>
+    <id>https://lifelover.cc/2018/12/24/test/</id>
+    <published>2018-12-24T15:00:09.000Z</published>
+    <updated>2018-12-24T15:00:19.490Z</updated>
+    
+    <content type="html"><![CDATA[<p>test</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;test&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>2018年年终小结</title>
