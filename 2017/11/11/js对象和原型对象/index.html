@@ -100,13 +100,13 @@
 
 
 
-  <meta name="description" content="前言学习了解JavaScript对象的继承机制 JavaScript Object概念Object是js的基本数据结构的一种，属于引用类型。 对象的创建方法 对象字面量写法 构造函数，通过构造函数来创建对象实例 Object()构造函数 create()方法12345678910111213141516171819202122232425// 对象字面量let person1 = &amp;#123;na">
+  <meta name="description" content="前言 学习了解JavaScript对象的继承机制  JavaScript Object  概念 Object是js的基本数据结构的一种，属于引用类型。  对象的创建方法  对象字面量写法 构造函数，通过构造函数来创建对象实例 Object()构造函数 create()方法  12345678910111213141516171819202122232425// 对象字面量let person1">
 <meta name="keywords" content="原型,JavaScript">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js对象和原型对象">
 <meta property="og:url" content="https://lifelover.cc/2017/11/11/js对象和原型对象/index.html">
 <meta property="og:site_name" content="lifelover">
-<meta property="og:description" content="前言学习了解JavaScript对象的继承机制 JavaScript Object概念Object是js的基本数据结构的一种，属于引用类型。 对象的创建方法 对象字面量写法 构造函数，通过构造函数来创建对象实例 Object()构造函数 create()方法12345678910111213141516171819202122232425// 对象字面量let person1 = &amp;#123;na">
+<meta property="og:description" content="前言 学习了解JavaScript对象的继承机制  JavaScript Object  概念 Object是js的基本数据结构的一种，属于引用类型。  对象的创建方法  对象字面量写法 构造函数，通过构造函数来创建对象实例 Object()构造函数 create()方法  12345678910111213141516171819202122232425// 对象字面量let person1">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg">
 <meta property="og:image" content="https://ws3.sinaimg.cn/large/006tKfTcgy1fljonrl5g9j30al0bwjrf.jpg">
@@ -114,7 +114,7 @@
 <meta property="og:updated_time" content="2017-11-16T01:48:07.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js对象和原型对象">
-<meta name="twitter:description" content="前言学习了解JavaScript对象的继承机制 JavaScript Object概念Object是js的基本数据结构的一种，属于引用类型。 对象的创建方法 对象字面量写法 构造函数，通过构造函数来创建对象实例 Object()构造函数 create()方法12345678910111213141516171819202122232425// 对象字面量let person1 = &amp;#123;na">
+<meta name="twitter:description" content="前言 学习了解JavaScript对象的继承机制  JavaScript Object  概念 Object是js的基本数据结构的一种，属于引用类型。  对象的创建方法  对象字面量写法 构造函数，通过构造函数来创建对象实例 Object()构造函数 create()方法  12345678910111213141516171819202122232425// 对象字面量let person1">
 <meta name="twitter:image" content="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg">
 
 
@@ -498,29 +498,39 @@
       
 
       
-        <h3><span id="前言">前言</span></h3><p>学习了解JavaScript对象的继承机制</p>
-<h3><span id="javascript-object">JavaScript Object</span></h3><h4><span id="概念">概念</span></h4><p>Object是js的基本数据结构的一种，属于引用类型。</p>
-<h4><span id="对象的创建方法">对象的创建方法</span></h4><ol>
+        <h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
+<p>学习了解JavaScript对象的继承机制</p>
+<h3 id="javascript-object"><a class="markdownIt-Anchor" href="#javascript-object"></a> JavaScript Object</h3>
+<h4 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h4>
+<p>Object是js的基本数据结构的一种，属于引用类型。</p>
+<h4 id="对象的创建方法"><a class="markdownIt-Anchor" href="#对象的创建方法"></a> 对象的创建方法</h4>
+<ol>
 <li>对象字面量写法</li>
 <li>构造函数，通过构造函数来创建对象实例</li>
 <li>Object()构造函数</li>
-<li>create()方法<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 对象字面量</span></span><br><span class="line"><span class="keyword">let</span> person1 = &#123;<span class="attr">name</span>: <span class="string">'jim'</span>&#125;; </span><br><span class="line"><span class="comment">// 构造函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name = name;</span><br><span class="line">    <span class="keyword">this</span>.greeting = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'hello my name is '</span> + <span class="keyword">this</span>.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> person2 = <span class="keyword">new</span> Person(<span class="string">'Bob'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(person2.name);</span><br><span class="line"><span class="built_in">console</span>.log(person2.greeting());</span><br><span class="line"><span class="comment">// Object() 方法</span></span><br><span class="line"><span class="keyword">let</span> person3 = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">person3.name = <span class="string">'kobe'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person3.name);</span><br><span class="line">person3 = <span class="keyword">new</span> <span class="built_in">Object</span>(&#123;</span><br><span class="line">    name: <span class="string">'kobe2'</span>,</span><br><span class="line">    age: <span class="number">22</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(person3.name);</span><br><span class="line"><span class="comment">// create() 方法 类似构造函数 </span></span><br><span class="line"><span class="keyword">let</span> person4 = <span class="built_in">Object</span>.create(person3);</span><br><span class="line">person4.name = <span class="string">'kobe3'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(person4.name,person3.name);</span><br></pre></td></tr></table></figure>
-</li>
+<li>create()方法</li>
 </ol>
-<h4><span id="对象属性的访问方式">对象属性的访问方式</span></h4><ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 对象字面量</span><br><span class="line">let person1 = &#123;<span class="type">name</span>: <span class="string">'jim'</span>&#125;; </span><br><span class="line">// 构造函数</span><br><span class="line"><span class="keyword">function</span> Person(<span class="type">name</span>) &#123;</span><br><span class="line">    this.name = <span class="type">name</span>;</span><br><span class="line">    this.greeting = <span class="keyword">function</span>() &#123;</span><br><span class="line">        console.log(<span class="string">'hello my name is '</span> + this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let person2 = <span class="built_in">new</span> Person(<span class="string">'Bob'</span>);</span><br><span class="line">console.log(person2.name);</span><br><span class="line">console.log(person2.greeting());</span><br><span class="line">// <span class="keyword">Object</span>() 方法</span><br><span class="line">let person3 = <span class="built_in">new</span> <span class="keyword">Object</span>();</span><br><span class="line">person3.name = <span class="string">'kobe'</span>;</span><br><span class="line">console.log(person3.name);</span><br><span class="line">person3 = <span class="built_in">new</span> <span class="keyword">Object</span>(&#123;</span><br><span class="line">    <span class="type">name</span>: <span class="string">'kobe2'</span>,</span><br><span class="line">    age: <span class="number">22</span></span><br><span class="line">&#125;);</span><br><span class="line">console.log(person3.name);</span><br><span class="line">// <span class="keyword">create</span>() 方法 类似构造函数 </span><br><span class="line">let person4 = <span class="keyword">Object</span>.<span class="keyword">create</span>(person3);</span><br><span class="line">person4.name = <span class="string">'kobe3'</span>;</span><br><span class="line">console.log(person4.name,person3.name);</span><br></pre></td></tr></table></figure>
+<h4 id="对象属性的访问方式"><a class="markdownIt-Anchor" href="#对象属性的访问方式"></a> 对象属性的访问方式</h4>
+<ol>
 <li>点表示法</li>
-<li>中括号表示法<figure class="highlight sqf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let person = &#123;</span><br><span class="line">    <span class="built_in">name</span>: <span class="string">'xiaofei'</span>,</span><br><span class="line">    age: <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line">console.<span class="built_in">log</span>(person.<span class="built_in">name</span>);</span><br><span class="line">console.<span class="built_in">log</span>(person[<span class="string">'age'</span>]);</span><br></pre></td></tr></table></figure>
-</li>
+<li>中括号表示法</li>
 </ol>
-<h3><span id="proto-prototype-prototype"><strong>proto</strong>、[[prototype]]、prototype</span></h3><ol>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let person = &#123;</span><br><span class="line">    <span class="type">name</span>: <span class="string">'xiaofei'</span>,</span><br><span class="line">    age: <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line">console.log(person.name);</span><br><span class="line">console.log(person[<span class="string">'age'</span>]);</span><br></pre></td></tr></table></figure>
+<h3 id="proto-prototype-prototype"><a class="markdownIt-Anchor" href="#proto-prototype-prototype"></a> <strong>proto</strong>、[[prototype]]、prototype</h3>
+<ol>
 <li>JavaScript对象通过<code>原型机制</code>从其他对象<code>继承</code>功能特性</li>
 <li>每个对象有一个私有属性<code>[[prototype]]</code>，这个私有属性持有一个连接到另一个称为其<code>prototype</code>对象（原型对象）的链接。</li>
 <li><code>__proto__</code>是浏览器对ES语法<code>[[prototype]]</code>的实现api</li>
 <li><code>prototype</code>属性指向的对象就是实例对象的原型对象即<code>__proto__</code>所指引的对象</li>
-<li>原型链，原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。<br>例1<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg" alt="clipboard.png"></li>
+<li>原型链，原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。<br>
+例1<br>
+<img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg" alt="clipboard.png"></li>
 </ol>
 <p>例2 通过原型链来检测对象所调用的方法是否存在，存在在哪个原型对象上</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fljonrl5g9j30al0bwjrf.jpg" alt="clipboard.png"><br>person1除了name,age在对象对象中存在外，其他方法都是通过原型链的方法在Object上找到并调用。<br><img src="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png" alt="原型链"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fljonrl5g9j30al0bwjrf.jpg" alt="clipboard.png"><br>
+person1除了name,age在对象对象中存在外，其他方法都是通过原型链的方法在Object上找到并调用。<br>
+<img src="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png" alt="原型链"></p>
 
       
     </div>
@@ -762,7 +772,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">JavaScript Object</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">对象的创建方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#undefined"><span class="nav-text">对象属性的访问方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#undefined"><span class="nav-text">proto、[[prototype]]、prototype</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#javascript-object"><span class="nav-text"> JavaScript Object</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#概念"><span class="nav-text"> 概念</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象的创建方法"><span class="nav-text"> 对象的创建方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象属性的访问方式"><span class="nav-text"> 对象属性的访问方式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#proto-prototype-prototype"><span class="nav-text"> proto、[[prototype]]、prototype</span></a></li></ol></div>
             
 
           </div>
@@ -891,10 +901,6 @@
 
 
 
-
-  
-  
-  <script id="ribbon" size="200" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
 
 
 
