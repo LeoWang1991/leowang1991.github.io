@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[next主题优化]]></title>
     <url>%2F2019%2F02%2F27%2Fnext%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96%2F</url>
-    <content type="text"><![CDATA[前言本文主要记录next主题优化的一些点 图片展示增加图片预览功能add fancybox然后设置fancybox: true 评论系统添加disqus评论系统然后在_config.yml中找到disqus 进行配置，输入自己注册服务的shortname 访问量不蒜子统计 文章浏览进度主题背景修改主题点击动效]]></content>
+    <content type="text"><![CDATA[出现的问题 锚点失效 好像需要从 h2开始写才会识别 参考 hexo目录锚点TOC失效 前言 本文主要记录next主题优化的一些点 图片展示 增加图片预览功能 add fancybox 然后设置fancybox: true 评论系统 添加disqus评论系统 然后在_config.yml中找到disqus 进行配置，输入自己注册服务的shortname 访问量 不蒜子统计 文章浏览进度 主题背景修改 主题点击动效]]></content>
       <categories>
         <category>工具</category>
       </categories>
@@ -60,7 +60,7 @@
   <entry>
     <title><![CDATA[给hexo博客自定义域名加https]]></title>
     <url>%2F2017%2F12%2F03%2F%E7%BB%99hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%8A%A0https%2F</url>
-    <content type="text"><![CDATA[给自定义域名加https 目的 看上去更加安全 小绿锁看上去更好看 实现方案 cloudflare走cloudflare的DNS解析 注册cloudflare账号 添加域名然后一步步走下去就ok了 把你域名原有的DNS修改成cloudflare的比如我的是万网 在cloudflare上check 应该很快生效 在cloudflare上配置DNS 之前一直弄不好就是因为这里没有配置好按这样配置就ok了，因为是挂在github上的静态博客，所以192.30.252.153指向的github的ip,CNAME的配置，我不是很明白，但就是这样配置就好了。如果你操作完一直不成功可以查看是不是这里配置出问题了。 配置规则，强制走https访问有个小绿锁还是蛮好看的 一些知识主要只是就是了解DNS配置时候的A AAAA CNAME等都是啥DNS全称，Domain Name System,域名系统，作为互联网的一项服务,将域名和ip地址映射的一个分布式数据库。通过DNS就可以通过域名，找到对应的物理机ip。上面的A AAAA CNAME都是这套系统的资源记录类型。 代码 描述 功能 A IP地址记录 映射主机域名到IPv4地址 AAAA IPv6 IP地址记录 映射主机域名到IPv6地址 CNAME 规范名称记录 一个主机域名的别名，告诉在哪个地方继续寻找 MX 电邮交互记录 引导域名到该域名的邮件传输代理(MTA)列表 还有更多的类型参考域名服务器记录类型列表，域名查询服务 其他应该多去学习一下计算机网络相关的知识]]></content>
+    <content type="text"><![CDATA[给自定义域名加https 目的 看上去更加安全 小绿锁看上去更好看 实现方案 cloudflare 走cloudflare的DNS解析 注册cloudflare账号 添加域名 然后一步步走下去就ok了 把你域名原有的DNS修改成cloudflare的 比如我的是万网 在cloudflare上check 应该很快生效 在cloudflare上配置DNS 之前一直弄不好就是因为这里没有配置好 按这样配置就ok了，因为是挂在github上的静态博客，所以192.30.252.153指向的github的ip,CNAME的配置，我不是很明白，但就是这样配置就好了。 如果你操作完一直不成功可以查看是不是这里配置出问题了。 配置规则，强制走https访问 有个小绿锁还是蛮好看的 一些知识 主要只是就是了解DNS配置时候的A AAAA CNAME等都是啥 DNS全称，Domain Name System,域名系统，作为互联网的一项服务,将域名和ip地址映射的一个分布式数据库。通过DNS就可以通过域名，找到对应的物理机ip。 上面的A AAAA CNAME都是这套系统的资源记录类型。 代码 描述 功能 A IP地址记录 映射主机域名到IPv4地址 AAAA IPv6 IP地址记录 映射主机域名到IPv6地址 CNAME 规范名称记录 一个主机域名的别名，告诉在哪个地方继续寻找 MX 电邮交互记录 引导域名到该域名的邮件传输代理(MTA)列表 还有更多的类型参考域名服务器记录类型列表， 域名查询服务 其他 应该多去学习一下计算机网络相关的知识]]></content>
       <categories>
         <category>https</category>
       </categories>
