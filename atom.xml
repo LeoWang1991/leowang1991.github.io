@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lifelover.cc/"/>
-  <updated>2019-02-18T10:37:23.244Z</updated>
+  <updated>2019-02-27T09:24:24.238Z</updated>
   <id>https://lifelover.cc/</id>
   
   <author>
@@ -17,23 +17,57 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>vscode 配置同步</title>
-    <link href="https://lifelover.cc/2019/02/18/vscode-%E9%85%8D%E7%BD%AE%E5%90%8C%E6%AD%A5/"/>
-    <id>https://lifelover.cc/2019/02/18/vscode-配置同步/</id>
-    <published>2019-02-18T10:34:40.000Z</published>
-    <updated>2019-02-18T10:37:23.244Z</updated>
+    <title>next主题优化</title>
+    <link href="https://lifelover.cc/2019/02/27/next%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/"/>
+    <id>https://lifelover.cc/2019/02/27/next主题优化/</id>
+    <published>2019-02-27T07:39:17.000Z</published>
+    <updated>2019-02-27T09:24:24.238Z</updated>
     
-    <content type="html"><![CDATA[<h3><span id="前言">前言</span></h3><p>解决换电脑重装vscode时候要手动重装所有插件和配置。</p><h3><span id="工具">工具</span></h3><ol><li>vscode Setting Sync 插件</li><li>github token</li></ol><h3><span id="操作">操作</span></h3><ol><li>下载插件</li><li>去github页面生成一个<code>Personal access tokens</code> 记下该token</li><li>将token配置到vscode <code>shift alt u</code>（或者指令操作） 会弹窗输入token值</li><li>同步或者下载</li></ol><p>注意：可能会出现一些错误，可能是之前配置过的缘故，我直接选择了重置操作，然后重新配置。</p><h3><span id="参考">参考</span></h3><p><a href="http://www.cnblogs.com/zhilingege/p/8921211.html" target="_blank" rel="noopener">vscode sync插件 在不同设备 同步的坑</a><br><a href="https://juejin.im/post/5b9b5a6f6fb9a05d22728e36" target="_blank" rel="noopener">三分钟教你同步 Visual Studio Code 设置</a></p>]]></content>
+    <content type="html"><![CDATA[<h3><span id="前言">前言</span></h3><p>本文主要记录next主题优化的一些点</p><h3><span id="图片展示">图片展示</span></h3><h4><span id="增加图片预览功能">增加图片预览功能</span></h4><p><a href="https://github.com/theme-next/theme-next-fancybox3" target="_blank" rel="noopener">add fancybox</a><br>然后设置<code>fancybox: true</code></p><h3><span id="评论系统">评论系统</span></h3><p><a href="http://www.cylong.com/blog/2017/03/26/hexo-next-disqus/" target="_blank" rel="noopener">添加disqus评论系统</a><br>然后在<code>_config.yml</code>中找到<code>disqus</code> 进行配置，输入自己注册服务的<code>shortname</code></p><h3><span id="访问量">访问量</span></h3><p><a href="https://theme-next.iissnan.com/third-party-services.html#analytics-busuanzi" target="_blank" rel="noopener">不蒜子统计</a></p><h3><span id="文章浏览进度">文章浏览进度</span></h3><h3><span id="主题背景修改">主题背景修改</span></h3><h3><span id="主题点击动效">主题点击动效</span></h3>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h3&gt;&lt;span id=&quot;前言&quot;&gt;前言&lt;/span&gt;&lt;/h3&gt;&lt;p&gt;解决换电脑重装vscode时候要手动重装所有插件和配置。&lt;/p&gt;
-&lt;h3&gt;&lt;span id=&quot;工具&quot;&gt;工具&lt;/span&gt;&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;vscode Setting Sync 插件&lt;/li&gt;
-&lt;li
+        &lt;h3&gt;&lt;span id=&quot;前言&quot;&gt;前言&lt;/span&gt;&lt;/h3&gt;&lt;p&gt;本文主要记录next主题优化的一些点&lt;/p&gt;
+&lt;h3&gt;&lt;span id=&quot;图片展示&quot;&gt;图片展示&lt;/span&gt;&lt;/h3&gt;&lt;h4&gt;&lt;span id=&quot;增加图片预览功能&quot;&gt;增加图片预览功能&lt;/span&gt;&lt;/h4&gt;&lt;p
       
+    
+    </summary>
+    
+      <category term="工具" scheme="https://lifelover.cc/categories/%E5%B7%A5%E5%85%B7/"/>
+    
+    
+      <category term="博客" scheme="https://lifelover.cc/tags/%E5%8D%9A%E5%AE%A2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>热爱编程</title>
+    <link href="https://lifelover.cc/2019/02/18/%E7%83%AD%E7%88%B1%E7%BC%96%E7%A8%8B/"/>
+    <id>https://lifelover.cc/2019/02/18/热爱编程/</id>
+    <published>2019-02-18T11:17:45.000Z</published>
+    <updated>2019-02-18T11:17:45.179Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>vscode 配置同步</title>
+    <link href="https://lifelover.cc/2019/02/18/vscode-%E9%85%8D%E7%BD%AE%E5%90%8C%E6%AD%A5/"/>
+    <id>https://lifelover.cc/2019/02/18/vscode-配置同步/</id>
+    <published>2019-02-18T10:34:40.000Z</published>
+    <updated>2019-02-18T10:38:35.079Z</updated>
+    
+    <content type="html"><![CDATA[<h3><span id="前言">前言</span></h3><p>解决换电脑重装vscode时候要手动重装所有插件和配置。</p><a id="more"></a><h3><span id="工具">工具</span></h3><ol><li>vscode Setting Sync 插件</li><li>github token</li></ol><h3><span id="操作">操作</span></h3><ol><li>下载插件</li><li>去github页面生成一个<code>Personal access tokens</code> 记下该token</li><li>将token配置到vscode <code>shift alt u</code>（或者指令操作） 会弹窗输入token值</li><li>同步或者下载</li></ol><p>注意：可能会出现一些错误，可能是之前配置过的缘故，我直接选择了重置操作，然后重新配置。</p><h3><span id="参考">参考</span></h3><p><a href="http://www.cnblogs.com/zhilingege/p/8921211.html" target="_blank" rel="noopener">vscode sync插件 在不同设备 同步的坑</a><br><a href="https://juejin.im/post/5b9b5a6f6fb9a05d22728e36" target="_blank" rel="noopener">三分钟教你同步 Visual Studio Code 设置</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;解决换电脑重装vscode时候要手动重装所有插件和配置。&lt;/p&gt;
     
     </summary>
     
