@@ -358,6 +358,191 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://lifelover.cc/2018/08/05/javascript-dom编程艺术-笔记/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="骁飞">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="lifelover">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                
+                <a href="/2018/08/05/javascript-dom编程艺术-笔记/" class="post-title-link" itemprop="url">javascript dom编程艺术 笔记</a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2018-08-05 13:54:15 / 修改时间：13:56:25" itemprop="dateCreated datePublished" datetime="2018-08-05T13:54:15+08:00">2018-08-05</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+              
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+            
+                <span class="post-meta-item-text">评论数：</span>
+                <a href="/2018/08/05/javascript-dom编程艺术-笔记/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/08/05/javascript-dom编程艺术-笔记/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>[TOC]</p>
+<h3 id="了解的知识点"><a href="#了解的知识点" class="headerlink" title="了解的知识点"></a>了解的知识点</h3><ol>
+<li>DOM概念</li>
+<li>JavaScript相关原生api</li>
+</ol>
+<h3 id="整理"><a href="#整理" class="headerlink" title="整理"></a>整理</h3><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1ftv4mk3l2ij30tw19xq8a.jpg" alt=""></p>
+          <!--noindex-->
+          
+            <div class="post-button text-center">
+              <a class="btn" href="/2018/08/05/javascript-dom编程艺术-笔记/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://lifelover.cc/2018/04/08/node卸载与重装/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
@@ -487,38 +672,23 @@
       
         
           
-            <h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
-<p>因为不知道怎么回事 node 和 npm 安装时候总是会出现一些莫名其妙的问题,于是索性打算卸了重装，顺便学习一下遇到的一些问题。</p>
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为不知道怎么回事 node 和 npm 安装时候总是会出现一些莫名其妙的问题,于是索性打算卸了重装，顺便学习一下遇到的一些问题。</p>
 <ol>
 <li>homebrew</li>
 <li>symlink 软链接是啥</li>
 <li>chmod 权限指令 改变权限</li>
 <li>macOS /usr/bin 系统目录 分别放了什么内容</li>
 </ol>
-<h3 id="node-卸载"><a class="markdownIt-Anchor" href="#node-卸载"></a> node 卸载</h3>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">node_modules</span></span></span><br><span class="line">sudo rm -rf ~<span class="regexp">/.npm</span></span><br><span class="line"><span class="regexp">brew uninstall --force node</span></span><br><span class="line"><span class="regexp">brew install node</span></span><br></pre></td></tr></table></figure>
-<p>总之就是把改删的都删除了就行了<br>
-参考<a href="https://stackoverflow.com/questions/33870520/npm-install-cannot-find-module-semver" target="_blank" rel="noopener">stackoverflow-uninstall node</a></p>
-<h3 id="node安装"><a class="markdownIt-Anchor" href="#node安装"></a> node安装</h3>
-<p>可以去官网下载pkg安装，推荐使用<code>brew install node</code>安装<br>
-<img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fq5js4ltmyj30d50cojtx.jpg" alt=""></p>
-<p>不清楚为什么这样 google后的解决方案是</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod <span class="number">776</span> /usr/local/<span class="class"><span class="keyword">lib</span></span></span><br><span class="line">brew link --overwrite node</span><br><span class="line">/<span class="regexp">/Outputs: Linking /usr</span><span class="regexp">/local/</span>Cellar/node/<span class="number">9.6</span>.<span class="number">1</span>... <span class="number">49</span> symlinks created</span><br><span class="line">sudo chmod <span class="number">755</span> /usr/local/<span class="class"><span class="keyword">lib</span></span></span><br></pre></td></tr></table></figure>
-<p>应该是权限问题<br>
-参考<a href="https://stackoverflow.com/questions/35249204/node-already-installed-its-just-not-linked#" target="_blank" rel="noopener">node already installed its just node linked</a>最下面的回答</p>
+<h3 id="node-卸载"><a href="#node-卸载" class="headerlink" title="node 卸载"></a>node 卸载</h3><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">node_modules</span></span></span><br><span class="line">sudo rm -rf ~<span class="regexp">/.npm</span></span><br><span class="line"><span class="regexp">brew uninstall --force node</span></span><br><span class="line"><span class="regexp">brew install node</span></span><br></pre></td></tr></table></figure>
+<p>总之就是把改删的都删除了就行了<br>参考<a href="https://stackoverflow.com/questions/33870520/npm-install-cannot-find-module-semver" target="_blank" rel="noopener">stackoverflow-uninstall node</a></p>
+<h3 id="node安装"><a href="#node安装" class="headerlink" title="node安装"></a>node安装</h3><p>可以去官网下载pkg安装，推荐使用<code>brew install node</code>安装<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fq5js4ltmyj30d50cojtx.jpg" alt=""></p>
+<p>不清楚为什么这样 google后的解决方案是<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod <span class="number">776</span> /usr/local/<span class="class"><span class="keyword">lib</span></span></span><br><span class="line">brew link --overwrite node</span><br><span class="line">/<span class="regexp">/Outputs: Linking /usr</span><span class="regexp">/local/</span>Cellar/node/<span class="number">9.6</span>.<span class="number">1</span>... <span class="number">49</span> symlinks created</span><br><span class="line">sudo chmod <span class="number">755</span> /usr/local/<span class="class"><span class="keyword">lib</span></span></span><br></pre></td></tr></table></figure></p>
+<p>应该是权限问题<br>参考<a href="https://stackoverflow.com/questions/35249204/node-already-installed-its-just-not-linked#" target="_blank" rel="noopener">node already installed its just node linked</a>最下面的回答</p>
 <p>至此，卸载与安装完成</p>
-<h3 id="npm-config-配置解释"><a class="markdownIt-Anchor" href="#npm-config-配置解释"></a> npm config 配置解释</h3>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">; cli configs</span><br><span class="line">metrics-registry = <span class="string">"https://registry.npm.taobao.org/"</span></span><br><span class="line">scope = <span class="string">""</span></span><br><span class="line">user-agent = <span class="string">"npm/5.6.0 node/v9.11.1 darwin x64"</span></span><br><span class="line"></span><br><span class="line">; userconfig /Users/jingxiao/.npmrc</span><br><span class="line">config = <span class="string">""</span></span><br><span class="line">cwd = <span class="string">"/Users/jingxiao"</span></span><br><span class="line">prefix = <span class="string">"/usr/local"</span></span><br><span class="line">registry = <span class="string">"https://registry.npm.taobao.org/"</span></span><br><span class="line"></span><br><span class="line">; builtin<span class="built_in"> config </span>undefined</span><br><span class="line">prefix = <span class="string">"/usr/local"</span></span><br><span class="line"></span><br><span class="line">; node bin location = /usr/local/Cellar/node/9.11.1/bin/node</span><br><span class="line">; cwd = /Users/jingxiao</span><br><span class="line">; HOME = /Users/jingxiao</span><br><span class="line">; <span class="string">"npm config ls -l"</span> <span class="keyword">to</span> show all defaults.</span><br></pre></td></tr></table></figure>
-<p><code>metrics-registry</code> npm源地址，默认应该是指向npm的地址，我也没有去设置taobao源居然自动换成了淘宝源。<br>
-<code>scope</code> 域名，比如个人或者公司私有的仓库，不用担心重名问题了 @somescope/somepackagename<br>
-<code>user-agent</code> 用户代理，比如浏览器的话就是chrome firefox之类的，n这里就是node环境了<br>
-<code>prefix</code> npm全局路径<br>
-<code>cwd</code> process.cwd() current working directory. 当前工作目录</p>
-<h3 id="npm-安装权限问题"><a class="markdownIt-Anchor" href="#npm-安装权限问题"></a> npm 安装权限问题</h3>
-<p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fq5krp1e5tj30ps0dq0w3.jpg" alt=""></p>
-<p>全局安装webpack并没有问题，安装webpack-cli指令时候会有权限问题<br>
-解决权限问题</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R $(whoami) $(npm<span class="built_in"> config </span><span class="builtin-name">get</span> prefix)/&#123;lib/node_modules,bin,share&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="npm-config-配置解释"><a href="#npm-config-配置解释" class="headerlink" title="npm config 配置解释"></a>npm config 配置解释</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">; cli configs</span><br><span class="line">metrics-registry = <span class="string">"https://registry.npm.taobao.org/"</span></span><br><span class="line">scope = <span class="string">""</span></span><br><span class="line">user-agent = <span class="string">"npm/5.6.0 node/v9.11.1 darwin x64"</span></span><br><span class="line"></span><br><span class="line">; userconfig /Users/jingxiao/.npmrc</span><br><span class="line">config = <span class="string">""</span></span><br><span class="line">cwd = <span class="string">"/Users/jingxiao"</span></span><br><span class="line">prefix = <span class="string">"/usr/local"</span></span><br><span class="line">registry = <span class="string">"https://registry.npm.taobao.org/"</span></span><br><span class="line"></span><br><span class="line">; builtin<span class="built_in"> config </span>undefined</span><br><span class="line">prefix = <span class="string">"/usr/local"</span></span><br><span class="line"></span><br><span class="line">; node bin location = /usr/local/Cellar/node/9.11.1/bin/node</span><br><span class="line">; cwd = /Users/jingxiao</span><br><span class="line">; HOME = /Users/jingxiao</span><br><span class="line">; <span class="string">"npm config ls -l"</span> <span class="keyword">to</span> show all defaults.</span><br></pre></td></tr></table></figure>
+<p><code>metrics-registry</code> npm源地址，默认应该是指向npm的地址，我也没有去设置taobao源居然自动换成了淘宝源。<br><code>scope</code> 域名，比如个人或者公司私有的仓库，不用担心重名问题了 @somescope/somepackagename<br><code>user-agent</code> 用户代理，比如浏览器的话就是chrome firefox之类的，n这里就是node环境了<br><code>prefix</code> npm全局路径<br><code>cwd</code> process.cwd() current working directory. 当前工作目录</p>
+<h3 id="npm-安装权限问题"><a href="#npm-安装权限问题" class="headerlink" title="npm 安装权限问题"></a>npm 安装权限问题</h3><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fq5krp1e5tj30ps0dq0w3.jpg" alt=""></p>
+<p>全局安装webpack并没有问题，安装webpack-cli指令时候会有权限问题<br>解决权限问题<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R $(whoami) $(npm<span class="built_in"> config </span><span class="builtin-name">get</span> prefix)/&#123;lib/node_modules,bin,share&#125;</span><br></pre></td></tr></table></figure></p>
 
           
         
@@ -705,38 +875,20 @@
         
           
             <p>给自定义域名加https</p>
-<h2 id="目的"><a class="markdownIt-Anchor" href="#目的"></a> 目的</h2>
-<ul>
+<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><ul>
 <li>看上去更加安全</li>
 <li>小绿锁看上去更好看</li>
 </ul>
-<h2 id="实现方案-cloudflare"><a class="markdownIt-Anchor" href="#实现方案-cloudflare"></a> 实现方案 cloudflare</h2>
-<p>走cloudflare的DNS解析</p>
+<h2 id="实现方案-cloudflare"><a href="#实现方案-cloudflare" class="headerlink" title="实现方案 cloudflare"></a>实现方案 cloudflare</h2><p>走cloudflare的DNS解析</p>
 <ol>
 <li>注册cloudflare账号</li>
-<li>添加域名<br>
-<img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lp252ssj30rb0ed0ty.jpg" alt="add site"><br>
-然后一步步走下去就ok了</li>
-<li>把你域名原有的DNS修改成cloudflare的<br>
-<img src="https://ws1.sinaimg.cn/large/8700af19gy1fi43n3bs7yj21ig0g4wgj.jpg" alt="modify dns"><br>
-比如我的是万网<br>
-<img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fm3luk14gij30y90b3gmv.jpg" alt=""></li>
-<li>在cloudflare上check 应该很快生效<br>
-<img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lw69h29j30w60dr76l.jpg" alt=""></li>
-<li>在cloudflare上配置DNS 之前一直弄不好就是因为这里没有配置好<br>
-<img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lxcpu2rj30t70k20vl.jpg" alt=""><br>
-按这样配置就ok了，因为是挂在github上的静态博客，所以<code>192.30.252.153</code>指向的github的ip,CNAME的配置，我不是很明白，但就是这样配置就好了。<br>
-如果你操作完一直不成功可以查看是不是这里配置出问题了。</li>
-<li>配置规则，强制走https访问<br>
-<img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3m0e6e8dj30s00in41a.jpg" alt=""><br>
-<img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fm3m1st5ymj307n014t8n.jpg" alt=""><br>
-有个小绿锁还是蛮好看的</li>
+<li>添加域名<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lp252ssj30rb0ed0ty.jpg" alt="add site"><br>然后一步步走下去就ok了</li>
+<li>把你域名原有的DNS修改成cloudflare的<br><img src="https://ws1.sinaimg.cn/large/8700af19gy1fi43n3bs7yj21ig0g4wgj.jpg" alt="modify dns"><br>比如我的是万网<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fm3luk14gij30y90b3gmv.jpg" alt=""></li>
+<li>在cloudflare上check 应该很快生效<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lw69h29j30w60dr76l.jpg" alt=""></li>
+<li>在cloudflare上配置DNS 之前一直弄不好就是因为这里没有配置好<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lxcpu2rj30t70k20vl.jpg" alt=""><br>按这样配置就ok了，因为是挂在github上的静态博客，所以<code>192.30.252.153</code>指向的github的ip,CNAME的配置，我不是很明白，但就是这样配置就好了。<br>如果你操作完一直不成功可以查看是不是这里配置出问题了。</li>
+<li>配置规则，强制走https访问<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3m0e6e8dj30s00in41a.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fm3m1st5ymj307n014t8n.jpg" alt=""><br>有个小绿锁还是蛮好看的</li>
 </ol>
-<h2 id="一些知识"><a class="markdownIt-Anchor" href="#一些知识"></a> 一些知识</h2>
-<p>主要只是就是了解DNS配置时候的A AAAA CNAME等都是啥<br>
-<img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fm3m7e7niqj306109wwep.jpg" alt="dns"><br>
-<code>DNS</code>全称，<code>Domain Name System</code>,域名系统，作为互联网的一项服务,将域名和ip地址映射的一个分布式数据库。通过DNS就可以通过域名，找到对应的物理机ip。<br>
-上面的A AAAA CNAME都是这套系统的资源记录类型。</p>
+<h2 id="一些知识"><a href="#一些知识" class="headerlink" title="一些知识"></a>一些知识</h2><p>主要只是就是了解DNS配置时候的A AAAA CNAME等都是啥<br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fm3m7e7niqj306109wwep.jpg" alt="dns"><br><code>DNS</code>全称，<code>Domain Name System</code>,域名系统，作为互联网的一项服务,将域名和ip地址映射的一个分布式数据库。通过DNS就可以通过域名，找到对应的物理机ip。<br>上面的A AAAA CNAME都是这套系统的资源记录类型。</p>
 <table>
 <thead>
 <tr>
@@ -768,10 +920,8 @@
 </tr>
 </tbody>
 </table>
-<p>还有更多的类型参考<a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E4%BC%BA%E6%9C%8D%E5%99%A8%E8%A8%98%E9%8C%84%E9%A1%9E%E5%9E%8B%E5%88%97%E8%A1%A8" target="_blank" rel="noopener">域名服务器记录类型列表</a>，<br>
-<a href="http://www.dirs.cn/" target="_blank" rel="noopener">域名查询服务</a></p>
-<h2 id="其他"><a class="markdownIt-Anchor" href="#其他"></a> 其他</h2>
-<p>应该多去学习一下计算机网络相关的知识</p>
+<p>还有更多的类型参考<a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E4%BC%BA%E6%9C%8D%E5%99%A8%E8%A8%98%E9%8C%84%E9%A1%9E%E5%9E%8B%E5%88%97%E8%A1%A8" target="_blank" rel="noopener">域名服务器记录类型列表</a>，<br><a href="http://www.dirs.cn/" target="_blank" rel="noopener">域名查询服务</a></p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>应该多去学习一下计算机网络相关的知识 </p>
 
           
         
@@ -957,39 +1107,29 @@
       
         
           
-            <h3 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h3>
-<p>学习了解JavaScript对象的继承机制</p>
-<h3 id="javascript-object"><a class="markdownIt-Anchor" href="#javascript-object"></a> JavaScript Object</h3>
-<h4 id="概念"><a class="markdownIt-Anchor" href="#概念"></a> 概念</h4>
-<p>Object是js的基本数据结构的一种，属于引用类型。</p>
-<h4 id="对象的创建方法"><a class="markdownIt-Anchor" href="#对象的创建方法"></a> 对象的创建方法</h4>
-<ol>
+            <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学习了解JavaScript对象的继承机制</p>
+<h3 id="JavaScript-Object"><a href="#JavaScript-Object" class="headerlink" title="JavaScript Object"></a>JavaScript Object</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>Object是js的基本数据结构的一种，属于引用类型。</p>
+<h4 id="对象的创建方法"><a href="#对象的创建方法" class="headerlink" title="对象的创建方法"></a>对象的创建方法</h4><ol>
 <li>对象字面量写法</li>
 <li>构造函数，通过构造函数来创建对象实例</li>
 <li>Object()构造函数</li>
-<li>create()方法</li>
+<li>create()方法<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 对象字面量</span><br><span class="line">let person1 = &#123;<span class="type">name</span>: <span class="string">'jim'</span>&#125;; </span><br><span class="line">// 构造函数</span><br><span class="line"><span class="keyword">function</span> Person(<span class="type">name</span>) &#123;</span><br><span class="line">    this.name = <span class="type">name</span>;</span><br><span class="line">    this.greeting = <span class="keyword">function</span>() &#123;</span><br><span class="line">        console.log(<span class="string">'hello my name is '</span> + this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let person2 = <span class="built_in">new</span> Person(<span class="string">'Bob'</span>);</span><br><span class="line">console.log(person2.name);</span><br><span class="line">console.log(person2.greeting());</span><br><span class="line">// <span class="keyword">Object</span>() 方法</span><br><span class="line">let person3 = <span class="built_in">new</span> <span class="keyword">Object</span>();</span><br><span class="line">person3.name = <span class="string">'kobe'</span>;</span><br><span class="line">console.log(person3.name);</span><br><span class="line">person3 = <span class="built_in">new</span> <span class="keyword">Object</span>(&#123;</span><br><span class="line">    <span class="type">name</span>: <span class="string">'kobe2'</span>,</span><br><span class="line">    age: <span class="number">22</span></span><br><span class="line">&#125;);</span><br><span class="line">console.log(person3.name);</span><br><span class="line">// <span class="keyword">create</span>() 方法 类似构造函数 </span><br><span class="line">let person4 = <span class="keyword">Object</span>.<span class="keyword">create</span>(person3);</span><br><span class="line">person4.name = <span class="string">'kobe3'</span>;</span><br><span class="line">console.log(person4.name,person3.name);</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 对象字面量</span><br><span class="line">let person1 = &#123;<span class="type">name</span>: <span class="string">'jim'</span>&#125;; </span><br><span class="line">// 构造函数</span><br><span class="line"><span class="keyword">function</span> Person(<span class="type">name</span>) &#123;</span><br><span class="line">    this.name = <span class="type">name</span>;</span><br><span class="line">    this.greeting = <span class="keyword">function</span>() &#123;</span><br><span class="line">        console.log(<span class="string">'hello my name is '</span> + this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let person2 = <span class="built_in">new</span> Person(<span class="string">'Bob'</span>);</span><br><span class="line">console.log(person2.name);</span><br><span class="line">console.log(person2.greeting());</span><br><span class="line">// <span class="keyword">Object</span>() 方法</span><br><span class="line">let person3 = <span class="built_in">new</span> <span class="keyword">Object</span>();</span><br><span class="line">person3.name = <span class="string">'kobe'</span>;</span><br><span class="line">console.log(person3.name);</span><br><span class="line">person3 = <span class="built_in">new</span> <span class="keyword">Object</span>(&#123;</span><br><span class="line">    <span class="type">name</span>: <span class="string">'kobe2'</span>,</span><br><span class="line">    age: <span class="number">22</span></span><br><span class="line">&#125;);</span><br><span class="line">console.log(person3.name);</span><br><span class="line">// <span class="keyword">create</span>() 方法 类似构造函数 </span><br><span class="line">let person4 = <span class="keyword">Object</span>.<span class="keyword">create</span>(person3);</span><br><span class="line">person4.name = <span class="string">'kobe3'</span>;</span><br><span class="line">console.log(person4.name,person3.name);</span><br></pre></td></tr></table></figure>
-<h4 id="对象属性的访问方式"><a class="markdownIt-Anchor" href="#对象属性的访问方式"></a> 对象属性的访问方式</h4>
-<ol>
+<h4 id="对象属性的访问方式"><a href="#对象属性的访问方式" class="headerlink" title="对象属性的访问方式"></a>对象属性的访问方式</h4><ol>
 <li>点表示法</li>
-<li>中括号表示法</li>
+<li>中括号表示法<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let person = &#123;</span><br><span class="line">    <span class="type">name</span>: <span class="string">'xiaofei'</span>,</span><br><span class="line">    age: <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line">console.log(person.name);</span><br><span class="line">console.log(person[<span class="string">'age'</span>]);</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
-<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let person = &#123;</span><br><span class="line">    <span class="type">name</span>: <span class="string">'xiaofei'</span>,</span><br><span class="line">    age: <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line">console.log(person.name);</span><br><span class="line">console.log(person[<span class="string">'age'</span>]);</span><br></pre></td></tr></table></figure>
-<h3 id="proto-prototype-prototype"><a class="markdownIt-Anchor" href="#proto-prototype-prototype"></a> <strong>proto</strong>、[[prototype]]、prototype</h3>
-<ol>
+<h3 id="proto、-prototype-、prototype"><a href="#proto、-prototype-、prototype" class="headerlink" title="proto、[[prototype]]、prototype"></a><strong>proto</strong>、[[prototype]]、prototype</h3><ol>
 <li>JavaScript对象通过<code>原型机制</code>从其他对象<code>继承</code>功能特性</li>
 <li>每个对象有一个私有属性<code>[[prototype]]</code>，这个私有属性持有一个连接到另一个称为其<code>prototype</code>对象（原型对象）的链接。</li>
 <li><code>__proto__</code>是浏览器对ES语法<code>[[prototype]]</code>的实现api</li>
 <li><code>prototype</code>属性指向的对象就是实例对象的原型对象即<code>__proto__</code>所指引的对象</li>
-<li>原型链，原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。<br>
-例1<br>
-<img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg" alt="clipboard.png"></li>
+<li>原型链，原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。<br>例1<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg" alt="clipboard.png"></li>
 </ol>
 <p>例2 通过原型链来检测对象所调用的方法是否存在，存在在哪个原型对象上</p>
-<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fljonrl5g9j30al0bwjrf.jpg" alt="clipboard.png"><br>
-person1除了name,age在对象对象中存在外，其他方法都是通过原型链的方法在Object上找到并调用。<br>
-<img src="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png" alt="原型链"></p>
+<p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fljonrl5g9j30al0bwjrf.jpg" alt="clipboard.png"><br>person1除了name,age在对象对象中存在外，其他方法都是通过原型链的方法在Object上找到并调用。<br><img src="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png" alt="原型链"></p>
 
           
         
@@ -1077,7 +1217,7 @@ person1除了name,age在对象对象中存在外，其他方法都是通过原�
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-count">9</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -1096,7 +1236,9 @@ person1除了name,age在对象对象中存在外，其他方法都是通过原�
                     
                       
                     
-                    <span class="site-state-item-count">3</span>
+                      
+                    
+                    <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
                 </div>
@@ -1127,7 +1269,9 @@ person1除了name,age在对象对象中存在外，其他方法都是通过原�
                     
                       
                     
-                    <span class="site-state-item-count">9</span>
+                      
+                    
+                    <span class="site-state-item-count">10</span>
                     <span class="site-state-item-name">标签</span>
                   </a>
                 </div>
