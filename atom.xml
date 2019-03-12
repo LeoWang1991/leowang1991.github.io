@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lifelover.cc/"/>
-  <updated>2019-03-01T14:45:35.591Z</updated>
+  <updated>2019-03-12T02:29:09.381Z</updated>
   <id>https://lifelover.cc/</id>
   
   <author>
@@ -17,219 +17,42 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>耐心点写好业务代码</title>
-    <link href="https://lifelover.cc/2019/03/01/%E8%80%90%E5%BF%83%E7%82%B9%E5%86%99%E5%A5%BD%E4%B8%9A%E5%8A%A1%E4%BB%A3%E7%A0%81/"/>
-    <id>https://lifelover.cc/2019/03/01/耐心点写好业务代码/</id>
-    <published>2019-03-01T14:33:37.000Z</published>
-    <updated>2019-03-01T14:45:35.591Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="业务代码"><a href="#业务代码" class="headerlink" title="业务代码"></a>业务代码</h2><p>其实大部分时间大部分工作都是在写业务代码，有时候觉得很无趣<code>每天写来写去都写一样的东西</code>，类似增删改查，前端的业务代码也是用一些写好的公共组件库像搭建积木一样去搭建。写多了好像真的没意思，可是项目都是这样，<strong>如果自己真的很厌恶了，那应该从思考下为什么，怎么改变</strong>。</p><a id="more"></a><h2 id="为什么厌恶"><a href="#为什么厌恶" class="headerlink" title="为什么厌恶"></a>为什么厌恶</h2><ol><li>没什么技术难度，堆积组件</li><li>繁琐，细活，容易出错</li><li>没有成就感，就好像 就是一份工作，也就没有了什么追求吧</li></ol><h2 id="坏习惯"><a href="#坏习惯" class="headerlink" title="坏习惯"></a>坏习惯</h2><p>发现自己平常写代码时候的一个坏习惯就是，<em>对一些交互细节，总是不以为然，写的时候总想着把主流程走通，功能完成，细节以后再说</em>。拖拉真的很严重，往往后续再花时间来改会浪费更多的时间，因为要重新审视自己的代码。</p><h2 id="提高"><a href="#提高" class="headerlink" title="提高"></a>提高</h2><p>最讨厌的就是一边<code>好厌烦写这样的代码</code>，一边<code>不得不继续为了生计写下去</code>，这样的人生真的是矛盾而无趣。</p><p>解决方案要么就是老子不干这个事了，要么就是老子认了。</p><p>认真的反思了下自己，遇到这样，自己觉得还是自己的问题吧，很多时候没有调整好，没有做好。</p><p><strong>认真很重要！！！</strong><br><strong>认真很重要！！！</strong><br><strong>认真很重要！！！</strong></p><p>虚心一点，踏实一点。</p>]]></content>
+    <title>开始写博客</title>
+    <link href="https://lifelover.cc/2019/03/12/%E5%BC%80%E5%A7%8B%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
+    <id>https://lifelover.cc/2019/03/12/开始写博客/</id>
+    <published>2019-03-12T02:29:09.000Z</published>
+    <updated>2019-03-12T02:29:09.381Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;业务代码&quot;&gt;&lt;a href=&quot;#业务代码&quot; class=&quot;headerlink&quot; title=&quot;业务代码&quot;&gt;&lt;/a&gt;业务代码&lt;/h2&gt;&lt;p&gt;其实大部分时间大部分工作都是在写业务代码，有时候觉得很无趣&lt;code&gt;每天写来写去都写一样的东西&lt;/code&gt;，类似增删改查，前端的业务代码也是用一些写好的公共组件库像搭建积木一样去搭建。写多了好像真的没意思，可是项目都是这样，&lt;strong&gt;如果自己真的很厌恶了，那应该从思考下为什么，怎么改变&lt;/strong&gt;。&lt;/p&gt;
-    
     </summary>
     
-      <category term="工作" scheme="https://lifelover.cc/categories/%E5%B7%A5%E4%BD%9C/"/>
-    
-    
-      <category term="工作" scheme="https://lifelover.cc/tags/%E5%B7%A5%E4%BD%9C/"/>
     
   </entry>
   
   <entry>
-    <title>next主题优化</title>
-    <link href="https://lifelover.cc/2019/02/27/next%E4%B8%BB%E9%A2%98%E4%BC%98%E5%8C%96/"/>
-    <id>https://lifelover.cc/2019/02/27/next主题优化/</id>
-    <published>2019-02-27T07:39:17.000Z</published>
-    <updated>2019-03-07T07:15:15.836Z</updated>
+    <title>README.md</title>
+    <link href="https://lifelover.cc/2019/03/12/README/"/>
+    <id>https://lifelover.cc/2019/03/12/README/</id>
+    <published>2019-03-12T02:16:20.000Z</published>
+    <updated>2019-03-12T02:25:10.742Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="出现的问题"><a href="#出现的问题" class="headerlink" title="出现的问题"></a>出现的问题</h2><ol><li>锚点失效 好像需要从 h2开始写才会识别 <a href="https://ihaoming.top/archives/7445c6f1.html" target="_blank" rel="noopener">参考 hexo目录锚点TOC失效</a></li><li><a href="https://www.itfanr.cc/2017/11/24/resolve-hexo-blog-search-exception/" target="_blank" rel="noopener">本地搜索异常的问题</a></li></ol><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>本文主要记录next主题优化的一些点</p><h2 id="图片展示"><a href="#图片展示" class="headerlink" title="图片展示"></a>图片展示</h2><h3 id="增加图片预览功能"><a href="#增加图片预览功能" class="headerlink" title="增加图片预览功能"></a>增加图片预览功能</h3><p><a href="https://github.com/theme-next/theme-next-fancybox3" target="_blank" rel="noopener">add fancybox</a><br>然后设置<code>fancybox: true</code></p><h2 id="评论系统"><a href="#评论系统" class="headerlink" title="评论系统"></a>评论系统</h2><p><a href="http://www.cylong.com/blog/2017/03/26/hexo-next-disqus/" target="_blank" rel="noopener">添加disqus评论系统</a><br>然后在<code>_config.yml</code>中找到<code>disqus</code> 进行配置，输入自己注册服务的<code>shortname</code></p><h2 id="访问量"><a href="#访问量" class="headerlink" title="访问量"></a>访问量</h2><p><a href="https://theme-next.iissnan.com/third-party-services.html#analytics-busuanzi" target="_blank" rel="noopener">不蒜子统计</a></p><h2 id="文章浏览进度"><a href="#文章浏览进度" class="headerlink" title="文章浏览进度"></a>文章浏览进度</h2><h2 id="主题背景修改"><a href="#主题背景修改" class="headerlink" title="主题背景修改"></a>主题背景修改</h2><h2 id="主题点击动效"><a href="#主题点击动效" class="headerlink" title="主题点击动效"></a>主题点击动效</h2><ul><li style="list-style: none"><input type="checkbox" checked> 背景效果</li><li>[] canvas效果</li></ul>]]></content>
+    <content type="html"><![CDATA[<p><a href="https://github.com/LeoWang1991/blog-backup" target="_blank" rel="noopener">blogs</a></p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;出现的问题&quot;&gt;&lt;a href=&quot;#出现的问题&quot; class=&quot;headerlink&quot; title=&quot;出现的问题&quot;&gt;&lt;/a&gt;出现的问题&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;锚点失效 好像需要从 h2开始写才会识别 &lt;a href=&quot;https://ihaoming.top/a
-      
-    
-    </summary>
-    
-      <category term="工具" scheme="https://lifelover.cc/categories/%E5%B7%A5%E5%85%B7/"/>
-    
-    
-      <category term="博客" scheme="https://lifelover.cc/tags/%E5%8D%9A%E5%AE%A2/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>热爱编程</title>
-    <link href="https://lifelover.cc/2019/02/18/%E7%83%AD%E7%88%B1%E7%BC%96%E7%A8%8B/"/>
-    <id>https://lifelover.cc/2019/02/18/热爱编程/</id>
-    <published>2019-02-18T11:17:45.000Z</published>
-    <updated>2019-02-18T11:17:45.179Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>vscode 配置同步</title>
-    <link href="https://lifelover.cc/2019/02/18/vscode-%E9%85%8D%E7%BD%AE%E5%90%8C%E6%AD%A5/"/>
-    <id>https://lifelover.cc/2019/02/18/vscode-配置同步/</id>
-    <published>2019-02-18T10:34:40.000Z</published>
-    <updated>2019-02-18T10:38:35.079Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>解决换电脑重装vscode时候要手动重装所有插件和配置。</p><a id="more"></a><h3 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h3><ol><li>vscode Setting Sync 插件</li><li>github token</li></ol><h3 id="操作"><a href="#操作" class="headerlink" title="操作"></a>操作</h3><ol><li>下载插件</li><li>去github页面生成一个<code>Personal access tokens</code> 记下该token</li><li>将token配置到vscode <code>shift alt u</code>（或者指令操作） 会弹窗输入token值</li><li>同步或者下载</li></ol><p>注意：可能会出现一些错误，可能是之前配置过的缘故，我直接选择了重置操作，然后重新配置。</p><h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><p><a href="http://www.cnblogs.com/zhilingege/p/8921211.html" target="_blank" rel="noopener">vscode sync插件 在不同设备 同步的坑</a><br><a href="https://juejin.im/post/5b9b5a6f6fb9a05d22728e36" target="_blank" rel="noopener">三分钟教你同步 Visual Studio Code 设置</a></p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;解决换电脑重装vscode时候要手动重装所有插件和配置。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="vscode" scheme="https://lifelover.cc/tags/vscode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2018年终小结</title>
-    <link href="https://lifelover.cc/2018/12/31/2018%E5%B9%B4%E7%BB%88%E5%B0%8F%E7%BB%93/"/>
-    <id>https://lifelover.cc/2018/12/31/2018年终小结/</id>
-    <published>2018-12-31T12:48:22.000Z</published>
-    <updated>2019-02-28T05:13:06.853Z</updated>
-    
-    <content type="html"><![CDATA[<p>真是拖延啊，所以拖到最后一天才开始写写总结，总归有点形式大于内容吧。当然也希望明年变的好一点咯。<br><a id="more"></a>  </p><h3 id="Flags-of-2018"><a href="#Flags-of-2018" class="headerlink" title="Flags of 2018"></a>Flags of 2018</h3><p><img src="http://wx2.sinaimg.cn/mw690/007ueBBily1fyqaqd46vtj30lm0lc0um.jpg" alt=""><br>这是年初随意敲的一些flag，感觉还是很贪心，而且很随意吧。一些事情吧还是在努力的去实现，当然也浪了很多。相比2017年多少还是有一些进步的，虽然今年浪了三个月（失业状态不积极工作），现在想想少赚了很多钱。  </p><ol><li>常年 健身减肥flag</li><li>英语提高，emmm，无障碍文档预读还是可以的  </li><li>学日语，打算放弃又想学习下，主要还喜欢听一些日语歌吧</li><li>有进步吧，尽量隐藏职业风格</li><li>少熬夜啊</li><li>+30%左右吧，技能没啥提高太不努力了</li><li>拿下驾照 买车可以提上日程  </li><li>生活态度 讲道理还是可以的吧  </li><li>kindle吃灰到充不了电了都，尴尬，把实体书看完先  </li></ol><p><code>flag越随意，越多，就变得一点都不严肃不认真对待了。</code></p><h3 id="Summary-of-2018"><a href="#Summary-of-2018" class="headerlink" title="Summary of 2018"></a>Summary of 2018</h3><h4 id="学车"><a href="#学车" class="headerlink" title="学车"></a>学车</h4><p>16年年初报名的，拖到18年10月份还没考科目二也是服气啊，可能是因为再不学要过期了，毕竟也是花了几千块报名的。但是啊太远了两个小时公交路程，当年咋就不会报一个近一点的，然后先想着驾校能不能退我点钱好了，我重新报一个近点学学好了。没退，那就学了。不得不承认学车的那段时间我的智商受到了侮辱。换了个教练，效果还挺好，上一个教练太保守了让我练了好几天的倒车入库，硬是把我练车的想法都磨没了。换了个教练半天练完倒库就去跑项目了，现在想来也就练了四五天不到，就去考试了，deadline还是有效果，考试报名了再说，而不是练到八成把握在报名，科二考场车的原因第一把第一个项目就挂了，略慌。还好凭借’良好的心理素质’(大不了80的补考费不心疼)第二把合格。科三练了三天就去考了，别问怎么过的，问就慢点开，别管的安全员催促，慢慢开就很稳。<br>所以，拖延很久很久以为比较难处理的事情，很快完成掉还是挺开心的。</p><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul><li>好歹还是读了一些书</li><li>好歹没变的更胖（<del>已经如此没有追求了</del>）</li><li>跑步 背单词也会去弄，阶段性习惯</li></ul><h4 id="太浪了"><a href="#太浪了" class="headerlink" title="太浪了"></a>太浪了</h4><p>六月初离职，然后就休息练了几天车外出玩了趟，然后就开始断断续续不认真找工作。反正那段时间废的很，吃饭睡觉打游戏，现在想起来很糟糕吧，大概这就是堕落吧，真的快休息到不想去上班的节奏，还好及时认识到不对(嗯，要交房租了)。以后不会这样了，我觉得，实在太没有追求了。</p><h4 id="再其他"><a href="#再其他" class="headerlink" title="再其他"></a>再其他</h4><p>认识一些人和事，幸运也ok吧。</p><p>当前新年还是要有所期待的</p><h3 id="Promise-of-2019"><a href="#Promise-of-2019" class="headerlink" title="Promise of 2019"></a>Promise of 2019</h3><p>会忙碌充实<br>因为又已经贪心地立下了很多<code>flag</code>，但并<code>不随意</code>。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;真是拖延啊，所以拖到最后一天才开始写写总结，总归有点形式大于内容吧。当然也希望明年变的好一点咯。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="生活" scheme="https://lifelover.cc/tags/%E7%94%9F%E6%B4%BB/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>javascript dom编程艺术 笔记</title>
-    <link href="https://lifelover.cc/2018/08/05/javascript-dom%E7%BC%96%E7%A8%8B%E8%89%BA%E6%9C%AF-%E7%AC%94%E8%AE%B0/"/>
-    <id>https://lifelover.cc/2018/08/05/javascript-dom编程艺术-笔记/</id>
-    <published>2018-08-05T05:54:15.000Z</published>
-    <updated>2018-08-05T05:56:25.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>[TOC]</p><h3 id="了解的知识点"><a href="#了解的知识点" class="headerlink" title="了解的知识点"></a>了解的知识点</h3><ol><li>DOM概念</li><li>JavaScript相关原生api</li></ol><h3 id="整理"><a href="#整理" class="headerlink" title="整理"></a>整理</h3><p><img src="https://ws4.sinaimg.cn/large/006tNc79gy1ftv4mk3l2ij30tw19xq8a.jpg" alt=""></p><a id="more"></a><h3 id="知识要点"><a href="#知识要点" class="headerlink" title="知识要点"></a>知识要点</h3><h4 id="XHTML-HTML"><a href="#XHTML-HTML" class="headerlink" title="XHTML HTML"></a>XHTML HTML</h4><p>XML给文档加标记，方便存储传输分享数据，XML的语法严格。<br>XHTML就是用XML语法形式来写HTML<br>XHTML语法要求有</p><ol><li>必须包含文件头声明&lt;!DOCTYPE&gt;</li><li>所有元素名小写</li><li>所有空元素必须关闭</li><li>所有属性值/名必须加引号</li></ol><h3 id="渐进增强和平稳退化"><a href="#渐进增强和平稳退化" class="headerlink" title="渐进增强和平稳退化"></a>渐进增强和平稳退化</h3><p>渐进增强 progressive enhancement<br>原则就一点，编写DOM时，考虑网站不支持js，css时候核心内容也能展示给用户。<br>所以采用<code>渐进增强</code>原则来编写代码时候，不要通过JavaScript来添加一些重要内容，如果网站不支持js。<br>总是应该从最核心的地方，即从内容开始，根据内容使用标记，实现良好的结构；然后再逐步加强这些内容，<br>加强的工作既可以通过css改进呈现效果，也可以通过DOM添加各种行为。<br>平稳退化： 渐进增强的实现必然支持平稳退化，如上，按渐进增强的原则去充实内容，就算去掉css或者DOM<br>支持依然可以访问到核心内容。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;[TOC]&lt;/p&gt;
-&lt;h3 id=&quot;了解的知识点&quot;&gt;&lt;a href=&quot;#了解的知识点&quot; class=&quot;headerlink&quot; title=&quot;了解的知识点&quot;&gt;&lt;/a&gt;了解的知识点&lt;/h3&gt;&lt;ol&gt;
-&lt;li&gt;DOM概念&lt;/li&gt;
-&lt;li&gt;JavaScript相关原生api&lt;/li&gt;
-&lt;/ol&gt;
-&lt;h3 id=&quot;整理&quot;&gt;&lt;a href=&quot;#整理&quot; class=&quot;headerlink&quot; title=&quot;整理&quot;&gt;&lt;/a&gt;整理&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://ws4.sinaimg.cn/large/006tNc79gy1ftv4mk3l2ij30tw19xq8a.jpg&quot; alt=&quot;&quot;&gt;&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="javascript" scheme="https://lifelover.cc/tags/javascript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>node卸载与重装</title>
-    <link href="https://lifelover.cc/2018/04/08/node%E5%8D%B8%E8%BD%BD%E4%B8%8E%E9%87%8D%E8%A3%85/"/>
-    <id>https://lifelover.cc/2018/04/08/node卸载与重装/</id>
-    <published>2018-04-08T12:47:21.000Z</published>
-    <updated>2019-02-28T04:57:34.287Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>因为不知道怎么回事 node 和 npm 安装时候总是会出现一些莫名其妙的问题,于是索性打算卸了重装，顺便学习一下遇到的一些问题。</p><ol><li>homebrew</li><li>symlink 软链接是啥</li><li>chmod 权限指令 改变权限</li><li>macOS /usr/bin 系统目录 分别放了什么内容</li></ol><h3 id="node-卸载"><a href="#node-卸载" class="headerlink" title="node 卸载"></a>node 卸载</h3><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo rm -rf /usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">node_modules</span></span></span><br><span class="line">sudo rm -rf ~<span class="regexp">/.npm</span></span><br><span class="line"><span class="regexp">brew uninstall --force node</span></span><br><span class="line"><span class="regexp">brew install node</span></span><br></pre></td></tr></table></figure><p>总之就是把改删的都删除了就行了<br>参考<a href="https://stackoverflow.com/questions/33870520/npm-install-cannot-find-module-semver" target="_blank" rel="noopener">stackoverflow-uninstall node</a></p><h3 id="node安装"><a href="#node安装" class="headerlink" title="node安装"></a>node安装</h3><p>可以去官网下载pkg安装，推荐使用<code>brew install node</code>安装<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fq5js4ltmyj30d50cojtx.jpg" alt=""></p><p>不清楚为什么这样 google后的解决方案是<br><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo chmod <span class="number">776</span> /usr/local/<span class="class"><span class="keyword">lib</span></span></span><br><span class="line">brew link --overwrite node</span><br><span class="line">/<span class="regexp">/Outputs: Linking /usr</span><span class="regexp">/local/</span>Cellar/node/<span class="number">9.6</span>.<span class="number">1</span>... <span class="number">49</span> symlinks created</span><br><span class="line">sudo chmod <span class="number">755</span> /usr/local/<span class="class"><span class="keyword">lib</span></span></span><br></pre></td></tr></table></figure></p><p>应该是权限问题<br>参考<a href="https://stackoverflow.com/questions/35249204/node-already-installed-its-just-not-linked#" target="_blank" rel="noopener">node already installed its just node linked</a>最下面的回答</p><p>至此，卸载与安装完成</p><h3 id="npm-config-配置解释"><a href="#npm-config-配置解释" class="headerlink" title="npm config 配置解释"></a>npm config 配置解释</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">; cli configs</span><br><span class="line">metrics-registry = <span class="string">"https://registry.npm.taobao.org/"</span></span><br><span class="line">scope = <span class="string">""</span></span><br><span class="line">user-agent = <span class="string">"npm/5.6.0 node/v9.11.1 darwin x64"</span></span><br><span class="line"></span><br><span class="line">; userconfig /Users/jingxiao/.npmrc</span><br><span class="line">config = <span class="string">""</span></span><br><span class="line">cwd = <span class="string">"/Users/jingxiao"</span></span><br><span class="line">prefix = <span class="string">"/usr/local"</span></span><br><span class="line">registry = <span class="string">"https://registry.npm.taobao.org/"</span></span><br><span class="line"></span><br><span class="line">; builtin<span class="built_in"> config </span>undefined</span><br><span class="line">prefix = <span class="string">"/usr/local"</span></span><br><span class="line"></span><br><span class="line">; node bin location = /usr/local/Cellar/node/9.11.1/bin/node</span><br><span class="line">; cwd = /Users/jingxiao</span><br><span class="line">; HOME = /Users/jingxiao</span><br><span class="line">; <span class="string">"npm config ls -l"</span> <span class="keyword">to</span> show all defaults.</span><br></pre></td></tr></table></figure><p><code>metrics-registry</code> npm源地址，默认应该是指向npm的地址，我也没有去设置taobao源居然自动换成了淘宝源。<br><code>scope</code> 域名，比如个人或者公司私有的仓库，不用担心重名问题了 @somescope/somepackagename<br><code>user-agent</code> 用户代理，比如浏览器的话就是chrome firefox之类的，n这里就是node环境了<br><code>prefix</code> npm全局路径<br><code>cwd</code> process.cwd() current working directory. 当前工作目录</p><h3 id="npm-安装权限问题"><a href="#npm-安装权限问题" class="headerlink" title="npm 安装权限问题"></a>npm 安装权限问题</h3><p><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fq5krp1e5tj30ps0dq0w3.jpg" alt=""></p><p>全局安装webpack并没有问题，安装webpack-cli指令时候会有权限问题<br>解决权限问题<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R $(whoami) $(npm<span class="built_in"> config </span><span class="builtin-name">get</span> prefix)/&#123;lib/node_modules,bin,share&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;因为不知道怎么回事 node 和 npm 安装时候总是会出现一些莫名其妙的问题,于是索性打算卸了重装，顺便学习一下遇到的一些问题。&lt;/p&gt;
+        &lt;p&gt;&lt;a href=&quot;https://github.com/LeoWang1991/blog-backup&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;blogs&lt;/a&gt;&lt;/p&gt;
 
       
     
     </summary>
     
-      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="关于" scheme="https://lifelover.cc/categories/%E5%85%B3%E4%BA%8E/"/>
     
     
-      <category term="node" scheme="https://lifelover.cc/tags/node/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>给hexo博客自定义域名加https</title>
-    <link href="https://lifelover.cc/2017/12/03/%E7%BB%99hexo%E5%8D%9A%E5%AE%A2%E8%87%AA%E5%AE%9A%E4%B9%89%E5%9F%9F%E5%90%8D%E5%8A%A0https/"/>
-    <id>https://lifelover.cc/2017/12/03/给hexo博客自定义域名加https/</id>
-    <published>2017-12-03T07:10:14.000Z</published>
-    <updated>2019-02-28T02:50:39.018Z</updated>
-    
-    <content type="html"><![CDATA[<p>给自定义域名加https</p><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><ul><li>看上去更加安全</li><li>小绿锁看上去更好看</li></ul><h2 id="实现方案-cloudflare"><a href="#实现方案-cloudflare" class="headerlink" title="实现方案 cloudflare"></a>实现方案 cloudflare</h2><p>走cloudflare的DNS解析</p><ol><li>注册cloudflare账号</li><li>添加域名<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lp252ssj30rb0ed0ty.jpg" alt="add site"><br>然后一步步走下去就ok了</li><li>把你域名原有的DNS修改成cloudflare的<br><img src="https://ws1.sinaimg.cn/large/8700af19gy1fi43n3bs7yj21ig0g4wgj.jpg" alt="modify dns"><br>比如我的是万网<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fm3luk14gij30y90b3gmv.jpg" alt=""></li><li>在cloudflare上check 应该很快生效<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lw69h29j30w60dr76l.jpg" alt=""></li><li>在cloudflare上配置DNS 之前一直弄不好就是因为这里没有配置好<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3lxcpu2rj30t70k20vl.jpg" alt=""><br>按这样配置就ok了，因为是挂在github上的静态博客，所以<code>192.30.252.153</code>指向的github的ip,CNAME的配置，我不是很明白，但就是这样配置就好了。<br>如果你操作完一直不成功可以查看是不是这里配置出问题了。</li><li>配置规则，强制走https访问<br><img src="https://ws2.sinaimg.cn/large/006tKfTcgy1fm3m0e6e8dj30s00in41a.jpg" alt=""><br><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fm3m1st5ymj307n014t8n.jpg" alt=""><br>有个小绿锁还是蛮好看的</li></ol><h2 id="一些知识"><a href="#一些知识" class="headerlink" title="一些知识"></a>一些知识</h2><p>主要只是就是了解DNS配置时候的A AAAA CNAME等都是啥<br><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1fm3m7e7niqj306109wwep.jpg" alt="dns"><br><code>DNS</code>全称，<code>Domain Name System</code>,域名系统，作为互联网的一项服务,将域名和ip地址映射的一个分布式数据库。通过DNS就可以通过域名，找到对应的物理机ip。<br>上面的A AAAA CNAME都是这套系统的资源记录类型。</p><table><thead><tr><th>代码</th><th>描述</th><th>功能</th></tr></thead><tbody><tr><td>A</td><td>IP地址记录</td><td>映射主机域名到IPv4地址</td></tr><tr><td>AAAA</td><td>IPv6 IP地址记录</td><td>映射主机域名到IPv6地址</td></tr><tr><td>CNAME</td><td>规范名称记录</td><td>一个主机域名的别名，告诉在哪个地方继续寻找</td></tr><tr><td>MX</td><td>电邮交互记录</td><td>引导域名到该域名的邮件传输代理(MTA)列表</td></tr></tbody></table><p>还有更多的类型参考<a href="https://zh.wikipedia.org/wiki/%E5%9F%9F%E5%90%8D%E4%BC%BA%E6%9C%8D%E5%99%A8%E8%A8%98%E9%8C%84%E9%A1%9E%E5%9E%8B%E5%88%97%E8%A1%A8" target="_blank" rel="noopener">域名服务器记录类型列表</a>，<br><a href="http://www.dirs.cn/" target="_blank" rel="noopener">域名查询服务</a></p><h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><p>应该多去学习一下计算机网络相关的知识 </p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;给自定义域名加https&lt;/p&gt;
-&lt;h2 id=&quot;目的&quot;&gt;&lt;a href=&quot;#目的&quot; class=&quot;headerlink&quot; title=&quot;目的&quot;&gt;&lt;/a&gt;目的&lt;/h2&gt;&lt;ul&gt;
-&lt;li&gt;看上去更加安全&lt;/li&gt;
-&lt;li&gt;小绿锁看上去更好看&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id
-      
-    
-    </summary>
-    
-      <category term="https" scheme="https://lifelover.cc/categories/https/"/>
-    
-    
-      <category term="dns" scheme="https://lifelover.cc/tags/dns/"/>
-    
-      <category term="http" scheme="https://lifelover.cc/tags/http/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>js对象和原型对象</title>
-    <link href="https://lifelover.cc/2017/11/11/js%E5%AF%B9%E8%B1%A1%E5%92%8C%E5%8E%9F%E5%9E%8B%E5%AF%B9%E8%B1%A1/"/>
-    <id>https://lifelover.cc/2017/11/11/js对象和原型对象/</id>
-    <published>2017-11-11T11:37:23.000Z</published>
-    <updated>2017-11-16T01:48:07.000Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>学习了解JavaScript对象的继承机制</p><h3 id="JavaScript-Object"><a href="#JavaScript-Object" class="headerlink" title="JavaScript Object"></a>JavaScript Object</h3><h4 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h4><p>Object是js的基本数据结构的一种，属于引用类型。</p><h4 id="对象的创建方法"><a href="#对象的创建方法" class="headerlink" title="对象的创建方法"></a>对象的创建方法</h4><ol><li>对象字面量写法</li><li>构造函数，通过构造函数来创建对象实例</li><li>Object()构造函数</li><li>create()方法<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">// 对象字面量</span><br><span class="line">let person1 = &#123;<span class="type">name</span>: <span class="string">'jim'</span>&#125;; </span><br><span class="line">// 构造函数</span><br><span class="line"><span class="keyword">function</span> Person(<span class="type">name</span>) &#123;</span><br><span class="line">    this.name = <span class="type">name</span>;</span><br><span class="line">    this.greeting = <span class="keyword">function</span>() &#123;</span><br><span class="line">        console.log(<span class="string">'hello my name is '</span> + this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">let person2 = <span class="built_in">new</span> Person(<span class="string">'Bob'</span>);</span><br><span class="line">console.log(person2.name);</span><br><span class="line">console.log(person2.greeting());</span><br><span class="line">// <span class="keyword">Object</span>() 方法</span><br><span class="line">let person3 = <span class="built_in">new</span> <span class="keyword">Object</span>();</span><br><span class="line">person3.name = <span class="string">'kobe'</span>;</span><br><span class="line">console.log(person3.name);</span><br><span class="line">person3 = <span class="built_in">new</span> <span class="keyword">Object</span>(&#123;</span><br><span class="line">    <span class="type">name</span>: <span class="string">'kobe2'</span>,</span><br><span class="line">    age: <span class="number">22</span></span><br><span class="line">&#125;);</span><br><span class="line">console.log(person3.name);</span><br><span class="line">// <span class="keyword">create</span>() 方法 类似构造函数 </span><br><span class="line">let person4 = <span class="keyword">Object</span>.<span class="keyword">create</span>(person3);</span><br><span class="line">person4.name = <span class="string">'kobe3'</span>;</span><br><span class="line">console.log(person4.name,person3.name);</span><br></pre></td></tr></table></figure></li></ol><h4 id="对象属性的访问方式"><a href="#对象属性的访问方式" class="headerlink" title="对象属性的访问方式"></a>对象属性的访问方式</h4><ol><li>点表示法</li><li>中括号表示法<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">let person = &#123;</span><br><span class="line">    <span class="type">name</span>: <span class="string">'xiaofei'</span>,</span><br><span class="line">    age: <span class="number">20</span></span><br><span class="line">&#125;</span><br><span class="line">console.log(person.name);</span><br><span class="line">console.log(person[<span class="string">'age'</span>]);</span><br></pre></td></tr></table></figure></li></ol><h3 id="proto、-prototype-、prototype"><a href="#proto、-prototype-、prototype" class="headerlink" title="proto、[[prototype]]、prototype"></a><strong>proto</strong>、[[prototype]]、prototype</h3><ol><li>JavaScript对象通过<code>原型机制</code>从其他对象<code>继承</code>功能特性</li><li>每个对象有一个私有属性<code>[[prototype]]</code>，这个私有属性持有一个连接到另一个称为其<code>prototype</code>对象（原型对象）的链接。</li><li><code>__proto__</code>是浏览器对ES语法<code>[[prototype]]</code>的实现api</li><li><code>prototype</code>属性指向的对象就是实例对象的原型对象即<code>__proto__</code>所指引的对象</li><li>原型链，原型对象也可能拥有原型，并从中继承方法和属性，一层一层、以此类推。这种关系常被称为原型链 (prototype chain)，它解释了为何一个对象会拥有定义在其他对象中的属性和方法。<br>例1<br><img src="https://ws4.sinaimg.cn/large/006tKfTcgy1fljonn7186j30cf0emdg5.jpg" alt="clipboard.png"></li></ol><p>例2 通过原型链来检测对象所调用的方法是否存在，存在在哪个原型对象上</p><p><img src="https://ws3.sinaimg.cn/large/006tKfTcgy1fljonrl5g9j30al0bwjrf.jpg" alt="clipboard.png"><br>person1除了name,age在对象对象中存在外，其他方法都是通过原型链的方法在Object上找到并调用。<br><img src="https://mdn.mozillademos.org/files/13891/MDN-Graphics-person-person-object-2.png" alt="原型链"></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;学习了解JavaScript对象的继承机制&lt;/p&gt;
-&lt;h3 id=&quot;JavaScript-Object&quot;&gt;&lt;a href=&quot;#JavaScr
-      
-    
-    </summary>
-    
-      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
-    
-    
-      <category term="原型" scheme="https://lifelover.cc/tags/%E5%8E%9F%E5%9E%8B/"/>
-    
-      <category term="JavaScript" scheme="https://lifelover.cc/tags/JavaScript/"/>
+      <category term="关于" scheme="https://lifelover.cc/tags/%E5%85%B3%E4%BA%8E/"/>
     
   </entry>
   
