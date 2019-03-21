@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lifelover.cc/"/>
-  <updated>2019-03-14T09:20:12.676Z</updated>
+  <updated>2019-03-21T02:41:44.815Z</updated>
   <id>https://lifelover.cc/</id>
   
   <author>
@@ -17,23 +17,329 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>开始写博客</title>
-    <link href="https://lifelover.cc/2019/03/12/%E5%BC%80%E5%A7%8B%E5%86%99%E5%8D%9A%E5%AE%A2/"/>
-    <id>https://lifelover.cc/2019/03/12/开始写博客/</id>
-    <published>2019-03-12T02:29:09.000Z</published>
-    <updated>2019-03-14T09:20:12.676Z</updated>
+    <title>HTTP请求</title>
+    <link href="https://lifelover.cc/2019/03/21/HTTP%E8%AF%B7%E6%B1%82/"/>
+    <id>https://lifelover.cc/2019/03/21/HTTP请求/</id>
+    <published>2019-03-21T02:36:45.000Z</published>
+    <updated>2019-03-21T02:41:44.815Z</updated>
     
-    <content type="html"><![CDATA[<p>重新开始写博客</p>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过接口看http请求</p><h2 id="login接口"><a href="#login接口" class="headerlink" title="login接口"></a>login接口</h2><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1g182ukfq2lj30ix0lu78q.jpg" alt=""></p><h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><ol><li>需要弄清楚http请求报头包括哪些内容</li><li>使用场景</li><li>CORS 安全性问题等</li></ol><h3 id="字段讲解"><a href="#字段讲解" class="headerlink" title="字段讲解"></a>字段讲解</h3><h4 id="General"><a href="#General" class="headerlink" title="General"></a>General</h4><ol><li><code>Request URL</code>:请求接口url地址</li><li><code>Request Method</code>:请求方法 post get put delete…</li><li><code>Status Code</code>：状态码</li><li><code>Remote Address</code>:远程服务器ip</li><li><code>Referrer Policy</code>: 来源协议，<strong>需要了解</strong>，监管哪些访问来源信息</li></ol><h4 id="Response-Headers"><a href="#Response-Headers" class="headerlink" title="Response Headers"></a>Response Headers</h4><ol start="6"><li><code>Access-Control-Allow-Credentials</code>:响应头表示是否可以将对请求的响应暴露给页面，true则可以，其他都不行。</li><li><code>Access-Control-Allow-Origin</code>:访问控制允许同源，涉及到安全性CORS</li><li><code>Cache-Control</code>:缓存控制</li><li><code>Content-Type</code>:返回数据类型</li><li><code>Date</code>:服务器时间</li><li><code>Expires</code>:响应过期的时间，0代表无效</li><li><code>Pragma</code>: 兼容只支持HTTP/1.0协议的缓存服务器相当于Cache-Control作用</li><li><code>Transfer-Encoding</code>:传递给用户采用的编码方式</li><li><code>Vary</code>:一个HTTP响应头部信息，它决定了对于未来的一个请求头</li><li><code>X-Content-Type-Options</code>:响应首部相当于一个提示标志，被服务器用来提示客户端一定要遵循在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type" target="_blank" rel="noopener"><code>Content-Type</code></a> 首部中对  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types" target="_blank" rel="noopener">MIME 类型</a> 的设定，而不能对其进行修改。</li><li><code>X-Frame-Options</code>:是否允许当前页面通过iframe内嵌到其他网站中</li><li><code>X-XSS-Protection</code>:响应头是Internet Explorer，Chrome和Safari的一个功能，当检测到跨站脚本攻击 (<a href="https://developer.mozilla.org/en-US/docs/Glossary/XSS" target="_blank" rel="noopener">XSS</a>)时，浏览器将停止加载页面。</li></ol><h4 id="Request-Headers"><a href="#Request-Headers" class="headerlink" title="Request Headers"></a>Request Headers</h4><ol start="18"><li><code>Accept</code>: 发送端希望接受的数据类型</li><li><code>Content-Type</code>:发送端发送的实体数据的类型</li><li><code>Origin</code>:请求来自哪个站点</li><li><code>Referer</code>:首部包含了当前请求页面的来源页面的地址，即表示当前页面是通过此来源页面里的链接进入的。</li><li><code>User-Agent</code>:发起请求的用户代理软件信息</li></ol>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;重新开始写博客&lt;/p&gt;
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;通过接口看http请求&lt;/p&gt;
+&lt;h2 id=&quot;login接口&quot;&gt;&lt;a href=&quot;#login接口&quot; class=&quot;headerlink&quot;
+      
+    
+    </summary>
+    
+      <category term="网络" scheme="https://lifelover.cc/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="http" scheme="https://lifelover.cc/tags/http/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Promise</title>
+    <link href="https://lifelover.cc/2019/03/21/Promise/"/>
+    <id>https://lifelover.cc/2019/03/21/Promise/</id>
+    <published>2019-03-21T02:36:45.000Z</published>
+    <updated>2019-03-21T02:43:15.785Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ol><li>Promise概念</li><li>解决什么问题</li><li>用法</li></ol><h2 id="Promise是什么"><a href="#Promise是什么" class="headerlink" title="Promise是什么"></a>Promise是什么</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;Promise概念&lt;/li&gt;
+&lt;li&gt;解决什么问题&lt;/li&gt;
+&lt;li&gt;用法&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;Promise
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="es6" scheme="https://lifelover.cc/tags/es6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript事件机制</title>
+    <link href="https://lifelover.cc/2019/03/21/JavaScript%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/"/>
+    <id>https://lifelover.cc/2019/03/21/JavaScript事件机制/</id>
+    <published>2019-03-21T02:36:45.000Z</published>
+    <updated>2019-03-21T02:42:08.193Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ol><li>了解学习 JavaScript事件机制 Event Loop</li><li>单线程怎么做到 非阻塞</li></ol><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.ruanyifeng.com/blog/2013/10/event_loop.html" target="_blank" rel="noopener">什么是Event Loop</a></p><p><a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html" target="_blank" rel="noopener">JavaScript 运行机制详解：再谈Event Loop</a></p><p><a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/?utm_source=html5weekly" target="_blank" rel="noopener">Tasks, microtasks, queues and schedules</a></p><p><a href="https://juejin.im/post/59e85eebf265da430d571f89" target="_blank" rel="noopener">这一次彻底弄懂JavaScript执行机制</a></p><p><a href="https://juejin.im/post/5b498d245188251b193d4059" target="_blank" rel="noopener">JS事件循环机制（event loop）之宏任务/微任务</a></p><p><a href="https://github.com/dwqs/blog/issues/61" target="_blank" rel="noopener">从一道题说JavaScript的事件循环</a></p><h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h3><ol><li>JavaScript是单线程语言</li><li>Event Loop是JavaScript执行机制</li></ol><blockquote><p>执行顺序，js一般的执行顺序都是按正常顺序执行，如果触发了事件比如点击事件或者其他页面上的交互事件，会将事件放到执行栈Stack，然后顺序执行，这就有个问题，比如加载图片很慢会使得页面渲染很慢，所以需要引出<code>异步</code>的概念，对于异步的任务，</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;了解学习 JavaScript事件机制 Event Loop&lt;/li&gt;
+&lt;li&gt;单线程怎么做到 非阻塞&lt;/li&gt;
+&lt;/ol&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://lifelover.cc/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vue学习</title>
+    <link href="https://lifelover.cc/2019/03/18/vue%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://lifelover.cc/2019/03/18/vue学习/</id>
+    <published>2019-03-18T02:36:45.000Z</published>
+    <updated>2019-03-21T02:43:45.980Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p><a href="https://cn.vuejs.org/v2/guide/index.html" target="_blank" rel="noopener">Vue.js官网教程</a>笔记</p><p>学习目标</p><ol><li>Vue基本语法</li><li>数据的双向绑定</li><li>深入和最佳实践（？）</li></ol><h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="创建一个Vue对象"><a href="#创建一个Vue对象" class="headerlink" title="创建一个Vue对象"></a>创建一个Vue对象</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">'#app'</span>,</span><br><span class="line">    data: &#123;</span><br><span class="line">        message: <span class="string">'hello Vue'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;&lt;a href=&quot;https://cn.vuejs.org/v2/guide/index.html&quot; target=&quot;_blank&quot; rel
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="vue" scheme="https://lifelover.cc/tags/vue/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>从零开始搭建React</title>
+    <link href="https://lifelover.cc/2019/03/18/%E4%BB%8E%E9%9B%B6%E6%90%AD%E5%BB%BAReact/"/>
+    <id>https://lifelover.cc/2019/03/18/从零搭建React/</id>
+    <published>2019-03-18T02:36:45.000Z</published>
+    <updated>2019-03-21T02:38:46.521Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>不借助脚手架 create-react-app，自己手工从零开始搭建React App</p><ol><li>npm 使用</li><li>webpack配置</li><li>其他</li></ol><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><ol><li>安装babel的 还是babel-cli 以及怎么配置的</li><li>babel配置的问题 <a href="https://stackoverflow.com/questions/53326986/trace-the-node-type-spreadproperty-has-been-renamed-to-spreadelement-at-object" target="_blank" rel="noopener">https://stackoverflow.com/questions/53326986/trace-the-node-type-spreadproperty-has-been-renamed-to-spreadelement-at-object</a></li><li><a href="https://github.com/babel/babel/issues/8707" target="_blank" rel="noopener">https://github.com/babel/babel/issues/8707</a></li></ol><h2 id="学习"><a href="#学习" class="headerlink" title="学习"></a>学习</h2><ol><li>webpack配置 loader plugins</li><li>babel配置 两种方式 package.json/.babelrc</li><li>webpack打包过程中</li><li>webpack-dev-server </li></ol><h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol><li>npm init</li><li>安装react 和react-dom</li><li>安装打包工具 webpack和webpack-dev-server</li><li>安装babel，转es6到es5(？)</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;不借助脚手架 create-react-app，自己手工从零开始搭建React App&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;npm 使用&lt;/li&gt;
+&lt;
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="React" scheme="https://lifelover.cc/tags/React/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>前端工具</title>
+    <link href="https://lifelover.cc/2019/03/17/%E5%89%8D%E7%AB%AF%E5%B7%A5%E5%85%B7/"/>
+    <id>https://lifelover.cc/2019/03/17/前端工具/</id>
+    <published>2019-03-17T02:36:45.000Z</published>
+    <updated>2019-03-21T02:39:23.271Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>前端工具使用</p><h2 id="live-server"><a href="#live-server" class="headerlink" title="live-server"></a><a href="https://www.npmjs.com/package/live-server" target="_blank" rel="noopener">live-server</a></h2><p>起个个本地服务，可以实现热更新</p><blockquote><p>注意：–watch监视当前文件夹路径要写<strong>“.”</strong>，而不是<strong>“./“</strong>，</p><p>not work: live-server ./ –port=9000 –watch=./</p><p>work: live-server . –port=9000 –watch=.</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;前端工具使用&lt;/p&gt;
+&lt;h2 id=&quot;live-server&quot;&gt;&lt;a href=&quot;#live-server&quot; class=&quot;headerli
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="工具" scheme="https://lifelover.cc/tags/%E5%B7%A5%E5%85%B7/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>学习英语</title>
+    <link href="https://lifelover.cc/2019/03/15/%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD/"/>
+    <id>https://lifelover.cc/2019/03/15/学习英语/</id>
+    <published>2019-03-15T12:36:45.000Z</published>
+    <updated>2019-03-21T02:39:55.506Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>学习英语哇</p><ol><li>为什么好好掌握英语</li><li>怎么学习</li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://byoungd.gitbook.io/english-level-up-tips/part-i/1-understanding" target="_blank" rel="noopener">程序员学习英语</a></p><h2 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h2><ol><li>去找一些单词书 不要总是去app上背四六级单词</li><li>通过有道单词本 同步遇到的生词等 自己的词库</li><li>英语阅读参考手册</li></ol><h2 id="单词"><a href="#单词" class="headerlink" title="单词"></a>单词</h2><p><img src="https://ws3.sinaimg.cn/large/006tKfTcly1g19ac8oezxj31bk0u00x2.jpg" alt=""></p><p>背单词的方法：</p><ol><li>每天适量坚持，比如每天80-100，因为比较容易，记得住，但是这种效果不是特别好，因为记得少</li><li>通过背诵大量的单词并快速复习，遗忘率虽然相对于定量背诵高，但是可以以量取胜。 比如:一天背20个词，一个月能背600个，假设形成长期记忆的占80%，那最后能记住的便是480个。 但是如果我用相同时间，每天快速看100个词，一个月能看3000个。假设能记住30%，最后能记住900个，远远大于第一种方式。 适用于在1000~7000词汇量这个学习阶段。</li></ol><p>通过自己的单词本学习，而不是通过app上去背六级四级等单词本，很多时候会浪费时间，自己的单词本，遇到生词，比如阅读文档时候遇到，添加进去，然后复习。这样容易积累。</p><blockquote><p>tips: 背单词的时候大多数时候不需要刻意的去记，简单的过一下就行，生词，<strong>生</strong> 词嘛，多过过，自然而然就熟悉了;</p><p>另外最好不要在公交 状态不好时候去背，效果并不佳，很多时候这种背诵只是走个过程，打个卡。专门留点时间去背。</p></blockquote><h2 id="听力"><a href="#听力" class="headerlink" title="听力"></a>听力</h2><h3 id="选择听力材料"><a href="#选择听力材料" class="headerlink" title="选择听力材料"></a>选择听力材料</h3><ol><li>油管 适当订阅喜欢的内容，不要杂</li><li>刷喜欢的剧，重复刷的时候尝试关掉字幕</li><li>有意识地去听英文歌词</li><li>直播 听播</li><li><a href="https://byoungd.gitbook.io/english-level-up-tips/part-i/3-listening" target="_blank" rel="noopener">油管的频道推荐</a></li></ol><blockquote><p>tips: 选择的材料 比如说剧 音乐等 去选择自己喜欢的内容，这样才能坚持下去</p></blockquote><h2 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h2><p><a href="https://book.douban.com/subject/4720475/" target="_blank" rel="noopener">英语阅读参考手册</a></p><p>材料很多，从简单的文章，小说开始，逐步提高。</p><p>社区Medium Quora Reddit Twitter等。</p><h2 id="口语"><a href="#口语" class="headerlink" title="口语"></a>口语</h2><p>之前尝试的学习方法就是通过类似<code>英语流利说</code>这样的app来训练，挺枯燥的。</p><ol><li>读出来，比如读短文 读小说</li><li>唱喜欢的英语歌</li><li>如果能通过网络认识墙外的哥们 那就可以直接沟通了 这算一条路子</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;学习英语哇&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;为什么好好掌握英语&lt;/li&gt;
+&lt;li&gt;怎么学习&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;参考&quot;&gt;&lt;a h
+      
+    
+    </summary>
+    
+      <category term="学习" scheme="https://lifelover.cc/categories/%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+      <category term="英语" scheme="https://lifelover.cc/tags/%E8%8B%B1%E8%AF%AD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>antd pro使用</title>
+    <link href="https://lifelover.cc/2019/03/11/antd%20pro%E4%BD%BF%E7%94%A8/"/>
+    <id>https://lifelover.cc/2019/03/11/antd pro使用/</id>
+    <published>2019-03-11T11:36:45.000Z</published>
+    <updated>2019-03-21T02:40:29.766Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Antd Pro使用</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;Antd Pro使用&lt;/p&gt;
 
       
     
     </summary>
+    
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="antd" scheme="https://lifelover.cc/tags/antd/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js高程学习笔记</title>
+    <link href="https://lifelover.cc/2019/03/11/js%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://lifelover.cc/2019/03/11/js高程学习笔记/</id>
+    <published>2019-03-11T02:36:45.000Z</published>
+    <updated>2019-03-21T02:42:45.753Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>重读js高程3的学习笔记，这本书很经典，值得多读几遍。特别是其中的js高级内容，需要很好地去掌握</p><ol><li>作用域</li><li>原型 原型链</li><li>闭包</li><li>对象和函数</li><li>…</li></ol><h2 id="Chapter1-JavaScript简介"><a href="#Chapter1-JavaScript简介" class="headerlink" title="Chapter1 JavaScript简介"></a>Chapter1 JavaScript简介</h2><h3 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h3><ol><li><p>ECMA European Computer Manufacturers Association.欧洲计算机制造商协会。</p></li><li><p>TC39，ECMA协会指定的39号技术委员会，负责脚本语言的语法和语义。</p></li><li><p>javascript实现包括了  ECMAScript+DOM+BOM</p></li></ol><h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><p>1 DOM (Document Object Model)针对<code>XML</code>但经过扩展用于<code>HTML</code>的应用程序接口(API)，用来操作文档树。</p><p>2 DOM级别1，2，3</p><p>DOM1: DOM Core+DOM HTML</p><p>DOM2: 引入了DOM视图(DOM View), DOM事件 </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;重读js高程3的学习笔记，这本书很经典，值得多读几遍。特别是其中的js高级内容，需要很好地去掌握&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;作用域&lt;/li&gt;
+      
+    
+    </summary>
+    
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+      <category term="JavaScript" scheme="https://lifelover.cc/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>nodejs</title>
+    <link href="https://lifelover.cc/2019/03/09/nodejs%E5%AD%A6%E4%B9%A0/"/>
+    <id>https://lifelover.cc/2019/03/09/nodejs学习/</id>
+    <published>2019-03-09T02:36:45.000Z</published>
+    <updated>2019-03-21T02:42:58.450Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>nodejs学习笔记</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;nodejs学习笔记&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://lifelover.cc/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="node" scheme="https://lifelover.cc/tags/node/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Docker学习</title>
+    <link href="https://lifelover.cc/2019/03/03/Docker/"/>
+    <id>https://lifelover.cc/2019/03/03/Docker/</id>
+    <published>2019-03-03T13:36:45.000Z</published>
+    <updated>2019-03-21T02:47:35.079Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>了解下Docker</p><ol><li>docker是什么</li><li>安装配置</li><li>实践</li></ol><h2 id="Docker是什么"><a href="#Docker是什么" class="headerlink" title="Docker是什么"></a>Docker是什么</h2><p>首先看下<a href="https://docs.docker.com/" target="_blank" rel="noopener">Docker官网</a>的定义</p><blockquote><p>Docker provides a way to run application  security isolated in a container, packaged with all its dependencies and libraries.</p></blockquote><p>三个概念：</p><ol><li>application</li><li>container</li><li>dependencies and libraries</li></ol><h2 id="安装和配置"><a href="#安装和配置" class="headerlink" title="安装和配置"></a>安装和配置</h2><p><a href="https://dn-dao-github-mirror.qbox.me/docker/install/mac/Docker.dmg" target="_blank" rel="noopener">Docker国内镜像下载</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;了解下Docker&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;docker是什么&lt;/li&gt;
+&lt;li&gt;安装配置&lt;/li&gt;
+&lt;li&gt;实践&lt;/li&gt;
+&lt;/ol&gt;
+
+      
+    
+    </summary>
+    
+      <category term="后端" scheme="https://lifelover.cc/categories/%E5%90%8E%E7%AB%AF/"/>
+    
+    
+      <category term="docker" scheme="https://lifelover.cc/tags/docker/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>README</title>
+    <link href="https://lifelover.cc/2019/03/01/README/"/>
+    <id>https://lifelover.cc/2019/03/01/README/</id>
+    <published>2019-03-01T02:36:45.000Z</published>
+    <updated>2019-03-21T02:49:36.649Z</updated>
+    
+    <content type="html"><![CDATA[<p>重新开始写blog了</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;重新开始写blog了&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+      <category term="其他" scheme="https://lifelover.cc/categories/%E5%85%B6%E4%BB%96/"/>
     
     
   </entry>
