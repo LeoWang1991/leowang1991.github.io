@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://lifelover.cc/"/>
-  <updated>2019-04-13T15:06:36.005Z</updated>
+  <updated>2019-04-13T15:10:36.750Z</updated>
   <id>https://lifelover.cc/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://lifelover.cc/2019/04/13/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://lifelover.cc/2019/04/13/正则表达式学习笔记/</id>
     <published>2019-04-13T05:34:04.000Z</published>
-    <updated>2019-04-13T15:06:36.005Z</updated>
+    <updated>2019-04-13T15:10:36.750Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前写代码遇到个问题，就是<code>[&quot;admin&quot;]</code>提取其中的字符串<code>admin</code>因为不会写正则只能通过<code>replace(&#39;[&quot;&#39;,&#39;&#39;).replace(&#39;&quot;]&#39;,&#39;&#39;)</code>操作，感觉很笨拙，通过正则去应该是更好的方法。</p><p>本文主要了解</p><ol><li>什么是正则表达式</li><li>基本语法规则</li></ol><a id="more"></a><h2 id="正则表达式是什么"><a href="#正则表达式是什么" class="headerlink" title="正则表达式是什么"></a>正则表达式是什么</h2><p>个人理解就是匹配文本的规则吧，了解这个规则怎么去写对文本处理真的太有帮助了。</p><h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><p>元字符是一些特定辅助精准匹配的特定字符</p><table><thead><tr><th>代码</th><th>说明</th></tr></thead><tbody><tr><td>.</td><td>匹配除换行符以为的任何字符</td></tr><tr><td>\w</td><td>匹配字母 数字 下划线 汉字</td></tr><tr><td>\s</td><td>匹配任意空白符</td></tr><tr><td>\d</td><td>匹配数字</td></tr><tr><td>\b</td><td>匹配单词的开始或结束</td></tr><tr><td>^</td><td>匹配字符串的开始</td></tr><tr><td>$</td><td>匹配字符串的结束</td></tr></tbody></table><p>对于特殊字符需要通过<code>\</code>来转义，比如匹配<code>.</code>那么需要使用<code>\.</code></p><h3 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h3><table><thead><tr><th>代码</th><th>说明</th></tr></thead><tbody><tr><td>*</td><td>重复0次或更多次</td></tr><tr><td>+</td><td>重复1次或更多次</td></tr><tr><td>？</td><td>重复0次或1次</td></tr><tr><td>{n}</td><td>重复n次</td></tr><tr><td>{n,}</td><td>重复n或更多次</td></tr><tr><td>{n,m}</td><td>重复n到m次</td></tr></tbody></table><h3 id="设置匹配字符集"><a href="#设置匹配字符集" class="headerlink" title="设置匹配字符集"></a>设置匹配字符集</h3><p>通过<code>[]</code>来设定匹配字符集 如<code>[0-9]</code>就相当于<code>\d</code></p><h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><p>对单个字符来说，通过<code>0{n}</code>来设置匹配次数，但是对于字符串而言的话，通过分组来解决<code>(\d{1,3}\.){3}\d{1,3}</code>匹配ip。</p><h3 id="反义"><a href="#反义" class="headerlink" title="反义"></a>反义</h3><table><thead><tr><th>代码/语法</th><th>说明</th></tr></thead><tbody><tr><td>\W</td><td>匹配任意不是字母，数字，下划线，汉字的字符</td></tr><tr><td>\S</td><td>匹配任意不是空白符的字符</td></tr><tr><td>\D</td><td>匹配任意非数字的字符</td></tr><tr><td>\B</td><td>匹配不是单词开头或结束的位置</td></tr><tr><td>[^x]</td><td>匹配除了x以外的任意字符</td></tr><tr><td>[^aeiou]</td><td>匹配除了aeiou这几个字母以外的任意字符</td></tr></tbody></table><p>以上差不多就能日常使用了</p><p>###其他高级用法参考</p><p><a href="https://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">正则表达式30分钟入门教程</a></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>回到上面之前的问题 从<code>[&quot;admin&quot;]</code>中提取<code>admin</code>就可以写</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'["amdin"]'</span>.replace(<span class="regexp">/\[\"|\"\]/g</span>,<span class="string">''</span>)</span><br></pre></td></tr></table></figure>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>之前写代码遇到个问题，就是<code>[&quot;admin&quot;]</code>提取其中的字符串<code>admin</code>因为不会写正则只能通过<code>replace(&#39;[&quot;&#39;,&#39;&#39;).replace(&#39;&quot;]&#39;,&#39;&#39;)</code>操作，感觉很笨拙，通过正则去应该是更好的方法。</p><p>本文主要了解</p><ol><li>什么是正则表达式</li><li>基本语法规则</li></ol><a id="more"></a><h2 id="正则表达式是什么"><a href="#正则表达式是什么" class="headerlink" title="正则表达式是什么"></a>正则表达式是什么</h2><p>个人理解就是匹配文本的规则吧，了解这个规则怎么去写对文本处理真的太有帮助了。</p><h3 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h3><h3 id="元字符"><a href="#元字符" class="headerlink" title="元字符"></a>元字符</h3><p>元字符是一些特定辅助精准匹配的特定字符</p><table><thead><tr><th>代码</th><th>说明</th></tr></thead><tbody><tr><td>.</td><td>匹配除换行符以为的任何字符</td></tr><tr><td>\w</td><td>匹配字母 数字 下划线 汉字</td></tr><tr><td>\s</td><td>匹配任意空白符</td></tr><tr><td>\d</td><td>匹配数字</td></tr><tr><td>\b</td><td>匹配单词的开始或结束</td></tr><tr><td>^</td><td>匹配字符串的开始</td></tr><tr><td>$</td><td>匹配字符串的结束</td></tr></tbody></table><p>对于特殊字符需要通过<code>\</code>来转义，比如匹配<code>.</code>那么需要使用<code>\.</code></p><h3 id="重复"><a href="#重复" class="headerlink" title="重复"></a>重复</h3><table><thead><tr><th>代码</th><th>说明</th></tr></thead><tbody><tr><td>*</td><td>重复0次或更多次</td></tr><tr><td>+</td><td>重复1次或更多次</td></tr><tr><td>？</td><td>重复0次或1次</td></tr><tr><td>{n}</td><td>重复n次</td></tr><tr><td>{n,}</td><td>重复n或更多次</td></tr><tr><td>{n,m}</td><td>重复n到m次</td></tr></tbody></table><h3 id="设置匹配字符集"><a href="#设置匹配字符集" class="headerlink" title="设置匹配字符集"></a>设置匹配字符集</h3><p>通过<code>[]</code>来设定匹配字符集 如<code>[0-9]</code>就相当于<code>\d</code></p><h3 id="分组"><a href="#分组" class="headerlink" title="分组"></a>分组</h3><p>对单个字符来说，通过<code>0{n}</code>来设置匹配次数，但是对于字符串而言的话，通过分组来解决<code>(\d{1,3}\.){3}\d{1,3}</code>匹配ip。</p><h3 id="反义"><a href="#反义" class="headerlink" title="反义"></a>反义</h3><table><thead><tr><th>代码/语法</th><th>说明</th></tr></thead><tbody><tr><td>\W</td><td>匹配任意不是字母，数字，下划线，汉字的字符</td></tr><tr><td>\S</td><td>匹配任意不是空白符的字符</td></tr><tr><td>\D</td><td>匹配任意非数字的字符</td></tr><tr><td>\B</td><td>匹配不是单词开头或结束的位置</td></tr><tr><td>[^x]</td><td>匹配除了x以外的任意字符</td></tr><tr><td>[^aeiou]</td><td>匹配除了aeiou这几个字母以外的任意字符</td></tr></tbody></table><p>以上差不多就能日常使用了</p><h3 id="其他高级用法参考"><a href="#其他高级用法参考" class="headerlink" title="其他高级用法参考"></a>其他高级用法参考</h3><p><a href="https://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">正则表达式30分钟入门教程</a></p><h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>回到上面之前的问题 从<code>[&quot;admin&quot;]</code>中提取<code>admin</code>就可以写</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'["amdin"]'</span>.replace(<span class="regexp">/\[\"|\"\]/g</span>,<span class="string">''</span>)</span><br></pre></td></tr></table></figure>]]></content>
     
     <summary type="html">
     
@@ -194,28 +194,6 @@
   </entry>
   
   <entry>
-    <title>HTTP请求</title>
-    <link href="https://lifelover.cc/2019/03/21/HTTP%E8%AF%B7%E6%B1%82/"/>
-    <id>https://lifelover.cc/2019/03/21/HTTP请求/</id>
-    <published>2019-03-21T02:36:45.000Z</published>
-    <updated>2019-03-21T02:57:54.013Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过接口看http请求</p><a id="more"></a><h2 id="login接口"><a href="#login接口" class="headerlink" title="login接口"></a>login接口</h2><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1g182ukfq2lj30ix0lu78q.jpg" alt=""></p><h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><ol><li>需要弄清楚http请求报头包括哪些内容</li><li>使用场景</li><li>CORS 安全性问题等</li></ol><h3 id="字段讲解"><a href="#字段讲解" class="headerlink" title="字段讲解"></a>字段讲解</h3><h4 id="General"><a href="#General" class="headerlink" title="General"></a>General</h4><ol><li><code>Request URL</code>:请求接口url地址</li><li><code>Request Method</code>:请求方法 post get put delete…</li><li><code>Status Code</code>：状态码</li><li><code>Remote Address</code>:远程服务器ip</li><li><code>Referrer Policy</code>: 来源协议，<strong>需要了解</strong>，监管哪些访问来源信息</li></ol><h4 id="Response-Headers"><a href="#Response-Headers" class="headerlink" title="Response Headers"></a>Response Headers</h4><ol start="6"><li><code>Access-Control-Allow-Credentials</code>:响应头表示是否可以将对请求的响应暴露给页面，true则可以，其他都不行。</li><li><code>Access-Control-Allow-Origin</code>:访问控制允许同源，涉及到安全性CORS</li><li><code>Cache-Control</code>:缓存控制</li><li><code>Content-Type</code>:返回数据类型</li><li><code>Date</code>:服务器时间</li><li><code>Expires</code>:响应过期的时间，0代表无效</li><li><code>Pragma</code>: 兼容只支持HTTP/1.0协议的缓存服务器相当于Cache-Control作用</li><li><code>Transfer-Encoding</code>:传递给用户采用的编码方式</li><li><code>Vary</code>:一个HTTP响应头部信息，它决定了对于未来的一个请求头</li><li><code>X-Content-Type-Options</code>:响应首部相当于一个提示标志，被服务器用来提示客户端一定要遵循在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type" target="_blank" rel="noopener"><code>Content-Type</code></a> 首部中对  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types" target="_blank" rel="noopener">MIME 类型</a> 的设定，而不能对其进行修改。</li><li><code>X-Frame-Options</code>:是否允许当前页面通过iframe内嵌到其他网站中</li><li><code>X-XSS-Protection</code>:响应头是Internet Explorer，Chrome和Safari的一个功能，当检测到跨站脚本攻击 (<a href="https://developer.mozilla.org/en-US/docs/Glossary/XSS" target="_blank" rel="noopener">XSS</a>)时，浏览器将停止加载页面。</li></ol><h4 id="Request-Headers"><a href="#Request-Headers" class="headerlink" title="Request Headers"></a>Request Headers</h4><ol start="18"><li><code>Accept</code>: 发送端希望接受的数据类型</li><li><code>Content-Type</code>:发送端发送的实体数据的类型</li><li><code>Origin</code>:请求来自哪个站点</li><li><code>Referer</code>:首部包含了当前请求页面的来源页面的地址，即表示当前页面是通过此来源页面里的链接进入的。</li><li><code>User-Agent</code>:发起请求的用户代理软件信息</li></ol>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;通过接口看http请求&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="网络" scheme="https://lifelover.cc/categories/%E7%BD%91%E7%BB%9C/"/>
-    
-    
-      <category term="http" scheme="https://lifelover.cc/tags/http/"/>
-    
-  </entry>
-  
-  <entry>
     <title>Promise</title>
     <link href="https://lifelover.cc/2019/03/21/Promise/"/>
     <id>https://lifelover.cc/2019/03/21/Promise/</id>
@@ -244,6 +222,28 @@
     
     
       <category term="es6" scheme="https://lifelover.cc/tags/es6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>HTTP请求</title>
+    <link href="https://lifelover.cc/2019/03/21/HTTP%E8%AF%B7%E6%B1%82/"/>
+    <id>https://lifelover.cc/2019/03/21/HTTP请求/</id>
+    <published>2019-03-21T02:36:45.000Z</published>
+    <updated>2019-03-21T02:57:54.013Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过接口看http请求</p><a id="more"></a><h2 id="login接口"><a href="#login接口" class="headerlink" title="login接口"></a>login接口</h2><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1g182ukfq2lj30ix0lu78q.jpg" alt=""></p><h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><ol><li>需要弄清楚http请求报头包括哪些内容</li><li>使用场景</li><li>CORS 安全性问题等</li></ol><h3 id="字段讲解"><a href="#字段讲解" class="headerlink" title="字段讲解"></a>字段讲解</h3><h4 id="General"><a href="#General" class="headerlink" title="General"></a>General</h4><ol><li><code>Request URL</code>:请求接口url地址</li><li><code>Request Method</code>:请求方法 post get put delete…</li><li><code>Status Code</code>：状态码</li><li><code>Remote Address</code>:远程服务器ip</li><li><code>Referrer Policy</code>: 来源协议，<strong>需要了解</strong>，监管哪些访问来源信息</li></ol><h4 id="Response-Headers"><a href="#Response-Headers" class="headerlink" title="Response Headers"></a>Response Headers</h4><ol start="6"><li><code>Access-Control-Allow-Credentials</code>:响应头表示是否可以将对请求的响应暴露给页面，true则可以，其他都不行。</li><li><code>Access-Control-Allow-Origin</code>:访问控制允许同源，涉及到安全性CORS</li><li><code>Cache-Control</code>:缓存控制</li><li><code>Content-Type</code>:返回数据类型</li><li><code>Date</code>:服务器时间</li><li><code>Expires</code>:响应过期的时间，0代表无效</li><li><code>Pragma</code>: 兼容只支持HTTP/1.0协议的缓存服务器相当于Cache-Control作用</li><li><code>Transfer-Encoding</code>:传递给用户采用的编码方式</li><li><code>Vary</code>:一个HTTP响应头部信息，它决定了对于未来的一个请求头</li><li><code>X-Content-Type-Options</code>:响应首部相当于一个提示标志，被服务器用来提示客户端一定要遵循在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type" target="_blank" rel="noopener"><code>Content-Type</code></a> 首部中对  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types" target="_blank" rel="noopener">MIME 类型</a> 的设定，而不能对其进行修改。</li><li><code>X-Frame-Options</code>:是否允许当前页面通过iframe内嵌到其他网站中</li><li><code>X-XSS-Protection</code>:响应头是Internet Explorer，Chrome和Safari的一个功能，当检测到跨站脚本攻击 (<a href="https://developer.mozilla.org/en-US/docs/Glossary/XSS" target="_blank" rel="noopener">XSS</a>)时，浏览器将停止加载页面。</li></ol><h4 id="Request-Headers"><a href="#Request-Headers" class="headerlink" title="Request Headers"></a>Request Headers</h4><ol start="18"><li><code>Accept</code>: 发送端希望接受的数据类型</li><li><code>Content-Type</code>:发送端发送的实体数据的类型</li><li><code>Origin</code>:请求来自哪个站点</li><li><code>Referer</code>:首部包含了当前请求页面的来源页面的地址，即表示当前页面是通过此来源页面里的链接进入的。</li><li><code>User-Agent</code>:发起请求的用户代理软件信息</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;通过接口看http请求&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="网络" scheme="https://lifelover.cc/categories/%E7%BD%91%E7%BB%9C/"/>
+    
+    
+      <category term="http" scheme="https://lifelover.cc/tags/http/"/>
     
   </entry>
   

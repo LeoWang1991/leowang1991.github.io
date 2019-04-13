@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[正则表达式学习笔记]]></title>
     <url>%2F2019%2F04%2F13%2F%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[前言之前写代码遇到个问题，就是[&quot;admin&quot;]提取其中的字符串admin因为不会写正则只能通过replace(&#39;[&quot;&#39;,&#39;&#39;).replace(&#39;&quot;]&#39;,&#39;&#39;)操作，感觉很笨拙，通过正则去应该是更好的方法。 本文主要了解 什么是正则表达式 基本语法规则 正则表达式是什么个人理解就是匹配文本的规则吧，了解这个规则怎么去写对文本处理真的太有帮助了。 基础语法元字符元字符是一些特定辅助精准匹配的特定字符 代码 说明 . 匹配除换行符以为的任何字符 \w 匹配字母 数字 下划线 汉字 \s 匹配任意空白符 \d 匹配数字 \b 匹配单词的开始或结束 ^ 匹配字符串的开始 $ 匹配字符串的结束 对于特殊字符需要通过\来转义，比如匹配.那么需要使用\. 重复 代码 说明 * 重复0次或更多次 + 重复1次或更多次 ？ 重复0次或1次 {n} 重复n次 {n,} 重复n或更多次 {n,m} 重复n到m次 设置匹配字符集通过[]来设定匹配字符集 如[0-9]就相当于\d 分组对单个字符来说，通过0{n}来设置匹配次数，但是对于字符串而言的话，通过分组来解决(\d{1,3}\.){3}\d{1,3}匹配ip。 反义 代码/语法 说明 \W 匹配任意不是字母，数字，下划线，汉字的字符 \S 匹配任意不是空白符的字符 \D 匹配任意非数字的字符 \B 匹配不是单词开头或结束的位置 [^x] 匹配除了x以外的任意字符 [^aeiou] 匹配除了aeiou这几个字母以外的任意字符 以上差不多就能日常使用了 ###其他高级用法参考 正则表达式30分钟入门教程 总结回到上面之前的问题 从[&quot;admin&quot;]中提取admin就可以写 1'["amdin"]'.replace(/\[\"|\"\]/g,'')]]></content>
+    <content type="text"><![CDATA[前言之前写代码遇到个问题，就是[&quot;admin&quot;]提取其中的字符串admin因为不会写正则只能通过replace(&#39;[&quot;&#39;,&#39;&#39;).replace(&#39;&quot;]&#39;,&#39;&#39;)操作，感觉很笨拙，通过正则去应该是更好的方法。 本文主要了解 什么是正则表达式 基本语法规则 正则表达式是什么个人理解就是匹配文本的规则吧，了解这个规则怎么去写对文本处理真的太有帮助了。 基础语法元字符元字符是一些特定辅助精准匹配的特定字符 代码 说明 . 匹配除换行符以为的任何字符 \w 匹配字母 数字 下划线 汉字 \s 匹配任意空白符 \d 匹配数字 \b 匹配单词的开始或结束 ^ 匹配字符串的开始 $ 匹配字符串的结束 对于特殊字符需要通过\来转义，比如匹配.那么需要使用\. 重复 代码 说明 * 重复0次或更多次 + 重复1次或更多次 ？ 重复0次或1次 {n} 重复n次 {n,} 重复n或更多次 {n,m} 重复n到m次 设置匹配字符集通过[]来设定匹配字符集 如[0-9]就相当于\d 分组对单个字符来说，通过0{n}来设置匹配次数，但是对于字符串而言的话，通过分组来解决(\d{1,3}\.){3}\d{1,3}匹配ip。 反义 代码/语法 说明 \W 匹配任意不是字母，数字，下划线，汉字的字符 \S 匹配任意不是空白符的字符 \D 匹配任意非数字的字符 \B 匹配不是单词开头或结束的位置 [^x] 匹配除了x以外的任意字符 [^aeiou] 匹配除了aeiou这几个字母以外的任意字符 以上差不多就能日常使用了 其他高级用法参考正则表达式30分钟入门教程 总结回到上面之前的问题 从[&quot;admin&quot;]中提取admin就可以写 1'["amdin"]'.replace(/\[\"|\"\]/g,'')]]></content>
       <categories>
         <category>前端</category>
       </categories>
@@ -66,17 +66,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[HTTP请求]]></title>
-    <url>%2F2019%2F03%2F21%2FHTTP%E8%AF%B7%E6%B1%82%2F</url>
-    <content type="text"><![CDATA[前言通过接口看http请求 login接口 笔记 需要弄清楚http请求报头包括哪些内容 使用场景 CORS 安全性问题等 字段讲解General Request URL:请求接口url地址 Request Method:请求方法 post get put delete… Status Code：状态码 Remote Address:远程服务器ip Referrer Policy: 来源协议，需要了解，监管哪些访问来源信息 Response Headers Access-Control-Allow-Credentials:响应头表示是否可以将对请求的响应暴露给页面，true则可以，其他都不行。 Access-Control-Allow-Origin:访问控制允许同源，涉及到安全性CORS Cache-Control:缓存控制 Content-Type:返回数据类型 Date:服务器时间 Expires:响应过期的时间，0代表无效 Pragma: 兼容只支持HTTP/1.0协议的缓存服务器相当于Cache-Control作用 Transfer-Encoding:传递给用户采用的编码方式 Vary:一个HTTP响应头部信息，它决定了对于未来的一个请求头 X-Content-Type-Options:响应首部相当于一个提示标志，被服务器用来提示客户端一定要遵循在 Content-Type 首部中对 MIME 类型 的设定，而不能对其进行修改。 X-Frame-Options:是否允许当前页面通过iframe内嵌到其他网站中 X-XSS-Protection:响应头是Internet Explorer，Chrome和Safari的一个功能，当检测到跨站脚本攻击 (XSS)时，浏览器将停止加载页面。 Request Headers Accept: 发送端希望接受的数据类型 Content-Type:发送端发送的实体数据的类型 Origin:请求来自哪个站点 Referer:首部包含了当前请求页面的来源页面的地址，即表示当前页面是通过此来源页面里的链接进入的。 User-Agent:发起请求的用户代理软件信息]]></content>
-      <categories>
-        <category>网络</category>
-      </categories>
-      <tags>
-        <tag>http</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Promise]]></title>
     <url>%2F2019%2F03%2F21%2FPromise%2F</url>
     <content type="text"><![CDATA[前言 Promise概念 解决什么问题 用法 疑惑 在 Effective JavaScript 的 第67项 不要对异步回调函数进行同步调用 参考资料MDN-Promise Promise小书 Promise是什么Promise是一个对象，是个什么对象？用来表示一个异步操作的最终状态(完成或者失败)，以及该异步操作的结果值。 笔记 Promise() 三种状态 pending FulFilled Rejected时候，对应的处理方法.then .catch 链式调用 Promise().then() 或者.catch() 都会返回一个新的Promise() 用Promise.all() .race() 对多个异步调用进行统一处理 all和race的差别，all是等所有Promise状态确定后(fulfilled或者rejected)才进行后面的处理，race是当某一个Promise状态确定后就会进行后面的处理 使用reject而不是throw来使得Promise状态变为rejected then和catch]]></content>
@@ -85,6 +74,17 @@
       </categories>
       <tags>
         <tag>es6</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[HTTP请求]]></title>
+    <url>%2F2019%2F03%2F21%2FHTTP%E8%AF%B7%E6%B1%82%2F</url>
+    <content type="text"><![CDATA[前言通过接口看http请求 login接口 笔记 需要弄清楚http请求报头包括哪些内容 使用场景 CORS 安全性问题等 字段讲解General Request URL:请求接口url地址 Request Method:请求方法 post get put delete… Status Code：状态码 Remote Address:远程服务器ip Referrer Policy: 来源协议，需要了解，监管哪些访问来源信息 Response Headers Access-Control-Allow-Credentials:响应头表示是否可以将对请求的响应暴露给页面，true则可以，其他都不行。 Access-Control-Allow-Origin:访问控制允许同源，涉及到安全性CORS Cache-Control:缓存控制 Content-Type:返回数据类型 Date:服务器时间 Expires:响应过期的时间，0代表无效 Pragma: 兼容只支持HTTP/1.0协议的缓存服务器相当于Cache-Control作用 Transfer-Encoding:传递给用户采用的编码方式 Vary:一个HTTP响应头部信息，它决定了对于未来的一个请求头 X-Content-Type-Options:响应首部相当于一个提示标志，被服务器用来提示客户端一定要遵循在 Content-Type 首部中对 MIME 类型 的设定，而不能对其进行修改。 X-Frame-Options:是否允许当前页面通过iframe内嵌到其他网站中 X-XSS-Protection:响应头是Internet Explorer，Chrome和Safari的一个功能，当检测到跨站脚本攻击 (XSS)时，浏览器将停止加载页面。 Request Headers Accept: 发送端希望接受的数据类型 Content-Type:发送端发送的实体数据的类型 Origin:请求来自哪个站点 Referer:首部包含了当前请求页面的来源页面的地址，即表示当前页面是通过此来源页面里的链接进入的。 User-Agent:发起请求的用户代理软件信息]]></content>
+      <categories>
+        <category>网络</category>
+      </categories>
+      <tags>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>

@@ -108,7 +108,7 @@
 <meta property="og:site_name" content="lifelover">
 <meta property="og:description" content="前言之前写代码遇到个问题，就是[&amp;quot;admin&amp;quot;]提取其中的字符串admin因为不会写正则只能通过replace(&amp;#39;[&amp;quot;&amp;#39;,&amp;#39;&amp;#39;).replace(&amp;#39;&amp;quot;]&amp;#39;,&amp;#39;&amp;#39;)操作，感觉很笨拙，通过正则去应该是更好的方法。 本文主要了解  什么是正则表达式 基本语法规则">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-04-13T15:06:36.005Z">
+<meta property="og:updated_time" content="2019-04-13T15:10:36.750Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则表达式学习笔记">
 <meta name="twitter:description" content="前言之前写代码遇到个问题，就是[&amp;quot;admin&amp;quot;]提取其中的字符串admin因为不会写正则只能通过replace(&amp;#39;[&amp;quot;&amp;#39;,&amp;#39;&amp;#39;).replace(&amp;#39;&amp;quot;]&amp;#39;,&amp;#39;&amp;#39;)操作，感觉很笨拙，通过正则去应该是更好的方法。 本文主要了解  什么是正则表达式 基本语法规则">
@@ -405,7 +405,7 @@
                 
               
 
-              <time title="创建时间：2019-04-13 13:34:04 / 修改时间：23:06:36" itemprop="dateCreated datePublished" datetime="2019-04-13T13:34:04+08:00">2019-04-13</time>
+              <time title="创建时间：2019-04-13 13:34:04 / 修改时间：23:10:36" itemprop="dateCreated datePublished" datetime="2019-04-13T13:34:04+08:00">2019-04-13</time>
             
 
             
@@ -601,8 +601,7 @@
 </tbody>
 </table>
 <p>以上差不多就能日常使用了</p>
-<p>###其他高级用法参考</p>
-<p><a href="https://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">正则表达式30分钟入门教程</a></p>
+<h3 id="其他高级用法参考"><a href="#其他高级用法参考" class="headerlink" title="其他高级用法参考"></a>其他高级用法参考</h3><p><a href="https://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">正则表达式30分钟入门教程</a></p>
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>回到上面之前的问题 从<code>[&quot;admin&quot;]</code>中提取<code>admin</code>就可以写</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">'["amdin"]'</span>.replace(<span class="regexp">/\[\"|\"\]/g</span>,<span class="string">''</span>)</span><br></pre></td></tr></table></figure>
 
@@ -852,7 +851,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式是什么"><span class="nav-text">正则表达式是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础语法"><span class="nav-text">基础语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元字符"><span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重复"><span class="nav-text">重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置匹配字符集"><span class="nav-text">设置匹配字符集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组"><span class="nav-text">分组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反义"><span class="nav-text">反义</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正则表达式是什么"><span class="nav-text">正则表达式是什么</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基础语法"><span class="nav-text">基础语法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#元字符"><span class="nav-text">元字符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重复"><span class="nav-text">重复</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#设置匹配字符集"><span class="nav-text">设置匹配字符集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分组"><span class="nav-text">分组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#反义"><span class="nav-text">反义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他高级用法参考"><span class="nav-text">其他高级用法参考</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
