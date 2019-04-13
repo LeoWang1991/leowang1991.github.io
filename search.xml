@@ -1,20 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[聊聊财前和里见]]></title>
-    <url>%2F2019%2F03%2F21%2F%E8%81%8A%E8%81%8A%E8%B4%A2%E5%89%8D%E5%92%8C%E9%87%8C%E8%A7%81%2F</url>
-    <content type="text"><![CDATA[因为最近又收到了云音乐的bgm推送，算观后感吧，虽然只刷过一遍，可以足够的深刻了。 最喜欢的日剧是’求婚大作战’，自认为评价最高的便是’白色巨塔’。每一句台词不经典，没一个真相不扎心。 首先，财前和里间这对cp，专业技能水平都是超高的。 里见的话，就好像一直是别人家的好孩子，很善良听话懂事，按自己的原则来非黑即白，眼里揉不得沙子。不会因为惧怕权威得罪上司而改变自己的意志，社会需要这么刚正的人啊。单纯的好啊，不用去应对那么多复杂的人际关系，专心自己的研究。所以我会觉得里间的人生比财前舒服太多了，没那么多压力，家庭也和睦，也没有太多的权利上的欲望，很佛系很知足，令人羡慕的人生。 至于财前，因为财前从底层一步步好好学习然后爬上来的人，入赘有钱人人家。然后岳父又是满是期待的希望财前能当上第一教授，境遇不同对人的影响实在也不同吧，从剧中来看，我觉得财前并不太擅长交际应酬，都是他岳父在搭理，有钱真好。从这点来说，我想财前和里间是一样的吧，但生活不同，财前会被各种人和事推着走。 选择哪种人生 里间虽然技术高超，但是因为什么事都按自己的想法判断非黑即白，好就是好错就是错。这样导致得不到重用吧，比如后面鸟教授把他调去了下面的一个小医院，在我看来就是淹没了才能把，除非以后得到哪个开明领导的重视。 而财前而言，为了自己的理想回去争取权利，争取权利或许并不是对权利的欲望和渴求吧，只是因为有了权利自己才能做更多的事能实现自己的报复，快结束的时候，财前拉着里间的手说等癌症中心建成了一定要来上班。财前也知道医院的黑暗，但是没办法哇，没有权利并改变不了这种事实，从这个层面来看，财前选择了一条更加艰难的路。我一直觉得财前是知道大环境黑幕的，也想去改变的，所以要得到权利先，但是他爱面子。 里间是幸福的，一个人哇，幸不幸福不在于他能做什么，而在于他能不做什么。里间不惜得罪鸟教授，但是家人依然还是关爱着他咯。而财前不同，即使他不想他身边的环境也会推这他走，人生啊，不由得想起那句教导，一个人的奋斗固然重要，但也要考虑到历史的进程。 emmm…以后再刷吧。]]></content>
+    <title><![CDATA[正则表达式学习笔记]]></title>
+    <url>%2F2019%2F04%2F13%2F%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[前言之前写代码遇到个问题，就是[&quot;admin&quot;]提取其中的字符串admin因为不会写正则只能通过replace(&#39;[&quot;&#39;,&#39;&#39;).replace(&#39;&quot;]&#39;,&#39;&#39;)操作，感觉很笨拙，通过正则去应该是更好的方法。 本文主要了解 什么是正则表达式 基本语法规则 正则表达式是什么个人理解就是匹配文本的规则吧，了解这个规则怎么去写对文本处理真的太有帮助了。 基础语法元字符元字符是一些特定辅助精准匹配的特定字符 代码 说明 . 匹配除换行符以为的任何字符 \w 匹配字母 数字 下划线 汉字 \s 匹配任意空白符 \d 匹配数字 \b 匹配单词的开始或结束 ^ 匹配字符串的开始 $ 匹配字符串的结束 对于特殊字符需要通过\来转义，比如匹配.那么需要使用\. 重复 代码 说明 * 重复0次或更多次 + 重复1次或更多次 ？ 重复0次或1次 {n} 重复n次 {n,} 重复n或更多次 {n,m} 重复n到m次 设置匹配字符集通过[]来设定匹配字符集 如[0-9]就相当于\d 分组对单个字符来说，通过0{n}来设置匹配次数，但是对于字符串而言的话，通过分组来解决(\d{1,3}\.){3}\d{1,3}匹配ip。 反义 代码/语法 说明 \W 匹配任意不是字母，数字，下划线，汉字的字符 \S 匹配任意不是空白符的字符 \D 匹配任意非数字的字符 \B 匹配不是单词开头或结束的位置 [^x] 匹配除了x以外的任意字符 [^aeiou] 匹配除了aeiou这几个字母以外的任意字符 以上差不多就能日常使用了 ###其他高级用法参考 正则表达式30分钟入门教程 总结回到上面之前的问题 从[&quot;admin&quot;]中提取admin就可以写 1'["amdin"]'.replace(/\[\"|\"\]/g,'')]]></content>
       <categories>
-        <category>影视剧</category>
+        <category>前端</category>
       </categories>
       <tags>
-        <tag>日剧</tag>
+        <tag>正则表达式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[react ssr学习]]></title>
+    <url>%2F2019%2F04%2F04%2Freact-ssr%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[前言了解ssr 带着问题 SSR是什么东西 同构有是什么 SSR使用场景，解决什么问题 那么怎么使用ssr 有没有现成的优秀的轮子直接用 看看轮子 参考文档React中同构原理(SSR)脉络梳理 服务端渲染vs 客户端渲染 笔记SSR是什么server-side rendering，字面意思就是服务端渲染，相对客户端渲染csr(client-side-rending)。 具体点说呢？ 客户端渲染的话，浏览器加载页面，服务端返回html文件但是没有内容展示，然后去加载执行html文件中的js去请求数据填充数据完成页面的交互事件绑定。 服务端渲染的话，返回html文件之前就把所有的数据填充好然后返回，浏览器只负责解析html就行了。 最后都是一样，有数据地展示页面。 SSR使用场景 seo，爬虫看不到完整源码 首屏加载慢，这个有体会。在 CSR 的页面渲染流程中，首先要加载 HTML 文件，之后要下载页面所需的 JavaScript 文件，然后 JavaScript 文件渲染生成页面。在这个渲染过程中至少涉及到两个 HTTP 请求周期，所以会有一定的耗时，这也是为什么大家在低网速下访问普通的 React 或者 Vue 应用时，初始页面会有出现白屏的原因。 缺点，第一篇参考文中有指出，本来简单的步骤因为ssr变得繁琐，项目可维护性差。 同构同构：同构这个概念存在于 Vue，React 这些新型的前端框架中，同构实际上是客户端渲染和服务器端渲染的一个整合。我们把页面的展示内容和交互写在一起，让代码执行两次。在服务器端执行一次，用于实现服务器端渲染，在客户端再执行一次，用于接管页面交互。 实现原理vitual-dom的存在]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>react</tag>
       </tags>
   </entry>
   <entry>
     <title></title>
-    <url>%2F2019%2F03%2F21%2FcentOS%E5%AE%89%E8%A3%85gitlab%2F</url>
-    <content type="text"><![CDATA[前言有台搁置的服务器，随便倒腾点东西把。 centOS7 安装个gitlab]]></content>
+    <url>%2F2019%2F04%2F04%2Fnpm%E6%8C%87%E4%BB%A4%E5%AD%A6%E4%B9%A0%2F</url>
+    <content type="text"><![CDATA[前言npm操作指令笔记 查看1 查看已经安装的包文件 版本号 查看所有 npm list -g --depth=0(depth=0去掉其他依赖项) 查看特定npm view xxx version -g 查看过期的 npm outdated -g --depth=0 2 查看全局包安装路径 npm config get prefix,设置的话则 npm config set prefix &#39;&#39;]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>%2F2019%2F03%2F27%2F%E8%85%BE%E8%AE%AF%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%8A%98%E8%85%BE%E5%B0%8F%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[前言我差不多都忘了，我还有台腾讯云服务器，到2023年到期。我寻思着也不能这么浪费吧。所以花时间折腾下，做些记录咯。 命令行指南 yum: yellow dog updater 安装各种东西zsh(ys主题)https://www.jianshu.com/p/556ff130fc65]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[git操作指南]]></title>
+    <url>%2F2019%2F03%2F26%2Fgit%E6%93%8D%E4%BD%9C%E6%8C%87%E5%8D%97%2F</url>
+    <content type="text"><![CDATA[前言 了解掌握基础的git操作 备忘录 操作新建本地分支 推送到远程仓库12git checkout -b feature-branch //创建并切换到分支feature-branch $ git push origin feature-branch:feature-branch //推送本地的feature-branch(冒号前面的)分支到远程origin的feature-branch(冒号后面的)分支(没有会自动创建)]]></content>
+      <categories>
+        <category>工具</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[前端Nginx配置]]></title>
+    <url>%2F2019%2F03%2F25%2F%E5%89%8D%E7%AB%AFnginx%E9%85%8D%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[前言了解学习在服务器上安装并启动Nginx 参考资料菜鸟教程 nginx安装配置 笔记 查看系统信息 指令 安装Nginx遇到的问题 需要升级openssl 基本操作123// 查找服务ps -ef | grep nginx// 启动]]></content>
+      <categories>
+        <category>后端</category>
+      </categories>
+      <tags>
+        <tag>nginx</tag>
+      </tags>
   </entry>
   <entry>
     <title><![CDATA[JavaScript事件机制]]></title>
@@ -25,17 +63,6 @@
       </categories>
       <tags>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Promise]]></title>
-    <url>%2F2019%2F03%2F21%2FPromise%2F</url>
-    <content type="text"><![CDATA[前言 Promise概念 解决什么问题 用法 Promise是什么]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>es6</tag>
       </tags>
   </entry>
   <entry>
@@ -50,14 +77,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[vue学习]]></title>
-    <url>%2F2019%2F03%2F18%2Fvue%E5%AD%A6%E4%B9%A0%2F</url>
-    <content type="text"><![CDATA[前言Vue.js官网教程笔记 学习目标 Vue基本语法 数据的双向绑定 深入和最佳实践（？） 基础语法创建一个Vue对象123456const app = new Vue(&#123; el: '#app', data: &#123; message: 'hello Vue' &#125;&#125;)]]></content>
+    <title><![CDATA[Promise]]></title>
+    <url>%2F2019%2F03%2F21%2FPromise%2F</url>
+    <content type="text"><![CDATA[前言 Promise概念 解决什么问题 用法 疑惑 在 Effective JavaScript 的 第67项 不要对异步回调函数进行同步调用 参考资料MDN-Promise Promise小书 Promise是什么Promise是一个对象，是个什么对象？用来表示一个异步操作的最终状态(完成或者失败)，以及该异步操作的结果值。 笔记 Promise() 三种状态 pending FulFilled Rejected时候，对应的处理方法.then .catch 链式调用 Promise().then() 或者.catch() 都会返回一个新的Promise() 用Promise.all() .race() 对多个异步调用进行统一处理 all和race的差别，all是等所有Promise状态确定后(fulfilled或者rejected)才进行后面的处理，race是当某一个Promise状态确定后就会进行后面的处理 使用reject而不是throw来使得Promise状态变为rejected then和catch]]></content>
       <categories>
         <category>前端</category>
       </categories>
       <tags>
-        <tag>vue</tag>
+        <tag>es6</tag>
       </tags>
   </entry>
   <entry>
@@ -94,47 +121,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[antd pro使用]]></title>
-    <url>%2F2019%2F03%2F11%2Fantd%20pro%E4%BD%BF%E7%94%A8%2F</url>
-    <content type="text"><![CDATA[前言Antd Pro使用]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
-      <tags>
-        <tag>antd</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[js高程学习笔记]]></title>
     <url>%2F2019%2F03%2F11%2Fjs%E9%AB%98%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[前言重读js高程3的学习笔记，这本书很经典，值得多读几遍。特别是其中的js高级内容，需要很好地去掌握 作用域 原型 原型链 闭包 对象和函数 … Chapter1 JavaScript简介名词 ECMA European Computer Manufacturers Association.欧洲计算机制造商协会。 TC39，ECMA协会指定的39号技术委员会，负责脚本语言的语法和语义。 javascript实现包括了 ECMAScript+DOM+BOM DOM1 DOM (Document Object Model)针对XML但经过扩展用于HTML的应用程序接口(API)，用来操作文档树。 2 DOM级别1，2，3 DOM1: DOM Core+DOM HTML DOM2: 引入了DOM视图(DOM View), DOM事件]]></content>
+    <content type="text"><![CDATA[前言重读js高程3的学习笔记，这本书很经典，值得多读几遍。特别是其中的js高级内容，需要很好地去掌握 作用域 原型 原型链 闭包 对象和函数 …]]></content>
       <categories>
         <category>前端</category>
       </categories>
       <tags>
         <tag>JavaScript</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[nodejs]]></title>
-    <url>%2F2019%2F03%2F09%2Fnodejs%E5%AD%A6%E4%B9%A0%2F</url>
-    <content type="text"><![CDATA[前言nodejs学习笔记]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>node</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[Docker学习]]></title>
-    <url>%2F2019%2F03%2F03%2FDocker%2F</url>
-    <content type="text"><![CDATA[前言了解下Docker docker是什么 安装配置 实践 Docker是什么首先看下Docker官网的定义 Docker provides a way to run application security isolated in a container, packaged with all its dependencies and libraries. 三个概念： application container dependencies and libraries 安装和配置Docker国内镜像下载]]></content>
-      <categories>
-        <category>后端</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
       </tags>
   </entry>
   <entry>
