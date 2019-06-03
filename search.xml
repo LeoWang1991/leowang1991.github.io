@@ -77,14 +77,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[HTTP请求]]></title>
-    <url>%2F2019%2F03%2F21%2FHTTP%E8%AF%B7%E6%B1%82%2F</url>
-    <content type="text"><![CDATA[前言通过接口看http请求 login接口 笔记 需要弄清楚http请求报头包括哪些内容 使用场景 CORS 安全性问题等 字段讲解General Request URL:请求接口url地址 Request Method:请求方法 post get put delete… Status Code：状态码 Remote Address:远程服务器ip Referrer Policy: 来源协议，需要了解，监管哪些访问来源信息 Response Headers Access-Control-Allow-Credentials:响应头表示是否可以将对请求的响应暴露给页面，true则可以，其他都不行。 Access-Control-Allow-Origin:访问控制允许同源，涉及到安全性CORS Cache-Control:缓存控制 Content-Type:返回数据类型 Date:服务器时间 Expires:响应过期的时间，0代表无效 Pragma: 兼容只支持HTTP/1.0协议的缓存服务器相当于Cache-Control作用 Transfer-Encoding:传递给用户采用的编码方式 Vary:一个HTTP响应头部信息，它决定了对于未来的一个请求头 X-Content-Type-Options:响应首部相当于一个提示标志，被服务器用来提示客户端一定要遵循在 Content-Type 首部中对 MIME 类型 的设定，而不能对其进行修改。 X-Frame-Options:是否允许当前页面通过iframe内嵌到其他网站中 X-XSS-Protection:响应头是Internet Explorer，Chrome和Safari的一个功能，当检测到跨站脚本攻击 (XSS)时，浏览器将停止加载页面。 Request Headers Accept: 发送端希望接受的数据类型 Content-Type:发送端发送的实体数据的类型 Origin:请求来自哪个站点 Referer:首部包含了当前请求页面的来源页面的地址，即表示当前页面是通过此来源页面里的链接进入的。 User-Agent:发起请求的用户代理软件信息]]></content>
+    <title><![CDATA[JavaScript事件机制]]></title>
+    <url>%2F2019%2F03%2F21%2FJavaScript%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6%2F</url>
+    <content type="text"><![CDATA[前言 了解学习 JavaScript事件机制 Event Loop 单线程怎么做到 非阻塞 参考资料什么是Event Loop JavaScript 运行机制详解：再谈Event Loop Tasks, microtasks, queues and schedules 这一次彻底弄懂JavaScript执行机制 JS事件循环机制（event loop）之宏任务/微任务 从一道题说JavaScript的事件循环 笔记核心概念 JavaScript是单线程语言 Event Loop是JavaScript执行机制 执行顺序，js一般的执行顺序都是按正常顺序执行，如果触发了事件比如点击事件或者其他页面上的交互事件，会将事件放到执行栈Stack，然后顺序执行，这就有个问题，比如加载图片很慢会使得页面渲染很慢，所以需要引出异步的概念，对于异步的任务，]]></content>
       <categories>
-        <category>网络</category>
+        <category>前端</category>
       </categories>
       <tags>
-        <tag>http</tag>
+        <tag>JavaScript</tag>
       </tags>
   </entry>
   <entry>
@@ -99,14 +99,14 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[JavaScript事件机制]]></title>
-    <url>%2F2019%2F03%2F21%2FJavaScript%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6%2F</url>
-    <content type="text"><![CDATA[前言 了解学习 JavaScript事件机制 Event Loop 单线程怎么做到 非阻塞 参考资料什么是Event Loop JavaScript 运行机制详解：再谈Event Loop Tasks, microtasks, queues and schedules 这一次彻底弄懂JavaScript执行机制 JS事件循环机制（event loop）之宏任务/微任务 从一道题说JavaScript的事件循环 笔记核心概念 JavaScript是单线程语言 Event Loop是JavaScript执行机制 执行顺序，js一般的执行顺序都是按正常顺序执行，如果触发了事件比如点击事件或者其他页面上的交互事件，会将事件放到执行栈Stack，然后顺序执行，这就有个问题，比如加载图片很慢会使得页面渲染很慢，所以需要引出异步的概念，对于异步的任务，]]></content>
+    <title><![CDATA[HTTP请求]]></title>
+    <url>%2F2019%2F03%2F21%2FHTTP%E8%AF%B7%E6%B1%82%2F</url>
+    <content type="text"><![CDATA[前言通过接口看http请求 login接口 笔记 需要弄清楚http请求报头包括哪些内容 使用场景 CORS 安全性问题等 字段讲解General Request URL:请求接口url地址 Request Method:请求方法 post get put delete… Status Code：状态码 Remote Address:远程服务器ip Referrer Policy: 来源协议，需要了解，监管哪些访问来源信息 Response Headers Access-Control-Allow-Credentials:响应头表示是否可以将对请求的响应暴露给页面，true则可以，其他都不行。 Access-Control-Allow-Origin:访问控制允许同源，涉及到安全性CORS Cache-Control:缓存控制 Content-Type:返回数据类型 Date:服务器时间 Expires:响应过期的时间，0代表无效 Pragma: 兼容只支持HTTP/1.0协议的缓存服务器相当于Cache-Control作用 Transfer-Encoding:传递给用户采用的编码方式 Vary:一个HTTP响应头部信息，它决定了对于未来的一个请求头 X-Content-Type-Options:响应首部相当于一个提示标志，被服务器用来提示客户端一定要遵循在 Content-Type 首部中对 MIME 类型 的设定，而不能对其进行修改。 X-Frame-Options:是否允许当前页面通过iframe内嵌到其他网站中 X-XSS-Protection:响应头是Internet Explorer，Chrome和Safari的一个功能，当检测到跨站脚本攻击 (XSS)时，浏览器将停止加载页面。 Request Headers Accept: 发送端希望接受的数据类型 Content-Type:发送端发送的实体数据的类型 Origin:请求来自哪个站点 Referer:首部包含了当前请求页面的来源页面的地址，即表示当前页面是通过此来源页面里的链接进入的。 User-Agent:发起请求的用户代理软件信息]]></content>
       <categories>
-        <category>前端</category>
+        <category>网络</category>
       </categories>
       <tags>
-        <tag>JavaScript</tag>
+        <tag>http</tag>
       </tags>
   </entry>
   <entry>

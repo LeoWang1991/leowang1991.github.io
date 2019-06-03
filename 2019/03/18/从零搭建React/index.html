@@ -459,7 +459,7 @@
             
                 <span class="post-meta-item-text">评论数：</span>
                 <a href="/2019/03/18/从零搭建React/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2019/03/18/从零搭建React/" itemprop="commentCount"></span>
+                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/18/从零搭建React/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -564,8 +564,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/21/JavaScript事件机制/" rel="prev" title="JavaScript事件机制">
-                JavaScript事件机制 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/21/HTTP请求/" rel="prev" title="HTTP请求">
+                HTTP请求 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -590,9 +590,9 @@
 
   
     <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
-      </div>
+      
+        <div id="gitment-container"></div>
+      
     </div>
 
   
@@ -663,8 +663,6 @@
                     
                       
                     
-                      
-                    
                     <span class="site-state-item-count">4</span>
                     <span class="site-state-item-name">分类</span>
                   </a>
@@ -677,8 +675,6 @@
                 <div class="site-state-item site-state-tags">
                   <a href="/tags/index.html">
                     
-                    
-                      
                     
                       
                     
@@ -947,30 +943,48 @@
 
   
   
-  
-  <script id="dsq-count-scr" src="https://wangjx.disqus.com/count.js" async></script>
 
+
+  
+    <!-- LOCAL: You can save these files to your site and update links -->
+
+  
+  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitmint.browser.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css">
+<!-- END LOCAL -->
+
+<style>
+#gitment-container a {
+  border-bottom: none;
+}
+
+</style>
 
 <script>
-  var disqus_config = function() {
-    this.page.url = "https://lifelover.cc/2019/03/18/从零搭建React/";
-    this.page.identifier = "2019/03/18/从零搭建React/";
-    this.page.title = '从零开始搭建React';
-    };
-  function loadComments() {
-    var d = document, s = d.createElement('script');
-    s.src = 'https://wangjx.disqus.com/embed.js';
-    s.setAttribute('data-timestamp', '' + +new Date());
-    (d.head || d.body).appendChild(s);
+  function renderGitment() {
+    var gitment = new Gitmint({
+      id: window.location.pathname,
+      owner: 'LeoWang1991',
+      repo: 'gitment-comments',
+      
+        lang: '' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
+      
+      oauth: {
+      
+      
+        client_secret: '4c8c184c0dd9a0411c9fc1fc4bb29b23dae811c4',
+      
+        client_id: '5c85d4fe90cc3ace1405'
+      }
+    });
+    gitment.render('gitment-container');
   }
+
   
-    loadComments();
+    renderGitment();
   
 </script>
-
-
-
-
 
   
 
