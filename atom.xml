@@ -225,27 +225,24 @@
   </entry>
   
   <entry>
-    <title>JavaScript事件机制</title>
-    <link href="https://lifelover.cc/2019/03/21/JavaScript%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/"/>
-    <id>https://lifelover.cc/2019/03/21/JavaScript事件机制/</id>
+    <title>HTTP请求</title>
+    <link href="https://lifelover.cc/2019/03/21/HTTP%E8%AF%B7%E6%B1%82/"/>
+    <id>https://lifelover.cc/2019/03/21/HTTP请求/</id>
     <published>2019-03-21T02:36:45.000Z</published>
-    <updated>2019-03-21T02:57:57.787Z</updated>
+    <updated>2019-03-21T02:57:54.013Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ol><li>了解学习 JavaScript事件机制 Event Loop</li><li>单线程怎么做到 非阻塞</li></ol><a id="more"></a><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.ruanyifeng.com/blog/2013/10/event_loop.html" target="_blank" rel="noopener">什么是Event Loop</a></p><p><a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html" target="_blank" rel="noopener">JavaScript 运行机制详解：再谈Event Loop</a></p><p><a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/?utm_source=html5weekly" target="_blank" rel="noopener">Tasks, microtasks, queues and schedules</a></p><p><a href="https://juejin.im/post/59e85eebf265da430d571f89" target="_blank" rel="noopener">这一次彻底弄懂JavaScript执行机制</a></p><p><a href="https://juejin.im/post/5b498d245188251b193d4059" target="_blank" rel="noopener">JS事件循环机制（event loop）之宏任务/微任务</a></p><p><a href="https://github.com/dwqs/blog/issues/61" target="_blank" rel="noopener">从一道题说JavaScript的事件循环</a></p><h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h3><ol><li>JavaScript是单线程语言</li><li>Event Loop是JavaScript执行机制</li></ol><blockquote><p>执行顺序，js一般的执行顺序都是按正常顺序执行，如果触发了事件比如点击事件或者其他页面上的交互事件，会将事件放到执行栈Stack，然后顺序执行，这就有个问题，比如加载图片很慢会使得页面渲染很慢，所以需要引出<code>异步</code>的概念，对于异步的任务，</p></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过接口看http请求</p><a id="more"></a><h2 id="login接口"><a href="#login接口" class="headerlink" title="login接口"></a>login接口</h2><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1g182ukfq2lj30ix0lu78q.jpg" alt=""></p><h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><ol><li>需要弄清楚http请求报头包括哪些内容</li><li>使用场景</li><li>CORS 安全性问题等</li></ol><h3 id="字段讲解"><a href="#字段讲解" class="headerlink" title="字段讲解"></a>字段讲解</h3><h4 id="General"><a href="#General" class="headerlink" title="General"></a>General</h4><ol><li><code>Request URL</code>:请求接口url地址</li><li><code>Request Method</code>:请求方法 post get put delete…</li><li><code>Status Code</code>：状态码</li><li><code>Remote Address</code>:远程服务器ip</li><li><code>Referrer Policy</code>: 来源协议，<strong>需要了解</strong>，监管哪些访问来源信息</li></ol><h4 id="Response-Headers"><a href="#Response-Headers" class="headerlink" title="Response Headers"></a>Response Headers</h4><ol start="6"><li><code>Access-Control-Allow-Credentials</code>:响应头表示是否可以将对请求的响应暴露给页面，true则可以，其他都不行。</li><li><code>Access-Control-Allow-Origin</code>:访问控制允许同源，涉及到安全性CORS</li><li><code>Cache-Control</code>:缓存控制</li><li><code>Content-Type</code>:返回数据类型</li><li><code>Date</code>:服务器时间</li><li><code>Expires</code>:响应过期的时间，0代表无效</li><li><code>Pragma</code>: 兼容只支持HTTP/1.0协议的缓存服务器相当于Cache-Control作用</li><li><code>Transfer-Encoding</code>:传递给用户采用的编码方式</li><li><code>Vary</code>:一个HTTP响应头部信息，它决定了对于未来的一个请求头</li><li><code>X-Content-Type-Options</code>:响应首部相当于一个提示标志，被服务器用来提示客户端一定要遵循在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type" target="_blank" rel="noopener"><code>Content-Type</code></a> 首部中对  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types" target="_blank" rel="noopener">MIME 类型</a> 的设定，而不能对其进行修改。</li><li><code>X-Frame-Options</code>:是否允许当前页面通过iframe内嵌到其他网站中</li><li><code>X-XSS-Protection</code>:响应头是Internet Explorer，Chrome和Safari的一个功能，当检测到跨站脚本攻击 (<a href="https://developer.mozilla.org/en-US/docs/Glossary/XSS" target="_blank" rel="noopener">XSS</a>)时，浏览器将停止加载页面。</li></ol><h4 id="Request-Headers"><a href="#Request-Headers" class="headerlink" title="Request Headers"></a>Request Headers</h4><ol start="18"><li><code>Accept</code>: 发送端希望接受的数据类型</li><li><code>Content-Type</code>:发送端发送的实体数据的类型</li><li><code>Origin</code>:请求来自哪个站点</li><li><code>Referer</code>:首部包含了当前请求页面的来源页面的地址，即表示当前页面是通过此来源页面里的链接进入的。</li><li><code>User-Agent</code>:发起请求的用户代理软件信息</li></ol>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ol&gt;
-&lt;li&gt;了解学习 JavaScript事件机制 Event Loop&lt;/li&gt;
-&lt;li&gt;单线程怎么做到 非阻塞&lt;/li&gt;
-&lt;/ol&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;通过接口看http请求&lt;/p&gt;
     
     </summary>
     
-      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
+      <category term="网络" scheme="https://lifelover.cc/categories/%E7%BD%91%E7%BB%9C/"/>
     
     
-      <category term="JavaScript" scheme="https://lifelover.cc/tags/JavaScript/"/>
+      <category term="http" scheme="https://lifelover.cc/tags/http/"/>
     
   </entry>
   
@@ -282,24 +279,27 @@
   </entry>
   
   <entry>
-    <title>HTTP请求</title>
-    <link href="https://lifelover.cc/2019/03/21/HTTP%E8%AF%B7%E6%B1%82/"/>
-    <id>https://lifelover.cc/2019/03/21/HTTP请求/</id>
+    <title>JavaScript事件机制</title>
+    <link href="https://lifelover.cc/2019/03/21/JavaScript%E4%BA%8B%E4%BB%B6%E6%9C%BA%E5%88%B6/"/>
+    <id>https://lifelover.cc/2019/03/21/JavaScript事件机制/</id>
     <published>2019-03-21T02:36:45.000Z</published>
-    <updated>2019-03-21T02:57:54.013Z</updated>
+    <updated>2019-03-21T02:57:57.787Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通过接口看http请求</p><a id="more"></a><h2 id="login接口"><a href="#login接口" class="headerlink" title="login接口"></a>login接口</h2><p><img src="https://ws1.sinaimg.cn/large/006tKfTcgy1g182ukfq2lj30ix0lu78q.jpg" alt=""></p><h3 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h3><ol><li>需要弄清楚http请求报头包括哪些内容</li><li>使用场景</li><li>CORS 安全性问题等</li></ol><h3 id="字段讲解"><a href="#字段讲解" class="headerlink" title="字段讲解"></a>字段讲解</h3><h4 id="General"><a href="#General" class="headerlink" title="General"></a>General</h4><ol><li><code>Request URL</code>:请求接口url地址</li><li><code>Request Method</code>:请求方法 post get put delete…</li><li><code>Status Code</code>：状态码</li><li><code>Remote Address</code>:远程服务器ip</li><li><code>Referrer Policy</code>: 来源协议，<strong>需要了解</strong>，监管哪些访问来源信息</li></ol><h4 id="Response-Headers"><a href="#Response-Headers" class="headerlink" title="Response Headers"></a>Response Headers</h4><ol start="6"><li><code>Access-Control-Allow-Credentials</code>:响应头表示是否可以将对请求的响应暴露给页面，true则可以，其他都不行。</li><li><code>Access-Control-Allow-Origin</code>:访问控制允许同源，涉及到安全性CORS</li><li><code>Cache-Control</code>:缓存控制</li><li><code>Content-Type</code>:返回数据类型</li><li><code>Date</code>:服务器时间</li><li><code>Expires</code>:响应过期的时间，0代表无效</li><li><code>Pragma</code>: 兼容只支持HTTP/1.0协议的缓存服务器相当于Cache-Control作用</li><li><code>Transfer-Encoding</code>:传递给用户采用的编码方式</li><li><code>Vary</code>:一个HTTP响应头部信息，它决定了对于未来的一个请求头</li><li><code>X-Content-Type-Options</code>:响应首部相当于一个提示标志，被服务器用来提示客户端一定要遵循在 <a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type" target="_blank" rel="noopener"><code>Content-Type</code></a> 首部中对  <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types" target="_blank" rel="noopener">MIME 类型</a> 的设定，而不能对其进行修改。</li><li><code>X-Frame-Options</code>:是否允许当前页面通过iframe内嵌到其他网站中</li><li><code>X-XSS-Protection</code>:响应头是Internet Explorer，Chrome和Safari的一个功能，当检测到跨站脚本攻击 (<a href="https://developer.mozilla.org/en-US/docs/Glossary/XSS" target="_blank" rel="noopener">XSS</a>)时，浏览器将停止加载页面。</li></ol><h4 id="Request-Headers"><a href="#Request-Headers" class="headerlink" title="Request Headers"></a>Request Headers</h4><ol start="18"><li><code>Accept</code>: 发送端希望接受的数据类型</li><li><code>Content-Type</code>:发送端发送的实体数据的类型</li><li><code>Origin</code>:请求来自哪个站点</li><li><code>Referer</code>:首部包含了当前请求页面的来源页面的地址，即表示当前页面是通过此来源页面里的链接进入的。</li><li><code>User-Agent</code>:发起请求的用户代理软件信息</li></ol>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ol><li>了解学习 JavaScript事件机制 Event Loop</li><li>单线程怎么做到 非阻塞</li></ol><a id="more"></a><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a href="http://www.ruanyifeng.com/blog/2013/10/event_loop.html" target="_blank" rel="noopener">什么是Event Loop</a></p><p><a href="http://www.ruanyifeng.com/blog/2014/10/event-loop.html" target="_blank" rel="noopener">JavaScript 运行机制详解：再谈Event Loop</a></p><p><a href="https://jakearchibald.com/2015/tasks-microtasks-queues-and-schedules/?utm_source=html5weekly" target="_blank" rel="noopener">Tasks, microtasks, queues and schedules</a></p><p><a href="https://juejin.im/post/59e85eebf265da430d571f89" target="_blank" rel="noopener">这一次彻底弄懂JavaScript执行机制</a></p><p><a href="https://juejin.im/post/5b498d245188251b193d4059" target="_blank" rel="noopener">JS事件循环机制（event loop）之宏任务/微任务</a></p><p><a href="https://github.com/dwqs/blog/issues/61" target="_blank" rel="noopener">从一道题说JavaScript的事件循环</a></p><h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><h3 id="核心概念"><a href="#核心概念" class="headerlink" title="核心概念"></a>核心概念</h3><ol><li>JavaScript是单线程语言</li><li>Event Loop是JavaScript执行机制</li></ol><blockquote><p>执行顺序，js一般的执行顺序都是按正常顺序执行，如果触发了事件比如点击事件或者其他页面上的交互事件，会将事件放到执行栈Stack，然后顺序执行，这就有个问题，比如加载图片很慢会使得页面渲染很慢，所以需要引出<code>异步</code>的概念，对于异步的任务，</p></blockquote>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;通过接口看http请求&lt;/p&gt;
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;了解学习 JavaScript事件机制 Event Loop&lt;/li&gt;
+&lt;li&gt;单线程怎么做到 非阻塞&lt;/li&gt;
+&lt;/ol&gt;
     
     </summary>
     
-      <category term="网络" scheme="https://lifelover.cc/categories/%E7%BD%91%E7%BB%9C/"/>
+      <category term="前端" scheme="https://lifelover.cc/categories/%E5%89%8D%E7%AB%AF/"/>
     
     
-      <category term="http" scheme="https://lifelover.cc/tags/http/"/>
+      <category term="JavaScript" scheme="https://lifelover.cc/tags/JavaScript/"/>
     
   </entry>
   

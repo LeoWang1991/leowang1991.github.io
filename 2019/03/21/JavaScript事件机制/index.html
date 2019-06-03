@@ -447,7 +447,7 @@
             
                 <span class="post-meta-item-text">评论数：</span>
                 <a href="/2019/03/21/JavaScript事件机制/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count gitment-comments-count" data-xid="/2019/03/21/JavaScript事件机制/" itemprop="commentCount"></span>
+                  <span class="post-comments-count valine-comment-count" data-xid="/2019/03/21/JavaScript事件机制/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -536,8 +536,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/21/Promise/" rel="next" title="Promise">
-                <i class="fa fa-chevron-left"></i> Promise
+              <a href="/2019/03/18/从零搭建React/" rel="next" title="从零开始搭建React">
+                <i class="fa fa-chevron-left"></i> 从零开始搭建React
               </a>
             
           </div>
@@ -546,8 +546,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2019/03/25/前端nginx配置/" rel="prev" title="前端Nginx配置">
-                前端Nginx配置 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/03/21/Promise/" rel="prev" title="Promise">
+                Promise <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -572,9 +572,6 @@
 
   
     <div class="comments" id="comments">
-      
-        <div id="gitment-container"></div>
-      
     </div>
 
   
@@ -925,48 +922,36 @@
 
   
   
-
-
   
-    <!-- LOCAL: You can save these files to your site and update links -->
 
-  
-  <script src="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/gitmint.browser.js"></script>
+<script src="//cdn1.lncld.net/static/js/3.11.1/av-min.js"></script>
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/theme-next/theme-next-gitment@1/default.css">
-<!-- END LOCAL -->
 
-<style>
-#gitment-container a {
-  border-bottom: none;
-}
 
-</style>
+<script src="//unpkg.com/valine/dist/Valine.min.js"></script>
 
 <script>
-  function renderGitment() {
-    var gitment = new Gitmint({
-      id: window.location.pathname,
-      owner: 'LeoWang1991',
-      repo: 'gitment-comments',
-      
-        lang: '' || navigator.language || navigator.systemLanguage || navigator.userLanguage,
-      
-      oauth: {
-      
-      
-        client_secret: '4c8c184c0dd9a0411c9fc1fc4bb29b23dae811c4',
-      
-        client_id: '5c85d4fe90cc3ace1405'
-      }
-    });
-    gitment.render('gitment-container');
-  }
-
-  
-    renderGitment();
-  
+  var GUEST = ['nick', 'mail', 'link'];
+  var guest = 'nick,mail,link';
+  guest = guest.split(',').filter(function(item) {
+    return GUEST.indexOf(item) > -1;
+  });
+  new Valine({
+    el: '#comments',
+    verify: false,
+    notify: false,
+    appId: 'EeMMip74QYwQLVeoDqaxN8zu-gzGzoHsz',
+    appKey: '2AOYK9Ldl0LQDJiuTdtTfEuA',
+    placeholder: 'Just go go',
+    avatar: 'mm',
+    meta: guest,
+    pageSize: '10' || 10,
+    visitor: false
+  });
 </script>
+
+
+
 
   
 
