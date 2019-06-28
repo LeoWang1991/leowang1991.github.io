@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,7 +76,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.0.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: true,
@@ -100,22 +100,22 @@
 
 
 
-  <meta name="description" content="前言了解ssr 带着问题 SSR是什么东西 同构有是什么 SSR使用场景，解决什么问题 那么怎么使用ssr 有没有现成的优秀的轮子直接用 看看轮子  参考文档React中同构原理(SSR)脉络梳理 服务端渲染vs 客户端渲染 笔记SSR是什么server-side rendering，字面意思就是服务端渲染，相对客户端渲染csr(client-side-rending)。 具体点说呢？  客户端渲">
+  <meta name="description" content="前言 了解ssr  带着问题  SSR是什么东西 同构有是什么 SSR使用场景，解决什么问题 那么怎么使用ssr 有没有现成的优秀的轮子直接用 看看轮子   参考文档 React中同构原理(SSR)脉络梳理 服务端渲染vs 客户端渲染  笔记  SSR是什么 server-side rendering，字面意思就是服务端渲染，相对客户端渲染csr(client-side-rending)。 具体">
 <meta name="keywords" content="react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react ssr学习">
 <meta property="og:url" content="https://lifelover.cc/2019/04/04/react-ssr学习/index.html">
-<meta property="og:site_name" content="lifelover">
-<meta property="og:description" content="前言了解ssr 带着问题 SSR是什么东西 同构有是什么 SSR使用场景，解决什么问题 那么怎么使用ssr 有没有现成的优秀的轮子直接用 看看轮子  参考文档React中同构原理(SSR)脉络梳理 服务端渲染vs 客户端渲染 笔记SSR是什么server-side rendering，字面意思就是服务端渲染，相对客户端渲染csr(client-side-rending)。 具体点说呢？  客户端渲">
+<meta property="og:site_name" content="Aaron&#39;s Blog">
+<meta property="og:description" content="前言 了解ssr  带着问题  SSR是什么东西 同构有是什么 SSR使用场景，解决什么问题 那么怎么使用ssr 有没有现成的优秀的轮子直接用 看看轮子   参考文档 React中同构原理(SSR)脉络梳理 服务端渲染vs 客户端渲染  笔记  SSR是什么 server-side rendering，字面意思就是服务端渲染，相对客户端渲染csr(client-side-rending)。 具体">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-04-04T09:24:33.574Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react ssr学习">
-<meta name="twitter:description" content="前言了解ssr 带着问题 SSR是什么东西 同构有是什么 SSR使用场景，解决什么问题 那么怎么使用ssr 有没有现成的优秀的轮子直接用 看看轮子  参考文档React中同构原理(SSR)脉络梳理 服务端渲染vs 客户端渲染 笔记SSR是什么server-side rendering，字面意思就是服务端渲染，相对客户端渲染csr(client-side-rending)。 具体点说呢？  客户端渲">
+<meta name="twitter:description" content="前言 了解ssr  带着问题  SSR是什么东西 同构有是什么 SSR使用场景，解决什么问题 那么怎么使用ssr 有没有现成的优秀的轮子直接用 看看轮子   参考文档 React中同构原理(SSR)脉络梳理 服务端渲染vs 客户端渲染  笔记  SSR是什么 server-side rendering，字面意思就是服务端渲染，相对客户端渲染csr(client-side-rending)。 具体">
 
 
 
-  <link rel="alternate" href="/atom.xml" title="lifelover" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Aaron's Blog" type="application/atom+xml">
 
 
 
@@ -130,7 +130,7 @@
   };
 </script>
 
-  <title>react ssr学习 | lifelover</title>
+  <title>react ssr学习 | Aaron's Blog</title>
   
 
 
@@ -189,13 +189,13 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">lifelover</span>
+        <span class="site-title">Aaron's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
     
       
-        <p class="site-subtitle">love life</p>
+        <p class="site-subtitle">record my code and life</p>
       
     
     
@@ -299,9 +299,6 @@
   
 
   
-    
-
-  
 
   
     <div class="site-search">
@@ -343,6 +340,9 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+            
+
+          
           <div id="content" class="content">
             
 
@@ -365,13 +365,13 @@
     <link itemprop="mainEntityOfPage" href="https://lifelover.cc/2019/04/04/react-ssr学习/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="骁飞">
+      <meta itemprop="name" content="Aaron">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lifelover">
+      <meta itemprop="name" content="Aaron's Blog">
     </span>
 
     
@@ -482,8 +482,10 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>了解ssr</p>
-<h2 id="带着问题"><a href="#带着问题" class="headerlink" title="带着问题"></a>带着问题</h2><ol>
+        <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>了解ssr</p>
+<h2 id="带着问题"><a class="markdownIt-Anchor" href="#带着问题"></a> 带着问题</h2>
+<ol>
 <li>SSR是什么东西</li>
 <li>同构有是什么</li>
 <li>SSR使用场景，解决什么问题</li>
@@ -491,22 +493,28 @@
 <li>有没有现成的优秀的轮子直接用</li>
 <li>看看轮子</li>
 </ol>
-<h2 id="参考文档"><a href="#参考文档" class="headerlink" title="参考文档"></a>参考文档</h2><p><a href="https://juejin.im/post/5bc7ea48e51d450e46289eab" target="_blank" rel="noopener">React中同构原理(SSR)脉络梳理</a></p>
+<h2 id="参考文档"><a class="markdownIt-Anchor" href="#参考文档"></a> 参考文档</h2>
+<p><a href="https://juejin.im/post/5bc7ea48e51d450e46289eab" target="_blank" rel="noopener">React中同构原理(SSR)脉络梳理</a></p>
 <p><a href="https://juejin.im/entry/5a111eb7f265da431c6fe51c" target="_blank" rel="noopener">服务端渲染vs 客户端渲染</a></p>
-<h2 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h2><h3 id="SSR是什么"><a href="#SSR是什么" class="headerlink" title="SSR是什么"></a>SSR是什么</h3><p><code>server-side rendering</code>，字面意思就是服务端渲染，相对客户端渲染<code>csr(client-side-rending)</code>。</p>
+<h2 id="笔记"><a class="markdownIt-Anchor" href="#笔记"></a> 笔记</h2>
+<h3 id="ssr是什么"><a class="markdownIt-Anchor" href="#ssr是什么"></a> SSR是什么</h3>
+<p><code>server-side rendering</code>，字面意思就是服务端渲染，相对客户端渲染<code>csr(client-side-rending)</code>。</p>
 <p>具体点说呢？</p>
 <ol>
 <li>客户端渲染的话，浏览器加载页面，服务端返回html文件但是没有内容展示，然后去加载执行html文件中的js去请求数据填充数据完成页面的交互事件绑定。</li>
 <li>服务端渲染的话，返回html文件之前就把所有的数据填充好然后返回，浏览器只负责解析html就行了。</li>
 </ol>
 <p>最后都是一样，有数据地展示页面。</p>
-<h3 id="SSR使用场景"><a href="#SSR使用场景" class="headerlink" title="SSR使用场景"></a>SSR使用场景</h3><ol>
+<h3 id="ssr使用场景"><a class="markdownIt-Anchor" href="#ssr使用场景"></a> SSR使用场景</h3>
+<ol>
 <li>seo，爬虫看不到完整源码</li>
 <li>首屏加载慢，这个有体会。在 CSR 的页面渲染流程中，首先要加载 HTML 文件，之后要下载页面所需的 JavaScript 文件，然后 JavaScript 文件渲染生成页面。在这个渲染过程中至少涉及到两个 HTTP 请求周期，所以会有一定的耗时，这也是为什么大家在低网速下访问普通的 React 或者 Vue 应用时，初始页面会有出现白屏的原因。</li>
 </ol>
 <p>缺点，第一篇参考文中有指出，本来简单的步骤因为ssr变得繁琐，项目可维护性差。</p>
-<h3 id="同构"><a href="#同构" class="headerlink" title="同构"></a>同构</h3><p>同构：同构这个概念存在于 Vue，React 这些新型的前端框架中，同构实际上是客户端渲染和服务器端渲染的一个整合。我们把页面的展示内容和交互写在一起，让代码执行两次。在服务器端执行一次，用于实现服务器端渲染，在客户端再执行一次，用于接管页面交互。</p>
-<h3 id="实现原理"><a href="#实现原理" class="headerlink" title="实现原理"></a>实现原理</h3><p>vitual-dom的存在</p>
+<h3 id="同构"><a class="markdownIt-Anchor" href="#同构"></a> 同构</h3>
+<p>同构：同构这个概念存在于 Vue，React 这些新型的前端框架中，同构实际上是客户端渲染和服务器端渲染的一个整合。我们把页面的展示内容和交互写在一起，让代码执行两次。在服务器端执行一次，用于实现服务器端渲染，在客户端再执行一次，用于接管页面交互。</p>
+<h3 id="实现原理"><a class="markdownIt-Anchor" href="#实现原理"></a> 实现原理</h3>
+<p>vitual-dom的存在</p>
 
       
     </div>
@@ -617,7 +625,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">骁飞</p>
+              <p class="site-author-name" itemprop="name">Aaron</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -751,7 +759,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带着问题"><span class="nav-text">带着问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文档"><span class="nav-text">参考文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#笔记"><span class="nav-text">笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SSR是什么"><span class="nav-text">SSR是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SSR使用场景"><span class="nav-text">SSR使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同构"><span class="nav-text">同构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现原理"><span class="nav-text">实现原理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#带着问题"><span class="nav-text"> 带着问题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考文档"><span class="nav-text"> 参考文档</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#笔记"><span class="nav-text"> 笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ssr是什么"><span class="nav-text"> SSR是什么</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssr使用场景"><span class="nav-text"> SSR使用场景</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同构"><span class="nav-text"> 同构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实现原理"><span class="nav-text"> 实现原理</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -776,7 +784,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">骁飞</span>
+  <span class="author" itemprop="copyrightHolder">Aaron</span>
 
   
 
@@ -792,7 +800,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.0</div>
 
 
 
@@ -911,7 +919,10 @@
   
 
 
-  <script src="/js/src/schemes/muse.js?v=7.0.0"></script>
+  <script src="/js/src/affix.js?v=7.0.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
 
 
 

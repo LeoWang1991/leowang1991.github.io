@@ -14,7 +14,7 @@
   
 
 
-<html class="theme-next muse use-motion" lang="zh-CN">
+<html class="theme-next gemini use-motion" lang="zh-CN">
 <head><meta name="generator" content="Hexo 3.8.0">
   <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,7 +76,7 @@
   var NexT = window.NexT || {};
   var CONFIG = {
     root: '/',
-    scheme: 'Muse',
+    scheme: 'Gemini',
     version: '7.0.0',
     sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false,"dimmer":false},
     fancybox: true,
@@ -100,21 +100,21 @@
 
 
 
-  <meta name="description" content="前言npm操作指令笔记 查看1 查看已经安装的包文件 版本号 查看所有 npm list -g --depth=0(depth=0去掉其他依赖项) 查看特定npm view xxx version -g 查看过期的 npm outdated -g --depth=0 2 查看全局包安装路径 npm config get prefix,设置的话则 npm config set prefix &amp;#39">
+  <meta name="description" content="前言 npm操作指令笔记  查看 1 查看已经安装的包文件 版本号 查看所有 npm list -g --depth=0(depth=0去掉其他依赖项) 查看特定npm view xxx version -g 查看过期的 npm outdated -g --depth=0 2 查看全局包安装路径 npm config get prefix,设置的话则 npm config set prefix">
 <meta property="og:type" content="article">
-<meta property="og:title" content="lifelover">
+<meta property="og:title" content="Aaron&#39;s Blog">
 <meta property="og:url" content="https://lifelover.cc/2019/04/04/npm指令学习/index.html">
-<meta property="og:site_name" content="lifelover">
-<meta property="og:description" content="前言npm操作指令笔记 查看1 查看已经安装的包文件 版本号 查看所有 npm list -g --depth=0(depth=0去掉其他依赖项) 查看特定npm view xxx version -g 查看过期的 npm outdated -g --depth=0 2 查看全局包安装路径 npm config get prefix,设置的话则 npm config set prefix &amp;#39">
+<meta property="og:site_name" content="Aaron&#39;s Blog">
+<meta property="og:description" content="前言 npm操作指令笔记  查看 1 查看已经安装的包文件 版本号 查看所有 npm list -g --depth=0(depth=0去掉其他依赖项) 查看特定npm view xxx version -g 查看过期的 npm outdated -g --depth=0 2 查看全局包安装路径 npm config get prefix,设置的话则 npm config set prefix">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:updated_time" content="2019-04-04T07:41:26.481Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="lifelover">
-<meta name="twitter:description" content="前言npm操作指令笔记 查看1 查看已经安装的包文件 版本号 查看所有 npm list -g --depth=0(depth=0去掉其他依赖项) 查看特定npm view xxx version -g 查看过期的 npm outdated -g --depth=0 2 查看全局包安装路径 npm config get prefix,设置的话则 npm config set prefix &amp;#39">
+<meta name="twitter:title" content="Aaron&#39;s Blog">
+<meta name="twitter:description" content="前言 npm操作指令笔记  查看 1 查看已经安装的包文件 版本号 查看所有 npm list -g --depth=0(depth=0去掉其他依赖项) 查看特定npm view xxx version -g 查看过期的 npm outdated -g --depth=0 2 查看全局包安装路径 npm config get prefix,设置的话则 npm config set prefix">
 
 
 
-  <link rel="alternate" href="/atom.xml" title="lifelover" type="application/atom+xml">
+  <link rel="alternate" href="/atom.xml" title="Aaron's Blog" type="application/atom+xml">
 
 
 
@@ -129,7 +129,7 @@
   };
 </script>
 
-  <title> | lifelover</title>
+  <title> | Aaron's Blog</title>
   
 
 
@@ -188,13 +188,13 @@
     <div class="custom-logo-site-title">
       <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">lifelover</span>
+        <span class="site-title">Aaron's Blog</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
     
       
-        <p class="site-subtitle">love life</p>
+        <p class="site-subtitle">record my code and life</p>
       
     
     
@@ -298,9 +298,6 @@
   
 
   
-    
-
-  
 
   
     <div class="site-search">
@@ -342,6 +339,9 @@
       <div class="main-inner">
         <div class="content-wrap">
           
+            
+
+          
           <div id="content" class="content">
             
 
@@ -364,13 +364,13 @@
     <link itemprop="mainEntityOfPage" href="https://lifelover.cc/2019/04/04/npm指令学习/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="骁飞">
+      <meta itemprop="name" content="Aaron">
       <meta itemprop="description" content="">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
     <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="lifelover">
+      <meta itemprop="name" content="Aaron's Blog">
     </span>
 
     
@@ -463,14 +463,16 @@
       
 
       
-        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>npm操作指令笔记</p>
-<h2 id="查看"><a href="#查看" class="headerlink" title="查看"></a>查看</h2><p>1 查看已经安装的包文件 版本号</p>
+        <h2 id="前言"><a class="markdownIt-Anchor" href="#前言"></a> 前言</h2>
+<p>npm操作指令笔记</p>
+<h2 id="查看"><a class="markdownIt-Anchor" href="#查看"></a> 查看</h2>
+<p>1 查看已经安装的包文件 版本号</p>
 <p>查看所有 <code>npm list -g --depth=0</code>(depth=0去掉其他依赖项)</p>
 <p>查看特定<code>npm view xxx version -g</code></p>
 <p>查看过期的 <code>npm outdated -g --depth=0</code></p>
 <p>2 查看全局包安装路径</p>
 <p><code>npm config get prefix</code>,设置的话则</p>
-<p><code>npm config set prefix &#39;&#39;</code></p>
+<p><code>npm config set prefix ''</code></p>
 
       
     </div>
@@ -575,7 +577,7 @@
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
-              <p class="site-author-name" itemprop="name">骁飞</p>
+              <p class="site-author-name" itemprop="name">Aaron</p>
               <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
@@ -709,7 +711,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看"><span class="nav-text">查看</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-text"> 前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看"><span class="nav-text"> 查看</span></a></li></ol></div>
             
 
           </div>
@@ -734,7 +736,7 @@
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
-  <span class="author" itemprop="copyrightHolder">骁飞</span>
+  <span class="author" itemprop="copyrightHolder">Aaron</span>
 
   
 
@@ -750,7 +752,7 @@
 
 
 
-  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.0.0</div>
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> v7.0.0</div>
 
 
 
@@ -869,7 +871,10 @@
   
 
 
-  <script src="/js/src/schemes/muse.js?v=7.0.0"></script>
+  <script src="/js/src/affix.js?v=7.0.0"></script>
+
+  <script src="/js/src/schemes/pisces.js?v=7.0.0"></script>
+
 
 
 
