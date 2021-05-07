@@ -1,0 +1,100 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge,chrome=1"><title>Redux源码解析createStore - marke life simple</title><meta name=renderer content=webkit><meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1"><meta http-equiv=cache-control content=no-transform><meta http-equiv=cache-control content=no-siteapp><meta name=theme-color content=#f8f5ec><meta name=msapplication-navbutton-color content=#f8f5ec><meta name=apple-mobile-web-app-capable content=yes><meta name=apple-mobile-web-app-status-bar-style content=#f8f5ec><meta name=author content=lifesimple><meta name=description content="前言 该文章主要记录看redux源码时候遇到的疑惑点以及解惑 笔记 redux源码很短，主要核心内容就createStore自己在阅读的时候遇到一"><meta name=keywords content=Hugo,theme,even><meta name=generator content="Hugo 0.56.3 with theme even"><link rel=canonical href=http://wangjx.site/post/redux%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90createstore/><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=manifest href=/manifest.json><link rel=mask-icon href=/safari-pinned-tab.svg color=#5bbad5><link href=/sass/main.min.ebfeb17586134166427a13f8512fe71f5d9a1c7de5725631e4cff01f02c59a27.css rel=stylesheet><link rel=stylesheet href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.css integrity="sha256-7TyXnr2YU040zfSP+rEcz29ggW4j56/ujTPwjMzyqFY=" crossorigin=anonymous><meta property=og:title content=Redux源码解析createStore><meta property=og:description content="前言 该文章主要记录看redux源码时候遇到的疑惑点以及解惑 笔记 redux源码很短，主要核心内容就createStore自己在阅读的时候遇到一"><meta property=og:type content=article><meta property=og:url content=http://wangjx.site/post/redux%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90createstore/><meta property=article:published_time content=2021-04-24T22:25:29+08:00><meta property=article:modified_time content=2021-04-24T22:25:29+08:00><meta itemprop=name content=Redux源码解析createStore><meta itemprop=description content="前言 该文章主要记录看redux源码时候遇到的疑惑点以及解惑 笔记 redux源码很短，主要核心内容就createStore自己在阅读的时候遇到一"><meta itemprop=datePublished content=2021-04-24T22:25:29&#43;08:00><meta itemprop=dateModified content=2021-04-24T22:25:29&#43;08:00><meta itemprop=wordCount content=686><meta itemprop=keywords content=redux,><meta name=twitter:card content=summary><meta name=twitter:title content=Redux源码解析createStore><meta name=twitter:description content="前言 该文章主要记录看redux源码时候遇到的疑惑点以及解惑 笔记 redux源码很短，主要核心内容就createStore自己在阅读的时候遇到一"><!--[if lte IE 9]><script src=https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js></script><![endif]--><!--[if lt IE 9]><script src=https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js></script><script src=https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js></script><![endif]--></head><body><div id=mobile-navbar class=mobile-navbar><div class=mobile-header-logo><a href=/ class=logo>Hello, Lily</a></div><div class=mobile-navbar-icon><span></span><span></span><span></span></div></div><nav id=mobile-menu class="mobile-menu slideout-menu"><ul class=mobile-menu-list><a href=/><li class=mobile-menu-item>首页</li></a><a href=/post/><li class=mobile-menu-item>归档</li></a><a href=/categories/><li class=mobile-menu-item>分类</li></a><a href=/tags/><li class=mobile-menu-item>标签</li></a><a href=/about/><li class=mobile-menu-item>关于</li></a></ul></nav><div class=container id=mobile-panel><header id=header class=header><div class=logo-wrapper><a href=/ class=logo>Hello, Lily</a></div><nav class=site-navbar><ul id=menu class=menu><li class=menu-item><a class=menu-item-link href=/>首页</a></li><li class=menu-item><a class=menu-item-link href=/post/>归档</a></li><li class=menu-item><a class=menu-item-link href=/categories/>分类</a></li><li class=menu-item><a class=menu-item-link href=/tags/>标签</a></li><li class=menu-item><a class=menu-item-link href=/about/>关于</a></li></ul></nav></header><main id=main class=main><div class=content-wrapper><div id=content class=content><article class=post><header class=post-header><h1 class=post-title>Redux源码解析createStore</h1><div class=post-meta><span class=post-time>2021-04-24</span><div class=post-category><a href=/categories/%E5%89%8D%E7%AB%AF/>前端</a></div><span class=more-meta>约 686 字</span>
+<span class=more-meta>预计阅读 2 分钟</span></div></header><div class=post-toc id=post-toc><h2 class=post-toc-title>文章目录</h2><div class="post-toc-content always-active"><nav id=TableOfContents><ul><li><ul><li><ul><li><a href=#前言>前言</a></li><li><a href=#笔记>笔记</a></li><li><a href=#ensurecanmutatenextlisteners>ensureCanMutateNextListeners</a></li></ul></li></ul></li></ul></nav></div></div><div class=post-content><h3 id=前言>前言</h3><p>该文章主要记录看redux源码时候遇到的疑惑点以及解惑</p><h3 id=笔记>笔记</h3><p>redux源码很短，主要核心内容就<code>createStore</code>自己在阅读的时候遇到一些问题，记录下。</p><p>redux的使用原则大概：单一数据源store，数据源只能通过<code>dispatch</code>方式改变，编写纯函数来修改执行。</p><div class=highlight><div class=chroma><table class=lntable><tr><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span></code></pre></td><td class=lntd><pre class=chroma><code class=language-javascript data-lang=javascript><span class=cm>/*
+</span><span class=cm> * @Author: wangjx
+</span><span class=cm> * @Date: 2021-04-24 21:28:20
+</span><span class=cm> * @Description: redux 源码理解demo
+</span><span class=cm> */</span>
+
+<span class=k>import</span> <span class=p>{</span> <span class=nx>createStore</span> <span class=p>}</span> <span class=nx>from</span> <span class=s1>&#39;../index.js&#39;</span><span class=p>;</span>
+
+<span class=k>const</span> <span class=nx>initialState</span> <span class=o>=</span> <span class=p>{</span>
+  <span class=nx>count</span><span class=o>:</span> <span class=mi>1</span>
+<span class=p>}</span>
+
+<span class=k>const</span> <span class=nx>reducer</span> <span class=o>=</span> <span class=p>(</span><span class=nx>state</span> <span class=o>=</span> <span class=nx>initialState</span><span class=p>,</span> <span class=nx>action</span><span class=p>)</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=k>switch</span><span class=p>(</span><span class=nx>action</span><span class=p>.</span><span class=nx>type</span><span class=p>)</span> <span class=p>{</span>
+    <span class=k>case</span> <span class=s1>&#39;ADD&#39;</span><span class=o>:</span> <span class=k>return</span> <span class=p>{</span>
+      <span class=p>...</span><span class=nx>state</span><span class=p>,</span>
+      <span class=nx>count</span><span class=o>:</span> <span class=nx>state</span><span class=p>.</span><span class=nx>count</span> <span class=o>+</span> <span class=mi>1</span>
+    <span class=p>};</span>
+    <span class=k>case</span> <span class=s1>&#39;MIN&#39;</span><span class=o>:</span> <span class=k>return</span> <span class=p>{</span>
+      <span class=p>...</span><span class=nx>state</span><span class=p>,</span>
+      <span class=nx>count</span><span class=o>:</span> <span class=nx>state</span><span class=p>.</span><span class=nx>count</span> <span class=o>-</span> <span class=mi>1</span>
+    <span class=p>};</span>
+    <span class=k>default</span><span class=o>:</span> <span class=k>return</span> <span class=nx>state</span><span class=p>;</span>
+  <span class=p>}</span>
+<span class=p>}</span>
+
+<span class=k>const</span> <span class=nx>logState</span> <span class=o>=</span> <span class=p>()</span> <span class=p>=&gt;</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=nx>store</span><span class=p>.</span><span class=nx>getState</span><span class=p>())</span>
+<span class=p>}</span>
+
+<span class=c1>// 创建store时候会默认执行一次dispatch，得到初始化state值。
+</span><span class=c1></span><span class=k>const</span> <span class=nx>store</span> <span class=o>=</span> <span class=nx>createStore</span><span class=p>(</span><span class=nx>reducer</span><span class=p>);</span>
+<span class=nx>store</span><span class=p>.</span><span class=nx>subscribe</span><span class=p>(</span><span class=kd>function</span><span class=p>()</span> <span class=p>{</span>
+  <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=sb>`当前状态`</span><span class=p>,</span> <span class=nx>store</span><span class=p>.</span><span class=nx>getState</span><span class=p>());</span>
+<span class=p>})</span>
+
+<span class=nx>logState</span><span class=p>();</span>
+
+<span class=c1>// logState();
+</span><span class=c1>// store.dispatch({ type: &#39;ADD&#39; })
+</span><span class=c1>// logState();
+</span><span class=c1>// store.dispatch({ type: &#39;MIN&#39; })
+</span><span class=c1>// logState();
+</span></code></pre></td></tr></table></div></div><h3 id=ensurecanmutatenextlisteners>ensureCanMutateNextListeners</h3><p>为什么需要nextListeners，都在currentListeners上进行不就ok了。</p><p>查了一些资料了解到这么设计是因为：</p><p><strong>我们在dispatch过程中 就是那个listeners遍历执行过程中，在这期间我们subscribe/subscribe操作，如果只有currentListeners一个数组来保存的话，则在操作当前数组的时候，当前数组也发生了变化，就会有些问题</strong></p><p><img src=https://blog-img-1256179672.cos.ap-shanghai.myqcloud.com/img/H1JEqn.png alt=H1JEqn></p><p><img src=https://blog-img-1256179672.cos.ap-shanghai.myqcloud.com/img/iVppLO.png alt=iVppLO></p><p>改下<code>dispatch</code> 源码来验证下，</p><p><img src=https://blog-img-1256179672.cos.ap-shanghai.myqcloud.com/img/image-20210424234941472.png alt=image-20210424234941472></p><p><code>store.dispatch({ type: 'ADD' });</code> 这个操作在此时只调用第一个订阅函数。而应该把后面的一些订阅情况考虑过来。所以需要引入<code>nextListeners</code> 来解决这个问题，每次执行时候currentListeners=nextListeners保存一份当前时间节点的订阅事件快照。至于后续的变动改变发生在<code>nextListeners</code>中。</p></div><div class=post-copyright><p class=copyright-item><span class=item-title>文章作者</span>
+<span class=item-content>lifesimple</span></p><p class=copyright-item><span class=item-title>上次更新</span>
+<span class=item-content>2021-04-24</span></p></div><footer class=post-footer><div class=post-tags><a href=/tags/redux/>redux</a></div><nav class=post-nav><a class=prev href=/post/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/><i class="iconfont icon-left"></i><span class="prev-text nav-default">React生命周期</span>
+<span class="prev-text nav-mobile">上一篇</span></a>
+<a class=next href=/post/lc11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/><span class="next-text nav-default">Lc11 盛最多水的容器</span>
+<span class="next-text nav-mobile">下一篇</span>
+<i class="iconfont icon-right"></i></a></nav></footer></article></div><div id=vcomments></div><script src=//cdn1.lncld.net/static/js/3.0.4/av-min.js></script><script src=//unpkg.com/valine/dist/Valine.min.js></script><script type=text/javascript>new Valine({el:'#vcomments',appId:'EeMMip74QYwQLVeoDqaxN8zu-gzGzoHsz',appKey:'2AOYK9Ldl0LQDJiuTdtTfEuA',notify:false,verify:false,avatar:'mm',placeholder:'说点什么吧...',visitor:false});</script></div></main><footer id=footer class=footer><div class=social-links><a href=mailto:kingswang007@qq.com class="iconfont icon-email" title=email></a><a href=https://github.com/LeoWang1991 class="iconfont icon-github" title=github></a><a href=http://wangjx.site/index.xml type=application/rss+xml class="iconfont icon-rss" title=rss></a></div><div class=copyright><span class=power-by>由 <a class=hexo-link href=https://gohugo.io>Hugo</a> 强力驱动</span>
+<span class=division>|</span>
+<span class=theme-info>主题 -
+<a class=theme-link href=https://github.com/olOwOlo/hugo-theme-even>Even</a></span>
+<span class=copyright-year>&copy;
+2019 -
+2021<span class=heart><i class="iconfont icon-heart"></i></span><span>lifesimple</span></span></div></footer><div class=back-to-top id=back-to-top><i class="iconfont icon-up"></i></div></div><script src=https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/slideout@1.0.1/dist/slideout.min.js integrity="sha256-t+zJ/g8/KXIJMjSVQdnibt4dlaDxc9zXr/9oNPeWqdg=" crossorigin=anonymous></script><script src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.1.20/dist/jquery.fancybox.min.js integrity="sha256-XVLffZaxoWfGUEbdzuLi7pwaUJv1cecsQJQqGLe7axY=" crossorigin=anonymous></script><script type=text/javascript src=/js/main.min.c12618f9a600c40bd024996677e951e64d3487006775aeb22e200c990006c5c7.js></script></body></html>
