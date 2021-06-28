@@ -3,7 +3,7 @@ name: Deploy Hugo
 on:
   push:
     branches:
-      - develop
+      - notes
 
 jobs:
   build-deploy:
