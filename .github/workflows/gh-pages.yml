@@ -28,7 +28,7 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         # if: github.ref == 'refs/heads/blog'
         with:
-          external_repository: LeoWang1991/leowang1991.github.io
+          # external_repository: LeoWang1991/leowang1991.github.io
           personal_token: ${{ secrets.DEPLOY_TOKEN }}
           publish_dir: ./public
           publish_branch: master
