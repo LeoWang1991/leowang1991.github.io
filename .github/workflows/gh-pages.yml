@@ -32,5 +32,4 @@ jobs:
           github_token: ${{ secrets.DEPLOY_KEY }}
           publish_dir: ./public
           publish_branch: master
-          cname: leowang1991.github.io
 
