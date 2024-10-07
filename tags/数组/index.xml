@@ -1,1 +1,61 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>数组 on hi~</title><link>https://way2.fun/tags/%E6%95%B0%E7%BB%84/</link><description>Recent content in 数组 on hi~</description><generator>Hugo -- 0.131.0</generator><language>zh-cn</language><lastBuildDate>Thu, 22 Apr 2021 23:34:13 +0800</lastBuildDate><atom:link href="https://way2.fun/tags/%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml"/><item><title>Lc11 盛最多水的容器</title><link>https://way2.fun/post/lc11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</link><pubDate>Thu, 22 Apr 2021 23:34:13 +0800</pubDate><guid>https://way2.fun/post/lc11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</guid><description>题目 11. 盛最多水的容器 题解 max = (end - start) * getMin(height[end], height[start]) 暴力解法 就遍历两轮计算所有两个坐标值之间的情况，会超时 双指针法，从首尾两点开始计算，两点距离不变，m</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>数组 on hi~</title><link>https://way2.fun/tags/%E6%95%B0%E7%BB%84/</link><description>Recent content in 数组 on hi~</description><generator>Hugo -- 0.135.0</generator><language>zh-cn</language><lastBuildDate>Thu, 22 Apr 2021 23:34:13 +0800</lastBuildDate><atom:link href="https://way2.fun/tags/%E6%95%B0%E7%BB%84/index.xml" rel="self" type="application/rss+xml"/><item><title>Lc11 盛最多水的容器</title><link>https://way2.fun/post/lc11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</link><pubDate>Thu, 22 Apr 2021 23:34:13 +0800</pubDate><guid>https://way2.fun/post/lc11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</guid><description>&lt;h3 id="题目">题目&lt;/h3>
+&lt;p>&lt;a href="https://leetcode-cn.com/problems/container-with-most-water/">11. 盛最多水的容器&lt;/a>&lt;/p>
+&lt;p>&lt;img loading="lazy" src="https://blog-img-1256179672.cos.ap-shanghai.myqcloud.com/img/RGGm14.png" alt="RGGm14" />
+&lt;/p>
+&lt;h3 id="题解">题解&lt;/h3>
+&lt;p>max = (end - start) * getMin(height[end], height[start])&lt;/p>
+&lt;ol>
+&lt;li>暴力解法 就遍历两轮计算所有两个坐标值之间的情况，会超时&lt;/li>
+&lt;li>双指针法，从首尾两点开始计算，两点距离不变，max值取决于value小的数据，哪端小哪端往中间靠，到首尾坐标相等时候结束遍历，计算出所有&lt;strong>可能存在的最大值&lt;/strong>中取最大值。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="cm">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> * @param {number[]} height
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> * @return {number}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">maxArea&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">height&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">start&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">end&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">length&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">max&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">end&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">start&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">endValue&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">end&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">startValue&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">start&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">tmp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">end&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">start&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">endValue&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nx">startValue&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="nx">startValue&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="nx">endValue&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">max&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">tmp&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nx">max&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="nx">tmp&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">endValue&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nx">startValue&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">start&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>&lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">end&lt;/span> &lt;span class="o">-=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item></channel></rss>

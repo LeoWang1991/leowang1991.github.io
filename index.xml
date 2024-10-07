@@ -1,8 +1,110 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>hi~</title><link>https://way2.fun/</link><description>Recent content on hi~</description><generator>Hugo -- 0.131.0</generator><language>zh-cn</language><lastBuildDate>Mon, 03 Oct 2022 23:21:31 +0800</lastBuildDate><atom:link href="https://way2.fun/index.xml" rel="self" type="application/rss+xml"/><item><title>LC121买卖股票的最佳时机</title><link>https://way2.fun/post/lc121%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</link><pubDate>Mon, 03 Oct 2022 23:21:31 +0800</pubDate><guid>https://way2.fun/post/lc121%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</guid><description>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。 你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一</description></item><item><title>关于</title><link>https://way2.fun/about/</link><pubDate>Fri, 26 Nov 2021 18:12:33 +0800</pubDate><guid>https://way2.fun/about/</guid><description>前端开发工程师，热爱技术，热爱生活。</description></item><item><title>React生命周期</title><link>https://way2.fun/post/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link><pubDate>Thu, 06 May 2021 14:38:35 +0800</pubDate><guid>https://way2.fun/post/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid><description>前言 了解相关React生命周期函数 优化 挂载 组件实例初始化并插入到DOM过程 constructor(props) {super(props)} static getDerivedStateFromProps(nextProps, prevState) =&amp;gt; newState render() componentDidMount() getDerivedStateFromProps 当组件props变化时候可以在这个api中监听</description></item><item><title>当setState之后</title><link>https://way2.fun/post/%E5%BD%93setstate%E4%B9%8B%E5%90%8E/</link><pubDate>Thu, 29 Apr 2021 17:47:58 +0800</pubDate><guid>https://way2.fun/post/%E5%BD%93setstate%E4%B9%8B%E5%90%8E/</guid><description>当我们在setState，我们在set什么 前言 本文主要想要了解并学习关于setState后续的一些过程 同步or异步 更新过程 更新过程</description></item><item><title>Redux源码解析createStore</title><link>https://way2.fun/post/redux%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90createstore/</link><pubDate>Sat, 24 Apr 2021 22:25:29 +0800</pubDate><guid>https://way2.fun/post/redux%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90createstore/</guid><description>前言 该文章主要记录看redux源码时候遇到的疑惑点以及解惑 笔记 redux源码很短，主要核心内容就createStore自己在阅读的时候遇到一</description></item><item><title>Lc11 盛最多水的容器</title><link>https://way2.fun/post/lc11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</link><pubDate>Thu, 22 Apr 2021 23:34:13 +0800</pubDate><guid>https://way2.fun/post/lc11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</guid><description>题目 11. 盛最多水的容器 题解 max = (end - start) * getMin(height[end], height[start]) 暴力解法 就遍历两轮计算所有两个坐标值之间的情况，会超时 双指针法，从首尾两点开始计算，两点距离不变，m</description></item><item><title>Js创建对象的几种方式</title><link>https://way2.fun/post/js%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</link><pubDate>Mon, 19 Apr 2021 22:08:49 +0800</pubDate><guid>https://way2.fun/post/js%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>hi~</title><link>https://way2.fun/</link><description>Recent content on hi~</description><generator>Hugo -- 0.135.0</generator><language>zh-cn</language><lastBuildDate>Mon, 07 Oct 2024 20:59:29 +0800</lastBuildDate><atom:link href="https://way2.fun/index.xml" rel="self" type="application/rss+xml"/><item><title>浏览器缓存机制</title><link>https://way2.fun/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/</link><pubDate>Mon, 07 Oct 2024 20:59:29 +0800</pubDate><guid>https://way2.fun/post/%E6%B5%8F%E8%A7%88%E5%99%A8%E7%BC%93%E5%AD%98%E6%9C%BA%E5%88%B6/</guid><description>&lt;p>浏览器缓存机制&lt;/p>
+&lt;ol>
+&lt;li>强制缓存&lt;/li>
+&lt;li>协商缓存&lt;/li>
+&lt;/ol></description></item><item><title>LC121买卖股票的最佳时机</title><link>https://way2.fun/post/lc121%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</link><pubDate>Mon, 03 Oct 2022 23:21:31 +0800</pubDate><guid>https://way2.fun/post/lc121%E4%B9%B0%E5%8D%96%E8%82%A1%E7%A5%A8%E7%9A%84%E6%9C%80%E4%BD%B3%E6%97%B6%E6%9C%BA/</guid><description>&lt;p>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。&lt;/p>
+&lt;p>你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。&lt;/p></description></item><item><title>关于</title><link>https://way2.fun/about/</link><pubDate>Fri, 26 Nov 2021 18:12:33 +0800</pubDate><guid>https://way2.fun/about/</guid><description>&lt;p>前端开发工程师，热爱技术，热爱生活。
+kkk&lt;/p></description></item><item><title>React生命周期</title><link>https://way2.fun/post/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</link><pubDate>Thu, 06 May 2021 14:38:35 +0800</pubDate><guid>https://way2.fun/post/react%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
+&lt;ol>
+&lt;li>了解相关React生命周期函数&lt;/li>
+&lt;li>优化&lt;/li>
+&lt;/ol>
+&lt;h3 id="挂载">挂载&lt;/h3>
+&lt;p>组件实例初始化并插入到DOM过程&lt;/p>
+&lt;ol>
+&lt;li>constructor(props) {super(props)}&lt;/li>
+&lt;li>static getDerivedStateFromProps(nextProps, prevState) =&amp;gt; newState&lt;/li>
+&lt;li>render()&lt;/li>
+&lt;li>componentDidMount()&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>getDerivedStateFromProps&lt;/strong> 当组件props变化时候可以在这个api中监听到，开发过程中场景比较少，如果组件半受控，也受props影响则可以在这个api中返回新的state。&lt;/p></description></item><item><title>当setState之后</title><link>https://way2.fun/post/%E5%BD%93setstate%E4%B9%8B%E5%90%8E/</link><pubDate>Thu, 29 Apr 2021 17:47:58 +0800</pubDate><guid>https://way2.fun/post/%E5%BD%93setstate%E4%B9%8B%E5%90%8E/</guid><description>&lt;blockquote>
+&lt;p>当我们在&lt;code>setState&lt;/code>，我们在&lt;code>set&lt;/code>什么&lt;/p>
+&lt;/blockquote>
+&lt;h3 id="前言">前言&lt;/h3>
+&lt;p>本文主要想要了解并学习关于setState后续的一些过程&lt;/p>
+&lt;ol>
+&lt;li>同步or异步&lt;/li>
+&lt;li>更新过程&lt;/li>
+&lt;/ol>
+&lt;p>更新过程&lt;/p></description></item><item><title>Redux源码解析createStore</title><link>https://way2.fun/post/redux%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90createstore/</link><pubDate>Sat, 24 Apr 2021 22:25:29 +0800</pubDate><guid>https://way2.fun/post/redux%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90createstore/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
+&lt;p>该文章主要记录看redux源码时候遇到的疑惑点以及解惑&lt;/p>
+&lt;h3 id="笔记">笔记&lt;/h3>
+&lt;p>redux源码很短，主要核心内容就&lt;code>createStore&lt;/code>自己在阅读的时候遇到一些问题，记录下。&lt;/p></description></item><item><title>Lc11 盛最多水的容器</title><link>https://way2.fun/post/lc11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</link><pubDate>Thu, 22 Apr 2021 23:34:13 +0800</pubDate><guid>https://way2.fun/post/lc11-%E7%9B%9B%E6%9C%80%E5%A4%9A%E6%B0%B4%E7%9A%84%E5%AE%B9%E5%99%A8/</guid><description>&lt;h3 id="题目">题目&lt;/h3>
+&lt;p>&lt;a href="https://leetcode-cn.com/problems/container-with-most-water/">11. 盛最多水的容器&lt;/a>&lt;/p>
+&lt;p>&lt;img loading="lazy" src="https://blog-img-1256179672.cos.ap-shanghai.myqcloud.com/img/RGGm14.png" alt="RGGm14" />
+&lt;/p>
+&lt;h3 id="题解">题解&lt;/h3>
+&lt;p>max = (end - start) * getMin(height[end], height[start])&lt;/p>
+&lt;ol>
+&lt;li>暴力解法 就遍历两轮计算所有两个坐标值之间的情况，会超时&lt;/li>
+&lt;li>双指针法，从首尾两点开始计算，两点距离不变，max值取决于value小的数据，哪端小哪端往中间靠，到首尾坐标相等时候结束遍历，计算出所有&lt;strong>可能存在的最大值&lt;/strong>中取最大值。&lt;/li>
+&lt;/ol>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt"> 1
+&lt;/span>&lt;span class="lnt"> 2
+&lt;/span>&lt;span class="lnt"> 3
+&lt;/span>&lt;span class="lnt"> 4
+&lt;/span>&lt;span class="lnt"> 5
+&lt;/span>&lt;span class="lnt"> 6
+&lt;/span>&lt;span class="lnt"> 7
+&lt;/span>&lt;span class="lnt"> 8
+&lt;/span>&lt;span class="lnt"> 9
+&lt;/span>&lt;span class="lnt">10
+&lt;/span>&lt;span class="lnt">11
+&lt;/span>&lt;span class="lnt">12
+&lt;/span>&lt;span class="lnt">13
+&lt;/span>&lt;span class="lnt">14
+&lt;/span>&lt;span class="lnt">15
+&lt;/span>&lt;span class="lnt">16
+&lt;/span>&lt;span class="lnt">17
+&lt;/span>&lt;span class="lnt">18
+&lt;/span>&lt;span class="lnt">19
+&lt;/span>&lt;span class="lnt">20
+&lt;/span>&lt;span class="lnt">21
+&lt;/span>&lt;span class="lnt">22
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-javascript" data-lang="javascript">&lt;span class="line">&lt;span class="cl">&lt;span class="cm">/**
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> * @param {number[]} height
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> * @return {number}
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="cm"> */&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="kd">var&lt;/span> &lt;span class="nx">maxArea&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="kd">function&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">height&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">start&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">end&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="nx">length&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">max&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="mi">0&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">while&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">end&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">start&lt;/span> &lt;span class="o">&amp;gt;=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">endValue&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">end&lt;/span>&lt;span class="p">];&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kd">let&lt;/span> &lt;span class="nx">startValue&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">height&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="nx">start&lt;/span>&lt;span class="p">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="kr">const&lt;/span> &lt;span class="nx">tmp&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">end&lt;/span> &lt;span class="o">-&lt;/span> &lt;span class="nx">start&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="o">*&lt;/span> &lt;span class="p">(&lt;/span>&lt;span class="nx">endValue&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nx">startValue&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="nx">startValue&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="nx">endValue&lt;/span>&lt;span class="p">);&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">max&lt;/span> &lt;span class="o">=&lt;/span> &lt;span class="nx">tmp&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nx">max&lt;/span> &lt;span class="o">?&lt;/span> &lt;span class="nx">tmp&lt;/span> &lt;span class="o">:&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">if&lt;/span>&lt;span class="p">(&lt;/span>&lt;span class="nx">endValue&lt;/span> &lt;span class="o">&amp;gt;&lt;/span> &lt;span class="nx">startValue&lt;/span>&lt;span class="p">)&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">start&lt;/span> &lt;span class="o">+=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>&lt;span class="k">else&lt;/span> &lt;span class="p">{&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="nx">end&lt;/span> &lt;span class="o">-=&lt;/span> &lt;span class="mi">1&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="p">}&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl"> &lt;span class="k">return&lt;/span> &lt;span class="nx">max&lt;/span>&lt;span class="p">;&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">};&lt;/span>
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div></description></item><item><title>Js创建对象的几种方式</title><link>https://way2.fun/post/js%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</link><pubDate>Mon, 19 Apr 2021 22:08:49 +0800</pubDate><guid>https://way2.fun/post/js%E5%88%9B%E5%BB%BA%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E5%BC%8F/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
 &lt;ol>
 &lt;li>了解js几种创建对象的方式&lt;/li>
 &lt;li>了解原型&lt;/li>
-&lt;/ol></description></item><item><title>Js深拷贝实现</title><link>https://way2.fun/post/js%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%AE%9E%E7%8E%B0/</link><pubDate>Fri, 09 Apr 2021 14:12:02 +0800</pubDate><guid>https://way2.fun/post/js%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%AE%9E%E7%8E%B0/</guid><description>为什么需要深拷贝 因为对象在内存中是在堆内存heap中存储，没法直接访问，只能通过地址指针来访问到。所以通常我们在拷贝对象时候只是拷贝了指针地</description></item><item><title>H5歌曲播放页面编写</title><link>https://way2.fun/post/h5%E6%AD%8C%E6%9B%B2%E6%92%AD%E6%94%BE%E9%A1%B5%E9%9D%A2%E7%BC%96%E5%86%99/</link><pubDate>Thu, 08 Apr 2021 16:21:44 +0800</pubDate><guid>https://way2.fun/post/h5%E6%AD%8C%E6%9B%B2%E6%92%AD%E6%94%BE%E9%A1%B5%E9%9D%A2%E7%BC%96%E5%86%99/</guid><description>背景 编写音频播放需求 实现 思路： 音频播放就用 audio标签来处理，音频内容挂载到audio元素(ad)上，把该元素隐藏。自己写下ui，然后通过</description></item><item><title>问题记录</title><link>https://way2.fun/post/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 06 Apr 2021 16:08:02 +0800</pubDate><guid>https://way2.fun/post/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid><description>fetch接口post数据时候需要写明Content-type 默认是text/plain 会导致接口获取不到请求的body数据。</description></item><item><title>http知识点</title><link>https://way2.fun/post/http%E7%9F%A5%E8%AF%86%E7%82%B9/</link><pubDate>Tue, 06 Apr 2021 14:08:02 +0800</pubDate><guid>https://way2.fun/post/http%E7%9F%A5%E8%AF%86%E7%82%B9/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
+&lt;/ol></description></item><item><title>Js深拷贝实现</title><link>https://way2.fun/post/js%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%AE%9E%E7%8E%B0/</link><pubDate>Fri, 09 Apr 2021 14:12:02 +0800</pubDate><guid>https://way2.fun/post/js%E6%B7%B1%E6%8B%B7%E8%B4%9D%E5%AE%9E%E7%8E%B0/</guid><description>&lt;h3 id="为什么需要深拷贝">为什么需要深拷贝&lt;/h3>
+&lt;p>因为对象在内存中是在堆内存heap中存储，没法直接访问，只能通过地址指针来访问到。所以通常我们在拷贝对象时候只是拷贝了指针地址。当实际对象在内存中被别的变量改变了，相应的当前的数据也变了。所以需要深拷贝，&lt;strong>单独开辟新的内存地址存放对象数据&lt;/strong>&lt;/p></description></item><item><title>H5歌曲播放页面编写</title><link>https://way2.fun/post/h5%E6%AD%8C%E6%9B%B2%E6%92%AD%E6%94%BE%E9%A1%B5%E9%9D%A2%E7%BC%96%E5%86%99/</link><pubDate>Thu, 08 Apr 2021 16:21:44 +0800</pubDate><guid>https://way2.fun/post/h5%E6%AD%8C%E6%9B%B2%E6%92%AD%E6%94%BE%E9%A1%B5%E9%9D%A2%E7%BC%96%E5%86%99/</guid><description>&lt;h3 id="背景">背景&lt;/h3>
+&lt;p>&lt;img loading="lazy" src="https://blog-img-1256179672.cos.ap-shanghai.myqcloud.com/img/O3H5y5.png" alt="O3H5y5" />
+&lt;/p>
+&lt;p>编写音频播放需求&lt;/p>
+&lt;!-- more -->
+&lt;h3 id="实现">实现&lt;/h3>
+&lt;p>思路：&lt;/p>
+&lt;p>音频播放就用 audio标签来处理，音频内容挂载到audio元素(ad)上，把该元素隐藏。自己写下ui，然后通过audio的相关控制api来实现播放功能。&lt;/p></description></item><item><title>问题记录</title><link>https://way2.fun/post/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</link><pubDate>Tue, 06 Apr 2021 16:08:02 +0800</pubDate><guid>https://way2.fun/post/%E9%97%AE%E9%A2%98%E8%AE%B0%E5%BD%95/</guid><description>&lt;h3 id="fetch接口post数据时候需要写明content-type">fetch接口post数据时候需要写明Content-type&lt;/h3>
+&lt;p>&lt;img loading="lazy" src="https://blog-img-1256179672.cos.ap-shanghai.myqcloud.com/img/hcFX8t.png" alt="" />
+&lt;/p>
+&lt;p>默认是text/plain 会导致接口获取不到请求的body数据。&lt;/p></description></item><item><title>http知识点</title><link>https://way2.fun/post/http%E7%9F%A5%E8%AF%86%E7%82%B9/</link><pubDate>Tue, 06 Apr 2021 14:08:02 +0800</pubDate><guid>https://way2.fun/post/http%E7%9F%A5%E8%AF%86%E7%82%B9/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
 &lt;ol>
 &lt;li>http是什么&lt;/li>
 &lt;li>https是什么&lt;/li>
@@ -14,7 +116,30 @@
 &lt;li>了解js作为单线程处理事件的顺序&lt;/li>
 &lt;li>宏任务和微任务 同步任务 异步任务&lt;/li>
 &lt;li>setTimeout/setInterval&lt;/li>
-&lt;/ol></description></item><item><title>Nginx卸载重装和升级</title><link>https://way2.fun/post/nginx%E5%8D%B8%E8%BD%BD%E9%87%8D%E8%A3%85%E5%92%8C%E5%8D%87%E7%BA%A7/</link><pubDate>Thu, 28 May 2020 11:18:26 +0800</pubDate><guid>https://way2.fun/post/nginx%E5%8D%B8%E8%BD%BD%E9%87%8D%E8%A3%85%E5%92%8C%E5%8D%87%E7%BA%A7/</guid><description>前言 了解nginx在centos上安装和配置步骤 平滑升级 参考： https://www.jianshu.com/p/097d1f907289 步骤如下： 获取编译参数 获取指定版本源码 配置编译 替换升级 1 获取当前编译参数 通过</description></item><item><title>防抖和节流</title><link>https://way2.fun/post/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/</link><pubDate>Tue, 19 May 2020 14:31:14 +0800</pubDate><guid>https://way2.fun/post/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/</guid><description>前言 节流防抖 是什么 应用场景区分 实现 参考 https://zhuanlan.zhihu.com/p/38313717 https://juejin.im/post/5b8de829f265da43623c4261 节流和防抖 处理频繁请求的业务场景，比如「输入框keyup实时搜索查询请求」 「页面滚动触发的事件」，</description></item><item><title>前端跨域</title><link>https://way2.fun/post/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F/</link><pubDate>Mon, 11 May 2020 18:47:53 +0800</pubDate><guid>https://way2.fun/post/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
+&lt;/ol></description></item><item><title>Nginx卸载重装和升级</title><link>https://way2.fun/post/nginx%E5%8D%B8%E8%BD%BD%E9%87%8D%E8%A3%85%E5%92%8C%E5%8D%87%E7%BA%A7/</link><pubDate>Thu, 28 May 2020 11:18:26 +0800</pubDate><guid>https://way2.fun/post/nginx%E5%8D%B8%E8%BD%BD%E9%87%8D%E8%A3%85%E5%92%8C%E5%8D%87%E7%BA%A7/</guid><description>&lt;h4 id="前言">前言&lt;/h4>
+&lt;p>了解nginx在centos上安装和配置步骤&lt;/p>
+&lt;h4 id="平滑升级">平滑升级&lt;/h4>
+&lt;p>参考： &lt;a href="https://www.jianshu.com/p/097d1f907289">https://www.jianshu.com/p/097d1f907289&lt;/a>&lt;/p>
+&lt;p>&lt;img loading="lazy" src="https://tva1.sinaimg.cn/large/007S8ZIlly1gf84rebbdkj31fs0e24f4.jpg" alt="image-20200528140644676" />
+&lt;/p>
+&lt;p>步骤如下：&lt;/p>
+&lt;ol>
+&lt;li>获取编译参数&lt;/li>
+&lt;li>获取指定版本源码&lt;/li>
+&lt;li>配置编译&lt;/li>
+&lt;li>替换升级&lt;/li>
+&lt;/ol>
+&lt;p>&lt;strong>1 获取当前编译参数&lt;/strong>&lt;/p></description></item><item><title>防抖和节流</title><link>https://way2.fun/post/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/</link><pubDate>Tue, 19 May 2020 14:31:14 +0800</pubDate><guid>https://way2.fun/post/%E9%98%B2%E6%8A%96%E5%92%8C%E8%8A%82%E6%B5%81/</guid><description>&lt;h4 id="前言">前言&lt;/h4>
+&lt;ol>
+&lt;li>节流防抖 是什么&lt;/li>
+&lt;li>应用场景区分&lt;/li>
+&lt;li>实现&lt;/li>
+&lt;/ol>
+&lt;p>参考&lt;/p>
+&lt;p>&lt;a href="https://zhuanlan.zhihu.com/p/38313717">https://zhuanlan.zhihu.com/p/38313717&lt;/a>&lt;/p>
+&lt;p>&lt;a href="https://juejin.im/post/5b8de829f265da43623c4261">https://juejin.im/post/5b8de829f265da43623c4261&lt;/a>&lt;/p>
+&lt;h4 id="节流和防抖">节流和防抖&lt;/h4>
+&lt;p>处理频繁请求的业务场景，比如「输入框keyup实时搜索查询请求」 「页面滚动触发的事件」，不处理的话 可能会频繁请求给服务器带去太大压力吧，滚动或者浏览器缩放这样的会带来前端性能问题。&lt;/p></description></item><item><title>前端跨域</title><link>https://way2.fun/post/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F/</link><pubDate>Mon, 11 May 2020 18:47:53 +0800</pubDate><guid>https://way2.fun/post/%E5%89%8D%E7%AB%AF%E8%B7%A8%E5%9F%9F/</guid><description>&lt;h3 id="前言">前言&lt;/h3>
 &lt;ol>
 &lt;li>为什么会产生跨域&lt;/li>
 &lt;li>解决方案&lt;/li>
